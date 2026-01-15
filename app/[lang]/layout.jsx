@@ -60,13 +60,16 @@ export default async function RootLayout({ children, params }) {
   const navbar = (
     <Navbar
       logo={
-        <span style={{ fontWeight: 700, fontSize: '1.2rem' }}>
-          <span style={{ color: '#12b886' }}>Art</span>Generation.me
-        </span>
+        <a href="https://artgeneration.me" target="_blank" rel="noreferrer" style={{ display: 'flex', alignItems: 'center', textDecoration: 'none' }}>
+          <img src="https://artgeneration.me/assets/artgeneration_me/logo.svg" alt="ArtGeneration.me" style={{ height: '34px' }} />
+        </a>
       }
-      projectLink="https://github.com/ArtGeneration-me"
-      chatLink="https://t.me/ArtGenerationMe"
     >
+      <a href="https://artgeneration.me/gallery/category/all/new" target="_blank" rel="noreferrer" className="nav-link">Галерея</a>
+      <a href="https://artgeneration.me/generator" target="_blank" rel="noreferrer" className="nav-link">Создать</a>
+      <a href="https://artgeneration.me/editor" target="_blank" rel="noreferrer" className="nav-link">Редактор</a>
+      <a href="https://artgeneration.me/about" target="_blank" rel="noreferrer" className="nav-link">О Сервисе</a>
+      <a href={`/${lang}/docs`} className="nav-link nav-link-active">Руководство</a>
       <LocaleSwitch lite />
     </Navbar>
   )

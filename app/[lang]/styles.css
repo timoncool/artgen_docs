@@ -7,10 +7,97 @@ html {
   scroll-behavior: smooth;
 }
 
+body {
+  background: #1a1a1a;
+}
+
 a {
   color: #12b886;
 }
 
 a:hover {
   color: #0ca678;
+}
+
+/* Header styling to match artgen main site */
+nav.nextra-nav-container {
+  background: rgba(26, 26, 26, 0.95) !important;
+  border: 1px solid rgba(255, 255, 255, 0.4) !important;
+  border-top: 0 !important;
+  border-radius: 0 0 30px 30px !important;
+  backdrop-filter: blur(20px);
+  padding: 12px 24px !important;
+  margin: 0 auto;
+  max-width: 100%;
+}
+
+nav.nextra-nav-container-blur {
+  background: rgba(26, 26, 26, 0.95) !important;
+}
+
+/* Navigation links styling */
+.nextra-nav-container a {
+  color: white !important;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 28px;
+  padding: 3px 16px;
+  border-radius: 8px;
+  background: rgba(48, 48, 48, 0.4);
+  backdrop-filter: blur(20px);
+  transition: background-color 0.2s ease;
+}
+
+.nextra-nav-container a:hover {
+  background: rgba(255, 255, 255, 0.2) !important;
+  color: white !important;
+}
+
+/* Logo styling */
+.nextra-nav-container > nav > a:first-child {
+  background: transparent !important;
+  padding: 0 !important;
+}
+
+.nextra-nav-container > nav > a:first-child:hover {
+  background: transparent !important;
+}
+
+/* Theme switch and other icons */
+.nextra-nav-container button {
+  color: white !important;
+}
+
+/* Sidebar styling */
+.nextra-sidebar-container {
+  background: rgba(26, 26, 26, 0.95) !important;
+}
+
+/* Main content area */
+.nextra-content {
+  background: #1a1a1a;
+}
+
+/* Cards styling to match artgen */
+.nextra-cards {
+  gap: 16px;
+}
+
+.nextra-card {
+  background: rgba(48, 48, 48, 0.4) !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  border-radius: 12px !important;
+  backdrop-filter: blur(20px);
+  transition: all 0.2s ease;
+}
+
+.nextra-card:hover {
+  background: rgba(255, 255, 255, 0.1) !important;
+  border-color: rgba(255, 255, 255, 0.4) !important;
+}
+
+/* Footer styling */
+footer {
+  background: rgba(26, 26, 26, 0.95) !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
 }
