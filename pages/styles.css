@@ -114,29 +114,25 @@ nav.nextra-nav-container-blur,
   gap: 24px;
 }
 
-/* Language switcher */
-.lang-switcher {
+/* IntlMenu - globe icon */
+.intl-menu {
   display: flex;
   align-items: center;
-  gap: 6px;
-  margin-left: 12px;
+  justify-content: center;
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 50%;
+  transition: background-color 0.2s ease;
 }
 
-.lang-link {
-  color: rgba(255, 255, 255, 0.7) !important;
-  font-size: 14px;
-  font-weight: 400;
-  text-decoration: none !important;
-  transition: color 0.2s ease;
+.intl-menu:hover {
+  background: rgba(255, 255, 255, 0.1);
 }
 
-.lang-link:hover {
-  color: white !important;
-}
-
-.lang-separator {
-  color: rgba(255, 255, 255, 0.4);
-  font-size: 14px;
+.intl-icon {
+  color: white;
+  width: 25px;
+  height: 25px;
 }
 
 /* User menu - simulated logged-in user */
@@ -187,15 +183,29 @@ nav.nextra-nav-container-blur,
   transition: all 0.2s ease;
 }
 
-/* Search styling */
+/* Search styling - move to sidebar */
+nav.nextra-nav-container .nextra-search,
+.nextra-nav-container .nextra-search {
+  display: none !important;
+}
+
+.nextra-sidebar-container .nextra-search {
+  display: flex !important;
+  width: 100%;
+  max-width: 100%;
+  margin-bottom: 16px;
+  padding: 0 12px;
+}
+
 .nextra-search {
-  max-width: 200px;
+  max-width: 100%;
 }
 
 .nextra-search input {
   background: rgba(48, 48, 48, 0.4) !important;
   border: 1px solid rgba(255, 255, 255, 0.2) !important;
   color: white !important;
+  width: 100%;
 }
 
 .nextra-search input::placeholder {

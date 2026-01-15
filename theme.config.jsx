@@ -10,10 +10,14 @@ export default {
   navbar: {
     extraContent: (
       <div className="header-content">
-        <div className="lang-switcher">
-          <a href="/ru/docs" className="lang-link" title="Русский">RU</a>
-          <span className="lang-separator">|</span>
-          <a href="/en/docs" className="lang-link" title="English">EN</a>
+        <div className="intl-menu">
+          <svg className="intl-icon" width="25" height="25" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="1.5"/>
+            <ellipse cx="12" cy="12" rx="4" ry="10" stroke="currentColor" strokeWidth="1.5"/>
+            <path d="M2 12h20" stroke="currentColor" strokeWidth="1.5"/>
+            <path d="M12 2c2.5 2.5 4 5.5 4 10s-1.5 7.5-4 10" stroke="currentColor" strokeWidth="1.5"/>
+            <path d="M12 2c-2.5 2.5-4 5.5-4 10s1.5 7.5 4 10" stroke="currentColor" strokeWidth="1.5"/>
+          </svg>
         </div>
         <div className="nav-center">
           <a href="https://artgeneration.me/gallery/category/all/new" className="nav-link">Галерея</a>
@@ -38,7 +42,7 @@ export default {
     )
   },
   search: {
-    component: null
+    placeholder: 'Поиск...'
   },
   project: {
     link: null
