@@ -183,33 +183,31 @@ nav.nextra-nav-container-blur,
   transition: all 0.2s ease;
 }
 
-/* Search styling - move to sidebar */
-nav.nextra-nav-container .nextra-search,
-.nextra-nav-container .nextra-search {
-  display: none !important;
-}
-
-.nextra-sidebar-container .nextra-search {
-  display: flex !important;
-  width: 100%;
-  max-width: 100%;
-  margin-bottom: 16px;
-  padding: 0 12px;
-}
-
+/* Search styling - move to sidebar area */
 .nextra-search {
-  max-width: 100%;
+  position: fixed !important;
+  top: 80px !important;
+  left: 16px !important;
+  width: 250px !important;
+  max-width: 250px !important;
+  z-index: 100 !important;
 }
 
 .nextra-search input {
   background: rgba(48, 48, 48, 0.4) !important;
   border: 1px solid rgba(255, 255, 255, 0.2) !important;
   color: white !important;
-  width: 100%;
+  width: 100% !important;
+  border-radius: 8px !important;
 }
 
 .nextra-search input::placeholder {
   color: rgba(255, 255, 255, 0.5) !important;
+}
+
+/* Adjust sidebar to make room for search */
+.nextra-sidebar-container {
+  padding-top: 60px !important;
 }
 
 /* Sidebar styling */
