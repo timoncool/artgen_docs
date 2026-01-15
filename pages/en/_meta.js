@@ -1,14 +1,11 @@
 export default {
   index: {
-    title: 'Home',
-    type: 'page'
+    title: 'Home'
   },
   docs: {
-    title: 'Documentation',
-    type: 'page'
+    title: 'Documentation'
   },
   news: {
-    title: 'News & Updates',
-    type: 'page'
+    title: 'News & Updates'
   }
 }
