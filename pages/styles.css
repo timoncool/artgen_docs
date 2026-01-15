@@ -105,35 +105,101 @@ nav.nextra-nav-container-blur,
   background: rgba(255, 255, 255, 0.2) !important;
 }
 
-.nav-cta {
-  display: inline-flex;
+/* Header content wrapper */
+.header-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  gap: 24px;
+}
+
+/* Language switcher */
+.lang-switcher {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-left: 12px;
+}
+
+.lang-link {
+  color: rgba(255, 255, 255, 0.7) !important;
+  font-size: 14px;
+  font-weight: 400;
+  text-decoration: none !important;
+  transition: color 0.2s ease;
+}
+
+.lang-link:hover {
+  color: white !important;
+}
+
+.lang-separator {
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 14px;
+}
+
+/* User menu - simulated logged-in user */
+.user-menu {
+  display: flex;
   align-items: center;
   gap: 8px;
-  color: white !important;
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 28px;
-  padding: 8px 20px;
-  border-radius: 12px;
-  background: #12b886 !important;
-  text-decoration: none !important;
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: 8px;
+  transition: background-color 0.2s ease;
+}
+
+.user-menu:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.user-nickname {
+  color: white;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 400;
+  max-width: 150px;
+  overflow: hidden;
+  text-overflow: ellipsis;
   white-space: nowrap;
-  transition: background-color 0.2s ease, transform 0.2s ease;
 }
 
-.nav-cta:hover {
-  background: #0ca678 !important;
-  color: white !important;
-  transform: scale(1.02);
-}
-
-.nav-cta svg {
+.user-icon {
+  color: white;
   flex-shrink: 0;
 }
 
-/* Hide default search in navbar - it will be in sidebar */
-.nextra-nav-container .nextra-search {
-  display: none !important;
+.burger-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 4px;
+  cursor: pointer;
+}
+
+.burger-menu span {
+  display: block;
+  width: 18px;
+  height: 2px;
+  background: white;
+  border-radius: 1px;
+  transition: all 0.2s ease;
+}
+
+/* Search styling */
+.nextra-search {
+  max-width: 200px;
+}
+
+.nextra-search input {
+  background: rgba(48, 48, 48, 0.4) !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  color: white !important;
+}
+
+.nextra-search input::placeholder {
+  color: rgba(255, 255, 255, 0.5) !important;
 }
 
 /* Sidebar styling */
