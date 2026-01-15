@@ -1,0 +1,98 @@
+---
+title: Image Generator
+description: Complete guide to the ArtGeneration.me image generator
+---
+
+# Image Generator
+
+The Generator is the main tool of the platform for creating images using artificial intelligence.
+
+## Main Parameters
+
+### Prompt
+A text description of the desired image. The more detailed the description, the more accurate the result.
+
+import { Callout } from 'nextra/components'
+
+<Callout type="warning">
+Write prompts in English for best results. Most models are trained on English data.
+</Callout>
+
+### Negative Prompt
+A description of what should NOT be in the image. Helps avoid unwanted elements.
+
+### Model
+The choice of generation model affects the style and quality of the result. Various models are available for different tasks.
+
+### Style
+Additional style modifiers that are applied to the generation.
+
+## Advanced Settings
+
+### Resolution
+Choose the output image size. Various aspect ratios are available.
+
+### Performance Mode
+- **Sketch** — fast generation, low quality
+- **Draft** — balance of speed and quality
+- **Masterpiece** — maximum quality, longer generation
+
+### LoRA
+Low-Rank Adaptation models for fine-tuning the generation style.
+
+### Seed
+Generation seed. The same seed with the same parameters will give a similar result.
+
+## Special Features
+
+### Init Image (img2img)
+Upload an image as a base for generation. Useful for:
+- Stylizing photos
+- Creating variations
+- Adding elements
+
+### Face Swap
+Replacing a face in a generated image. Requires PRO or MAX subscription.
+
+### Upscale
+Increasing the resolution of a finished image while maintaining quality.
+
+### Background Remove
+Removing the background from an image.
+
+## Generation Process
+
+import { Steps } from 'nextra/components'
+
+<Steps>
+### Step 1
+Enter a prompt — a description of the desired image
+
+### Step 2
+Choose a model and style
+
+### Step 3
+Configure additional parameters (optional)
+
+### Step 4
+Click the "Create" button
+
+### Step 5
+Wait for generation to complete (usually 10-30 seconds)
+</Steps>
+
+## Prompt Tips
+
+### Structure of a Good Prompt
+1. **Main subject** — what is depicted
+2. **Details** — features of the subject
+3. **Environment** — background, setting
+4. **Style** — artistic direction
+5. **Quality** — technical parameters
+
+### Example
+```
+a beautiful woman with long red hair, wearing a white dress, 
+standing in a flower garden, soft sunlight, 
+oil painting style, highly detailed, 8k resolution
+```
