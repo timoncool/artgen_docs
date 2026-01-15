@@ -1,27 +1,95 @@
 # Main Gallery
 
-The gallery is a place to view, organize, and manage all your generated images.
+![Main Gallery](/images/blog/blog_image-10.png)
 
-## Gallery Features
+The gallery is the heart of the ArtGeneration.me community, where the best user works are collected. Here you can find inspiration, study techniques of other artists, and discover new styles.
 
-- View all your generations
-- Organize images into folders
-- Search and filter
-- Batch operations
-- Share with others
+## Search and Categories
+
+![Search and Categories](/images/blog/blog_image-11.png)
+
+At the top of the gallery is a search bar and category filters. You can search for images by keywords or select a category of interest from the list.
+
+**Available categories:**
+- All
+- Portraits
+- Landscapes
+- Fantasy
+- Sci-Fi
+- Anime
+- Abstract
+- And many more
+
+## Cover Interaction
+
+When hovering over an image in the gallery, interactive elements appear:
+- **Heart** - add to favorites
+- **Eye** - quick view
+- **Info** - generation details
+
+## Gallery View
+
+![Gallery View](/images/blog/blog_image-12-1024x702.png)
+
+The gallery is displayed as a grid of images. You can scroll down to load new works. Images are automatically loaded as you scroll.
+
+### Sorting
+
+The following sorting options are available:
+- **New** - the freshest works
+- **Popular** - works with the most likes
+- **Discussed** - works with active comments
+
+## Image View
+
+![Image View](/images/blog/blog_image-13-1024x962.png)
+
+Clicking on an image opens full-screen view with detailed generation information.
+
+### View Elements
+
+In viewing mode, the following are available:
+- **Full-size image** - high quality
+- **Author information** - creator's profile
+- **Generation parameters** - prompt, model, settings
+- **Actions** - download, share, create version
+
+### Generation Details
+
+![Generation Details](/images/blog/blog_image-14.png)
+
+The right panel displays all parameters used to create the image:
+- Text prompt
+- Negative prompt
+- Model
+- Image size
+- Seed
+- Number of steps
+- CFG Scale
+
+### Similar Images
+
+Below the main image, similar works that may interest you are displayed. The algorithm selects images based on style, theme, and parameters used.
+
+### Create Your Version
+
+![Create Your Version](/images/blog/blog_image-15.png)
+
+Click the "Create your version" button to use the parameters of a liked image as a basis for your own generation. All settings will be automatically transferred to the generator.
 
 ## Sections
 
 import { Cards } from 'nextra/components'
 
 <Cards>
-  <Cards.Card title="Interface" href="/en/docs/gallery/interface" />
-  <Cards.Card title="Viewing Images" href="/en/docs/gallery/viewing" />
-  <Cards.Card title="Filters and Search" href="/en/docs/gallery/filters" />
-  <Cards.Card title="Image Actions" href="/en/docs/gallery/image-actions" />
-  <Cards.Card title="Folders" href="/en/docs/gallery/folders" />
-  <Cards.Card title="Batch Operations" href="/en/docs/gallery/batch-operations" />
-  <Cards.Card title="Sharing" href="/en/docs/gallery/sharing" />
-  <Cards.Card title="Moderation" href="/en/docs/gallery/moderation" />
-  <Cards.Card title="Statistics" href="/en/docs/gallery/statistics" />
+  <Cards.Card title="Search and Categories" href="/en/docs/gallery/search-categories" />
+  <Cards.Card title="Cover Interaction" href="/en/docs/gallery/cover-interaction" />
+  <Cards.Card title="Gallery Categories" href="/en/docs/gallery/categories" />
+  <Cards.Card title="Gallery View" href="/en/docs/gallery/gallery-view" />
+  <Cards.Card title="Interactive Elements" href="/en/docs/gallery/interactive-elements" />
+  <Cards.Card title="Image View" href="/en/docs/gallery/image-view" />
+  <Cards.Card title="View Elements" href="/en/docs/gallery/view-elements" />
+  <Cards.Card title="Generation Details" href="/en/docs/gallery/generation-details" />
+  <Cards.Card title="Similar Images" href="/en/docs/gallery/similar-images" />
+  <Cards.Card title="Create Your Version" href="/en/docs/gallery/create-version" />
 </Cards>
