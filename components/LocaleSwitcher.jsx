@@ -1,24 +1,54 @@
-import { useRouter } from 'next/router'
-import Link from 'next/link'
+'use client'
 
-export function LocaleSwitcher() {
-  const { locale, asPath } = useRouter()
-  const otherLocale = locale === 'ru' ? 'en' : 'ru'
-  const label = locale === 'ru' ? 'EN' : 'RU'
+import { usePathname, useRouter } from 'next/navigation'
+
+const locales = [
+  { code: 'ru', name: 'RU' },
+  { code: 'en', name: 'EN' }
+]
+
+export function LocaleSwitcher({ currentLocale }) {
+  const pathname = usePathname()
+  const router = useRouter()
+
+  const switchLocale = (newLocale) => {
+    // Set the NEXT_LOCALE cookie
+    document.cookie = `NEXT_LOCALE=${newLocale};path=/;max-age=31536000;SameSite=Lax`
+
+    // Replace current locale in pathname with new locale
+    const currentLocalePattern = new RegExp(`^/(${locales.map(l => l.code).join('|')})`)
+    const newPathname = pathname.replace(currentLocalePattern, `/${newLocale}`)
+
+    router.push(newPathname)
+  }
 
   return (
-    <Link
-      href={asPath}
-      locale={otherLocale}
-      className="locale-switcher-btn"
-      title={otherLocale === 'en' ? 'Switch to English' : 'Переключить на русский'}
-    >
-      <svg className="intl-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="1.5"/>
-        <ellipse cx="12" cy="12" rx="4" ry="10" stroke="currentColor" strokeWidth="1.5"/>
-        <path d="M2 12h20" stroke="currentColor" strokeWidth="1.5"/>
+    <div className="locale-switcher">
+      <svg
+        width="16"
+        height="16"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
+        <circle cx="12" cy="12" r="10"/>
+        <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/>
+        <path d="M2 12h20"/>
       </svg>
-      <span>{label}</span>
-    </Link>
+      <select
+        value={currentLocale}
+        onChange={(e) => switchLocale(e.target.value)}
+        className="locale-select"
+      >
+        {locales.map((locale) => (
+          <option key={locale.code} value={locale.code}>
+            {locale.name}
+          </option>
+        ))}
+      </select>
+    </div>
   )
 }
