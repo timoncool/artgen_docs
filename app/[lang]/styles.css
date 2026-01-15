@@ -7,10 +7,208 @@ html {
   scroll-behavior: smooth;
 }
 
+body {
+  background: #1a1a1a;
+}
+
+/* Default link colors */
 a {
   color: #12b886;
 }
 
 a:hover {
   color: #0ca678;
+}
+
+/* Header styling to match artgen main site exactly */
+nav.nextra-nav-container,
+.nextra-nav-container {
+  background: rgba(26, 26, 26, 0.95) !important;
+  border: 1px solid rgba(255, 255, 255, 0.4) !important;
+  border-top: 0 !important;
+  border-radius: 0 0 30px 30px !important;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  padding: 12px 24px !important;
+  margin: 0 auto;
+  max-width: 100%;
+}
+
+nav.nextra-nav-container-blur,
+.nextra-nav-container-blur {
+  background: rgba(26, 26, 26, 0.95) !important;
+}
+
+/* Navigation links styling - matching artgen exactly */
+.nav-link {
+  display: inline-flex;
+  align-items: center;
+  color: white !important;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 28px;
+  padding: 3px 16px;
+  border-radius: 8px;
+  background: rgba(48, 48, 48, 0.4);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  transition: background-color 0.2s ease;
+  text-decoration: none !important;
+  white-space: nowrap;
+}
+
+.nav-link:hover {
+  background: rgba(255, 255, 255, 0.2) !important;
+  color: white !important;
+}
+
+/* Active navigation link */
+.nav-link-active {
+  background: rgba(255, 255, 255, 0.2) !important;
+}
+
+/* Logo styling - no background */
+.nextra-nav-container > nav > a:first-child,
+nav > a:first-child {
+  background: transparent !important;
+  padding: 0 !important;
+}
+
+.nextra-nav-container > nav > a:first-child:hover,
+nav > a:first-child:hover {
+  background: transparent !important;
+}
+
+/* Theme switch and other icons */
+.nextra-nav-container button {
+  color: white !important;
+}
+
+/* Locale switch styling */
+.nextra-nav-container [data-locale-switch] {
+  color: white !important;
+}
+
+/* Sidebar styling */
+.nextra-sidebar-container {
+  background: rgba(26, 26, 26, 0.95) !important;
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Sidebar links */
+.nextra-sidebar-container a {
+  color: rgba(255, 255, 255, 0.8) !important;
+}
+
+.nextra-sidebar-container a:hover {
+  color: white !important;
+  background: rgba(255, 255, 255, 0.1) !important;
+}
+
+.nextra-sidebar-container a[data-active="true"] {
+  color: #12b886 !important;
+  background: rgba(18, 184, 134, 0.1) !important;
+}
+
+/* Main content area */
+.nextra-content {
+  background: #1a1a1a;
+}
+
+/* Cards styling to match artgen */
+.nextra-cards {
+  gap: 16px;
+}
+
+.nextra-card {
+  background: rgba(48, 48, 48, 0.4) !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  border-radius: 12px !important;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  transition: all 0.2s ease;
+}
+
+.nextra-card:hover {
+  background: rgba(255, 255, 255, 0.1) !important;
+  border-color: rgba(255, 255, 255, 0.4) !important;
+}
+
+/* Footer styling */
+footer {
+  background: rgba(26, 26, 26, 0.95) !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Table of contents styling */
+.nextra-toc {
+  border-left: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.nextra-toc a {
+  color: rgba(255, 255, 255, 0.6) !important;
+}
+
+.nextra-toc a:hover {
+  color: white !important;
+}
+
+.nextra-toc a[data-active="true"] {
+  color: #12b886 !important;
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+  color: white;
+}
+
+/* Code blocks */
+pre {
+  background: rgba(48, 48, 48, 0.6) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  border-radius: 8px !important;
+}
+
+code {
+  background: rgba(48, 48, 48, 0.4) !important;
+  border-radius: 4px;
+  padding: 2px 6px;
+}
+
+/* Callouts */
+.nextra-callout {
+  background: rgba(48, 48, 48, 0.4) !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  border-radius: 8px !important;
+}
+
+/* Steps component */
+.nextra-steps {
+  border-left: 2px solid rgba(18, 184, 134, 0.5);
+}
+
+/* Responsive header adjustments */
+@media screen and (max-width: 1000px) {
+  nav.nextra-nav-container,
+  .nextra-nav-container {
+    padding: 12px 16px !important;
+  }
+  
+  .nav-link {
+    font-size: 14px;
+    padding: 3px 12px;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  nav.nextra-nav-container,
+  .nextra-nav-container {
+    padding: 12px !important;
+    border-radius: 0 0 20px 20px !important;
+  }
+  
+  .nav-link {
+    font-size: 13px;
+    padding: 2px 10px;
+  }
 }

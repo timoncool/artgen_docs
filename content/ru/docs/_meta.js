@@ -1,12 +1,11 @@
 export default {
   index: 'Обзор',
-  registration: 'Регистрация',
+  registration: 'Приветствие и регистрация',
   'main-page': 'Главная страница',
-  gallery: 'Галерея',
+  gallery: 'Главная Галерея',
   generator: 'Генератор изображений',
   editor: 'Редактор изображений',
   'user-menu': 'Меню пользователя',
-  payments: 'Оплата и подписки',
   faq: 'FAQ',
   rules: 'Правила'
 }

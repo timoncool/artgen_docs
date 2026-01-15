@@ -1,0 +1,33 @@
+# Parameters
+
+Fine-tune generation with advanced parameters.
+
+## CFG Scale
+
+Controls how closely the model follows the prompt:
+- **1-5** — creative, loose interpretation
+- **6-10** — balanced
+- **11-15** — strict adherence
+- **15+** — may cause artifacts
+
+## Steps
+
+Number of denoising steps:
+- **20-30** — fast, lower quality
+- **30-50** — balanced
+- **50+** — slower, higher quality
+
+## Seed
+
+Random seed for reproducibility. Same seed + same parameters = same result.
+
+## Sampler
+
+Different sampling algorithms affect style and quality:
+- Euler — fast, good quality
+- DPM++ — detailed results
+- DDIM — consistent results
+
+## Batch Size
+
+Generate multiple images at once (uses more generations).

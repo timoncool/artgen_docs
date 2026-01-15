@@ -1,0 +1,29 @@
+# Usage Features
+
+Important features to consider when using weights.
+
+## Weight Limits
+
+- Minimum: 0.1
+- Maximum: 2.0
+- Values outside this range may cause artifacts
+
+## Interaction Between Weights
+
+Weights are relative to each other. If everything has high weight, the effect is neutralized.
+
+## Nested Weights
+
+You can nest weights for complex control:
+
+```
+((important element:1.2):1.1)
+```
+
+## Negative Weights
+
+Weights below 1.0 reduce element influence but don't remove it completely. Use negative prompt for exclusion.
+
+## Model Compatibility
+
+Different models may respond to weights differently. Experiment to find optimal values.
