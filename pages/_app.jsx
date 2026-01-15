@@ -1,6 +1,8 @@
 import 'nextra-theme-docs/style.css'
 import './styles.css'
 import { useEffect } from 'react'
+import { renderToStaticMarkup } from 'react-dom/server'
+import { IconBrandGithub } from '@tabler/icons-react'
 
 function addSidebarExtras() {
   const searchContainer = document.querySelector('nav input[type="search"]')?.parentElement;
@@ -23,15 +25,14 @@ function addSidebarExtras() {
   if (sidebar && !document.querySelector('.sidebar-github-link')) {
     const locale = document.documentElement.lang || 'ru';
     const text = locale === 'en' ? 'Suggest changes' : 'Внести правки';
+    const iconHtml = renderToStaticMarkup(<IconBrandGithub size={20} stroke={2} />);
 
     const githubLink = document.createElement('a');
     githubLink.href = 'https://github.com/timoncool/artgen_docs';
     githubLink.target = '_blank';
     githubLink.rel = 'noopener noreferrer';
     githubLink.className = 'sidebar-github-link';
-    githubLink.innerHTML = `
-      <img src="https://cdn.simpleicons.org/github/white" width="20" height="20" alt="GitHub" />
-      <span>${text}</span>`;
+    githubLink.innerHTML = `${iconHtml}<span>${text}</span>`;
 
     // Append to bottom of sidebar
     sidebar.parentElement.appendChild(githubLink);

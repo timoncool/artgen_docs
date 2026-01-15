@@ -1,6 +1,7 @@
 'use client'
 
 import { usePathname, useRouter } from 'next/navigation'
+import { IconWorld } from '@tabler/icons-react'
 
 const locales = [
   { code: 'ru', name: 'RU' },
@@ -24,20 +25,7 @@ export function LocaleSwitcher({ currentLocale }) {
 
   return (
     <div className="locale-switcher">
-      <svg
-        width="16"
-        height="16"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      >
-        <circle cx="12" cy="12" r="10"/>
-        <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/>
-        <path d="M2 12h20"/>
-      </svg>
+      <IconWorld size={16} stroke={2} />
       <select
         value={currentLocale}
         onChange={(e) => switchLocale(e.target.value)}

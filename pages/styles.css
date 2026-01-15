@@ -166,21 +166,10 @@ nav.nextra-nav-container-blur,
   flex-shrink: 0;
 }
 
-.burger-menu {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-  padding: 4px;
+.burger-icon {
+  color: white;
   cursor: pointer;
-}
-
-.burger-menu span {
-  display: block;
-  width: 18px;
-  height: 2px;
-  background: white;
-  border-radius: 1px;
-  transition: all 0.2s ease;
+  flex-shrink: 0;
 }
 
 /* Sidebar extras container - search and GitHub link */

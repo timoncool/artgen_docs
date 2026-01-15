@@ -1,4 +1,5 @@
 import { useRouter } from 'next/router'
+import { IconWorld, IconUser, IconMenu2 } from '@tabler/icons-react'
 
 export default {
   logo: (
@@ -13,13 +14,7 @@ export default {
     extraContent: (
       <div className="header-content">
         <div className="intl-menu">
-          <svg className="intl-icon" width="25" height="25" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="1.5"/>
-            <ellipse cx="12" cy="12" rx="4" ry="10" stroke="currentColor" strokeWidth="1.5"/>
-            <path d="M2 12h20" stroke="currentColor" strokeWidth="1.5"/>
-            <path d="M12 2c2.5 2.5 4 5.5 4 10s-1.5 7.5-4 10" stroke="currentColor" strokeWidth="1.5"/>
-            <path d="M12 2c-2.5 2.5-4 5.5-4 10s1.5 7.5 4 10" stroke="currentColor" strokeWidth="1.5"/>
-          </svg>
+          <IconWorld className="intl-icon" size={25} stroke={1.5} />
         </div>
         <div className="nav-center">
           <a href="https://artgeneration.me/gallery/category/all/new" className="nav-link">Галерея</a>
@@ -30,15 +25,8 @@ export default {
         </div>
         <div className="user-menu">
           <span className="user-nickname">Пользователь</span>
-          <svg className="user-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="12" cy="8" r="4" stroke="currentColor" strokeWidth="2"/>
-            <path d="M4 20C4 16.6863 7.58172 14 12 14C16.4183 14 20 16.6863 20 20" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
-          </svg>
-          <div className="burger-menu">
-            <span></span>
-            <span></span>
-            <span></span>
-          </div>
+          <IconUser className="user-icon" size={24} stroke={2} />
+          <IconMenu2 className="burger-icon" size={24} stroke={2} />
         </div>
       </div>
     )
