@@ -1,3 +1,5 @@
+import { useRouter } from 'nextra/hooks'
+
 export default {
   logo: (
     <img
@@ -42,14 +44,20 @@ export default {
     )
   },
   search: {
-    placeholder: 'Поиск...'
+    placeholder: function usePlaceholder() {
+      const { locale } = useRouter()
+      return locale === 'en' ? 'Search...' : 'Поиск...'
+    }
   },
   project: {
     link: null
   },
   docsRepositoryBase: 'https://github.com/timoncool/artgen_docs/tree/main',
   editLink: {
-    text: 'Редактировать страницу на GitHub'
+    content: function useEditLink() {
+      const { locale } = useRouter()
+      return locale === 'en' ? 'Edit this page on GitHub' : 'Редактировать страницу на GitHub'
+    }
   },
   feedback: {
     content: null
@@ -75,12 +83,21 @@ export default {
     toggleButton: true
   },
   toc: {
-    backToTop: true
+    backToTop: true,
+    title: function useTocTitle() {
+      const { locale } = useRouter()
+      return locale === 'en' ? 'On This Page' : 'На этой странице'
+    }
   },
   i18n: [
-    { locale: 'ru', text: 'Русский' },
-    { locale: 'en', text: 'English' }
+    { locale: 'ru', name: 'Русский' },
+    { locale: 'en', name: 'English' }
   ],
-  darkMode: true,
-  primaryHue: 162
+  darkMode: false,
+  primaryHue: 162,
+  useNextSeoProps() {
+    return {
+      titleTemplate: '%s | ArtGeneration.me'
+    }
+  }
 };
