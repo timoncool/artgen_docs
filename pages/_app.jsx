@@ -4,7 +4,7 @@ import { useEffect } from 'react'
 
 function addSidebarExtras() {
   const searchContainer = document.querySelector('nav input[type="search"]')?.parentElement;
-  const sidebar = document.querySelector('aside > ul');
+  const sidebar = document.querySelector('aside ul');
   
   if (searchContainer && sidebar && !document.querySelector('.sidebar-extras-container')) {
     const wrapper = document.createElement('div');
