@@ -12,7 +12,7 @@ function addSidebarExtras() {
     
     const searchWrapper = document.createElement('div');
     searchWrapper.className = 'sidebar-search-container';
-    searchWrapper.appendChild(searchContainer.cloneNode(true));
+    searchWrapper.appendChild(searchContainer);
     wrapper.appendChild(searchWrapper);
     
     const githubLink = document.createElement('a');
@@ -29,7 +29,6 @@ function addSidebarExtras() {
     wrapper.appendChild(githubLink);
     
     sidebar.parentElement.insertBefore(wrapper, sidebar);
-    searchContainer.style.display = 'none';
   }
 }
 
