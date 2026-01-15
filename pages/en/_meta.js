@@ -1,11 +1,11 @@
 export default {
   index: {
-    title: 'Главная'
+    title: 'Home'
   },
   docs: {
-    title: 'Руководство'
+    title: 'Documentation'
   },
   news: {
-    title: 'Новости и обновления'
+    title: 'News & Updates'
   }
 }
