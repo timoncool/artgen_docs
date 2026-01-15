@@ -7,10 +7,6 @@ export default {
     title: 'Руководство',
     type: 'page'
   },
-  news: {
-    title: 'Новости',
-    type: 'page'
-  },
   '---': {
     type: 'separator'
   },

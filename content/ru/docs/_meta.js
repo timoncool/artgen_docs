@@ -5,7 +5,5 @@ export default {
   gallery: 'Главная Галерея',
   generator: 'Генератор изображений',
   editor: 'Редактор изображений',
-  'user-menu': 'Меню пользователя',
-  faq: 'FAQ',
-  rules: 'Правила'
+  'user-menu': 'Меню пользователя'
 }
