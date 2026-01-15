@@ -1,4 +1,4 @@
-import { useRouter } from 'nextra/hooks'
+import { useRouter } from 'next/router'
 
 export default {
   logo: (
