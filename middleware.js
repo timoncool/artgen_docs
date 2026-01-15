@@ -11,7 +11,7 @@ export function middleware(request) {
     (locale) => pathname.startsWith(`/${locale}/`) || pathname === `/${locale}`
   )
   
-  // If pathname doesn't have a locale, redirect to default locale
+  // If pathname doesn't have a locale, redirect to preferred locale
   if (!pathnameHasLocale) {
     // Skip static files and API routes
     if (
@@ -23,9 +23,30 @@ export function middleware(request) {
       return NextResponse.next()
     }
     
-    // Redirect to default locale
+    // Get preferred locale from NEXT_LOCALE cookie or referer header
+    const cookieLocale = request.cookies.get('NEXT_LOCALE')?.value
+    const referer = request.headers.get('referer')
+    
+    let preferredLocale = defaultLocale
+    
+    // First check cookie
+    if (cookieLocale && locales.includes(cookieLocale)) {
+      preferredLocale = cookieLocale
+    }
+    // Then check referer URL for locale
+    else if (referer) {
+      const refererUrl = new URL(referer)
+      const refererLocale = locales.find(
+        (locale) => refererUrl.pathname.startsWith(`/${locale}/`) || refererUrl.pathname === `/${locale}`
+      )
+      if (refererLocale) {
+        preferredLocale = refererLocale
+      }
+    }
+    
+    // Redirect to preferred locale
     const url = request.nextUrl.clone()
-    url.pathname = `/${defaultLocale}${pathname}`
+    url.pathname = `/${preferredLocale}${pathname}`
     return NextResponse.redirect(url)
   }
   
