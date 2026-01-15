@@ -38,10 +38,10 @@ export default {
     )
   },
   search: {
-    component: null
+    placeholder: 'Поиск...'
   },
   project: {
-    link: null
+    link: 'https://artgeneration.me',
   },
   docsRepositoryBase: 'https://github.com/timoncool/artgen_docs/tree/main',
   editLink: {
