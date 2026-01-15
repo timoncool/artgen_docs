@@ -21,8 +21,8 @@ a:hover {
 }
 
 /* ============================================
-   HEADER STYLING - EXACT MATCH TO ARTGEN
-   Based on artgen-chat/src/components/chat/chat-header.module.scss
+   HEADER STYLING - EXACT MATCH TO ARTGEN.ME
+   Based on services-frontend-artgen header
    ============================================ */
 
 /* Main header container - grid layout matching artgen exactly */
@@ -32,7 +32,7 @@ header.nextra-nav-container {
   display: grid !important;
   position: relative;
   grid-template-rows: auto;
-  grid-template-columns: fit-content(100%) auto fit-content(100%) fit-content(100%);
+  grid-template-columns: fit-content(100%) 1fr fit-content(100%);
   gap: 12px;
   align-items: center;
   
@@ -51,6 +51,41 @@ header.nextra-nav-container {
 nav.nextra-nav-container-blur,
 .nextra-nav-container-blur {
   background: rgba(26, 26, 26, 0.95) !important;
+}
+
+/* Logo container with locale switch */
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo-link {
+  display: flex;
+  align-items: center;
+  text-decoration: none !important;
+  background: transparent !important;
+  padding: 0 !important;
+}
+
+.logo-link:hover {
+  background: transparent !important;
+}
+
+.logo-image {
+  height: 34px;
+  min-width: 120px;
+  max-width: 240px;
+  object-fit: contain;
+}
+
+/* Navigation center container */
+.nav-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
 }
 
 /* Navigation links styling - matching artgen exactly */
@@ -81,26 +116,31 @@ nav.nextra-nav-container-blur,
   background: rgba(255, 255, 255, 0.2) !important;
 }
 
-/* Logo styling - no background */
-.nextra-nav-container > nav > a:first-child,
-nav > a:first-child,
-.nextra-nav-container a[href="/"],
-.nextra-nav-container a[href="https://artgeneration.me"] {
-  background: transparent !important;
-  padding: 0 !important;
-  display: flex;
+/* CTA Button - "Начать творить!" */
+.nav-cta {
+  display: inline-flex;
   align-items: center;
+  gap: 8px;
+  color: white !important;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 28px;
+  padding: 8px 20px;
+  border-radius: 12px;
+  background: #12b886 !important;
+  text-decoration: none !important;
+  white-space: nowrap;
+  transition: background-color 0.2s ease, transform 0.2s ease;
 }
 
-.nextra-nav-container > nav > a:first-child:hover,
-nav > a:first-child:hover {
-  background: transparent !important;
+.nav-cta:hover {
+  background: #0ca678 !important;
+  color: white !important;
+  transform: scale(1.02);
 }
 
-/* Logo image sizing */
-.nextra-nav-container img[alt="ArtGeneration.me"] {
-  max-width: 220px;
-  height: 32px;
+.nav-cta svg {
+  flex-shrink: 0;
 }
 
 /* Theme switch and other icons */
@@ -109,7 +149,8 @@ nav > a:first-child:hover {
 }
 
 /* Locale switch styling */
-.nextra-nav-container [data-locale-switch] {
+.nextra-nav-container [data-locale-switch],
+.locale-switch {
   color: white !important;
 }
 
@@ -119,6 +160,20 @@ nav > a:first-child:hover {
   display: flex;
   align-items: center;
   gap: 12px;
+}
+
+/* Hide default nextra nav items we don't need */
+.nextra-nav-container > nav > a:not(.logo-link):not(.nav-link):not(.nav-cta),
+header nav > div[class*="scrollable"],
+header nav > div:has(> a[href="/"]):has(> a[href="/docs"]),
+header nav input[type="search"],
+header nav kbd {
+  display: none !important;
+}
+
+/* Hide the default nextra navigation links container */
+nav.nextra-nav-container > nav > div:first-of-type {
+  display: none !important;
 }
 
 /* Sidebar styling */

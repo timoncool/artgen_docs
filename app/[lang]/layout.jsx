@@ -60,17 +60,29 @@ export default async function RootLayout({ children, params }) {
   const navbar = (
     <Navbar
       logo={
-        <a href="https://artgeneration.me" target="_blank" rel="noreferrer" style={{ display: 'flex', alignItems: 'center', textDecoration: 'none' }}>
-          <img src="https://artgeneration.me/assets/artgeneration_me/logo.svg" alt="ArtGeneration.me" style={{ height: '34px' }} />
-        </a>
+        <div className="logo-container">
+          <a href="https://artgeneration.me" target="_blank" rel="noreferrer" className="logo-link">
+            <img src="https://artgeneration.me/artgeneration_me/assets/ru/logo/logo.png" alt="ArtGeneration.me" className="logo-image" />
+          </a>
+          <LocaleSwitch lite className="locale-switch" />
+        </div>
       }
     >
-      <a href="https://artgeneration.me/gallery/category/all/new" target="_blank" rel="noreferrer" className="nav-link">Галерея</a>
-      <a href="https://artgeneration.me/generator" target="_blank" rel="noreferrer" className="nav-link">Создать</a>
-      <a href="https://artgeneration.me/editor" target="_blank" rel="noreferrer" className="nav-link">Редактор</a>
-      <a href="https://artgeneration.me/about" target="_blank" rel="noreferrer" className="nav-link">О Сервисе</a>
-      <a href={`/${lang}/docs`} className="nav-link nav-link-active">Руководство</a>
-      <LocaleSwitch lite />
+      <div className="nav-center">
+        <a href="https://artgeneration.me/gallery/category/all/new" target="_blank" rel="noreferrer" className="nav-link">Галерея</a>
+        <a href="https://artgeneration.me/generator" target="_blank" rel="noreferrer" className="nav-link">Создать</a>
+        <a href="https://artgeneration.me/editor" target="_blank" rel="noreferrer" className="nav-link">Редактор</a>
+        <a href="https://artgeneration.me/about" target="_blank" rel="noreferrer" className="nav-link">О Сервисе</a>
+        <a href={`/${lang}/docs`} className="nav-link nav-link-active">Руководство</a>
+      </div>
+      <a href="https://artgeneration.me/generator" target="_blank" rel="noreferrer" className="nav-cta">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+          <path d="M2 17L12 22L22 17" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+          <path d="M2 12L12 17L22 12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+        </svg>
+        Начать творить!
+      </a>
     </Navbar>
   )
 
