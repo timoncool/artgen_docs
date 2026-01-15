@@ -31,5 +31,9 @@ export default {
         href: 'https://artgeneration.me/about'
       }
     }
+  },
+  github: {
+    title: 'Suggest changes',
+    href: 'https://github.com/timoncool/artgen_docs'
   }
 }

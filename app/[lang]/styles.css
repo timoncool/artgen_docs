@@ -154,6 +154,41 @@ nav.nextra-nav-container-blur,
   color: white !important;
 }
 
+/* Custom locale switcher */
+.locale-switcher {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: white;
+  background: rgba(48, 48, 48, 0.4);
+  border-radius: 8px;
+  padding: 4px 10px;
+  cursor: pointer;
+}
+
+.locale-switcher svg {
+  flex-shrink: 0;
+  opacity: 0.8;
+}
+
+.locale-select {
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 14px;
+  cursor: pointer;
+  outline: none;
+  padding: 0;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+.locale-select option {
+  background: #1a1a1a;
+  color: white;
+}
+
 /* Navigation container - center aligned */
 .nextra-nav-container nav,
 .nextra-nav-container > div {

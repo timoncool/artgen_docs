@@ -1,4 +1,5 @@
-import { Footer, Layout, LocaleSwitch, Navbar } from 'nextra-theme-docs'
+import { Footer, Layout, Navbar } from 'nextra-theme-docs'
+import { LocaleSwitcher } from '../../components/LocaleSwitcher'
 import { Head } from 'nextra/components'
 import { getPageMap } from 'nextra/page-map'
 import 'nextra-theme-docs/style.css'
@@ -38,17 +39,15 @@ const dictionaries = {
     editPage: 'Редактировать страницу',
     backToTop: 'Наверх',
     lastUpdated: 'Последнее обновление',
-    dark: 'Тёмная',
-    light: 'Светлая',
-    system: 'Системная'
+    tocTitle: 'На этой странице',
+    suggestChanges: 'Внести правки'
   },
   en: {
     editPage: 'Edit this page',
     backToTop: 'Back to top',
     lastUpdated: 'Last updated',
-    dark: 'Dark',
-    light: 'Light',
-    system: 'System'
+    tocTitle: 'On This Page',
+    suggestChanges: 'Suggest changes'
   }
 }
 
@@ -64,7 +63,7 @@ export default async function RootLayout({ children, params }) {
           <a href="https://artgeneration.me" target="_blank" rel="noreferrer" className="logo-link">
             <img src="https://artgeneration.me/artgeneration_me/assets/ru/logo/logo.png" alt="ArtGeneration.me" className="logo-image" />
           </a>
-          <LocaleSwitch lite className="locale-switch" />
+          <LocaleSwitcher currentLocale={lang} />
         </div>
       }
     >
@@ -116,20 +115,15 @@ export default async function RootLayout({ children, params }) {
         <Layout
           navbar={navbar}
           footer={footer}
-          i18n={[
-            { locale: 'ru', name: 'Русский' },
-            { locale: 'en', name: 'English' }
-          ]}
           sidebar={{ defaultMenuCollapseLevel: 1, toggleButton: true }}
-          toc={{ backToTop: dictionary.backToTop }}
+          toc={{
+            title: dictionary.tocTitle,
+            backToTop: dictionary.backToTop
+          }}
           editLink={dictionary.editPage}
           pageMap={pageMap}
-          nextThemes={{ defaultTheme: 'dark' }}
-          themeSwitch={{
-            dark: dictionary.dark,
-            light: dictionary.light,
-            system: dictionary.system
-          }}
+          darkMode={false}
+          nextThemes={{ defaultTheme: 'dark', forcedTheme: 'dark' }}
         >
           {children}
         </Layout>
