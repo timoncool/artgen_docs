@@ -20,9 +20,22 @@ a:hover {
   color: #0ca678;
 }
 
-/* Header styling to match artgen main site exactly */
+/* ============================================
+   HEADER STYLING - EXACT MATCH TO ARTGEN
+   Based on artgen-chat/src/components/chat/chat-header.module.scss
+   ============================================ */
+
+/* Main header container - grid layout matching artgen exactly */
 nav.nextra-nav-container,
-.nextra-nav-container {
+.nextra-nav-container,
+header.nextra-nav-container {
+  display: grid !important;
+  position: relative;
+  grid-template-rows: auto;
+  grid-template-columns: fit-content(100%) auto fit-content(100%) fit-content(100%);
+  gap: 12px;
+  align-items: center;
+  
   background: rgba(26, 26, 26, 0.95) !important;
   border: 1px solid rgba(255, 255, 255, 0.4) !important;
   border-top: 0 !important;
@@ -32,6 +45,7 @@ nav.nextra-nav-container,
   padding: 12px 24px !important;
   margin: 0 auto;
   max-width: 100%;
+  flex-shrink: 0;
 }
 
 nav.nextra-nav-container-blur,
@@ -69,14 +83,24 @@ nav.nextra-nav-container-blur,
 
 /* Logo styling - no background */
 .nextra-nav-container > nav > a:first-child,
-nav > a:first-child {
+nav > a:first-child,
+.nextra-nav-container a[href="/"],
+.nextra-nav-container a[href="https://artgeneration.me"] {
   background: transparent !important;
   padding: 0 !important;
+  display: flex;
+  align-items: center;
 }
 
 .nextra-nav-container > nav > a:first-child:hover,
 nav > a:first-child:hover {
   background: transparent !important;
+}
+
+/* Logo image sizing */
+.nextra-nav-container img[alt="ArtGeneration.me"] {
+  max-width: 220px;
+  height: 32px;
 }
 
 /* Theme switch and other icons */
@@ -87,6 +111,14 @@ nav > a:first-child:hover {
 /* Locale switch styling */
 .nextra-nav-container [data-locale-switch] {
   color: white !important;
+}
+
+/* Navigation container - center aligned */
+.nextra-nav-container nav,
+.nextra-nav-container > div {
+  display: flex;
+  align-items: center;
+  gap: 12px;
 }
 
 /* Sidebar styling */
@@ -187,11 +219,39 @@ code {
   border-left: 2px solid rgba(18, 184, 134, 0.5);
 }
 
-/* Responsive header adjustments */
+/* ============================================
+   RESPONSIVE BREAKPOINTS - EXACT MATCH TO ARTGEN
+   Based on artgen-chat/src/components/chat/chat-header.module.scss
+   ============================================ */
+
+/* Breakpoint: 1750px - Navigation moves to grid column 2 */
+@media screen and (max-width: 1750px) {
+  nav.nextra-nav-container,
+  .nextra-nav-container,
+  header.nextra-nav-container {
+    grid-template-columns: fit-content(100%) 1fr fit-content(100%) fit-content(100%);
+  }
+}
+
+/* Breakpoint: 1500px - Two rows layout */
+@media screen and (max-width: 1500px) {
+  nav.nextra-nav-container,
+  .nextra-nav-container,
+  header.nextra-nav-container {
+    grid-template-rows: auto auto;
+    grid-template-columns: 1fr 1fr;
+    padding: 12px 24px !important;
+  }
+}
+
+/* Breakpoint: 1000px - Three rows layout */
 @media screen and (max-width: 1000px) {
   nav.nextra-nav-container,
-  .nextra-nav-container {
-    padding: 12px 16px !important;
+  .nextra-nav-container,
+  header.nextra-nav-container {
+    grid-template-rows: auto auto auto;
+    grid-template-columns: auto 1fr auto;
+    padding: 12px 24px !important;
   }
   
   .nav-link {
@@ -200,11 +260,20 @@ code {
   }
 }
 
+/* Breakpoint: 550px - Mobile layout */
 @media screen and (max-width: 550px) {
   nav.nextra-nav-container,
-  .nextra-nav-container {
-    padding: 12px !important;
+  .nextra-nav-container,
+  header.nextra-nav-container {
+    grid-template-rows: auto;
+    grid-template-columns: auto 1fr auto;
+    padding: 12px 16px !important;
     border-radius: 0 0 20px 20px !important;
+  }
+  
+  /* Logo sizing on mobile */
+  .nextra-nav-container img[alt="ArtGeneration.me"] {
+    max-width: 150px;
   }
   
   .nav-link {
