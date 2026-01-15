@@ -166,21 +166,10 @@ nav.nextra-nav-container-blur,
   flex-shrink: 0;
 }
 
-.burger-menu {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-  padding: 4px;
+.burger-icon {
+  color: white;
   cursor: pointer;
-}
-
-.burger-menu span {
-  display: block;
-  width: 18px;
-  height: 2px;
-  background: white;
-  border-radius: 1px;
-  transition: all 0.2s ease;
+  flex-shrink: 0;
 }
 
 /* Sidebar extras container - search and GitHub link */
@@ -216,32 +205,6 @@ nav.nextra-nav-container-blur,
 
 .sidebar-search-container kbd {
   display: none !important;
-}
-
-.sidebar-github-bottom {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  color: rgba(255, 255, 255, 0.8) !important;
-  text-decoration: none !important;
-  padding: 12px 16px;
-  margin-top: auto;
-  border-radius: 8px;
-  background: rgba(48, 48, 48, 0.4);
-  transition: all 0.2s ease;
-}
-
-.sidebar-github-bottom:hover {
-  background: rgba(255, 255, 255, 0.1);
-  color: white !important;
-}
-
-.sidebar-github-bottom svg {
-  flex-shrink: 0;
-}
-
-.sidebar-github-bottom span {
-  font-size: 14px;
 }
 
 .sidebar-github-link {
@@ -334,29 +297,6 @@ footer {
 
 .nextra-toc a[data-active="true"] {
   color: #12b886 !important;
-}
-
-/* Locale switcher */
-.locale-switcher-btn {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  color: white !important;
-  text-decoration: none !important;
-  padding: 4px 10px;
-  border-radius: 8px;
-  background: rgba(48, 48, 48, 0.4);
-  transition: all 0.2s ease;
-  font-size: 14px;
-}
-
-.locale-switcher-btn:hover {
-  background: rgba(255, 255, 255, 0.2);
-}
-
-.locale-switcher-btn .intl-icon {
-  width: 18px;
-  height: 18px;
 }
 
 /* Headings */

@@ -1,5 +1,5 @@
-import { useRouter } from 'nextra/hooks'
-import { LocaleSwitcher } from './components/LocaleSwitcher'
+import { useRouter } from 'next/router'
+import { IconWorld, IconUser, IconMenu2 } from '@tabler/icons-react'
 
 export default {
   logo: (
@@ -13,7 +13,9 @@ export default {
   navbar: {
     extraContent: (
       <div className="header-content">
-        <LocaleSwitcher />
+        <div className="intl-menu">
+          <IconWorld className="intl-icon" size={25} stroke={1.5} />
+        </div>
         <div className="nav-center">
           <a href="https://artgeneration.me/gallery/category/all/new" className="nav-link">Галерея</a>
           <a href="https://artgeneration.me/generator" className="nav-link">Создать</a>
@@ -23,15 +25,8 @@ export default {
         </div>
         <div className="user-menu">
           <span className="user-nickname">Пользователь</span>
-          <svg className="user-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="12" cy="8" r="4" stroke="currentColor" strokeWidth="2"/>
-            <path d="M4 20C4 16.6863 7.58172 14 12 14C16.4183 14 20 16.6863 20 20" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
-          </svg>
-          <div className="burger-menu">
-            <span></span>
-            <span></span>
-            <span></span>
-          </div>
+          <IconUser className="user-icon" size={24} stroke={2} />
+          <IconMenu2 className="burger-icon" size={24} stroke={2} />
         </div>
       </div>
     )
@@ -41,6 +36,9 @@ export default {
       const { locale } = useRouter()
       return locale === 'en' ? 'Search...' : 'Поиск...'
     }
+  },
+  project: {
+    link: null
   },
   docsRepositoryBase: 'https://github.com/timoncool/artgen_docs/tree/main',
   editLink: {
@@ -79,6 +77,10 @@ export default {
       return locale === 'en' ? 'On This Page' : 'На этой странице'
     }
   },
+  i18n: [
+    { locale: 'ru', name: 'Русский' },
+    { locale: 'en', name: 'English' }
+  ],
   darkMode: false,
   primaryHue: 162,
   useNextSeoProps() {
