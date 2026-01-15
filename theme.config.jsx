@@ -76,7 +76,7 @@ export default {
   },
   toc: {
     backToTop: true,
-    title: 'На этой странице'
+    title: ({ locale }) => locale === 'en' ? 'On This Page' : 'На этой странице'
   },
   i18n: [
     { locale: 'ru', text: 'Русский' },
