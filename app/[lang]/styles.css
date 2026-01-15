@@ -1,0 +1,16 @@
+:root {
+  --nextra-primary-hue: 162deg;
+  --nextra-primary-saturation: 72%;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+a {
+  color: #12b886;
+}
+
+a:hover {
+  color: #0ca678;
+}
