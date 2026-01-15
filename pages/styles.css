@@ -183,9 +183,16 @@ nav.nextra-nav-container-blur,
   transition: all 0.2s ease;
 }
 
-/* Search in sidebar - moved via JavaScript */
-.sidebar-search-container {
+/* Sidebar extras container - search and GitHub link */
+.sidebar-extras-container {
   padding: 16px 12px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.sidebar-search-container {
   width: 100%;
 }
 
@@ -209,6 +216,31 @@ nav.nextra-nav-container-blur,
 
 .sidebar-search-container kbd {
   display: none !important;
+}
+
+.sidebar-github-link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: rgba(255, 255, 255, 0.8) !important;
+  text-decoration: none !important;
+  padding: 8px 12px;
+  border-radius: 8px;
+  background: rgba(48, 48, 48, 0.4);
+  transition: all 0.2s ease;
+}
+
+.sidebar-github-link:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: white !important;
+}
+
+.sidebar-github-link svg {
+  flex-shrink: 0;
+}
+
+.sidebar-github-link span {
+  font-size: 14px;
 }
 
 /* Sidebar styling */
