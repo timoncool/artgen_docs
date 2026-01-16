@@ -51,7 +51,7 @@ export default {
     content: null
   },
   footer: {
-    content: null
+    component: null
   },
   sidebar: {
     defaultMenuCollapseLevel: 1,
