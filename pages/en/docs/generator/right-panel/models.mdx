@@ -1,86 +1,96 @@
-# Модели
+# Models
 
-![Выбор модели](https://lh7-us.googleusercontent.com/jSGKnZWqZl-Paflkahe2Vc_YBBoWS9_CLfG1VAWH5SMOAQQmeTn4fJPIb8Q_kWeDFE-l6MvPkG_tNGgJAjv0GW39VI0b2BidpJ75eZ9DAcYynavnuJtUO29hzM_9CbKTP7F6vidosxUKJ6kNogQhUko)
+![Model Selection](/screens/model-selection-overlay.png)
 
-Модель (она же чекпоинт) — самая важная часть системы генерации изображений. Существует несколько типов моделей:
+The model (also called checkpoint) is the most important part of the image generation system. There are several types of models:
 
-- **SDXL и FLUX** — это версии архитектуры. Самая новая — FLUX. Это называется *Базовая модель*.
-- На основе базовой модели сообщество по всему миру обучает свои собственные *узкоспециализированные модели* для работы в разных стилях.
+- **SDXL** — high-quality architecture for creating detailed images
+- **Flux** — the newest architecture with deep prompt understanding and improved instruction following
+- **RunWare / GE / Custom** — specialized models from various providers
+- **Editing models** — models for inpainting, outpainting, face-swap, and stylization
 
-Модель — это что-то вроде операционной системы. Если сам ArtGeneration.me — это компьютер, системный блок, то модель — это его операционная система. Все, что вы сможете сгенерировать, зависит от модели.
+Based on the base models, the global community trains their own *specialized models* for working in different styles.
 
-Разные модели ориентированы на разный результат:
-- Генерировать аниме лучше на аниме-модели
-- Фотореалистичные изображения — на фото-модели
+A model is like an operating system. If ArtGeneration.me is the computer hardware, then the model is its operating system. Everything you can generate depends on the model.
 
-Для работы модели необходима видеокарта. Мы арендуем сотни видеокарт у разных провайдеров, чтобы запускать лучшие модели, созданные всем мировым сообществом любителей генерации изображений.
+Different models are optimized for different results:
+- Anime is better generated on anime models
+- Photorealistic images — on photo models
 
-## Альтернативное представление моделей
+## Available Resolutions
 
-![Альтернативное представление моделей](https://lh7-us.googleusercontent.com/kk4ftVpX9n-Paflkahe2Vc_YBBoWS9_CLfG1VAWH5SMOAQQmeTn4fJPIb8Q_kWeDFE-l6MvPkG_tNGgJAjv0GW39VI0b2BidpJ75eZ9DAcYynavnuJtUO29hzM_9CbKTP7F6vidosxUKJ6kNogQhUko)
+Most modern models support high resolutions:
+- **Standard SDXL models**: from 1024×1024 to 1536×1536
+- **4K-capable models**: up to 1536×1536 and higher (e.g., 1472×704 for widescreen)
+- For even higher quality, use the **upscale x2/x4** feature
 
-Если горизонтальный скролл вам не удобен, вы можете открыть поиск по моделям с вертикальной прокруткой.
+## Model Categories
 
-![Вертикальная прокрутка моделей](https://lh7-us.googleusercontent.com/p_HUxbDej0-Paflkahe2Vc_YBBoWS9_CLfG1VAWH5SMOAQQmeTn4fJPIb8Q_kWeDFE-l6MvPkG_tNGgJAjv0GW39VI0b2BidpJ75eZ9DAcYynavnuJtUO29hzM_9CbKTP7F6vidosxUKJ6kNogQhUko)
+![Model Filters](/screens/model-filter-tags.png)
 
-При этом саму боковую панель можно свернуть, оставив только выбор модели. Это удобно, чтобы поэкспериментировать на разных моделях, когда вы уже определились с настройками.
+You'll notice various labels on models that tell you a lot:
 
-Кстати, в горизонтальном виде при зажатом Shift вы сможете скролить модели колесиком мышки. Это удобно. Категории прокручиваются тоже при зажатом Shift.
+- **HIT** — The most popular models get this badge
+- **NEW** — New models are marked this way
+- **GE** — Our own service provider. Models with this label show the best performance, quality, and additional features
+- **RUNWARE** — High-performance provider with fast generation
+- **POLLI** — Provider with additional features
+- **YANDEX ART** — Models from Yandex
+- **SDXL** — Base model architecture
+- **FLUX** — The newest base architecture with improved prompt understanding
+- **ART** — Good for generating various illustrations
+- **PHOTO** — Better suited for photorealism style
+- **ANIME** — Best choice for creating illustrations in Japanese animation style
+- **NSFW** — Model oriented for creating uncensored adult content
+- **3D** — Model for creating 3D-style characters, like Pixar
 
-## Категории моделей
+## Model Card
 
-![Категории моделей](https://lh7-us.googleusercontent.com/2-M10QYRVb-Paflkahe2Vc_YBBoWS9_CLfG1VAWH5SMOAQQmeTn4fJPIb8Q_kWeDFE-l6MvPkG_tNGgJAjv0GW39VI0b2BidpJ75eZ9DAcYynavnuJtUO29hzM_9CbKTP7F6vidosxUKJ6kNogQhUko)
+![Model Card](/screens/model-card-juggernaut.png)
 
-На моделях вы заметите различные метки, они могут многое рассказать:
+Hover over a model card to see the model description. The card displays:
+- Preview image created with the model
+- Model name
+- Generation price in coins
+- Labels (HIT, NEW, etc.)
 
-- **ХИТ** — Самые популярные модели получают такой значок
-- **NEW** — Новые модели помечены так
-- **SD** — Это сервис-провайдер, мы используем несколько провайдеров, на видеокартах которых запускаются модели
-- **GE** — Это еще один сервис-провайдер, но наш собственный. Модели с этой меткой всегда показывают лучшее быстродействие, качество и дополнительные функции
-- **SDXL** — Базовая архитектура модели
-- **FLUX** — Самая новая базовая архитектура модели
-- **ART** — На такой модели будет хорошо получаться генерировать различные иллюстрации
-- **PHOTO** — Такая модель лучше подойдет для стиля фотореализма
-- **ANIME** — Лучший выбор для создания иллюстраций в стиле японских мультиков
-- **NSFW** — Модель, ориентированная на создание контента для взрослых без цензуры
-- **3D** — Модель для создания персонажей в стиле 3D, как Пиксар
-- **2.5D** — Любимый многими стиль между реализмом и аниме
-- **DESIGN** — Модели, созданные для работы с дизайном, типографикой, интерьерами и т.д.
+## Model Information
 
-## Поиск по моделям
+![Model Information](/screens/model-description-juggernaut.png)
 
-![Поиск по моделям](https://lh7-us.googleusercontent.com/iF9Ixe7oko-Paflkahe2Vc_YBBoWS9_CLfG1VAWH5SMOAQQmeTn4fJPIb8Q_kWeDFE-l6MvPkG_tNGgJAjv0GW39VI0b2BidpJ75eZ9DAcYynavnuJtUO29hzM_9CbKTP7F6vidosxUKJ6kNogQhUko)
+Click on a model card to see detailed description:
+- Model capabilities
+- Usage recommendations
+- LoRA support
+- Optimal settings
 
-По моделям предусмотрен поиск. Вы можете выбрать как несколько категорий (например, чтобы оставить только SDXL GE модели), так и написать первые буквы любимой модели.
+![Additional Information](/screens/model-description2.png)
 
-## Карточка модели
+## Model Filtering
 
-![Карточка модели](https://lh7-us.googleusercontent.com/ZMJLm8PxoH-Paflkahe2Vc_YBBoWS9_CLfG1VAWH5SMOAQQmeTn4fJPIb8Q_kWeDFE-l6MvPkG_tNGgJAjv0GW39VI0b2BidpJ75eZ9DAcYynavnuJtUO29hzM_9CbKTP7F6vidosxUKJ6kNogQhUko)
+![Model Filter Dialog](/screens/model-filter-dialog.png)
 
-Наведите курсор на карточку модели, чтобы увидеть описание модели.
+In the filter dialog you can:
+- Switch between "Categories" and "Models" tabs
+- Select multiple categories at once
+- Search models by name
+- See brief description and price for each model
 
-## Индикаторы моделей
+## Model Indicators
 
-![Индикаторы моделей](https://lh7-us.googleusercontent.com/vUw7mOQsg--Paflkahe2Vc_YBBoWS9_CLfG1VAWH5SMOAQQmeTn4fJPIb8Q_kWeDFE-l6MvPkG_tNGgJAjv0GW39VI0b2BidpJ75eZ9DAcYynavnuJtUO29hzM_9CbKTP7F6vidosxUKJ6kNogQhUko)
+Since there are many models and only a few service providers running them, some models may be more loaded than others. Therefore, models have three indicators:
 
-Так как моделей много и сервис-провайдеров, где они запускаются, всего несколько, некоторые модели могут быть загружены больше, чем другие. Поэтому на моделях есть три индикатора:
+- **Green** — Model works stably, fast, and without errors
+- **Yellow** — Model is under load, generation time may be longer than usual
+- **Red** — Model is overloaded, generation time is high
 
-- **Зеленый** — Модель работает стабильно, быстро и без ошибок
-- **Желтый** — Модель нагружена, время генерации может быть дольше, чем обычно. Иногда возможны ошибки
-- **Красный** — Модель перегружена, время генерации высокое, вероятны ошибки вместо генерации
+A red indicator is not a verdict. You can try using the model, and it might work fine. This is just statistical information for guidance.
 
-К сожалению, мы не всегда можем влиять на качество и доступность моделей, поэтому предлагаем вам выбирать из тех моделей, что подходят под ваши задачи и доступны в текущий момент.
+## Special Editing Models
 
-Красный индикатор на модели — это не приговор. Вы можете попробовать её использовать и, возможно, все пройдет хорошо. Это лишь статистическая информация, чтобы было проще ориентироваться в выборе модели.
+In addition to image generation models, specialized models are available:
 
-## Просмотр изображений, созданных на модели
-
-![Просмотр изображений модели](https://lh7-us.googleusercontent.com/z1RDAOsD6d-Paflkahe2Vc_YBBoWS9_CLfG1VAWH5SMOAQQmeTn4fJPIb8Q_kWeDFE-l6MvPkG_tNGgJAjv0GW39VI0b2BidpJ75eZ9DAcYynavnuJtUO29hzM_9CbKTP7F6vidosxUKJ6kNogQhUko)
-
-Если вы хотите получше узнать, на что способна модель, лучший способ — открыть поиск по созданным на ней изображениям. Так вы увидите, что чаще всего получается, и, возможно, найдете подходящий под ваши художественные цели запрос.
-
-## Информация о модели
-
-![Информация о модели](https://lh7-us.googleusercontent.com/368x_hmN4W-Paflkahe2Vc_YBBoWS9_CLfG1VAWH5SMOAQQmeTn4fJPIb8Q_kWeDFE-l6MvPkG_tNGgJAjv0GW39VI0b2BidpJ75eZ9DAcYynavnuJtUO29hzM_9CbKTP7F6vidosxUKJ6kNogQhUko)
-
-Чтобы посмотреть более подробную информацию об изображении и промпты модели, нажмите на иконку «i». Информация откроется в окошке рядом.
+- **Inpainting** — for editing specific areas of an image
+- **Outpainting** — for extending an image beyond its borders
+- **Face Swap** — for replacing faces in images
+- **Stylization** — for applying artistic styles to photos
