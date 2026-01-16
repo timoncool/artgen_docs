@@ -8,10 +8,7 @@ export default {
   news: {
     title: 'News & Updates'
   },
-  contributing: {
-    title: 'How to Contribute'
-  },
-  contributors: {
-    title: 'Contributors'
+  'about-docs': {
+    title: 'About docs'
   }
 }

@@ -8,10 +8,7 @@ export default {
   news: {
     title: 'Новости и обновления'
   },
-  contributing: {
-    title: 'Как редактировать'
-  },
-  contributors: {
-    title: 'Авторы документации'
+  'about-docs': {
+    title: 'Работа над документацией'
   }
 }
