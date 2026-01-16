@@ -51,20 +51,7 @@ export default {
     content: null
   },
   footer: {
-    text: (
-      <div style={{ textAlign: 'center', width: '100%' }}>
-        <p>{new Date().getFullYear()} ArtGeneration.me - Платформа для генерации изображений с помощью ИИ</p>
-        <p style={{ fontSize: '14px', opacity: 0.7, marginTop: '8px' }}>
-          <a href="https://artgeneration.me">Главная</a>
-          {' | '}
-          <a href="https://artgeneration.me/gallery/category/all/new">Галерея</a>
-          {' | '}
-          <a href="https://artgeneration.me/generator">Генератор</a>
-          {' | '}
-          <a href="https://t.me/ArtGenerationMe">Telegram</a>
-        </p>
-      </div>
-    )
+    content: null
   },
   sidebar: {
     defaultMenuCollapseLevel: 1,
