@@ -10,7 +10,9 @@
   },
   "dependencies": {
     "@tabler/icons-react": "^3.36.1",
+    "gray-matter": "^4.0.3",
     "next": "14.2.13",
+    "next-mdx-remote": "^5.0.0",
     "nextra": "3.0.14",
     "nextra-theme-docs": "3.0.14",
     "react": "18.3.1",
