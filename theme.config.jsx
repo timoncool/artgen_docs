@@ -1,7 +1,51 @@
 import { useRouter } from 'next/router'
+import { useConfig } from 'nextra-theme-docs'
 import { IconWorld, IconUser, IconMenu2 } from '@tabler/icons-react'
 
+const SITE_URL = 'https://docs.artgeneration.me'
+const DEFAULT_IMAGE = 'https://artgeneration.me/artgeneration_me/assets/ru/logo/og-image.png'
+const SITE_NAME = 'ArtGeneration.me — Документация'
+
 export default {
+  head: function useHead() {
+    const { asPath, locale } = useRouter()
+    const { frontMatter, title } = useConfig()
+
+    const pageTitle = frontMatter.title || title || 'Документация'
+    const description = frontMatter.description || 'Официальная документация сервиса ArtGeneration.me — генерация изображений с помощью ИИ'
+    const image = frontMatter.image || DEFAULT_IMAGE
+    const url = `${SITE_URL}${asPath}`
+
+    return (
+      <>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="description" content={description} />
+        <meta name="author" content="ArtGeneration.me" />
+
+        {/* Open Graph */}
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content={SITE_NAME} />
+        <meta property="og:title" content={pageTitle} />
+        <meta property="og:description" content={description} />
+        <meta property="og:image" content={image} />
+        <meta property="og:url" content={url} />
+        <meta property="og:locale" content={locale === 'en' ? 'en_US' : 'ru_RU'} />
+
+        {/* Twitter */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={pageTitle} />
+        <meta name="twitter:description" content={description} />
+        <meta name="twitter:image" content={image} />
+
+        {/* Canonical */}
+        <link rel="canonical" href={url} />
+
+        {/* Favicon */}
+        <link rel="icon" href="https://artgeneration.me/favicon.ico" />
+        <link rel="apple-touch-icon" href="https://artgeneration.me/apple-touch-icon.png" />
+      </>
+    )
+  },
   logo: (
     <img
       src="https://artgeneration.me/artgeneration_me/assets/ru/logo/logo.png"
