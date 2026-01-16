@@ -183,16 +183,20 @@ Place the image in the `public/screens/` folder
 
 ```
 pages/
-├── ru/                    # Russian version
-│   ├── docs/              # User guide
-│   │   ├── generator/     # Image generator
-│   │   ├── gallery/       # Gallery
-│   │   ├── editor/        # Editor
+├── ru/                      # Russian version
+│   ├── docs/                # User guide
+│   │   ├── generator/       # Image generator
+│   │   ├── gallery/         # Gallery
+│   │   ├── editor/          # Editor
 │   │   └── ...
-│   ├── news.mdx           # News
-│   ├── contributors.mdx   # Contributors
-│   └── contributing.mdx   # This page
-└── en/                    # English version
+│   ├── news/                # News (auto-loaded from folder)
+│   │   ├── index.jsx        # News feed
+│   │   ├── 2026-01-15-....mdx
+│   │   └── ...
+│   └── about-docs/          # Documentation work
+│       ├── contributing.mdx # This page
+│       └── contributors.mdx # Contributors
+└── en/                      # English version (same structure)
 ```
 
 ---
@@ -235,7 +239,7 @@ Yes! Create an Issue on GitHub describing your idea.
 
 ### Do I get anything for helping?
 
-You can add yourself to the [contributors page](/en/contributors) and receive community gratitude!
+You can add yourself to the [contributors page](/en/about-docs/contributors) and receive community gratitude!
 
 ---
 
