@@ -7,5 +7,11 @@ export default {
   },
   news: {
     title: 'Новости и обновления'
+  },
+  contributing: {
+    title: 'Как редактировать'
+  },
+  contributors: {
+    title: 'Авторы документации'
   }
 }
