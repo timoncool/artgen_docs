@@ -6,7 +6,9 @@ export default {
     title: 'Documentation'
   },
   news: {
-    title: 'News & Updates'
+    title: 'News & Updates',
+    type: 'page',
+    href: '/en/news'
   },
   'about-docs': {
     title: 'About docs'
