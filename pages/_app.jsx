@@ -23,7 +23,6 @@ function addSidebarExtras() {
 
   // Add GitHub link to bottom of sidebar
   const sidebarContainer = document.querySelector('aside.nextra-sidebar-container');
-  const sidebar = document.querySelector('aside ul');
   if (!document.querySelector('.sidebar-github-link')) {
     const locale = document.documentElement.lang || 'ru';
     const text = locale === 'en' ? 'Suggest changes' : 'Внести правки';
