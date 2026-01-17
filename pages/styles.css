@@ -497,21 +497,14 @@ th {
     max-width: 300px;
   }
 
-  /* Move edit link to BOTTOM of sidebar */
-  .nextra-sidebar-container {
+  /* Move sidebar-github-link to BOTTOM of sidebar on mobile */
+  .nextra-sidebar-container > div {
     display: flex !important;
     flex-direction: column !important;
+    height: 100% !important;
   }
 
-  .nextra-sidebar-container > * {
-    display: flex !important;
-    flex-direction: column !important;
-  }
-
-  .nextra-sidebar-container a[href*="github.com"],
-  .nextra-sidebar-container a[href*="timoncool"],
-  aside a[href*="github.com"],
-  aside a[href*="timoncool"] {
+  .sidebar-github-link {
     order: 99999 !important;
     margin-top: auto !important;
   }
