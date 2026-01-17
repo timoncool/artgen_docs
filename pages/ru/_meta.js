@@ -6,9 +6,7 @@ export default {
     title: 'Руководство'
   },
   news: {
-    title: 'Новости и обновления',
-    type: 'page',
-    href: '/ru/news'
+    title: 'Новости и обновления'
   },
   'about-docs': {
     title: 'Работа над документацией'
