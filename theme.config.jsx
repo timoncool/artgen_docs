@@ -2,17 +2,69 @@ import { useRouter } from 'next/router'
 import { useConfig } from 'nextra-theme-docs'
 import { IconWorld, IconUser, IconMenu2 } from '@tabler/icons-react'
 
-const SITE_URL = 'https://docs.artgeneration.me'
+const SITE_URL = 'https://artgeneration.me'
 const DEFAULT_IMAGE = 'https://artgeneration.me/artgeneration_me/assets/ru/logo/og-image.png'
-const SITE_NAME = 'ArtGeneration.me — Документация'
+
+const translations = {
+  ru: {
+    siteName: 'ArtGeneration.me — Документация',
+    description: 'Официальная документация сервиса ArtGeneration.me — генерация изображений с помощью ИИ',
+    docTitle: 'Документация',
+    gallery: 'Галерея',
+    create: 'Создать',
+    editor: 'Редактор',
+    about: 'О Сервисе',
+    guide: 'Руководство',
+    user: 'Пользователь'
+  },
+  en: {
+    siteName: 'ArtGeneration.me — Documentation',
+    description: 'Official documentation for ArtGeneration.me — AI image generation service',
+    docTitle: 'Documentation',
+    gallery: 'Gallery',
+    create: 'Create',
+    editor: 'Editor',
+    about: 'About',
+    guide: 'Guide',
+    user: 'User'
+  }
+}
+
+function NavbarContent() {
+  const { locale } = useRouter()
+  const t = translations[locale] || translations.ru
+  const docsPath = `/${locale}/docs`
+  const siteBase = locale === 'en' ? 'https://artgeneration.co' : 'https://artgeneration.me'
+
+  return (
+    <div className="header-content">
+      <div className="intl-menu">
+        <IconWorld className="intl-icon" size={25} stroke={1.5} />
+      </div>
+      <div className="nav-center">
+        <a href={`${siteBase}/gallery/category/all/new`} className="nav-link">{t.gallery}</a>
+        <a href={`${siteBase}/generator`} className="nav-link">{t.create}</a>
+        <a href={`${siteBase}/editor`} className="nav-link">{t.editor}</a>
+        <a href={`${siteBase}/about`} className="nav-link">{t.about}</a>
+        <a href={docsPath} className="nav-link nav-link-active">{t.guide}</a>
+      </div>
+      <div className="user-menu">
+        <span className="user-nickname">{t.user}</span>
+        <IconUser className="user-icon" size={24} stroke={2} />
+        <IconMenu2 className="burger-icon" size={24} stroke={2} />
+      </div>
+    </div>
+  )
+}
 
 export default {
   head: function useHead() {
     const { asPath, locale } = useRouter()
     const { frontMatter, title } = useConfig()
+    const t = translations[locale] || translations.ru
 
-    const pageTitle = frontMatter.title || title || 'Документация'
-    const description = frontMatter.description || 'Официальная документация сервиса ArtGeneration.me — генерация изображений с помощью ИИ'
+    const pageTitle = frontMatter.title || title || t.docTitle
+    const description = frontMatter.description || t.description
     const image = frontMatter.image || DEFAULT_IMAGE
     const url = `${SITE_URL}${asPath}`
 
@@ -24,7 +76,7 @@ export default {
 
         {/* Open Graph */}
         <meta property="og:type" content="website" />
-        <meta property="og:site_name" content={SITE_NAME} />
+        <meta property="og:site_name" content={t.siteName} />
         <meta property="og:title" content={pageTitle} />
         <meta property="og:description" content={description} />
         <meta property="og:image" content={image} />
@@ -55,25 +107,7 @@ export default {
   ),
   logoLink: 'https://artgeneration.me',
   navbar: {
-    extraContent: (
-      <div className="header-content">
-        <div className="intl-menu">
-          <IconWorld className="intl-icon" size={25} stroke={1.5} />
-        </div>
-        <div className="nav-center">
-          <a href="https://artgeneration.me/gallery/category/all/new" className="nav-link">Галерея</a>
-          <a href="https://artgeneration.me/generator" className="nav-link">Создать</a>
-          <a href="https://artgeneration.me/editor" className="nav-link">Редактор</a>
-          <a href="https://artgeneration.me/about" className="nav-link">О Сервисе</a>
-          <a href="/ru/docs" className="nav-link nav-link-active">Руководство</a>
-        </div>
-        <div className="user-menu">
-          <span className="user-nickname">Пользователь</span>
-          <IconUser className="user-icon" size={24} stroke={2} />
-          <IconMenu2 className="burger-icon" size={24} stroke={2} />
-        </div>
-      </div>
-    )
+    extraContent: <NavbarContent />
   },
   search: {
     placeholder: function usePlaceholder() {

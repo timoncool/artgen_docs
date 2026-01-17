@@ -1,7 +1,4 @@
 export default {
-  index: {
-    title: 'Главная'
-  },
   docs: {
     title: 'Руководство'
   },
