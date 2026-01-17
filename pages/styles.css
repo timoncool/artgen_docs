@@ -497,13 +497,16 @@ th {
     max-width: 300px;
   }
 
-  /* Hide edit link in mobile sidebar - it should only show in main content */
-  .nextra-sidebar-container > div > a[href*="github.com"],
-  .nextra-sidebar-container a[href*="/edit/"],
-  .nextra-sidebar-container a[href*="/tree/"],
-  aside a[href*="github.com"][href*="edit"],
-  aside a[href*="github.com"][href*="tree"] {
-    display: none !important;
+  /* Move sidebar-github-link to BOTTOM of sidebar on mobile */
+  .nextra-sidebar-container > div {
+    display: flex !important;
+    flex-direction: column !important;
+    height: 100% !important;
+  }
+
+  .sidebar-github-link {
+    order: 99999 !important;
+    margin-top: auto !important;
   }
 
   /* Content padding */
