@@ -113,6 +113,10 @@ export default {
     { locale: 'en', name: 'English' }
   ],
   darkMode: false,
+  nextThemes: {
+    forcedTheme: 'dark',
+    defaultTheme: 'dark'
+  },
   primaryHue: 162,
   useNextSeoProps() {
     return {
