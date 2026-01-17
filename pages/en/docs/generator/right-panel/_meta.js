@@ -1,12 +1,12 @@
 export default {
-  index: 'Обзор',
-  models: 'Модели',
-  styles: 'Стили',
+  index: 'Overview',
+  models: 'Models',
+  styles: 'Styles',
   loras: 'LoRA',
-  'init-image': 'Исходное изображение',
+  'init-image': 'Initial Image',
   'face-swap': 'Face Swap',
-  parameters: 'Параметры генерации',
-  'negative-prompt': 'Негативный промпт',
-  resolution: 'Разрешение',
-  'performance-mode': 'Режим производительности'
+  parameters: 'Generation Parameters',
+  'negative-prompt': 'Negative Prompt',
+  resolution: 'Resolution',
+  'performance-mode': 'Performance Mode'
 }

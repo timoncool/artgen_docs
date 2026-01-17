@@ -1,3 +1,3 @@
 export default {
-  index: 'Обзор'
+  index: 'Overview'
 }

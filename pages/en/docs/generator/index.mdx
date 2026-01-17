@@ -1,80 +1,33 @@
-# Генератор изображений
+# Image Generator
 
-![ArtGeneration.me Image Generator](/screens/generator-preview-overlay.png)
+![Image Generator](/images/blog/img_005.png)
 
-Генератор изображений — это основной инструмент ArtGeneration.me, позволяющий создавать уникальные изображения с помощью искусственного интеллекта. Здесь вы можете воплотить любые творческие идеи в визуальную форму.
+The image generator is the main tool for creating images using artificial intelligence.
 
-## Интерфейс генератора
+## How It Works
 
-Интерфейс разделён на три основные области:
+1. Enter a text description (prompt)
+2. Select a model and style
+3. Configure parameters
+4. Click "Generate"
+5. Get the result
 
-1. **Центральная область** — результаты генерации и поле ввода запроса
-2. **Левая панель** — история генераций и быстрые действия
-3. **Правая панель** — настройки модели, стилей и параметров
+## Generator Interface
 
-## Язык запросов
+The generator consists of several areas:
+- **Left Panel** — history, favorites, folders
+- **Central Area** — prompt input and result
+- **Right Panel** — models, styles, parameters
 
-Генератор поддерживает запросы на **русском** и **английском** языках. Вы можете писать промпты на любом из этих языков, и система корректно их обработает.
-
-### Примеры запросов
-
-**На русском:**
-- "Красивый закат над морем в стиле импрессионизма"
-- "Портрет девушки с цветами в волосах"
-- "Футуристический город ночью"
-
-**На английском:**
-- "Beautiful sunset over the ocean in impressionist style"
-- "Portrait of a girl with flowers in her hair"
-- "Futuristic city at night"
-
-## Веса в промптах
-
-Вы можете управлять важностью отдельных элементов в запросе с помощью весов. Используйте скобки для указания веса:
-
-- `(слово:1.5)` — увеличить важность в 1.5 раза
-- `(слово:0.5)` — уменьшить важность в 2 раза
-- `((слово))` — двойные скобки увеличивают вес
-- `[слово]` — квадратные скобки уменьшают вес
-
-### Примеры использования весов
-
-```
-(красные волосы:1.3), голубые глаза, (улыбка:0.8)
-```
-
-В этом примере красные волосы будут более выражены, а улыбка — менее заметна.
-
-## Советы по запросам
-
-1. **Будьте конкретны** — чем детальнее описание, тем точнее результат
-2. **Указывайте стиль** — добавляйте художественный стиль или технику
-3. **Описывайте освещение** — "мягкий свет", "контровой свет", "золотой час"
-4. **Добавляйте детали** — текстуры, материалы, атмосферу
-5. **Используйте негативный промпт** — исключайте нежелательные элементы
-
-## Дополнительные действия
-
-![Additional Actions](/screens/image-actions-toolbar.png)
-
-После генерации изображения доступны следующие действия:
-
-- **Скачать** — сохранить изображение на устройство
-- **Улучшить** — увеличить разрешение с помощью AI
-- **Редактировать** — открыть в редакторе для доработки
-- **Face Swap** — заменить лицо на изображении
-- **Создать вариации** — сгенерировать похожие изображения
-- **Поделиться** — опубликовать в галерее
-
-## Разделы
+## Sections
 
 import { Cards } from 'nextra/components'
 
 <Cards>
-  <Cards.Card title="Язык запросов" href="/ru/docs/generator/query-language" />
-  <Cards.Card title="Веса в промптах" href="/ru/docs/generator/weights" />
-  <Cards.Card title="Советы по запросам" href="/ru/docs/generator/query-tips" />
-  <Cards.Card title="Дополнительные действия" href="/ru/docs/generator/additional-actions" />
-  <Cards.Card title="Левая панель" href="/ru/docs/generator/left-panel" />
-  <Cards.Card title="Правая панель" href="/ru/docs/generator/right-panel" />
+  <Cards.Card title="Prompt Writing" href="/en/docs/generator/query-language" />
+  <Cards.Card title="Prompt Tips" href="/en/docs/generator/query-tips" />
+  <Cards.Card title="Weights" href="/en/docs/generator/weights" />
+  <Cards.Card title="Left Panel" href="/en/docs/generator/left-panel" />
+  <Cards.Card title="Right Panel" href="/en/docs/generator/right-panel" />
+  <Cards.Card title="Additional Actions" href="/en/docs/generator/additional-actions" />
 </Cards>

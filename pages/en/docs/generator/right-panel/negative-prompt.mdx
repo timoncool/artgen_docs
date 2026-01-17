@@ -1,74 +1,39 @@
-# Негативный промпт
+# Negative Prompt
 
-![Negative Prompt](/screens/generator-right-panel.png)
+![Negative Prompt](/images/blog/img_034.png)
 
-Негативный промпт — это инструмент, который позволяет указать нейросети, чего следует избегать при генерации изображения. Это мощный способ улучшить качество результата и избежать типичных проблем.
+Negative prompt specifies what you don't want in the image.
 
-## Как работает негативный промпт
+## Purpose
 
-Когда вы указываете что-то в негативном промпте, модель старается «отодвинуться» от этих концепций в процессе генерации. Это не гарантия, что элемент не появится, но значительно снижает вероятность.
+Use negative prompt to:
+- Remove unwanted elements
+- Improve quality
+- Avoid common artifacts
 
-Негативный промпт особенно полезен для:
-- Устранения типичных артефактов нейросетей
-- Исключения нежелательных элементов
-- Повышения общего качества изображения
-- Коррекции стиля генерации
+## Common Exclusions
 
-## Базовый негативный промпт
-
-В ArtGeneration.me для большинства моделей уже настроен базовый негативный промпт, который помогает избежать самых распространенных проблем. Вы можете дополнить его своими требованиями.
-
-## Эффективные негативные промпты
-
-### Для повышения качества
+### Quality
 ```
-low quality, worst quality, blurry, pixelated, 
-jpeg artifacts, compression artifacts, noise
+blurry, low quality, pixelated, jpeg artifacts
 ```
 
-### Для портретов и людей
+### Anatomy
 ```
-deformed, ugly, mutilated, disfigured, 
-extra limbs, extra fingers, missing fingers,
-bad anatomy, bad proportions, gross proportions,
-malformed limbs, fused fingers, too many fingers,
-long neck, cross-eyed, mutated hands
+extra fingers, deformed hands, bad anatomy
 ```
 
-### Для фотореализма
+### Style
 ```
-cartoon, anime, illustration, painting, drawing,
-3d render, cgi, unrealistic, artificial
-```
-
-### Для аниме и иллюстраций
-```
-realistic, photo, photograph, 3d, 
-bad anatomy, bad hands, text, watermark
+cartoon, anime, 3d render
 ```
 
-### Универсальный негативный промпт
-```
-lowres, bad anatomy, bad hands, text, error, 
-missing fingers, extra digit, fewer digits, 
-cropped, worst quality, low quality, 
-normal quality, jpeg artifacts, signature, 
-watermark, username, blurry
-```
+## Best Practices
 
-## Советы по использованию
+- Be specific
+- Don't overload with exclusions
+- Focus on common problems
 
-**Не перегружайте негативный промпт.** Слишком длинный негативный промпт может запутать модель и ухудшить результат. Сосредоточьтесь на самых важных исключениях.
+## Default Negative Prompt
 
-**Используйте конкретные термины.** Вместо абстрактного «плохое качество» лучше указать конкретные проблемы: «размытое», «пикселизация», «артефакты сжатия».
-
-**Экспериментируйте.** Разные модели по-разному реагируют на негативные промпты. То, что работает для одной модели, может не работать для другой.
-
-**Язык негативного промпта.** Как и основной промпт, негативный промпт лучше писать на английском языке для большинства моделей.
-
-## Когда негативный промпт не помогает
-
-Негативный промпт не всесилен. Если проблема связана с ограничениями самой модели или неудачным основным промптом, негативный промпт может не помочь. В таких случаях попробуйте:
-- Изменить основной промпт
-- Выбрать другую модель
-- Использовать инпейнтинг для исправления проблемных областей
+A default negative prompt is applied automatically. You can customize or disable it.

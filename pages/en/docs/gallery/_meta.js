@@ -1,13 +1,13 @@
 export default {
-  index: 'Обзор',
-  'search-categories': 'Поиск и категории',
-  'cover-interaction': 'Взаимодействие с обложкой',
-  categories: 'Категории галереи',
-  'gallery-view': 'Просмотр галереи',
-  'interactive-elements': 'Интерактивные элементы',
-  'image-view': 'Просмотр изображения',
-  'view-elements': 'Элементы просмотра',
-  'generation-details': 'Детали генерации',
-  'similar-images': 'Похожие изображения',
-  'create-version': 'Создать свою версию'
+  index: 'Overview',
+  'search-categories': 'Search and Categories',
+  'cover-interaction': 'Cover Interaction',
+  categories: 'Gallery Categories',
+  'gallery-view': 'Gallery View',
+  'interactive-elements': 'Interactive Elements',
+  'image-view': 'Image View',
+  'view-elements': 'View Elements',
+  'generation-details': 'Generation Details',
+  'similar-images': 'Similar Images',
+  'create-version': 'Create Your Version'
 }

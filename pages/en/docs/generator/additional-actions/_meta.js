@@ -1,12 +1,12 @@
 export default {
-  index: 'Обзор',
-  'own-image': 'Своё изображение',
-  'create-similar': 'Создать похожее',
-  'upscale-2x': 'Увеличение 2x',
-  'face-restoration': 'Восстановление лица',
-  'restoration-upscale': 'Восстановление + увеличение',
-  outpainting: 'Расширение границ',
-  'copy-link': 'Копировать ссылку',
-  download: 'Скачать',
-  fullscreen: 'Полноэкранный режим'
+  index: 'Overview',
+  'own-image': 'Your Image',
+  'create-similar': 'Create Similar',
+  'upscale-2x': 'Upscale 2x',
+  'face-restoration': 'Face Restoration',
+  'restoration-upscale': 'Restoration + Upscale',
+  outpainting: 'Outpainting',
+  'copy-link': 'Copy Link',
+  download: 'Download',
+  fullscreen: 'Fullscreen Mode'
 }
