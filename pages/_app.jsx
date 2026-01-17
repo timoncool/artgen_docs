@@ -23,7 +23,7 @@ function addSidebarExtras() {
 
   // Add GitHub link to bottom of sidebar
   const sidebarContainer = document.querySelector('aside.nextra-sidebar-container');
-  if (sidebarContainer && !document.querySelector('.sidebar-github-link')) {
+  if (!document.querySelector('.sidebar-github-link')) {
     const locale = document.documentElement.lang || 'ru';
     const text = locale === 'en' ? 'Suggest changes' : 'Внести правки';
     const iconHtml = renderToStaticMarkup(<IconBrandGithub size={20} stroke={2} />);
@@ -35,8 +35,14 @@ function addSidebarExtras() {
     githubLink.className = 'sidebar-github-link';
     githubLink.innerHTML = `${iconHtml}<span>${text}</span>`;
 
-    // Append to bottom of aside container
-    sidebarContainer.appendChild(githubLink);
+    // Desktop: append to scrollable area (sidebar parent)
+    // Mobile: append to aside container
+    const isMobile = window.matchMedia('(max-width: 768px)').matches;
+    if (isMobile && sidebarContainer) {
+      sidebarContainer.appendChild(githubLink);
+    } else if (sidebar) {
+      sidebar.parentElement.appendChild(githubLink);
+    }
   }
 }
 
