@@ -1,96 +1,95 @@
-# Главная Галерея
+# Main Gallery
 
-![ArtGeneration.me Main Gallery](/screens/gallery-home.png)
+![Main Gallery](/images/blog/img_028.png)
 
-Галерея — это сердце сообщества ArtGeneration.me, где собраны лучшие работы пользователей. Здесь вы можете найти вдохновение, изучить техники других художников и открыть для себя новые стили.
+The gallery is the heart of the ArtGeneration.me community, where the best user works are collected. Here you can find inspiration, study techniques of other artists, and discover new styles.
 
-## Поиск и категории
+## Search and Categories
 
-![Search and Categories](/screens/category-filter-dialog.png)
+![Search and Categories](/images/blog/img_030.png)
 
-В верхней части галереи расположена строка поиска и фильтры категорий. Вы можете искать изображения по ключевым словам или выбрать интересующую категорию из списка.
+At the top of the gallery is a search bar and category filters. You can search for images by keywords or select a category of interest from the list.
 
-**Доступные категории:**
-- Все
-- Портреты
-- Пейзажи
-- Фэнтези
+**Available categories:**
+- All
+- Portraits
+- Landscapes
+- Fantasy
 - Sci-Fi
-- Аниме
-- Абстракция
-- И многие другие
+- Anime
+- Abstract
+- And many more
 
-## Взаимодействие с обложкой
+## Cover Interaction
 
-При наведении на изображение в галерее появляются интерактивные элементы:
+When hovering over an image in the gallery, interactive elements appear:
+- **Heart** - add to favorites
+- **Eye** - quick view
+- **Info** - generation details
 
-- **Сердечко** — добавить в избранное
-- **Глаз** — быстрый просмотр
-- **Информация** — детали генерации
+## Gallery View
 
-## Просмотр галереи
+![Gallery View](/images/blog/img_032.png)
 
-![Gallery View](/screens/gallery-grid.png)
+The gallery is displayed as a grid of images. You can scroll down to load new works. Images are automatically loaded as you scroll.
 
-Галерея отображается в виде сетки изображений. Вы можете прокручивать страницу вниз для загрузки новых работ. Изображения автоматически подгружаются по мере прокрутки.
+### Sorting
 
-### Сортировка
+The following sorting options are available:
+- **New** - the freshest works
+- **Popular** - works with the most likes
+- **Discussed** - works with active comments
 
-Доступны следующие варианты сортировки:
-- **Новые** — самые свежие работы
-- **Популярные** — работы с наибольшим количеством лайков
-- **Обсуждаемые** — работы с активными комментариями
+## Image View
 
-## Просмотр изображения
+![Image View](/images/blog/img_008.png)
 
-![Image View](/screens/image-actions-toolbar.png)
+Clicking on an image opens full-screen view with detailed generation information.
 
-При клике на изображение открывается полноэкранный просмотр с детальной информацией о генерации.
+### View Elements
 
-### Элементы просмотра
+In viewing mode, the following are available:
+- **Full-size image** - high quality
+- **Author information** - creator's profile
+- **Generation parameters** - prompt, model, settings
+- **Actions** - download, share, create version
 
-В режиме просмотра доступны:
-- **Полноразмерное изображение** — высокое качество
-- **Информация об авторе** — профиль создателя
-- **Параметры генерации** — промпт, модель, настройки
-- **Действия** — скачать, поделиться, создать версию
+### Generation Details
 
-### Детали генерации
+![Generation Details](/images/blog/img_008.png)
 
-![Generation Details](/screens/image-details-with-prompt.png)
-
-В правой панели отображаются все параметры, использованные при создании изображения:
-- Текстовый запрос (промпт)
-- Негативный промпт
-- Модель
-- Размер изображения
+The right panel displays all parameters used to create the image:
+- Text prompt
+- Negative prompt
+- Model
+- Image size
 - Seed
-- Количество шагов
+- Number of steps
 - CFG Scale
 
-### Похожие изображения
+### Similar Images
 
-Под основным изображением отображаются похожие работы, которые могут вас заинтересовать. Алгоритм подбирает изображения на основе стиля, тематики и используемых параметров.
+Below the main image, similar works that may interest you are displayed. The algorithm selects images based on style, theme, and parameters used.
 
-### Создать свою версию
+### Create Your Version
 
-![Create Your Version](/screens/single-image-view.png)
+![Create Your Version](/images/blog/img_013.png)
 
-Нажмите кнопку "Создать свою версию", чтобы использовать параметры понравившегося изображения как основу для собственной генерации. Все настройки автоматически перенесутся в генератор.
+Click the "Create your version" button to use the parameters of a liked image as a basis for your own generation. All settings will be automatically transferred to the generator.
 
-## Разделы
+## Sections
 
 import { Cards } from 'nextra/components'
 
 <Cards>
-  <Cards.Card title="Поиск и категории" href="/ru/docs/gallery/search-categories" />
-  <Cards.Card title="Взаимодействие с обложкой" href="/ru/docs/gallery/cover-interaction" />
-  <Cards.Card title="Категории галереи" href="/ru/docs/gallery/categories" />
-  <Cards.Card title="Просмотр галереи" href="/ru/docs/gallery/gallery-view" />
-  <Cards.Card title="Интерактивные элементы" href="/ru/docs/gallery/interactive-elements" />
-  <Cards.Card title="Просмотр изображения" href="/ru/docs/gallery/image-view" />
-  <Cards.Card title="Элементы просмотра" href="/ru/docs/gallery/view-elements" />
-  <Cards.Card title="Детали генерации" href="/ru/docs/gallery/generation-details" />
-  <Cards.Card title="Похожие изображения" href="/ru/docs/gallery/similar-images" />
-  <Cards.Card title="Создать свою версию" href="/ru/docs/gallery/create-version" />
+  <Cards.Card title="Search and Categories" href="/en/docs/gallery/search-categories" />
+  <Cards.Card title="Cover Interaction" href="/en/docs/gallery/cover-interaction" />
+  <Cards.Card title="Gallery Categories" href="/en/docs/gallery/categories" />
+  <Cards.Card title="Gallery View" href="/en/docs/gallery/gallery-view" />
+  <Cards.Card title="Interactive Elements" href="/en/docs/gallery/interactive-elements" />
+  <Cards.Card title="Image View" href="/en/docs/gallery/image-view" />
+  <Cards.Card title="View Elements" href="/en/docs/gallery/view-elements" />
+  <Cards.Card title="Generation Details" href="/en/docs/gallery/generation-details" />
+  <Cards.Card title="Similar Images" href="/en/docs/gallery/similar-images" />
+  <Cards.Card title="Create Your Version" href="/en/docs/gallery/create-version" />
 </Cards>

@@ -1,76 +1,27 @@
-# Меню пользователя
+# User Menu
 
-![Меню пользователя](/screens/profile-menu.png)
+The user menu provides access to account management and personal settings.
 
-Меню пользователя — центр управления вашим аккаунтом на ArtGeneration.me. Здесь собраны все настройки, информация о балансе, подписках и инструменты для работы с вашими изображениями.
+## Menu Sections
 
-## Как открыть меню
+- **Profile** — Personal information
+- **Balance** — Generations and payments
+- **Subscriptions** — Tariff management
+- **Settings** — Preferences
+- **My Images** — Personal gallery
+- **Referral** — Invite friends
+- **Support** — Help and feedback
 
-Меню пользователя доступно из любой страницы сайта:
-
-1. Найдите иконку профиля в правом верхнем углу шапки сайта
-2. Нажмите на неё для открытия выпадающего меню
-3. Выберите нужный раздел
-
-Если вы не авторизованы, вместо меню отобразится кнопка «Войти».
-
-## Структура меню
-
-### Быстрая информация
-
-В верхней части меню отображается:
-- Ваш аватар и имя пользователя
-- Текущий тариф (Free / PRO / Premium)
-- Количество доступных генераций
-
-### Основные разделы
-
-**Профиль** — управление личными данными, аватаром и публичной информацией о вас как авторе.
-
-**Баланс** — детальная информация о доступных генерациях, история использования и возможность пополнения.
-
-**Подписки** — управление тарифным планом, просмотр преимуществ и оформление/отмена подписки.
-
-**Настройки** — персонализация интерфейса, уведомлений и параметров генерации по умолчанию.
-
-**Мои изображения** — быстрый доступ к вашей личной галерее, истории и избранному.
-
-**Реферальная программа** — ваша персональная ссылка для приглашения друзей и статистика начислений.
-
-**Поддержка** — связь с командой ArtGeneration.me, FAQ и помощь по использованию платформы.
-
-### Дополнительные действия
-
-В нижней части меню:
-- **Выход** — завершение сессии на текущем устройстве
-- **Выйти везде** — завершение всех активных сессий (для безопасности)
-
-## Индикаторы и уведомления
-
-Меню может отображать важные уведомления:
-
-- Красная точка — есть непрочитанные уведомления
-- Жёлтый индикатор — заканчиваются генерации или подписка
-- Зелёная галочка — активна PRO-подписка
-
-## Мобильная версия
-
-На мобильных устройствах меню пользователя доступно через:
-- Иконку профиля в шапке
-- Боковое меню (свайп справа или кнопка «бургер»)
-
-Функционал полностью идентичен десктопной версии.
-
-## Разделы
+## Sections
 
 import { Cards } from 'nextra/components'
 
 <Cards>
-  <Cards.Card title="Профиль" href="/en/docs/user-menu/profile" />
-  <Cards.Card title="Баланс и генерации" href="/en/docs/user-menu/balance" />
-  <Cards.Card title="Подписки" href="/en/docs/user-menu/subscriptions" />
-  <Cards.Card title="Настройки" href="/en/docs/user-menu/settings" />
-  <Cards.Card title="Мои изображения" href="/en/docs/user-menu/my-images" />
-  <Cards.Card title="Реферальная программа" href="/en/docs/user-menu/referral" />
-  <Cards.Card title="Поддержка" href="/en/docs/user-menu/support" />
+  <Cards.Card title="Profile" href="/en/docs/user-menu/profile" />
+  <Cards.Card title="Balance & Generations" href="/en/docs/user-menu/balance" />
+  <Cards.Card title="Subscriptions" href="/en/docs/user-menu/subscriptions" />
+  <Cards.Card title="Settings" href="/en/docs/user-menu/settings" />
+  <Cards.Card title="My Images" href="/en/docs/user-menu/my-images" />
+  <Cards.Card title="Referral Program" href="/en/docs/user-menu/referral" />
+  <Cards.Card title="Support" href="/en/docs/user-menu/support" />
 </Cards>

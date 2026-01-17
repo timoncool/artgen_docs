@@ -1,7 +1,7 @@
 export default {
-  index: 'Обзор',
-  history: 'История генераций',
-  favorites: 'Избранное',
-  folders: 'Папки',
-  'quick-actions': 'Быстрые действия'
+  index: 'Overview',
+  history: 'Generation History',
+  favorites: 'Favorites',
+  folders: 'Folders',
+  'quick-actions': 'Quick Actions'
 }
