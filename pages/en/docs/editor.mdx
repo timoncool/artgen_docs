@@ -1,137 +1,137 @@
 ---
-title: Редактор изображений
-description: Полное руководство по использованию редактора изображений ArtGeneration.me
+title: Image Editor
+description: Complete guide to using the ArtGeneration.me image editor - tools, filters, masks, and integration with the generator
 ---
 
-# Редактор изображений
+# Image Editor
 
-Редактор позволяет модифицировать сгенерированные изображения без необходимости использования сторонних программ. Это мощный инструмент для финальной обработки ваших генераций.
+The editor allows you to modify generated images without the need for third-party programs. It's a powerful tool for finalizing your generations.
 
-## Как открыть редактор
+## Opening the Editor
 
-Есть несколько способов открыть изображение в редакторе:
+There are several ways to open an image in the editor:
 
-1. **Из галереи генератора** — наведите на изображение и нажмите кнопку "В редактор"
-2. **Из основной галереи** — откройте изображение и выберите "Редактировать"
-3. **Напрямую** — перейдите в раздел "Редактор" в навигации и загрузите изображение
+1. **From generator gallery** — hover over an image and click "Edit"
+2. **From main gallery** — open an image and select "Edit"
+3. **Directly** — go to "Editor" in the navigation and upload an image
 
-## Основные инструменты
+## Main Tools
 
-### Обрезка (Crop)
+### Crop
 
-Обрежьте изображение до нужного размера или соотношения сторон. Доступны предустановленные соотношения:
-- Свободная обрезка
-- 1:1 (квадрат)
-- 16:9 (широкоформатное)
-- 9:16 (вертикальное)
-- 4:3 (классическое)
+Crop the image to the desired size or aspect ratio. Available presets:
+- Free crop
+- 1:1 (square)
+- 16:9 (widescreen)
+- 9:16 (vertical)
+- 4:3 (classic)
 
-### Масштабирование
+### Scale
 
-Измените размер изображения с сохранением пропорций. Полезно для подготовки изображений к публикации в социальных сетях.
+Resize the image while maintaining proportions. Useful for preparing images for social media publication.
 
-### Поворот
+### Rotate
 
-Поверните изображение на любой угол. Доступны быстрые повороты на 90° и точная настройка угла.
+Rotate the image to any angle. Quick rotations at 90° and precise angle adjustment are available.
 
-### Отражение
+### Flip
 
-Отразите изображение по горизонтали или вертикали. Часто используется для исправления композиции.
+Flip the image horizontally or vertically. Often used to fix composition.
 
-## Фильтры и эффекты
+## Filters and Effects
 
 import { Callout } from 'nextra/components'
 
 <Callout type="info">
-Фильтры применяются неразрушающе — вы всегда можете вернуться к оригиналу или отменить изменения.
+Filters are applied non-destructively — you can always return to the original or undo changes.
 </Callout>
 
-### Доступные настройки
+### Available Adjustments
 
-- **Яркость** — осветление или затемнение изображения
-- **Контраст** — усиление или ослабление разницы между светлыми и тёмными областями
-- **Насыщенность** — интенсивность цветов
-- **Экспозиция** — общая освещённость
-- **Тени** — детализация в тёмных областях
-- **Света** — детализация в светлых областях
-- **Температура** — тёплые или холодные тона
-- **Оттенок** — сдвиг цветовой гаммы
+- **Brightness** — lighten or darken the image
+- **Contrast** — strengthen or weaken the difference between light and dark areas
+- **Saturation** — color intensity
+- **Exposure** — overall lighting
+- **Shadows** — detail in dark areas
+- **Highlights** — detail in bright areas
+- **Temperature** — warm or cool tones
+- **Tint** — color shift
 
-### Художественные фильтры
+### Artistic Filters
 
-- Размытие (Blur)
-- Резкость (Sharpen)
-- Виньетирование
-- Зернистость (Grain)
-- Чёрно-белое
+- Blur
+- Sharpen
+- Vignette
+- Grain
+- Black & White
 
-## Рисование и маски
+## Drawing and Masks
 
-### Кисть
+### Brush
 
-Рисуйте поверх изображения различными кистями:
-- Настройка размера кисти
-- Настройка жёсткости краёв
-- Выбор цвета
-- Настройка прозрачности
+Draw over the image with various brushes:
+- Brush size adjustment
+- Edge hardness adjustment
+- Color selection
+- Opacity adjustment
 
-### Маска для инпейнтинга
+### Mask for Inpainting
 
-Создавайте маски для выборочного редактирования:
+Create masks for selective editing:
 
-1. Выберите инструмент "Маска"
-2. Закрасьте область, которую хотите изменить
-3. Нажмите "Отправить в генератор"
-4. Напишите промпт для новой области
-5. Запустите генерацию
+1. Select the "Mask" tool
+2. Paint over the area you want to change
+3. Click "Send to Generator"
+4. Write a prompt for the new area
+5. Start generation
 
 <Callout type="warning">
-Для качественного инпейнтинга рекомендуется закрашивать область с небольшим запасом за пределы объекта, который хотите изменить.
+For quality inpainting, it's recommended to paint the area with a small margin beyond the object you want to change.
 </Callout>
 
-## Текст и надписи
+## Text and Labels
 
-Добавляйте текст на изображения:
-- Выбор шрифта
-- Настройка размера
-- Выбор цвета текста и обводки
-- Позиционирование
+Add text to images:
+- Font selection
+- Size adjustment
+- Text and outline color selection
+- Positioning
 
-## Слои
+## Layers
 
-Редактор поддерживает работу со слоями:
-- Добавление новых слоев
-- Изменение порядка слоев
-- Настройка прозрачности слоя
-- Режимы наложения
+The editor supports working with layers:
+- Adding new layers
+- Changing layer order
+- Layer opacity adjustment
+- Blending modes
 
-## Сохранение и экспорт
+## Saving and Export
 
-После редактирования вы можете:
+After editing, you can:
 
-- **Сохранить в галерею** — изображение появится в вашей личной галерее
-- **Скачать** — сохранить на устройство в формате PNG или JPEG
-- **Отправить в генератор** — использовать как основу для новой генерации
+- **Save to gallery** — the image will appear in your personal gallery
+- **Download** — save to your device in PNG or JPEG format
+- **Send to generator** — use as a base for new generation
 
-### Форматы экспорта
+### Export Formats
 
-- **PNG** — без потери качества, поддержка прозрачности
-- **JPEG** — меньший размер файла, настройка качества
+- **PNG** — lossless quality, transparency support
+- **JPEG** — smaller file size, quality adjustment
 
-## Интеграция с генератором
+## Integration with Generator
 
-Отредактированное изображение можно использовать как Init Image для дальнейшей генерации. Это позволяет создавать сложные композиции итеративно:
+The edited image can be used as an Init Image for further generation. This allows you to create complex compositions iteratively:
 
-1. Сгенерируйте базовое изображение
-2. Отредактируйте его в редакторе
-3. Отправьте обратно в генератор
-4. Добавьте новые элементы через инпейнтинг
-5. Повторите процесс до достижения желаемого результата
+1. Generate a base image
+2. Edit it in the editor
+3. Send back to the generator
+4. Add new elements through inpainting
+5. Repeat the process until you achieve the desired result
 
-## Горячие клавиши
+## Keyboard Shortcuts
 
-- **Ctrl+Z** — отменить последнее действие
-- **Ctrl+Y** — повторить отменённое действие
-- **Ctrl+S** — сохранить изображение
-- **Space + перетаскивание** — перемещение по изображению
-- **Колесо мыши** — масштабирование
+- **Ctrl+Z** — undo last action
+- **Ctrl+Y** — redo undone action
+- **Ctrl+S** — save image
+- **Space + drag** — pan across the image
+- **Mouse wheel** — zoom
