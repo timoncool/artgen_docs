@@ -1,13 +1,31 @@
+import { Callout, Steps } from '@/components/mdx'
+
 # Left Panel
 
-The left panel provides quick access to history, favorites, and organization tools.
+The generator's left panel displays all your created images and provides tools for working with them.
 
-## Panel Elements
+## Main Features
 
-- **History** — recent generations
-- **Favorites** — marked images
-- **Folders** — organization by projects
-- **Quick Actions** — frequently used operations
+**Chronological Order** — all your created images are displayed in chronological order.
+
+**Search by Prompt** — the search function allows you to find images by prompt text.
+
+**Likes and Favorites Counters** — each image displays the number of likes and favorites.
+
+## Mobile Behavior
+
+<Callout type="info">
+  On mobile devices and small screens, the left panel is hidden by default. Click on it to expand.
+</Callout>
+
+## Image Interactions
+
+When working with images in the left panel, the following actions are available:
+
+- **Deletion** — delete the image
+- **Preview** — hover over the magnifying glass icon for a quick preview
+- **Fullscreen Mode** — open the image in fullscreen
+- **Privacy Settings** — click the eye icon to manage image visibility
 
 ## Sections
 
@@ -17,5 +35,4 @@ import { Cards, Card } from '@/components/mdx'
   <Card title="Generation History" href="/en/docs/generator/left-panel/history" />
   <Card title="Favorites" href="/en/docs/generator/left-panel/favorites" />
   <Card title="Folders" href="/en/docs/generator/left-panel/folders" />
-  <Card title="Quick Actions" href="/en/docs/generator/left-panel/quick-actions" />
 </Cards>

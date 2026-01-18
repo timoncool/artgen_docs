@@ -1,35 +1,80 @@
+import { Callout, Steps, Tabs, Tab } from '@/components/mdx'
+
 # Download
 
-![Download](/screens/image-actions-toolbar.png)
+![Download](/screens/download-menu.png)
 
-The download function allows you to save an image to your device.
+The download function allows you to save an image to your device in various formats.
+
+## Image Storage
+
+<Callout type="info">
+All images are stored on the server in **WebP format without quality loss**. When downloading, you can choose any format without degrading the original quality.
+</Callout>
+
+## Available Formats
+
+When downloading, you can choose the format:
+
+<Tabs items={['WebP', 'PNG', 'JPG']}>
+  <Tab>
+    **WebP** — modern format with excellent compression. Recommended for publishing on the web. Native storage format.
+  </Tab>
+  <Tab>
+    **PNG** — high quality without loss. Ideal for further editing.
+  </Tab>
+  <Tab>
+    **JPG** — universal format with good compression. Suitable for most tasks.
+  </Tab>
+</Tabs>
+
+![Download formats](/screens/download-menu2.png)
 
 ## How to Download
 
-1. Hover over an image
-2. Click the "Download" button
-3. The file will be downloaded to your downloads folder
+<Steps>
+### Hover over the image
+Find the desired image.
 
-## File Format
+### Click the download button
+A format selection menu will open.
 
-Images are downloaded in PNG format with maximum quality.
+### Select the desired format
+WebP, PNG, or JPG.
 
-## File Name
+### Done
+The file will be downloaded to your downloads folder.
+</Steps>
 
-The file name contains:
-- Generation identifier
-- Creation date
-- .png extension
+## Bulk Download
+
+![Download my images](/screens/download-my-images-dropdown.png)
+
+In the profile settings, a bulk image download function is available:
+
+- **Today** — all images from today
+- **Yesterday** — all images from yesterday
+- **Week** — from the last week
+- **Month** — from the last month
+- **3 months** / **6 months** / **Year** — for the corresponding period
+- **All time** — all your images
+
+![Period selection](/screens/download-period-options.png)
+
+The number of images available for download is displayed next to each period.
 
 ## Usage Rights
 
 Downloaded images can be used:
 - In personal projects
-- For commercial purposes (with appropriate subscription)
+- For commercial purposes (with the appropriate subscription)
 - For publication with source attribution
 
 ## Tips
 
+<Callout type="info">
 - Download images after applying enhancements (upscale, restoration)
-- Save liked works as they may be deleted over time
-- Use the bulk download function in your account for multiple images
+- Save your favorite works locally
+- Use the bulk download function for backup
+- Choose PNG for editing, WebP for publishing on the web
+</Callout>

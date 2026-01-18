@@ -1,33 +1,126 @@
-# Init Image
+import { Callout, Steps } from '@/components/mdx'
 
-![Init Image](/images/blog/img_011.png)
+# Custom Image (img2img)
 
-Init Image allows generating based on an existing image.
+![Custom Image](/screens/own-image-panel.png)
 
-## How It Works
+"Custom Image" allows you to use any image as a basis for generation. You can upload an existing image, draw a sketch, or use a mask for partial regeneration.
 
-Upload an image as a starting point, and the model will transform it according to your prompt.
+![Editing example - putting a hat on a cat](/screens/own-image-cat-example.webp)
 
-## Uploading Image
+<Callout type="info">
+All generations from "Custom Image" are set to "Private Mode" by default, so you don't accidentally share something you didn't intend to.
+</Callout>
 
-- Drag and drop
-- Click to select file
-- Paste from clipboard
+## Ways to Add an Image
 
-## Denoising Strength
+### Upload Image
 
-Controls how much the original image is changed:
-- **0.1-0.3** — minimal changes
-- **0.4-0.6** — moderate transformation
-- **0.7-1.0** — significant changes
+Upload an existing image from your device:
 
-## Use Cases
+- **Formats:** webp, jpg, png
+- **Maximum size:** 5 MB
+- Images created in ArtGeneration.me are also suitable
 
-- Style transfer
-- Image enhancement
-- Concept variations
-- Color correction
+After uploading, the system will offer to crop the image to match the selected resolution.
 
-## Supported Formats
+### Sketch
 
-PNG, JPG, WEBP up to 10MB.
+Draw an image directly on the canvas:
+
+- Drawing on an empty canvas
+- Customizable brush size
+- Color selection
+- Eraser for corrections
+
+Sketch is ideal for creating a basic composition that the neural network will transform into a detailed image.
+
+### Mask (Inpainting)
+
+Paint over areas on an existing image to regenerate them:
+
+- Paint over the areas you want to change
+- Customizable brush size
+- Mask inversion available (regenerate everything except the selected area)
+
+## Cropping
+
+![Cropping](/screens/crop-image-tool.png)
+
+If the image size and selected resolution differ, the system will offer to crop the image. You can set the desired size by changing the "Resolution" slider.
+
+You can also:
+- Move the image to set the ideal position
+- Scale the image to zoom in or out
+- Save the cropping result
+
+## Degree of Change
+
+The "Degree of Change" slider determines how much the neural network can deviate from the original image. Values from **0** to **1**:
+
+- **0** - the image will remain unchanged
+- **Low values (0.1-0.3)** - minimal changes, close to the original
+- **Medium values (0.4-0.6)** - moderate changes, balance between original and creativity
+- **High values (0.7-0.9)** - significant changes, more creative freedom
+- **1** - completely new image
+
+<Callout type="info">
+Start experimenting with a value of **0.5-0.6**. This is usually enough to see noticeable changes while preserving the main composition.
+</Callout>
+
+## Mask Generation (Inpainting)
+
+![Drawing mask](/screens/mask-paint-tool.png)
+
+<Steps>
+### Upload an image
+Upload the image you want to partially modify
+
+### Open the mask editor
+Click "Draw Mask" to open the mask drawing dialog
+
+### Paint over areas to change
+Paint over the part of the image you want to regenerate
+
+### Use inversion if needed
+Mask inversion allows you to regenerate everything except the selected area
+
+### Save and generate
+Save the mask and start generation
+</Steps>
+
+![Mask panel](/screens/mask-options-panel.png)
+
+In mask drawing mode, the following options are available:
+- Brush size selection
+- Undo last action
+- Mask inversion
+- Delete mask
+- Save mask
+
+After applying the mask, you have access to:
+- **Draw mask** - edit the mask
+- **Delete mask** - clear the mask
+- **Remove background** - automatically select the foreground object
+- Degree of change settings
+
+This technique is invaluable for:
+- Improving faces, eyes, hands, and other parts that don't always turn out well on the first try
+- Changing hair color
+- Adding or removing elements from the image
+
+<Callout type="info">
+Don't get discouraged if you don't achieve the desired result on the first try. Inpainting is often an iterative process.
+</Callout>
+
+## Describe
+
+After uploading an image to "Custom Image", a "Describe" button becomes available. Clicking it will send the image to a neural network that will try to create an English prompt describing your image. This way, you don't have to write the prompt yourself.
+
+## Usage Examples
+
+- **Stylization** - transforming photos into artistic styles
+- **Enhancement** - improving quality and detail
+- **Variations** - creating similar images with changes
+- **Correction** - fixing defects using the mask
+- **Expansion** - adding new elements to an existing image

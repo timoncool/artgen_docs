@@ -1,35 +1,84 @@
-# Parameters
+import { Callout } from '@/components/mdx'
 
-![Parameters](/images/blog/img_005.png)
+# Generation Parameters
 
-Fine-tune generation with advanced parameters.
+![Generation Parameters](/screens/generator-right-panel.png)
 
-## CFG Scale
-
-Controls how closely the model follows the prompt:
-- **1-5** — creative, loose interpretation
-- **6-10** — balanced
-- **11-15** — strict adherence
-- **15+** — may cause artifacts
-
-## Steps
-
-Number of denoising steps:
-- **20-30** — fast, lower quality
-- **30-50** — balanced
-- **50+** — slower, higher quality
+Technical parameters allow you to fine-tune the image generation process. Understanding these parameters will help you get higher quality and more predictable results.
 
 ## Seed
 
-Random seed for reproducibility. Same seed + same parameters = same result.
+![Seed](/screens/seed-setting.png)
+
+Seed is the initial value for the random number generator. This number determines the "randomness" of generation.
+
+**How it works:**
+- With the same seed value and all other parameters, you will get an identical image
+- A random seed gives a unique result each time
+- You can copy the seed value of a generation you like and use it to create variations
+- Click the dice icon to generate a random value
+
+**Applications:**
+- Found a good composition? Lock the seed and experiment with the prompt
+- Want a series of similar images? Use the same seed value with small prompt changes
+- Need reproducibility? Save the seed value along with other parameters
+
+## Number of Images
+
+![Number of Images](/screens/num-images-selection.png)
+
+You can generate from 1 to 4 images per request. This is convenient for quickly comparing options. The generation cost is shown next to each button.
+
+## Private Mode
+
+![Private Mode](/screens/private-mode-toggle.png)
+
+Enable "Private Mode" so your images are not displayed in the public gallery and are visible only to you.
+
+## CFG Scale (Guidance Scale)
+
+CFG Scale determines how strictly the model follows your prompt. This is one of the most important parameters for controlling the result.
+
+**Values:**
+- **1-4** — The model has great creative freedom, can significantly deviate from the prompt
+- **5-7** — Balance between following the prompt and creative freedom. Recommended for most tasks
+- **8-12** — The model strictly follows the prompt
+- **13-20** — Very strict adherence. May lead to artifacts
+
+<Callout emoji="💡">
+**Recommendation:** Start with **7** and adjust based on results.
+</Callout>
+
+## Generation Steps
+
+The number of steps determines how many iterations the model goes through when creating an image. More steps means more details, but also more time.
+
+**Values:**
+- **15-25** — Fast generation, basic quality
+- **25-35** — Optimal balance of quality and speed
+- **35-50** — High quality for final works
+
+<Callout type="info">
+After a certain number of steps, quality stops improving. For most models, this is 30-40 steps.
+</Callout>
 
 ## Sampler
 
-Different sampling algorithms affect style and quality:
-- Euler — fast, good quality
-- DPM++ — detailed results
-- DDIM — consistent results
+The sampler is an algorithm that determines how the model "moves" from noise to the final image.
 
-## Batch Size
+**Popular samplers:**
+- **Euler** — Fast and stable
+- **Euler a** — More "lively" results
+- **DPM++ 2M** — Excellent detail
+- **DPM++ 2M Karras** — Improved version with smooth transitions
 
-Generate multiple images at once (uses more generations).
+<Callout emoji="💡">
+If you don't know which sampler to choose — use **DPM++ 2M Karras** or **Euler a**.
+</Callout>
+
+## Parameter Relationships
+
+Parameters affect each other:
+- High CFG Scale may require more steps
+- Some samplers work better with a certain number of steps
+- Different models have their own optimal settings

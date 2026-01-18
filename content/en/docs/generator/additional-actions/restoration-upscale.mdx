@@ -1,35 +1,63 @@
+import { Callout, Steps } from '@/components/mdx'
+
 # Restoration + Upscale
 
 ![Restoration + Upscale](/screens/image-actions-toolbar.png)
 
-A combined function that merges face restoration and resolution upscaling.
+A combined function that merges face restoration and resolution upscaling into a single action.
 
 ## Advantages
 
-Performs two operations at once:
-1. Improves face quality
-2. Increases resolution by 2 times
+<Callout type="info">
+**With a single click**, two operations are performed:
+1. Face restoration
+2. 2x resolution upscaling
+</Callout>
+
+This saves time and simplifies the process of enhancing portrait images.
+
+## How to Use
+
+<Steps>
+### Hover over the image
+Select an image with faces that needs enhancement.
+
+### Click the "Restoration + Upscale" button
+Launch both operations with a single click.
+
+### Wait for processing
+The system will sequentially perform restoration and upscaling.
+
+### Get the result
+The result will open in a popup window for download.
+</Steps>
 
 ## When to Use
 
 - Portrait photos for printing
 - High-resolution images with people
-- When you need both face improvement and size increase
+- When you need both face restoration and size increase
+- To save time when processing portraits
 
 ## Processing Order
 
-1. First, faces are restored
-2. Then the image is upscaled
+<Steps>
+### Face restoration
+First, faces are restored on the image.
+
+### Resolution upscaling
+Then the image is upscaled by 2 times.
+</Steps>
 
 This order ensures better quality than the reverse sequence.
-
-## Cost
-
-Consumes more generations than each operation separately, but less than both operations sequentially.
 
 ## Result
 
 You get an image:
-- With improved faces
-- In increased resolution
+- With restored faces
+- In increased resolution (2x)
 - With preserved overall quality
+
+## Cost
+
+Consumes generations from your balance.

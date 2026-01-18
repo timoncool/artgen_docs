@@ -1,19 +1,30 @@
 ---
 title: Image Editor
-description: Complete guide to using the ArtGeneration.me image editor - tools, filters, masks, and integration with the generator
+description: Complete guide to using the ArtGeneration.me image editor
 ---
+
+import { Callout, Steps } from '@/components/mdx'
 
 # Image Editor
 
 The editor allows you to modify generated images without the need for third-party programs. It's a powerful tool for finalizing your generations.
 
-## Opening the Editor
+![ArtGeneration.me Image Editor](/guide/editor-02.png)
+
+## How to Open the Editor
 
 There are several ways to open an image in the editor:
 
-1. **From generator gallery** — hover over an image and click "Edit"
-2. **From main gallery** — open an image and select "Edit"
-3. **Directly** — go to "Editor" in the navigation and upload an image
+<Steps>
+### From the generator gallery
+Hover over an image and click the "To Editor" button.
+
+### From the main gallery
+Open an image and select "Edit".
+
+### Directly
+Go to the "Editor" section in the navigation and upload an image.
+</Steps>
 
 ## Main Tools
 
@@ -25,6 +36,8 @@ Crop the image to the desired size or aspect ratio. Available presets:
 - 16:9 (widescreen)
 - 9:16 (vertical)
 - 4:3 (classic)
+
+![Image crop tool](/screens/crop-image-tool.png)
 
 ### Scale
 
@@ -39,8 +52,6 @@ Rotate the image to any angle. Quick rotations at 90° and precise angle adjustm
 Flip the image horizontally or vertically. Often used to fix composition.
 
 ## Filters and Effects
-
-import { Callout } from '@/components/mdx'
 
 <Callout type="info">
 Filters are applied non-destructively — you can always return to the original or undo changes.
@@ -75,15 +86,32 @@ Draw over the image with various brushes:
 - Color selection
 - Opacity adjustment
 
+![Brush color picker](/screens/color-picker.png)
+
 ### Mask for Inpainting
 
 Create masks for selective editing:
 
-1. Select the "Mask" tool
-2. Paint over the area you want to change
-3. Click "Send to Generator"
-4. Write a prompt for the new area
-5. Start generation
+<Steps>
+### Select the tool
+Select the "Mask" tool from the toolbar.
+
+### Paint the area
+Paint over the area you want to change.
+
+### Send to generator
+Click "Send to Generator".
+
+### Write a prompt
+Write a prompt for the new area.
+
+### Start generation
+Start generation and wait for the result.
+</Steps>
+
+![Mask tool](/screens/mask-paint-tool.png)
+
+![Mask settings panel](/screens/mask-options-panel.png)
 
 <Callout type="warning">
 For quality inpainting, it's recommended to paint the area with a small margin beyond the object you want to change.
@@ -122,11 +150,26 @@ After editing, you can:
 
 The edited image can be used as an Init Image for further generation. This allows you to create complex compositions iteratively:
 
-1. Generate a base image
-2. Edit it in the editor
-3. Send back to the generator
-4. Add new elements through inpainting
-5. Repeat the process until you achieve the desired result
+<Steps>
+### Generate a base image
+Create an initial image in the generator.
+
+### Edit in the editor
+Open the image in the editor and make the necessary changes.
+
+### Send back to the generator
+Send the edited image back to the generator.
+
+### Add new elements
+Add new elements through inpainting.
+
+### Repeat the process
+Repeat the process until you achieve the desired result.
+</Steps>
+
+<Callout emoji="💡">
+The iterative approach allows you to gradually improve the image and achieve more precise results.
+</Callout>
 
 ## Keyboard Shortcuts
 

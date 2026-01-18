@@ -1,33 +1,88 @@
+import { Callout, Steps } from '@/components/mdx'
+
 # Face Swap
 
-![Face Swap](/images/blog/img_018.png)
+![Face Swap](/screens/face-swap-panel.png)
 
-Face Swap allows replacing faces in generated images.
+ArtGeneration.me offers a face replacement feature for images. This tool allows you to replace a face in any generation or uploaded image with another face of your choice. Face swap can be activated in several situations.
 
-## How It Works
+## When creating a new generation
 
-1. Upload a reference face photo
-2. Generate an image with a person
-3. The face will be replaced with the reference
+In the right sidebar, find the "Face Swap" section and upload a photo with the face you want to use. After the image is generated, the system will automatically apply the replacement, and both the result with face swap and without will be displayed as usual.
 
-## Requirements
+## To an existing generation
 
-- Clear face photo
-- Good lighting
-- Front-facing preferred
+<Steps>
+### Select the image
+Select the desired image in the gallery in the left sidebar
 
-## Quality Tips
+### Upload a face photo
+Upload a photo with the desired face
 
-- Use high-resolution reference
-- Ensure similar face angle
-- Match lighting conditions
+### Start the replacement
+Click the "Swap Now" button
 
-## Limitations
+### Wait for the result
+Wait for processing to complete
+</Steps>
 
-- Works best with single faces
-- May require multiple attempts
-- Some styles work better than others
+## To your own uploaded image
 
-## Privacy
+<Steps>
+### Reset results
+Click the "Reset" button to clear the generation results
 
-Reference photos are not stored and are deleted after generation.
+### Upload your image
+Upload an image through the "Own Image" feature
+
+### Confirm the action
+If there is no active generation, the system will warn that the replacement will be applied to the uploaded image
+
+### Start the replacement
+Upload a photo with the new face and click "Swap Now"
+</Steps>
+
+## Photo requirements
+
+For best results, use a photo that meets the following criteria:
+
+- **Human face only** — the technology does not work with animals or fantasy creatures
+- **Preferably head only** on a solid background
+- **Neutral facial expression**
+- **Open eyes**
+- **Good even lighting** without strong shadows
+- **Frontal angle** (like a passport photo, but in color)
+- **Clear, non-blurry image**
+
+<Callout type="warning">
+Face swap technology only works with human faces. Attempts to replace faces of anthropomorphic animals, anime characters, monsters, or other creatures may display an error or produce poor-quality results.
+</Callout>
+
+## Technical parameters
+
+<Callout type="info">
+- **Supported formats:** jpeg, png, webp
+- **Maximum file size:** 5 MB
+- **Feature available by subscription**
+</Callout>
+
+- The feature works with both generated images and those uploaded through "Own Image" or results of Upscale or outpainting
+- If there are multiple faces in the photo, the leftmost one will be replaced
+
+## Usage recommendations
+
+- Use photos with similar angles for better results
+- If needed, you can repeat the operation again if you're not satisfied with the result
+- The quality of the replacement directly depends on the quality of both source photos
+
+## User responsibility
+
+<Callout type="warning">
+According to the user agreement, you agree to upload only those images to which you have rights or permission. It is prohibited to use:
+
+- Photos of celebrities
+- Images of political figures
+- Photos of acquaintances without their explicit consent
+
+All responsibility for the use of images lies with the user.
+</Callout>

@@ -1,33 +1,116 @@
+import { Callout, Steps } from '@/components/mdx'
+
 # Image Generator
 
-![Image Generator](/images/blog/img_005.png)
+![ArtGeneration.me Image Generator](/screens/generator-right-panel.png)
 
-The image generator is the main tool for creating images using artificial intelligence.
+The Image Generator is the main tool of ArtGeneration.me, allowing you to create unique images using artificial intelligence.
 
-## How It Works
-
-1. Enter a text description (prompt)
-2. Select a model and style
-3. Configure parameters
-4. Click "Generate"
-5. Get the result
+Here you can bring any creative ideas to visual form.
 
 ## Generator Interface
 
-The generator consists of several areas:
-- **Left Panel** — history, favorites, folders
-- **Central Area** — prompt input and result
-- **Right Panel** — models, styles, parameters
+The interface is divided into three main areas:
+
+1. **Central area** — generation results and prompt input field
+2. **Left panel** — generation history and quick actions
+3. **Right panel** — model settings, styles, and parameters
+
+![Right panel](/screens/generator-right-panel2.png)
+
+## Prompt Input Field
+
+![Prompt input field](/screens/prompt-input.png)
+
+The bottom panel of the generator contains:
+- **Prompt input field** — describe the desired image
+- **"Reset" button** — clear current settings
+- **"Create" button** — start generation
+
+<Callout type="info">
+**Tips:**
+- Use **Ctrl + Enter** to quickly start generation
+- It is recommended to write prompts in **English** for best results
+- Prompts in Russian are also supported
+</Callout>
+
+## Viewing Results
+
+![Single image view](/screens/single-image-view.png)
+
+After generation, the image is displayed in the central area. Available options:
+- "Crop" button for cropping
+- Prompt field for creating variations
+- "Create" button for new generation
+
+## Rating Images
+
+![Image rating](/screens/image-rate-popup.png)
+
+In the gallery, you can rate images from other users:
+- **Like** — mark an image you liked
+- **Dislike** — if you didn't like the image
+
+## Image Visibility
+
+![Visibility toggle](/screens/visibility-toggle.png)
+
+For each image, you can configure visibility:
+- **Visible to all** — the image is displayed in the public gallery
+- **Private** — visible only to you
+
+## Query Language
+
+The generator supports queries in **Russian** and **English**.
+
+### Query Examples
+
+**In Russian:**
+- "Красивый закат над морем в стиле импрессионизма"
+- "Портрет девушки с цветами в волосах"
+
+**In English:**
+- "Beautiful sunset over the ocean in impressionist style"
+- "Portrait of a girl with flowers in her hair"
+
+## Query Tips
+
+<Steps>
+### Be Specific
+The more detailed the description, the more accurate the result.
+
+### Specify the Style
+Add an artistic style or technique.
+
+### Describe the Lighting
+Use terms like: "soft light", "backlight", "golden hour".
+
+### Add Details
+Describe textures, materials, atmosphere.
+
+### Use Negative Prompts
+Exclude unwanted elements.
+</Steps>
+
+## Additional Actions
+
+After image generation, the following actions are available:
+
+- **Download** — save the image to your device
+- **Enhance** — increase resolution using AI
+- **Edit** — open in editor for refinement
+- **Face Swap** — replace a face in the image
+- **Create Variations** — generate similar images
+- **Share** — publish to the gallery
 
 ## Sections
 
 import { Cards, Card } from '@/components/mdx'
 
 <Cards>
-  <Card title="Prompt Writing" href="/en/docs/generator/query-language" />
-  <Card title="Prompt Tips" href="/en/docs/generator/query-tips" />
-  <Card title="Weights" href="/en/docs/generator/weights" />
+  <Card title="Query Language" href="/en/docs/generator/query-language" />
+  <Card title="Query Tips" href="/en/docs/generator/query-tips" />
+  <Card title="Additional Actions" href="/en/docs/generator/additional-actions" />
   <Card title="Left Panel" href="/en/docs/generator/left-panel" />
   <Card title="Right Panel" href="/en/docs/generator/right-panel" />
-  <Card title="Additional Actions" href="/en/docs/generator/additional-actions" />
 </Cards>

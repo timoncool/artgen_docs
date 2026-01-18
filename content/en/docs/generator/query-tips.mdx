@@ -1,39 +1,100 @@
+import { Callout, Tabs, Tab, Steps } from '@/components/mdx'
+
 # Prompt Tips
 
 Practical recommendations for writing effective prompts.
 
+## Follow the Structure
+
+Recommended prompt structure for best results:
+
+<Steps>
+### Image Type
+Photograph, drawing, 3D, illustration
+
+### Subject
+What or who is in the image
+
+### Appearance
+Details and characteristics of the subject
+
+### Elements
+Additional objects and details
+
+### Location
+Where the subject is located
+
+### Effects
+Lighting, atmosphere, mood
+
+### Style
+Artistic direction
+</Steps>
+
 ## Be Specific
 
-Instead of "a cat", write "a fluffy orange tabby cat sitting on a windowsill".
+The more detailed the description, the more accurate the result:
+
+<Tabs items={['Bad', 'Good']}>
+  <Tab>
+    `cat`
+  </Tab>
+  <Tab>
+    `photograph, fluffy orange cat, green eyes, lying on windowsill, sunlight from window, warm tones, cozy atmosphere`
+  </Tab>
+</Tabs>
+
+## Use Weights Wisely
+
+<Callout type="warning">
+**Important:** Weights only work in parentheses `()`. Square brackets `[]` decrease weight.
+</Callout>
+
+**Rules for working with weights:**
+- Start with small changes (1.1-1.2)
+- Increase gradually in 0.1-0.2 increments
+- Avoid extreme values (above 1.8)
+- Weights that are too high can cause artifacts
+
+**Examples:**
+```
+(vibrant:1.2) colors, ((detailed)) background
+(red:1.4) hair, (blue eyes:0.8)
+```
 
 ## Use Descriptive Adjectives
 
-Add adjectives for:
-- Colors (vibrant, muted, golden)
-- Textures (smooth, rough, glossy)
-- Mood (peaceful, dramatic, mysterious)
+Add quality characteristics:
+- Colors: vibrant, saturated, pastel, neon
+- Lighting: soft, dramatic, contrasting, diffused
+- Mood: cozy, gloomy, joyful, mysterious
+- Textures: smooth, rough, glossy, matte
 
 ## Specify Style
 
-Mention artistic style:
+Define the artistic direction:
 - Photorealistic
-- Digital art
+- Digital painting
+- Anime
 - Oil painting
-- Anime style
 - Watercolor
+- Cyberpunk
+- Fantasy art
 
-## Add Lighting
+## Add Technical Details
 
-Describe lighting:
-- Golden hour
-- Studio lighting
-- Dramatic shadows
-- Soft diffused light
-
-## Avoid Negations
-
-Instead of "no people", use negative prompt for exclusions.
+For quality results, specify:
+- Resolution: 4k, 8k, high quality
+- Detail: detailed, sharp, crisp
+- Render: octane render, unreal engine
+- Camera: 85mm, portrait lens, wide angle
 
 ## Experiment
 
-Try different phrasings and combinations to find what works best.
+Don't be afraid to try different phrasings. Sometimes a small change in the prompt gives a completely different result.
+
+## Study Others' Work
+
+<Callout type="info">
+Look at prompts from successful generations in the gallery and learn from them. This is a great way to understand which phrasings work best.
+</Callout>

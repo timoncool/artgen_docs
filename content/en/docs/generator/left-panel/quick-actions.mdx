@@ -1,21 +1,71 @@
+import { Callout } from '@/components/mdx'
+
 # Quick Actions
 
-Quick actions provide fast access to frequently used operations.
+![Quick Actions](/screens/image-actions-toolbar.png)
 
-## Available Actions
+Quick actions are a set of frequently used functions available with one click. They speed up workflow and allow you to perform typical operations without navigating through menus.
 
-- **New Generation** — start new generation
-- **Repeat Last** — repeat last generation
-- **Random Prompt** — generate random prompt
-- **Clear Settings** — reset all parameters
+## Location
+
+The quick actions panel is located at the bottom of the generator's left panel. It's always visible and accessible regardless of the selected tab (History, Favorites, Folders).
+
+## Main Actions
+
+**Generate** — starts generation with current parameters. This is the main button for creating images. Equivalent to the Ctrl+Enter keyboard shortcut.
+
+**New Generation** — clears all current parameters and starts from scratch. Useful when you want to start a completely new project without influence from previous settings.
+
+**Repeat** — runs generation with the same parameters but a new seed. This creates a variation of the last image while keeping all settings.
+
+**Random Prompt** — generates a random idea for a prompt. Useful for inspiration or when you don't know what to create.
+
+## Additional Actions
+
+**Upload Image** — opens a file selection dialog to upload an image. Used for img2img mode when you want to create a variation of an existing image.
+
+**Clear Prompt** — removes text from the prompt field, leaving other settings unchanged.
+
+**Reset Settings** — returns all parameters to their default values.
 
 ## Keyboard Shortcuts
 
-- **Ctrl+Enter** — start generation
-- **Ctrl+R** — repeat last
-- **Ctrl+N** — new generation
-- **Esc** — cancel current operation
+<Callout type="info">
+  For maximum efficiency, use keyboard shortcuts:
+</Callout>
 
-## Customization
+| Action | Windows/Linux | Mac |
+|--------|---------------|-----|
+| Generate | Ctrl+Enter | Cmd+Enter |
+| New Generation | Ctrl+N | Cmd+N |
+| Repeat | Ctrl+R | Cmd+R |
+| Upload Image | Ctrl+O | Cmd+O |
+| Clear Prompt | Ctrl+Backspace | Cmd+Backspace |
 
-Configure which actions appear in the quick panel through settings.
+## Contextual Actions
+
+Some quick actions appear depending on the context:
+
+**After generation** — buttons appear for "Repeat with new seed", "Increase resolution", "Save to favorites".
+
+**When selecting an image** — buttons appear for "Use parameters", "Create variation", "Delete".
+
+**When uploading an image** — buttons appear for configuring img2img mode.
+
+## Panel Customization
+
+In the generator settings you can:
+
+- Choose which actions to display on the panel
+- Change the order of buttons
+- Adjust button size
+- Enable or disable labels
+
+## Usage Tips
+
+<Callout emoji="💡">
+  - Memorize the main keyboard shortcuts to speed up your workflow
+  - Use "Repeat" for quick creation of variations
+  - "Random Prompt" is a great way to find inspiration
+  - Customize the panel to fit your workflow
+</Callout>
