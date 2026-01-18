@@ -1,11 +1,11 @@
 'use client'
 
-import { Drawer, Box, Stack, Anchor, UnstyledButton, Collapse, Flex } from '@mantine/core'
-import { IconChevronRight, IconBrandGithub } from '@tabler/icons-react'
+import { Drawer, Box, Stack, Anchor, UnstyledButton, Collapse, Flex, Group } from '@mantine/core'
+import { IconChevronRight, IconBrandGithub, IconWorld } from '@tabler/icons-react'
 import { useState } from 'react'
 import Link from 'next/link'
-import { usePathname } from 'next/navigation'
-import { Locale, translations, getSiteBase } from '@/lib/i18n/config'
+import { usePathname, useRouter } from 'next/navigation'
+import { Locale, translations, getSiteBase, i18nConfig } from '@/lib/i18n/config'
 import { getDocsNavigation, getExtraNavigation, NavItem } from '@/lib/navigation/config'
 
 interface MobileMenuProps {
@@ -104,6 +104,27 @@ export function MobileMenu({ locale, opened, onClose }: MobileMenuProps) {
   const siteBase = getSiteBase(locale)
   const navigation = getDocsNavigation(locale)
   const extraNavigation = getExtraNavigation(locale)
+  const pathname = usePathname()
+  const router = useRouter()
+
+  const switchLocale = (newLocale: Locale) => {
+    if (!pathname) return
+
+    // Remove current locale prefix from path
+    let basePath = pathname
+    if (pathname.startsWith(`/${locale}`)) {
+      basePath = pathname.slice(`/${locale}`.length) || '/'
+    }
+
+    // Add new locale prefix
+    const newPath = `/${newLocale}${basePath === '/' ? '' : basePath}`
+
+    // Set cookie for persistence
+    document.cookie = `NEXT_LOCALE=${newLocale}; path=/; max-age=31536000`
+
+    onClose()
+    router.push(newPath)
+  }
 
   const mainLinks = [
     { label: t.gallery, href: `${siteBase}/gallery/category/all/new` },
@@ -232,6 +253,48 @@ export function MobileMenu({ locale, opened, onClose }: MobileMenuProps) {
             ))}
           </Stack>
         </Box>
+      </Box>
+
+      {/* Language Switcher */}
+      <Box
+        style={{
+          padding: '12px 20px',
+          borderTop: '1px solid rgba(255, 255, 255, 0.1)',
+        }}
+      >
+        <Flex align="center" gap={8} mb={8}>
+          <IconWorld size={18} color="rgba(255, 255, 255, 0.6)" />
+          <Box
+            style={{
+              fontSize: 12,
+              textTransform: 'uppercase',
+              color: 'rgba(255, 255, 255, 0.5)',
+              letterSpacing: 0.5,
+            }}
+          >
+            {locale === 'ru' ? 'Язык' : 'Language'}
+          </Box>
+        </Flex>
+        <Group gap={8}>
+          {i18nConfig.locales.map((loc) => (
+            <UnstyledButton
+              key={loc}
+              onClick={() => switchLocale(loc)}
+              aria-label={`Switch to ${i18nConfig.localeLabels[loc]}`}
+              style={{
+                padding: '8px 16px',
+                borderRadius: 8,
+                background: locale === loc ? 'rgba(18, 184, 134, 0.2)' : 'rgba(48, 48, 48, 0.4)',
+                color: locale === loc ? '#12b886' : 'rgba(255, 255, 255, 0.8)',
+                fontWeight: locale === loc ? 500 : 400,
+                fontSize: 14,
+                border: locale === loc ? '1px solid rgba(18, 184, 134, 0.5)' : '1px solid transparent',
+              }}
+            >
+              {i18nConfig.localeLabels[loc]}
+            </UnstyledButton>
+          ))}
+        </Group>
       </Box>
 
       {/* GitHub Link */}
