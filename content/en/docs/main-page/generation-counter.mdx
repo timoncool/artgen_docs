@@ -1,17 +1,29 @@
+import { Callout } from '@/components/mdx'
+
 # Generation Counter
 
-The generation counter shows the number of available generations.
+![Generation Counter](/screens/user-stats.png)
 
-## Counter Location
+The generation counter displays the number of available generations and helps track your balance.
 
-The counter is displayed in the top right corner of the screen next to the user menu.
+<Callout type="info">
+  The counter is always visible at the top of the screen, allowing you to quickly check your remaining generations.
+</Callout>
 
-## Counter Types
+## Location
 
-- **Free** — daily free generations
-- **Purchased** — generations from packages
-- **Subscription** — generations within the tariff
+The counter is located at the top of the interface and is always available for viewing.
 
-## Counter Update
+## Counter Information
 
-The counter updates automatically after each generation or balance top-up.
+- **Current balance** — number of available generations
+- **Generation type** — daily or non-expiring
+- **Subscription status** — whether PRO subscription is active
+
+## Balance Updates
+
+The balance updates automatically:
+
+- After each generation
+- At the beginning of a new day (for daily generations)
+- After purchasing additional generations

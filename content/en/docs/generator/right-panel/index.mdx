@@ -1,18 +1,81 @@
+import { Steps, Callout } from '@/components/mdx'
+
 # Right Panel
 
-The right panel contains all settings for image generation.
+The right panel of the generator is the control center for all image generation parameters in ArtGeneration.me. Here you select the model, style, configure technical parameters, and use additional features.
 
-## Panel Sections
+## Panel Structure
 
-- **Models** — base model selection
-- **Styles** — artistic styles
-- **LoRA** — additional adapters
-- **Init Image** — image-to-image generation
-- **Face Swap** — face replacement
-- **Parameters** — fine-tuning
-- **Negative Prompt** — exclusions
-- **Resolution** — image size
-- **Performance Mode** — speed vs quality
+The right panel is organized into logical sections, each responsible for a specific aspect of generation:
+
+**Model and Style Selection** — the foundation of any generation. The model determines the "character" of the image, while the style adds an artistic direction.
+
+**Prompt Field** — this is where you describe what you want to get. A prompt is a text description of the desired image.
+
+**Additional Features** — LoRA, source image, Face Swap, and other tools for extended control.
+
+**Technical Parameters** — resolution, number of steps, CFG Scale, and other settings for fine-tuning the result.
+
+## Main Sections
+
+### Models
+Choosing an AI model is the most important generation parameter. Different models specialize in different styles: photorealism, anime, 3D, illustrations, and others.
+
+### Styles
+A collection of 307 unique styles that add an artistic direction to your prompt. You can combine up to 3 styles simultaneously.
+
+### LoRA
+Additional models for specific effects, characters, or styles. LoRA allows you to achieve results that are not possible with base models.
+
+### Source Image (img2img)
+Upload your image as a base for generation. Includes cropping, sketch drawing, and inpainting features.
+
+### Face Swap
+Face replacement in an image. Works with both generations and uploaded photos.
+
+### Generation Parameters
+Technical settings: Seed, CFG Scale, number of steps, sampler. For fine-tuning the result.
+
+### Negative Prompt
+Specify what to avoid during generation. Helps exclude unwanted elements and artifacts.
+
+### Resolution
+Choose the image size. Different models are optimized for different resolutions.
+
+### Performance Mode
+Balance between generation speed and quality.
+
+## Panel Controls
+
+### Collapsing
+The panel can be collapsed by clicking the arrow at the top. This increases the viewing area for results and is convenient when working with generation history.
+
+### Scrolling
+Use vertical scrolling to access all sections. On mobile devices, the panel adapts to the screen size.
+
+### Hotkeys
+Some actions are available via hotkeys to speed up your workflow.
+
+## Workflow
+
+Typical workflow with the right panel:
+
+<Steps>
+### Select a Model
+Determine the base generation style
+
+### Add Styles
+Refine the artistic direction
+
+### Write a Prompt
+Describe the desired image
+
+### Configure Parameters
+If necessary, change resolution and other settings
+
+### Start Generation
+Click the "Generate" button
+</Steps>
 
 ## Sections
 

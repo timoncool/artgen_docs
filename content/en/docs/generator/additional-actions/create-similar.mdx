@@ -1,3 +1,5 @@
+import { Callout, Steps } from '@/components/mdx'
+
 # Create Similar
 
 ![Create Similar](/screens/image-actions-toolbar.png)
@@ -8,9 +10,16 @@ The "Create Similar" function generates variations of an image with the same par
 
 When clicking the "Create Similar" button:
 
-1. All parameters of the original generation are copied
-2. A new seed is generated
-3. A new generation is started
+<Steps>
+### Copying Parameters
+All parameters of the original generation are copied.
+
+### Generating New Seed
+A new random seed is created.
+
+### Starting Generation
+A new generation is automatically started.
+</Steps>
 
 ## Result
 
@@ -28,4 +37,6 @@ You will get an image:
 
 ## Tips
 
+<Callout type="info">
 If you like the general direction but not the specific result, use this function several times to find the perfect variant.
+</Callout>
