@@ -6,7 +6,7 @@ import { useState } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { Locale, translations } from '@/lib/i18n/config'
-import { getDocsNavigation, NavItem } from '@/lib/navigation/config'
+import { getDocsNavigation, getExtraNavigation, NavItem } from '@/lib/navigation/config'
 
 interface SidebarProps {
   locale: Locale
@@ -111,6 +111,7 @@ function SidebarItem({ item, locale, depth = 0 }: SidebarItemProps) {
 export function Sidebar({ locale }: SidebarProps) {
   const t = translations[locale]
   const navigation = getDocsNavigation(locale)
+  const extraNavigation = getExtraNavigation(locale)
 
   return (
     <Box
@@ -153,6 +154,27 @@ export function Sidebar({ locale }: SidebarProps) {
           <SidebarItem key={item.slug} item={item} locale={locale} />
         ))}
       </Stack>
+
+      {/* Extra Navigation (News, About Docs) */}
+      <Box mt={24} mb={60}>
+        <Box
+          style={{
+            fontSize: 11,
+            textTransform: 'uppercase',
+            color: 'rgba(255, 255, 255, 0.4)',
+            marginBottom: 8,
+            paddingLeft: 12,
+            letterSpacing: 0.5,
+          }}
+        >
+          {t.aboutDocs}
+        </Box>
+        <Stack gap={4}>
+          {extraNavigation.map((item) => (
+            <SidebarItem key={item.slug} item={item} locale={locale} />
+          ))}
+        </Stack>
+      </Box>
 
       {/* GitHub Link */}
       <Anchor

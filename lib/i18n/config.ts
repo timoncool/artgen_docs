@@ -38,6 +38,11 @@ export const translations = {
     userMenu: 'Меню пользователя',
     faq: 'Часто задаваемые вопросы',
     rules: 'Правила сервиса',
+    navigation: 'Навигация',
+    news: 'Новости',
+    aboutDocs: 'О документации',
+    contributing: 'Как редактировать',
+    contributors: 'Участники',
   },
   en: {
     siteName: 'ArtGeneration.me — Documentation',
@@ -63,6 +68,11 @@ export const translations = {
     userMenu: 'User Menu',
     faq: 'FAQ',
     rules: 'Service Rules',
+    navigation: 'Navigation',
+    news: 'News',
+    aboutDocs: 'About Docs',
+    contributing: 'How to contribute',
+    contributors: 'Contributors',
   },
 } as const
 

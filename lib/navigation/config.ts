@@ -85,3 +85,24 @@ export function getDocsNavigation(locale: Locale): NavItem[] {
     },
   ]
 }
+
+export function getExtraNavigation(locale: Locale): NavItem[] {
+  const prefix = `/${locale}`
+
+  return [
+    {
+      slug: 'news',
+      titleKey: 'news',
+      href: `${prefix}/news`,
+    },
+    {
+      slug: 'about-docs',
+      titleKey: 'aboutDocs',
+      href: `${prefix}/about-docs`,
+      children: [
+        { slug: 'contributing', titleKey: 'contributing', href: `${prefix}/about-docs/contributing` },
+        { slug: 'contributors', titleKey: 'contributors', href: `${prefix}/about-docs/contributors` },
+      ],
+    },
+  ]
+}
