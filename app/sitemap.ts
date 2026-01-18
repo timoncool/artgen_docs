@@ -50,7 +50,45 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 1.0,
     })
 
-    // Collect from content directory
+    // Add news page
+    const newsDir = path.join(process.cwd(), 'content', locale, 'news')
+    if (fs.existsSync(newsDir)) {
+      const newsIndex = path.join(newsDir, 'index.mdx')
+      urls.push({
+        url: `${BASE_URL}/${locale}/news`,
+        lastModified: fs.existsSync(newsIndex) ? getModTime(newsIndex) : new Date(),
+        changeFrequency: 'weekly',
+        priority: 0.9,
+      })
+    }
+
+    // Add about-docs pages
+    const aboutDocsDir = path.join(process.cwd(), 'content', locale, 'about-docs')
+    if (fs.existsSync(aboutDocsDir)) {
+      const aboutDocsFiles = getAllMdxFiles(aboutDocsDir)
+      for (const file of aboutDocsFiles) {
+        const relativePath = path.relative(aboutDocsDir, file)
+        const slug = relativePath
+          .replace(/\.mdx$/, '')
+          .replace(/\/index$/, '')
+          .replace(/\\/g, '/')
+
+        const url = slug
+          ? `${BASE_URL}/${locale}/about-docs/${slug}`
+          : `${BASE_URL}/${locale}/about-docs`
+
+        if (!urls.some((u) => u.url === url)) {
+          urls.push({
+            url,
+            lastModified: getModTime(file),
+            changeFrequency: 'monthly',
+            priority: 0.7,
+          })
+        }
+      }
+    }
+
+    // Collect from docs content directory
     const contentDir = path.join(process.cwd(), 'content', locale, 'docs')
     if (fs.existsSync(contentDir)) {
       const files = getAllMdxFiles(contentDir)

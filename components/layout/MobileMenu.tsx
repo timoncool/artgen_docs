@@ -38,6 +38,8 @@ function MobileNavItem({ item, locale, depth = 0, onClose }: MobileNavItemProps)
         {hasChildren && (
           <UnstyledButton
             onClick={() => setOpened(!opened)}
+            aria-label={`Toggle ${title} section`}
+            aria-expanded={opened}
             style={{
               display: 'flex',
               alignItems: 'center',

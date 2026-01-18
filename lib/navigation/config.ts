@@ -14,7 +14,6 @@ export interface NavSection {
 }
 
 export function getDocsNavigation(locale: Locale): NavItem[] {
-  const t = translations[locale]
   const prefix = `/${locale}/docs`
 
   return [
@@ -68,9 +67,53 @@ export function getDocsNavigation(locale: Locale): NavItem[] {
       children: [
         { slug: 'query-language', titleKey: 'overview', href: `${prefix}/generator/query-language` },
         { slug: 'query-tips', titleKey: 'overview', href: `${prefix}/generator/query-tips` },
-        { slug: 'left-panel', titleKey: 'overview', href: `${prefix}/generator/left-panel` },
-        { slug: 'right-panel', titleKey: 'overview', href: `${prefix}/generator/right-panel` },
-        { slug: 'additional-actions', titleKey: 'overview', href: `${prefix}/generator/additional-actions` },
+        {
+          slug: 'left-panel',
+          titleKey: 'overview',
+          href: `${prefix}/generator/left-panel`,
+          children: [
+            { slug: 'favorites', titleKey: 'overview', href: `${prefix}/generator/left-panel/favorites` },
+            { slug: 'folders', titleKey: 'overview', href: `${prefix}/generator/left-panel/folders` },
+            { slug: 'history', titleKey: 'overview', href: `${prefix}/generator/left-panel/history` },
+            { slug: 'quick-actions', titleKey: 'overview', href: `${prefix}/generator/left-panel/quick-actions` },
+          ],
+        },
+        {
+          slug: 'right-panel',
+          titleKey: 'overview',
+          href: `${prefix}/generator/right-panel`,
+          children: [
+            { slug: 'models', titleKey: 'overview', href: `${prefix}/generator/right-panel/models` },
+            { slug: 'styles', titleKey: 'overview', href: `${prefix}/generator/right-panel/styles` },
+            { slug: 'loras', titleKey: 'overview', href: `${prefix}/generator/right-panel/loras` },
+            { slug: 'resolution', titleKey: 'overview', href: `${prefix}/generator/right-panel/resolution` },
+            { slug: 'parameters', titleKey: 'overview', href: `${prefix}/generator/right-panel/parameters` },
+            { slug: 'negative-prompt', titleKey: 'overview', href: `${prefix}/generator/right-panel/negative-prompt` },
+            { slug: 'init-image', titleKey: 'overview', href: `${prefix}/generator/right-panel/init-image` },
+            { slug: 'face-swap', titleKey: 'overview', href: `${prefix}/generator/right-panel/face-swap` },
+            { slug: 'performance-mode', titleKey: 'overview', href: `${prefix}/generator/right-panel/performance-mode` },
+          ],
+        },
+        {
+          slug: 'additional-actions',
+          titleKey: 'overview',
+          href: `${prefix}/generator/additional-actions`,
+          children: [
+            { slug: 'copy-link', titleKey: 'overview', href: `${prefix}/generator/additional-actions/copy-link` },
+            { slug: 'download', titleKey: 'overview', href: `${prefix}/generator/additional-actions/download` },
+            { slug: 'fullscreen', titleKey: 'overview', href: `${prefix}/generator/additional-actions/fullscreen` },
+            { slug: 'create-similar', titleKey: 'overview', href: `${prefix}/generator/additional-actions/create-similar` },
+            { slug: 'own-image', titleKey: 'overview', href: `${prefix}/generator/additional-actions/own-image` },
+            { slug: 'upscale', titleKey: 'overview', href: `${prefix}/generator/additional-actions/upscale` },
+            { slug: 'upscale-2x', titleKey: 'overview', href: `${prefix}/generator/additional-actions/upscale-2x` },
+            { slug: 'face-restoration', titleKey: 'overview', href: `${prefix}/generator/additional-actions/face-restoration` },
+            { slug: 'restoration-upscale', titleKey: 'overview', href: `${prefix}/generator/additional-actions/restoration-upscale` },
+            { slug: 'outpainting', titleKey: 'overview', href: `${prefix}/generator/additional-actions/outpainting` },
+            { slug: 'inpainting', titleKey: 'overview', href: `${prefix}/generator/additional-actions/inpainting` },
+            { slug: 'image-to-image', titleKey: 'overview', href: `${prefix}/generator/additional-actions/image-to-image` },
+            { slug: 'variations', titleKey: 'overview', href: `${prefix}/generator/additional-actions/variations` },
+          ],
+        },
       ],
     },
     {

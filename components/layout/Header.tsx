@@ -74,7 +74,7 @@ export function Header({ locale }: HeaderProps) {
             align="center"
             justify="center"
             wrap="wrap"
-            className="tw-hidden screen-768:tw-flex"
+            className="tw-flex screen-768:tw-hidden"
             style={{ flex: 1 }}
           >
             {navLinks.map((link) => (
@@ -118,7 +118,7 @@ export function Header({ locale }: HeaderProps) {
           <Flex
             align="center"
             gap={8}
-            className="tw-hidden screen-768:tw-flex"
+            className="tw-flex screen-768:tw-hidden"
             style={{
               cursor: 'pointer',
               padding: '4px 8px',
@@ -133,7 +133,7 @@ export function Header({ locale }: HeaderProps) {
             }}
           >
             <span
-              className="tw-hidden screen-1000:tw-inline"
+              className="tw-inline screen-1000:tw-hidden"
               style={{
                 color: 'white',
                 fontSize: 14,
@@ -157,7 +157,9 @@ export function Header({ locale }: HeaderProps) {
 
           {/* Mobile Menu Button */}
           <Box
-            className="tw-block screen-768:tw-hidden"
+            className="tw-hidden screen-768:tw-block"
+            role="button"
+            aria-label="Open navigation menu"
             onClick={() => setMobileMenuOpened(true)}
             style={{
               cursor: 'pointer',

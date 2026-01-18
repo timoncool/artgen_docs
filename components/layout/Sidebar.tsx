@@ -37,6 +37,8 @@ function SidebarItem({ item, locale, depth = 0 }: SidebarItemProps) {
         {hasChildren && (
           <UnstyledButton
             onClick={() => setOpened(!opened)}
+            aria-label={`Toggle ${title} section`}
+            aria-expanded={opened}
             style={{
               display: 'flex',
               alignItems: 'center',
@@ -127,7 +129,7 @@ export function Sidebar({ locale }: SidebarProps) {
         borderRight: '1px solid rgba(255, 255, 255, 0.1)',
         padding: '16px 12px',
       }}
-      className="tw-hidden screen-768:tw-block"
+      className="tw-block screen-768:tw-hidden"
     >
       {/* Search */}
       <Box mb={16}>

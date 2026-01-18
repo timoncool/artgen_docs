@@ -1,6 +1,6 @@
 'use client'
 
-import { Menu, UnstyledButton, Flex } from '@mantine/core'
+import { Menu, UnstyledButton } from '@mantine/core'
 import { IconWorld, IconCheck } from '@tabler/icons-react'
 import { usePathname, useRouter } from 'next/navigation'
 import { Locale, i18nConfig } from '@/lib/i18n/config'
@@ -15,8 +15,15 @@ export function LocaleSwitcher({ locale }: LocaleSwitcherProps) {
 
   const switchLocale = (newLocale: Locale) => {
     if (!pathname) return
-    // Replace current locale in path
-    const newPath = pathname.replace(`/${locale}`, `/${newLocale}`)
+
+    // Remove current locale prefix from path
+    let basePath = pathname
+    if (pathname.startsWith(`/${locale}`)) {
+      basePath = pathname.slice(`/${locale}`.length) || '/'
+    }
+
+    // Add new locale prefix
+    const newPath = `/${newLocale}${basePath === '/' ? '' : basePath}`
 
     // Set cookie for persistence
     document.cookie = `NEXT_LOCALE=${newLocale}; path=/; max-age=31536000`
@@ -47,7 +54,9 @@ export function LocaleSwitcher({ locale }: LocaleSwitcherProps) {
     >
       <Menu.Target>
         <UnstyledButton
-          className="tw-hidden screen-768:tw-flex"
+          className="tw-flex screen-768:tw-hidden"
+          aria-label="Select language"
+          aria-haspopup="menu"
           style={{
             display: 'flex',
             alignItems: 'center',
