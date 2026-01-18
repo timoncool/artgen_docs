@@ -1,53 +1,89 @@
+import { Callout, Steps } from '@/components/mdx'
+
 # Gallery View
 
-![Gallery View](/images/blog/img_027.png)
+![Gallery View](/screens/gallery-grid.png)
 
-The ArtGeneration.me gallery displays images in an adaptive grid, optimized for convenient viewing on any device.
+The ArtGeneration.me gallery displays images in a responsive grid optimized for convenient viewing on any device.
 
 ## Gallery Interface
 
 The main gallery page consists of several elements:
 
-**Navigation panel** - at the top are categories and filters for quick access to the desired sections.
+**Navigation Panel** — at the top, there are categories and filters for quick access to the desired sections.
 
-**Search bar** - allows searching for images by keywords, prompts, or authors.
+**Search Bar** — allows you to search for images by keywords, prompts, or authors.
 
-**Image grid** - the main area with image cards organized in an adaptive grid.
+**Image Grid** — the main area with image cards organized in a responsive grid.
 
-**Side panel** - on desktop, a panel with additional filters and categories may be displayed.
+## Image Cards
+
+![Cards with dates](/screens/gallery-thumbnails-with-dates.png)
+
+Each card displays:
+- Image thumbnail
+- Creation date
+- Icon for multiple selection
+
+## Bulk Image Selection
+
+![Bulk selection](/screens/gallery-bulk-select.png)
+
+You can select multiple images for group operations:
+
+<Steps>
+### Activate selection mode
+Click on the checkbox in the corner of the image card.
+
+### Select the desired images
+Mark all the images you want to work with.
+
+### Use the action panel
+Choose the desired action in the panel above.
+</Steps>
+
+The bulk selection panel displays:
+- Number of selected images
+- Action dropdown list
+- Deselect button
+
+### Available Actions
+
+![Actions menu](/screens/gallery-bulk-delete-menu.png)
+
+<Callout type="warning">
+  Deleting images is irreversible. Make sure you have selected the correct files.
+</Callout>
+
+- **Change visibility** — make images public or private
+- **Delete** — delete selected images
+
+## Pagination
+
+![Pagination](/screens/gallery-pagination.png)
+
+Gallery page navigation:
+- Page numbers
+- Forward/back arrows
+- Current page indicator
 
 ## Display Modes
 
-**Grid** - compact display of many images. Optimal for quick browsing and finding inspiration.
+**Grid** — compact display of multiple images. Optimal for quick browsing.
 
-**Masonry** - images are displayed while preserving original proportions, creating a dynamic layout.
+**Masonry** — images are displayed while preserving their original proportions.
 
 ## Gallery Navigation
 
-**Infinite scroll** - when scrolling down, new images are automatically loaded. This allows continuous content viewing without page switching.
+**Infinite scroll** — new images are automatically loaded when scrolling down.
 
-**Quick return to top** - a button in the lower right corner allows instant return to the beginning of the gallery.
-
-**Keyboard navigation** - use arrows to move between images in viewing mode.
+**Quick return to top** — button in the bottom right corner to return to the beginning.
 
 ## Responsiveness
 
-The gallery automatically adapts to screen size:
+The gallery automatically adapts to the screen size:
 
-**Desktop (1920px+)** - 5-6 columns, maximum number of images on screen.
-
-**Laptop (1200-1920px)** - 4-5 columns, comfortable viewing on medium screens.
-
-**Tablet (768-1200px)** - 3-4 columns, optimized for touch control.
-
-**Mobile (up to 768px)** - 2 columns, convenient one-handed viewing.
-
-## Image Loading
-
-Images load gradually using lazy loading. This ensures fast initial page load and saves bandwidth.
-
-Image previews are optimized for fast loading, and full-size versions are loaded only when opening detailed view.
-
-## Caching
-
-Viewed images are cached in the browser, which speeds up repeated viewing and reduces network load.
+- **Desktop (1920px+)** — 5-6 columns
+- **Laptop (1200-1920px)** — 4-5 columns
+- **Tablet (768-1200px)** — 3-4 columns
+- **Mobile (up to 768px)** — 2 columns
