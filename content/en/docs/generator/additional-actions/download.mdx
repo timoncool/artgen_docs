@@ -6,19 +6,25 @@ import { Callout, Steps, Tabs, Tab } from '@/components/mdx'
 
 The download function allows you to save an image to your device in various formats.
 
+## Image Storage
+
+<Callout type="info">
+All images are stored on the server in **WebP format without quality loss**. When downloading, you can choose any format without degrading the original quality.
+</Callout>
+
 ## Available Formats
 
 When downloading, you can choose the format:
 
 <Tabs items={['WebP', 'PNG', 'JPG']}>
   <Tab>
-    Modern format with excellent compression. Recommended for publishing on the web.
+    **WebP** — modern format with excellent compression. Recommended for publishing on the web. Native storage format.
   </Tab>
   <Tab>
-    High quality without loss. Ideal for further editing.
+    **PNG** — high quality without loss. Ideal for further editing.
   </Tab>
   <Tab>
-    Universal format with good compression. Suitable for most tasks.
+    **JPG** — universal format with good compression. Suitable for most tasks.
   </Tab>
 </Tabs>
 

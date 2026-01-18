@@ -4,80 +4,57 @@ import { Callout, Steps } from '@/components/mdx'
 
 ![Gallery View](/screens/gallery-grid.png)
 
-The ArtGeneration.me gallery displays images in a responsive grid optimized for convenient viewing on any device.
+The ArtGeneration.me gallery showcases user-created images in an interactive grid optimized for convenient viewing on any device.
 
-## Gallery Interface
+## Image Count Slider
 
-The main gallery page consists of several elements:
+At the top of the gallery, there is a slider for adjusting the number of displayed images. This allows you to customize the grid density to your preferences:
+- More images — compact overview of many works
+- Fewer images — larger previews for detailed examination
 
-**Navigation Panel** — at the top, there are categories and filters for quick access to the desired sections.
+## Interactive Cards
 
-**Search Bar** — allows you to search for images by keywords, prompts, or authors.
+![Gallery Cards](/screens/gallery-thumbnails-with-dates.png)
 
-**Image Grid** — the main area with image cards organized in a responsive grid.
+Each image is presented as an interactive card. When hovering over a thumbnail, the following is displayed:
 
-## Image Cards
+- **Likes count** — the number of users who rated the work
+- **Favorites icon** — quick addition to your favorites collection
+- **Brief prompt with copy button** — prompt text and ability to copy it with one click
+- **Creator username with link** — navigate to the creator's profile
 
-![Cards with dates](/screens/gallery-thumbnails-with-dates.png)
-
-Each card displays:
-- Image thumbnail
-- Creation date
-- Icon for multiple selection
-
-## Bulk Image Selection
-
-![Bulk selection](/screens/gallery-bulk-select.png)
-
-You can select multiple images for group operations:
+## Card Actions
 
 <Steps>
-### Activate selection mode
-Click on the checkbox in the corner of the image card.
+### Copy prompt
+Click the copy button to save the prompt to your clipboard and use it for your own generation.
 
-### Select the desired images
-Mark all the images you want to work with.
+### Open fullsize
+Click on the image to view it in full-size mode with all generation parameters.
 
-### Use the action panel
-Choose the desired action in the panel above.
+### Navigate to creator profile
+Click on the username below the image to visit the creator's profile page.
 </Steps>
 
-The bulk selection panel displays:
-- Number of selected images
-- Action dropdown list
-- Deselect button
+## Categories and Filters
 
-### Available Actions
+The gallery supports filtering by various categories:
+- **Anime** — works in Japanese animation style
+- **Characters** — portraits and character images
+- **Classical styles** — works in traditional artistic styles
+- **Fantasy** — fantastical worlds and creatures
+- **Landscapes** — natural and urban views
 
-![Actions menu](/screens/gallery-bulk-delete-menu.png)
+## Community Voting
 
-<Callout type="warning">
-  Deleting images is irreversible. Make sure you have selected the correct files.
+<Callout type="info">
+  User likes determine gallery covers. Works with the most votes become the main images for sections.
 </Callout>
 
-- **Change visibility** — make images public or private
-- **Delete** — delete selected images
-
-## Pagination
-
-![Pagination](/screens/gallery-pagination.png)
-
-Gallery page navigation:
-- Page numbers
-- Forward/back arrows
-- Current page indicator
-
-## Display Modes
-
-**Grid** — compact display of multiple images. Optimal for quick browsing.
-
-**Masonry** — images are displayed while preserving their original proportions.
-
-## Gallery Navigation
-
-**Infinite scroll** — new images are automatically loaded when scrolling down.
-
-**Quick return to top** — button in the bottom right corner to return to the beginning.
+The voting system allows the community to highlight the best works:
+- Like images you enjoy
+- Works with more likes receive priority in display
+- The most popular works become category covers
 
 ## Responsiveness
 
@@ -87,3 +64,9 @@ The gallery automatically adapts to the screen size:
 - **Laptop (1200-1920px)** — 4-5 columns
 - **Tablet (768-1200px)** — 3-4 columns
 - **Mobile (up to 768px)** — 2 columns
+
+## Gallery Navigation
+
+**Infinite scroll** — new images are automatically loaded when scrolling down.
+
+**Quick return to top** — button in the bottom right corner to return to the beginning of the gallery.

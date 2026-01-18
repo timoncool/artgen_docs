@@ -1,81 +1,74 @@
+import { Callout, Steps } from '@/components/mdx'
+
 # Main Gallery
 
-![Main Gallery](/images/blog/img_028.png)
+![Main Gallery ArtGeneration.me](/screens/gallery-home.png)
 
-The gallery is the heart of the ArtGeneration.me community, where the best user works are collected. Here you can find inspiration, study techniques of other artists, and discover new styles.
+The gallery showcases user-created images in an interactive grid. Here you can find inspiration, study techniques of other artists, and discover new styles.
 
-## Search and Categories
+## Image Count Slider
 
-![Search and Categories](/images/blog/img_030.png)
+At the top of the gallery, there is a slider that allows you to adjust the number of displayed images on the page. Move the slider to increase or decrease the number of visible works.
 
-At the top of the gallery is a search bar and category filters. You can search for images by keywords or select a category of interest from the list.
+## Categories and Filters
+
+![Category Filter](/screens/category-filter-dialog.png)
+
+The gallery supports filtering by categories for convenient search of works on specific themes.
 
 **Available categories:**
-- All
-- Portraits
-- Landscapes
-- Fantasy
-- Sci-Fi
 - Anime
-- Abstract
+- Characters
+- Classical styles
+- Fantasy
+- Landscapes
+- Cyberpunk
 - And many more
 
-## Cover Interaction
+## Interactive Image Cards
 
-When hovering over an image in the gallery, interactive elements appear:
-- **Heart** - add to favorites
-- **Eye** - quick view
-- **Info** - generation details
+![Gallery Grid](/screens/gallery-grid.png)
 
-## Gallery View
+Each image in the gallery is presented as an interactive card with multiple functions.
 
-![Gallery View](/images/blog/img_032.png)
+### When hovering over a thumbnail, the following is displayed:
 
-The gallery is displayed as a grid of images. You can scroll down to load new works. Images are automatically loaded as you scroll.
+- **Likes count** — the number of users who rated the work
+- **Favorites icon** — ability to add to favorites
+- **Brief prompt with copy button** — quick access to the prompt text
+- **Creator username with link** — navigate to the creator's profile
 
-### Sorting
+### Available card actions:
 
-The following sorting options are available:
-- **New** - the freshest works
-- **Popular** - works with the most likes
-- **Discussed** - works with active comments
+<Steps>
+### Copy prompt
+Click the copy button next to the prompt to use it for your own generation.
+
+### Open fullsize
+Click on the image to view it in full-size mode with all generation details.
+
+### Navigate to creator profile
+Click on the username to go to the creator's profile page and see their other works.
+</Steps>
+
+## Community Voting
+
+<Callout type="info">
+  User likes determine cover images — works with the most votes become the main images for categories and sections.
+</Callout>
+
+The voting system allows the community to highlight the best works. The more likes an image receives, the higher its chances of becoming a section cover.
 
 ## Image View
 
-![Image View](/images/blog/img_008.png)
+![Image Card](/screens/image-view-card.png)
 
-Clicking on an image opens full-screen view with detailed generation information.
-
-### View Elements
-
-In viewing mode, the following are available:
-- **Full-size image** - high quality
-- **Author information** - creator's profile
-- **Generation parameters** - prompt, model, settings
-- **Actions** - download, share, create version
-
-### Generation Details
-
-![Generation Details](/images/blog/img_008.png)
-
-The right panel displays all parameters used to create the image:
-- Text prompt
-- Negative prompt
-- Model
-- Image size
-- Seed
-- Number of steps
-- CFG Scale
-
-### Similar Images
-
-Below the main image, similar works that may interest you are displayed. The algorithm selects images based on style, theme, and parameters used.
-
-### Create Your Version
-
-![Create Your Version](/images/blog/img_013.png)
-
-Click the "Create your version" button to use the parameters of a liked image as a basis for your own generation. All settings will be automatically transferred to the generator.
+Clicking on an image opens a card with detailed information:
+- Full-size image
+- Complete prompt text
+- Generation parameters
+- Creator profile
+- "Create your version" button
 
 ## Sections
 

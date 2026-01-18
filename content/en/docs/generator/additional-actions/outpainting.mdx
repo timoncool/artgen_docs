@@ -1,28 +1,67 @@
+import { Callout, Steps } from '@/components/mdx'
+
 # Outpainting
 
-Extend image boundaries beyond the original frame.
+![Outpainting](/screens/outpainting-menu.png)
+
+Outpainting allows you to expand an image beyond its current boundaries, adding new content in chosen directions.
 
 ## How It Works
 
-The AI analyzes the existing image and generates content that seamlessly continues beyond the edges.
+The AI analyzes the existing image and generates a continuation:
+- Preserves style and atmosphere
+- Continues the composition
+- Adds logical elements
 
 ## Extension Directions
 
-- Left
-- Right
-- Top
-- Bottom
-- All directions
+You can expand the image in any direction:
+- **Extend top** — add content above the image
+- **Extend left** — expand to the left
+- **Extend right** — expand to the right
+- **Extend bottom** — add content below the image
+
+## How to Use
+
+<Steps>
+### Hover over the image
+Select the image to expand.
+
+### Click the Outpainting button
+A direction selection menu will open.
+
+### Choose the direction
+Specify which direction to expand the image.
+
+### Modify the prompt (optional)
+If needed, you can modify the prompt to specify the desired content for the expanded area.
+
+### Get the result
+AI will generate the image continuation.
+</Steps>
+
+## Expansion Limits
+
+<Callout type="warning">
+**Important:** Image quality degrades with each successive expansion.
+
+- Maximum of **~4 expansions** possible for a single image
+- **Recommended: no more than 2 expansions** to maintain good quality
+- With more expansions, quality degrades significantly
+</Callout>
 
 ## Use Cases
 
-- Create wider panoramas
-- Add more context
-- Change aspect ratio
-- Create backgrounds
+- Changing aspect ratio
+- Adding space for text
+- Expanding composition
+- Creating panoramic images
 
 ## Tips
 
-- Extend gradually for best results
-- Provide context in the prompt
-- Check edge blending quality
+<Callout type="info">
+- Start with small expansions
+- Use prompt modification to control content
+- Limit to 1-2 expansions for best quality
+- Check consistency of added content
+</Callout>

@@ -1,29 +1,85 @@
+import { Callout, Steps } from '@/components/mdx'
+
 # Models
 
-Models are the foundation for image generation. Each model has unique characteristics.
+![Model selection](/screens/model-selection-new.webp)
 
-## Model Types
+A model is like an operating system. If ArtGeneration.me is a computer, then the model is its operating system. Everything you can generate depends on the model.
 
-### Realistic
-Models for photorealistic images, portraits, landscapes.
+## Base Architectures
 
-### Anime
-Models for anime and manga style images.
+The platform uses two main architectures:
 
-### Artistic
-Models for artistic styles, illustrations, digital art.
+- **SDXL** — a high-quality architecture for creating detailed images
+- **FLUX** — the newest architecture with deep prompt understanding and improved instruction following
 
-### Universal
-Models suitable for various tasks.
+Based on these base architectures, the community around the world trains their own *specialized models* for different styles.
 
-## Choosing a Model
+## Model Categories
 
-Consider:
-- Desired style
-- Subject matter
-- Quality requirements
-- Generation speed
+![Model filters](/screens/model-filter-tags.png)
 
-## Model Updates
+Different models are oriented towards different results. On model cards, you will notice various category labels:
 
-New models are added regularly. Check the "New" section for latest additions.
+- **PHOTO** — models for photorealistic images
+- **ANIME** — models for creating illustrations in Japanese animation style
+- **ART** — models for creating various illustrations
+- **3D** — models for creating 3D-style characters, like Pixar
+- **2.5D** — models that bridge realism and anime aesthetics
+- **DESIGN** — models for typography and interiors
+- **NSFW** — models for adult content
+
+<Callout type="info">
+It's better to generate anime on an anime model and photorealistic images on a photo model. Choose a model according to your desired style.
+</Callout>
+
+## Additional Labels
+
+Besides style categories, models may have other labels:
+
+- **HIT** — most popular models
+- **NEW** — recently added models
+- **SDXL** — model built on SDXL architecture
+- **FLUX** — model built on FLUX architecture
+
+## Model Card
+
+![Model card](/screens/model-card-juggernaut.png)
+
+Hover over a model card to see the description. The card displays:
+- Preview image created with the model
+- Model name
+- Price per generation in coins
+- Labels (HIT, NEW, etc.)
+
+## Model Information
+
+![Model information](/screens/model-description-juggernaut.png)
+
+Click on a model card to see detailed description:
+- Model capabilities
+- Usage recommendations
+- LoRA support
+- Optimal settings
+
+## Status Indicators
+
+The platform rents hundreds of GPUs from multiple providers. Since there are many models, some may be more loaded than others. Status indicators help understand the current load:
+
+- **Green** — model is running stably
+- **Yellow** — model is loaded but functional
+- **Red** — model is overloaded
+
+<Callout type="info">
+A red indicator is not a death sentence. You can try using the model and it might work fine. This is just statistical information for guidance.
+</Callout>
+
+## Model Filtering
+
+![Model filter dialog](/screens/model-filter-dialog.png)
+
+In the filter dialog you can:
+- Switch between "Categories" and "Models" tabs
+- Select multiple categories at once
+- Search models by name
+- See a brief description and price for each model

@@ -1,16 +1,38 @@
+import { Callout, Steps } from '@/components/mdx'
+
 # Upscale 2x
 
 ![Upscale 2x](/screens/image-actions-toolbar.png)
 
-The upscale function allows you to increase image resolution by 2 times while preserving quality.
+The upscale function doubles the image size while preserving quality.
 
 ## How It Works
 
 Upscale uses special AI algorithms for:
-- Increasing image size
+- Increasing image size by 2 times
 - Adding details
 - Preserving sharpness
 - Eliminating scaling artifacts
+
+## How to Use
+
+<Steps>
+### Hover over the image
+Select the image you want to upscale.
+
+### Click the "Upscale 2x" button
+The button will appear on the action toolbar.
+
+### Wait for processing
+The result will open in a popup window.
+
+### Download the result
+The upscaled image must be downloaded manually from the popup window.
+</Steps>
+
+<Callout type="info">
+The upscale result opens in a popup window. To save the upscaled image, you need to download it manually.
+</Callout>
 
 ## Result
 
@@ -29,6 +51,8 @@ Upscale consumes generations from your balance. The amount depends on the source
 
 ## Limitations
 
+<Callout type="warning">
 - Maximum size after upscaling is limited
 - Very small images may lose quality
 - Some artifacts may be amplified when upscaling
+</Callout>
