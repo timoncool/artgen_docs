@@ -17,6 +17,8 @@ Seed is the initial value for the random number generator. This number determine
 - A random seed gives a unique result each time
 - You can copy the seed value of a generation you like and use it to create variations
 - Click the dice icon to generate a random value
+- **Green dice** means the seed will be random for each generation
+- To lock a specific seed value, enter a number manually — the dice will turn gray
 
 **Applications:**
 - Found a good composition? Lock the seed and experiment with the prompt
@@ -33,33 +35,46 @@ You can generate from 1 to 4 images per request. This is convenient for quickly 
 
 ![Private Mode](/screens/private-mode-toggle.png)
 
-Enable "Private Mode" so your images are not displayed in the public gallery and are visible only to you.
+Private Mode hides your generations from all users — images will only be visible to you and won't appear in the public gallery.
 
-## CFG Scale (Guidance Scale)
+**How it works:**
+- **Closed eye** — private mode is enabled, generations are hidden
+- **Open eye** — mode is disabled, generations are public
+- Mode is **automatically enabled** when using "Your Image" (img2img) feature to protect your source images
+
+<Callout type="info">
+Private generations are not counted in gallery statistics and are inaccessible to other users even via direct link.
+</Callout>
+
+## Prompt Adherence (CFG Scale)
 
 CFG Scale determines how strictly the model follows your prompt. This is one of the most important parameters for controlling the result.
 
 **Values:**
 - **1-4** — The model has great creative freedom, can significantly deviate from the prompt
-- **5-7** — Balance between following the prompt and creative freedom. Recommended for most tasks
+- **5-7** — Balance between following the prompt and creative freedom
 - **8-12** — The model strictly follows the prompt
-- **13-20** — Very strict adherence. May lead to artifacts
+- **Above 10** — Use only if you know exactly what you're doing. May lead to artifacts
+
+**Recommendations by model type:**
+- **Photorealistic models:** CFG **5**
+- **Anime and 2.5D models:** CFG **7**
 
 <Callout emoji="💡">
-**Recommendation:** Start with **7** and adjust based on results.
+Start with the recommended value for your model type and adjust based on results. Too high CFG can lead to oversaturated colors and artifacts.
 </Callout>
 
-## Generation Steps
+## Detail Level (Steps)
 
-The number of steps determines how many iterations the model goes through when creating an image. More steps means more details, but also more time.
+The number of steps (neural network passes) determines how many iterations the model goes through when creating an image. More steps means more details, but also more generation time.
 
 **Values:**
 - **15-25** — Fast generation, basic quality
-- **25-35** — Optimal balance of quality and speed
-- **35-50** — High quality for final works
+- **25-30** — Optimal balance of quality and speed
+- **30+** — Changes are barely noticeable for most models
 
 <Callout type="info">
-After a certain number of steps, quality stops improving. For most models, this is 30-40 steps.
+**Important:** Beyond 30 steps, quality improvements are barely noticeable, but generation time continues to increase. We recommend using 25-30 steps for optimal results.
 </Callout>
 
 ## Sampler
@@ -75,6 +90,22 @@ The sampler is an algorithm that determines how the model "moves" from noise to 
 <Callout emoji="💡">
 If you don't know which sampler to choose — use **DPM++ 2M Karras** or **Euler a**.
 </Callout>
+
+## Grain
+
+<Callout type="warning">
+This parameter is available **only on GE models** (Genesis Engine).
+</Callout>
+
+Grain adds controlled noise to the image, which allows you to:
+- Improve fine detail rendering
+- Create a film photography effect
+- Add texture and "liveliness" to the image
+
+**Applications:**
+- For photorealistic portraits — adds natural skin texture
+- For landscapes — creates atmosphere and depth
+- For vintage or film stylization — enhances the retro effect
 
 ## Parameter Relationships
 
