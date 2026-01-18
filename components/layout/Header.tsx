@@ -6,12 +6,15 @@ import { IconUser, IconMenu2 } from '@tabler/icons-react'
 import { Locale, translations, getSiteBase } from '@/lib/i18n/config'
 import { LocaleSwitcher } from './LocaleSwitcher'
 import { MobileMenu } from './MobileMenu'
+import { NavItem } from '@/lib/navigation/build-nav'
 
 interface HeaderProps {
   locale: Locale
+  navigation: NavItem[]
+  extraNavigation: NavItem[]
 }
 
-export function Header({ locale }: HeaderProps) {
+export function Header({ locale, navigation, extraNavigation }: HeaderProps) {
   const [mobileMenuOpened, setMobileMenuOpened] = useState(false)
   const t = translations[locale]
   const siteBase = getSiteBase(locale)
@@ -184,6 +187,8 @@ export function Header({ locale }: HeaderProps) {
         locale={locale}
         opened={mobileMenuOpened}
         onClose={() => setMobileMenuOpened(false)}
+        navigation={navigation}
+        extraNavigation={extraNavigation}
       />
     </>
   )

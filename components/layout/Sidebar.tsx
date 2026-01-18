@@ -6,10 +6,12 @@ import { useState } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { Locale, translations } from '@/lib/i18n/config'
-import { getDocsNavigation, getExtraNavigation, NavItem } from '@/lib/navigation/config'
+import { NavItem } from '@/lib/navigation/build-nav'
 
 interface SidebarProps {
   locale: Locale
+  navigation: NavItem[]
+  extraNavigation: NavItem[]
 }
 
 interface SidebarItemProps {
@@ -20,7 +22,6 @@ interface SidebarItemProps {
 
 function SidebarItem({ item, locale, depth = 0 }: SidebarItemProps) {
   const pathname = usePathname() || ''
-  const t = translations[locale]
   const [opened, setOpened] = useState(
     pathname.startsWith(item.href) || !!item.children?.some(child => pathname.startsWith(child.href))
   )
@@ -28,8 +29,8 @@ function SidebarItem({ item, locale, depth = 0 }: SidebarItemProps) {
   const isActive = pathname === item.href
   const hasChildren = item.children && item.children.length > 0
 
-  // Get title from meta files or use titleKey
-  const title = t[item.titleKey] || item.slug
+  // Use the title directly from the item
+  const title = item.title
 
   return (
     <Box>
@@ -110,10 +111,8 @@ function SidebarItem({ item, locale, depth = 0 }: SidebarItemProps) {
   )
 }
 
-export function Sidebar({ locale }: SidebarProps) {
+export function Sidebar({ locale, navigation, extraNavigation }: SidebarProps) {
   const t = translations[locale]
-  const navigation = getDocsNavigation(locale)
-  const extraNavigation = getExtraNavigation(locale)
 
   return (
     <Box

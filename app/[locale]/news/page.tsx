@@ -34,7 +34,7 @@ export default async function NewsPage({ params }: NewsPageProps) {
   }
 
   return (
-    <article style={{ padding: '24px 48px', maxWidth: 900, margin: '0 auto' }}>
+    <article>
       <MDXContent />
     </article>
   )

@@ -1,45 +1,9 @@
-'use client'
-
-import { MantineProvider, createTheme } from '@mantine/core'
 import { ReactNode } from 'react'
 import { Header } from '@/components/layout'
+import { Providers } from '@/components/Providers'
+import { buildNavigation, buildExtraNavigation } from '@/lib/navigation/build-nav'
+import { Locale } from '@/lib/i18n/config'
 import '../globals.css'
-
-const theme = createTheme({
-  primaryColor: 'teal',
-  primaryShade: 6,
-  colors: {
-    teal: [
-      '#e6fcf5',
-      '#c3fae8',
-      '#96f2d7',
-      '#63e6be',
-      '#38d9a9',
-      '#20c997',
-      '#12b886',
-      '#0ca678',
-      '#099268',
-      '#087f5b',
-    ],
-  },
-  fontFamily: 'Roboto, -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif',
-  headings: {
-    fontFamily: 'Roboto, -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif',
-  },
-  defaultRadius: 'md',
-  components: {
-    Button: {
-      defaultProps: {
-        radius: 'md',
-      },
-    },
-    Paper: {
-      defaultProps: {
-        radius: 'md',
-      },
-    },
-  },
-})
 
 interface LocaleLayoutProps {
   children: ReactNode
@@ -47,7 +11,11 @@ interface LocaleLayoutProps {
 }
 
 export default function LocaleLayout({ children, params }: LocaleLayoutProps) {
-  const locale = params.locale as 'ru' | 'en'
+  const locale = params.locale as Locale
+
+  // Build navigation server-side
+  const navigation = buildNavigation(locale, 'docs')
+  const extraNavigation = buildExtraNavigation(locale)
 
   return (
     <html lang={locale}>
@@ -62,10 +30,10 @@ export default function LocaleLayout({ children, params }: LocaleLayoutProps) {
         />
       </head>
       <body>
-        <MantineProvider theme={theme} defaultColorScheme="dark">
-          <Header locale={locale} />
+        <Providers>
+          <Header locale={locale} navigation={navigation} extraNavigation={extraNavigation} />
           {children}
-        </MantineProvider>
+        </Providers>
       </body>
     </html>
   )

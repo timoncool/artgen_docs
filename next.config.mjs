@@ -3,6 +3,8 @@ import rehypeSlug from 'rehype-slug'
 import rehypeAutolinkHeadings from 'rehype-autolink-headings'
 import rehypePrettyCode from 'rehype-pretty-code'
 import remarkGfm from 'remark-gfm'
+import remarkFrontmatter from 'remark-frontmatter'
+import remarkMdxFrontmatter from 'remark-mdx-frontmatter'
 
 /** @type {import('rehype-pretty-code').Options} */
 const prettyCodeOptions = {
@@ -13,7 +15,11 @@ const prettyCodeOptions = {
 
 const withMDX = createMDX({
   options: {
-    remarkPlugins: [remarkGfm],
+    remarkPlugins: [
+      remarkGfm,
+      remarkFrontmatter,
+      [remarkMdxFrontmatter, { name: 'frontmatter' }],
+    ],
     rehypePlugins: [
       rehypeSlug,
       [rehypeAutolinkHeadings, { behavior: 'wrap' }],
