@@ -6,12 +6,14 @@ import { useState } from 'react'
 import Link from 'next/link'
 import { usePathname, useRouter } from 'next/navigation'
 import { Locale, translations, getSiteBase, i18nConfig } from '@/lib/i18n/config'
-import { getDocsNavigation, getExtraNavigation, NavItem } from '@/lib/navigation/config'
+import { NavItem } from '@/lib/navigation/build-nav'
 
 interface MobileMenuProps {
   locale: Locale
   opened: boolean
   onClose: () => void
+  navigation: NavItem[]
+  extraNavigation: NavItem[]
 }
 
 interface MobileNavItemProps {
@@ -23,14 +25,13 @@ interface MobileNavItemProps {
 
 function MobileNavItem({ item, locale, depth = 0, onClose }: MobileNavItemProps) {
   const pathname = usePathname() || ''
-  const t = translations[locale]
   const [opened, setOpened] = useState(
     pathname.startsWith(item.href) || !!item.children?.some(child => pathname.startsWith(child.href))
   )
 
   const isActive = pathname === item.href
   const hasChildren = item.children && item.children.length > 0
-  const title = t[item.titleKey] || item.slug
+  const title = item.title
 
   return (
     <Box>
@@ -99,11 +100,9 @@ function MobileNavItem({ item, locale, depth = 0, onClose }: MobileNavItemProps)
   )
 }
 
-export function MobileMenu({ locale, opened, onClose }: MobileMenuProps) {
+export function MobileMenu({ locale, opened, onClose, navigation, extraNavigation }: MobileMenuProps) {
   const t = translations[locale]
   const siteBase = getSiteBase(locale)
-  const navigation = getDocsNavigation(locale)
-  const extraNavigation = getExtraNavigation(locale)
   const pathname = usePathname()
   const router = useRouter()
 
