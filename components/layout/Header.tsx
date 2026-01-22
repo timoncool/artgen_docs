@@ -32,7 +32,7 @@ export function Header({ locale, navigation, extraNavigation }: HeaderProps) {
     <>
       <Box
         component="header"
-        className="tw-sticky tw-top-0 tw-z-50"
+        className="tw-fixed tw-top-0 tw-left-0 tw-right-0 tw-z-50"
         style={{
           background: 'rgba(48, 48, 48, 0.55)',
           border: '1px solid rgba(255, 255, 255, 0.4)',
