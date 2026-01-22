@@ -1,22 +1,94 @@
 # Image Editor
 
-The built-in image editor allows you to modify and enhance generated images.
+import { Callout, Steps, Cards, Card } from '@/components/mdx'
 
-## Editor Features
+The ArtGeneration.me image editor is a powerful tool for refining and enhancing generated images. It combines classic editing tools with artificial intelligence capabilities.
 
-- Drawing and painting tools
-- Layer management
-- Filters and effects
-- Text overlay
-- Export in various formats
+![Image Editor Interface](/guide/editor-02.png)
 
-## Sections
+## Main Features
 
-import { Cards, Card } from '@/components/mdx'
+**Inpainting (redrawing)** — select an area on the image and describe what should appear in its place. AI will redraw the selected part while preserving the style and lighting of the rest of the image. Ideal for fixing defects, replacing elements, or adding new details.
 
-<Cards>
-  <Card title="Editor Interface" href="/en/docs/editor/interface" />
-  <Card title="Tools" href="/en/docs/editor/tools" />
-  <Card title="Working with Layers" href="/en/docs/editor/layers" />
-  <Card title="Exporting Results" href="/en/docs/editor/export" />
-</Cards>
+![Mask tool for inpainting](/screens/mask-paint-tool.png)
+
+**Outpainting (expansion)** — extend the image boundaries, and AI will fill in the missing parts. Useful when you need to change the aspect ratio or add space around an object.
+
+![Outpainting menu](/screens/outpainting-menu.png)
+
+**Object Removal** — select an unwanted element, and AI will automatically remove it, filling the area with appropriate background.
+
+**Retouching and Correction** — classic tools for fine-tuning: brightness, contrast, saturation, color balance.
+
+**Working with Layers** — combine multiple images, add elements, create complex compositions.
+
+## How to Open the Editor
+
+### From the Generator
+
+<Steps>
+### Generate an image
+Create an image using the generator.
+
+### Click the edit button
+Hover over the result and click the "Edit" button.
+
+### Work in the editor
+The image will open in the editor.
+</Steps>
+
+### From History or Gallery
+
+<Steps>
+### Open the image
+Open the image in full-size mode.
+
+### Go to the editor
+Click the "Edit" button on the action panel.
+</Steps>
+
+### Directly
+
+<Steps>
+### Go to the editor page
+Open the editor page: artgeneration.me/editor
+
+### Upload an image
+Upload your image or select from history.
+</Steps>
+
+## Workflow
+
+Typical workflow in the editor:
+
+<Steps>
+### Upload an image
+Upload or open an image for editing.
+
+### Select an area
+Use selection tools to mark the editing area.
+
+### Choose an AI tool
+Select the needed AI tool (inpainting, outpainting, removal).
+
+### Configure parameters
+Enter a prompt (for inpainting) or adjust parameters.
+
+### Start processing
+Start processing and wait for the result.
+
+### Repeat if necessary
+Repeat for other areas if needed.
+
+### Export the result
+Export the finished result.
+</Steps>
+
+## Tips for Beginners
+
+<Callout emoji="💡">
+- Start with small editing areas for better control
+- Use precise prompts for inpainting
+- Save intermediate results
+- Experiment with different tools
+</Callout>

@@ -1,27 +1,101 @@
 # User Menu
 
-The user menu provides access to account management and personal settings.
+import { Callout, Steps, Cards, Card } from '@/components/mdx'
 
-## Menu Sections
+![User Menu](/screens/profile-menu.png)
 
-- **Profile** — Personal information
-- **Balance** — Generations and payments
-- **Subscriptions** — Tariff management
-- **Settings** — Preferences
-- **My Images** — Personal gallery
-- **Referral** — Invite friends
-- **Support** — Help and feedback
+The user menu is the control center for your account on ArtGeneration.me. Here you'll find all settings, balance information, subscriptions, and tools for working with your images.
 
-## Sections
+## How to Open the Menu
 
-import { Cards, Card } from '@/components/mdx'
+The user menu is accessible from any page on the site:
 
-<Cards>
-  <Card title="Profile" href="/en/docs/user-menu/profile" />
-  <Card title="Balance & Generations" href="/en/docs/user-menu/balance" />
-  <Card title="Subscriptions" href="/en/docs/user-menu/subscriptions" />
-  <Card title="Settings" href="/en/docs/user-menu/settings" />
-  <Card title="My Images" href="/en/docs/user-menu/my-images" />
-  <Card title="Referral Program" href="/en/docs/user-menu/referral" />
-  <Card title="Support" href="/en/docs/user-menu/support" />
-</Cards>
+<Steps>
+### Find the profile icon
+The profile icon is located in the upper right corner of the site header.
+
+### Open the menu
+Click on the icon to open the dropdown menu.
+
+### Select a section
+Choose the desired section from the list.
+</Steps>
+
+<Callout type="info">
+If you are not logged in, a "Sign In" button will be displayed instead of the menu.
+</Callout>
+
+## Menu Structure
+
+### Quick Information
+
+![Profile Panel](/screens/user-profile-bar.png)
+
+The top section displays:
+- Your avatar and nickname
+- Subscription level
+- Number of likes and favorites
+
+![User Statistics](/screens/user-stats.png)
+
+Available statistics:
+- Number of created images
+- Received likes
+- Additions to favorites
+- Subscriptions
+
+### Main Sections
+
+**Personal** — managing personal data, avatar, and public information.
+
+**Settings** — interface personalization, notifications, and parameters.
+
+**Payments** — balance information, payment history.
+
+**Bonuses** — referral program and promo codes.
+
+**Communities** — links to ArtGeneration.me communities.
+
+**Guide** — link to documentation.
+
+**Log Out** — end session.
+
+## Profile Settings
+
+![Profile Settings](/screens/profile-settings.png)
+
+In profile settings you can:
+- Change display name
+- Toggle safe/unsafe content display
+- Change email
+- Select time zone
+- Delete account
+
+## Password Change
+
+![Password Change](/screens/set-password-settings.png)
+
+The "Set Password" tab allows you to:
+- Set a new password
+- Change existing password
+
+## Quick Login
+
+![Quick Login](/screens/quick-login-settings.png)
+
+In quick login settings you can:
+- View connected accounts (Google, Yandex, VK, Mail.ru)
+- Connect additional login methods
+- Disconnect linked accounts
+
+## Localization and Server
+
+![Localization](/screens/locale-and-server-settings.png)
+
+Localization settings allow you to choose:
+- **Site language** — Russian (RU) or English (EN)
+- **Server** — Russia (RU) or Global
+
+<Callout emoji="💡">
+Server selection affects generation speed and available models. For users from Russia, using the RU server is recommended.
+</Callout>
