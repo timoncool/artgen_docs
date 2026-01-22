@@ -32,8 +32,12 @@ export function Header({ locale, navigation, extraNavigation }: HeaderProps) {
     <>
       <Box
         component="header"
-        className="tw-fixed tw-top-0 tw-left-0 tw-right-0 tw-z-50"
         style={{
+          position: 'fixed',
+          top: 0,
+          left: 0,
+          right: 0,
+          zIndex: 50,
           background: 'rgba(48, 48, 48, 0.55)',
           border: '1px solid rgba(255, 255, 255, 0.4)',
           borderTop: 0,
@@ -41,8 +45,6 @@ export function Header({ locale, navigation, extraNavigation }: HeaderProps) {
           backdropFilter: 'blur(20px)',
           WebkitBackdropFilter: 'blur(20px)',
           padding: '12px 24px',
-          margin: '0 auto',
-          maxWidth: '100%',
         }}
       >
         <Flex align="center" justify="space-between" gap={24}>
