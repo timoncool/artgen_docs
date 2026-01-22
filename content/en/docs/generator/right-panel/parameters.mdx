@@ -76,9 +76,41 @@ The sampler is an algorithm that determines how the model "moves" from noise to 
 If you don't know which sampler to choose — use **DPM++ 2M Karras** or **Euler a**.
 </Callout>
 
+## Grain
+
+The grain parameter adds a film noise effect to the image, simulating the texture of analog photography.
+
+**Values:**
+- **0** — No grain (smooth image)
+- **0.1-0.3** — Light texture, barely noticeable
+- **0.4-0.6** — Moderate grain, creates atmosphere
+- **0.7-1.0** — Pronounced film effect
+
+**Applications:**
+- Cinematic-style portraits
+- Vintage and retro images
+- Atmospheric landscapes
+- Black and white works
+
+<Callout emoji="💡">
+Grain is especially effective combined with warm tones and soft lighting — this creates an analog film effect.
+</Callout>
+
+## CFG Recommendations for Different Tasks
+
+| Image Type | CFG Scale | Comment |
+|------------|-----------|---------|
+| Portraits | 5-7 | Natural facial features |
+| Landscapes | 6-8 | Balance of detail |
+| Abstract | 3-5 | More creative freedom |
+| Precise illustration | 8-12 | Strict prompt adherence |
+| Photorealism | 6-9 | Avoid artifacts |
+| Anime/manga | 7-10 | Clear lines and contours |
+
 ## Parameter Relationships
 
 Parameters affect each other:
 - High CFG Scale may require more steps
 - Some samplers work better with a certain number of steps
 - Different models have their own optimal settings
+- Grain is best added to finished compositions
