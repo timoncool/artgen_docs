@@ -3,10 +3,11 @@
   "version": "2.0.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
+    "dev": "node scripts/generate-search-index.js && next dev",
+    "build": "node scripts/generate-search-index.js && next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "generate-search": "node scripts/generate-search-index.js"
   },
   "dependencies": {
     "@mantine/core": "^7.12.1",
@@ -16,6 +17,7 @@
     "@next/mdx": "^14.2.13",
     "@tabler/icons-react": "^3.36.1",
     "clsx": "^2.1.1",
+    "fuse.js": "^7.1.0",
     "gray-matter": "^4.0.3",
     "next": "14.2.13",
     "react": "18.3.1",

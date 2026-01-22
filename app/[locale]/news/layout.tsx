@@ -1,8 +1,9 @@
 import { ReactNode } from 'react'
 import { Box } from '@mantine/core'
-import { Sidebar } from '@/components/layout'
+import { Sidebar, TableOfContents } from '@/components/layout'
 import { buildNavigation, buildExtraNavigation } from '@/lib/navigation/build-nav'
 import { Locale } from '@/lib/i18n/config'
+import { Breadcrumbs } from '@/components/layout/Breadcrumbs'
 
 interface NewsLayoutProps {
   children: ReactNode
@@ -22,7 +23,11 @@ export default function NewsLayout({ children, params }: NewsLayoutProps) {
         <Sidebar locale={locale} navigation={navigation} extraNavigation={extraNavigation} />
       </Box>
       <Box component="main" className="docs-content">
-        {children}
+        <Breadcrumbs locale={locale} navigation={navigation} />
+        <article>{children}</article>
+      </Box>
+      <Box className="docs-toc">
+        <TableOfContents locale={locale} />
       </Box>
     </Box>
   )
