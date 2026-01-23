@@ -1,0 +1,49 @@
+import { Steps, Tabs, Tab } from '@/src/01-shared/ui/mdx'
+
+# Your Image
+
+![Your Image](/assets/docs-pages/screens/own-image-panel.png)
+
+The "Your Image" function allows you to use a generated or uploaded image as a basis for a new generation (img2img).
+
+## How to Use
+
+<Steps>
+### Hover over the image
+Select an image in the generation results.
+
+### Click the "Your Image" button
+The image will be added to the settings panel.
+
+### Adjust the influence strength
+Set the degree of influence from the source image.
+
+### Enter a prompt
+Add a new prompt or modify the existing one.
+
+### Start generation
+Click the "Create" button.
+</Steps>
+
+## Influence Strength
+
+The "Influence Strength" parameter determines how similar the result will be to the source image:
+
+<Tabs items={['0.1-0.3', '0.4-0.6', '0.7-0.9']}>
+  <Tab>
+    **Minimal changes.** Preserves the structure and composition of the original.
+  </Tab>
+  <Tab>
+    **Moderate changes.** Balance between the original and the prompt.
+  </Tab>
+  <Tab>
+    **Significant changes.** The prompt dominates over the source image.
+  </Tab>
+</Tabs>
+
+## Applications
+
+- Creating variations of a liked image
+- Changing the style of an existing image
+- Adding or removing elements
+- Improving composition

@@ -1,0 +1,9 @@
+node_modules
+packages
+public
+build
+ansible
+.next
+.husky
+package.json
+README.md

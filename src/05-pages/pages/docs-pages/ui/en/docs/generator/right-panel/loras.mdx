@@ -1,0 +1,115 @@
+import { Callout, Steps } from '@/src/01-shared/ui/mdx'
+
+# LoRA
+
+![LoRA](/assets/docs-pages/screens/lora-weight-slider.png)
+
+LoRA (Low-Rank Adaptation) are additional mini-models that add new information to generation. Each LoRA is trained on a single specific concept, allowing precise reproduction of certain styles, characters, or effects.
+
+## What is LoRA
+
+LoRA are small fine-tuned models that add new knowledge to the base model. The following LoRA categories are available in ArtGeneration.me:
+
+- **Gestures and poses** - specific poses, hand gestures, camera angles
+- **Characters** - specific characters from games, movies, anime
+- **Artistic styles** - unique styles of famous artists and art movements
+- **Special effects** - visual effects, lighting, atmosphere
+- **Service functions** - auxiliary LoRAs for quality improvement
+
+LoRAs work on top of the base model, adding additional "knowledge" to it. This allows you to achieve results that are impossible to obtain with prompts alone.
+
+## How to Use LoRA
+
+<Steps>
+### Open the LoRA section
+Open the "LoRA" section in the right panel of the generator
+
+### Find the desired LoRA
+Browse available LoRAs or use the search function
+
+### Add the LoRA
+Click on the LoRA card to add it
+
+### Adjust the weight
+Adjust the influence strength using the slider. The default value is **1.0**
+
+### Trigger words are added automatically
+Trigger words activate automatically when adding a LoRA
+</Steps>
+
+## LoRA Information
+
+![LoRA Information](/assets/docs-pages/screens/lora-details-sketchit.png)
+
+Click on a LoRA card to see detailed information:
+- Description and usage
+- Trigger words (added automatically)
+- Recommended weight settings
+- Example works
+
+![Example of using Stickers.Redmond LoRA for sticker generation](/assets/docs-pages/guide/init-image-01.png)
+
+## Trigger Words
+
+<Callout type="info">
+Trigger words activate automatically when adding a LoRA. You don't need to manually add them to the prompt - the system will do it for you.
+</Callout>
+
+Trigger words are special keywords that activate the trained LoRA concept. For example, if a LoRA is trained on a character, the trigger word will contain that character's name.
+
+## LoRA Weight
+
+The weight parameter determines how strongly the LoRA affects the result. The default value is **1.0**.
+
+- **0.1-0.3** - minimal influence, slight hint of style
+- **0.4-0.6** - moderate influence, balance between base model and LoRA
+- **0.7-0.9** - strong influence, LoRA dominates
+- **1.0** - standard maximum influence
+
+<Callout type="info">
+On GE (Generation Enhanced) models, negative weight values are supported. This allows you to "remove" the LoRA influence instead of adding it.
+</Callout>
+
+## Toggling LoRA On and Off
+
+You can quickly toggle added LoRAs on and off without deleting them. This is convenient for comparing results with and without the LoRA, as well as for experimenting with different combinations.
+
+## Combining Multiple LoRAs
+
+![Adjusting weights for multiple LoRAs](/assets/docs-pages/guide/init-image-02.png)
+
+You can use multiple LoRAs simultaneously to combine effects. However, keep in mind:
+
+- The total sum of all LoRA weights should not exceed **1.5-2.0**
+- Conflicting LoRAs (e.g., two different styles) may produce unpredictable results
+- Start with one LoRA, then add others gradually
+
+## Model Compatibility
+
+<Callout type="warning">
+Not all LoRAs are compatible with all base models:
+
+- LoRAs for **SDXL** only work with SDXL models
+- LoRAs for **FLUX** only work with FLUX models
+
+Using an incompatible LoRA may result in errors or poor quality results.
+</Callout>
+
+Compatibility information is provided in each LoRA's description.
+
+## Searching for LoRA
+
+ArtGeneration.me provides convenient LoRA search:
+
+- Search by name
+- Filter by categories (gestures/poses, characters, styles, special effects, service)
+- Sort by popularity
+- View example works
+
+## Usage Tips
+
+- Study example works with the LoRA before using it
+- Trigger words are added automatically - don't duplicate them
+- Experiment with weight to achieve the desired effect
+- On GE models, try negative weight values
+- Use the toggle for quick result comparison
