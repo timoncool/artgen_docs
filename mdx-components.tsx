@@ -32,22 +32,31 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     img: ({ src, alt }) => {
       if (!src) return null
 
-      // Handle relative images with Next.js Image
-      if (src.startsWith('/')) {
+      const imageElement = src.startsWith('/') ? (
+        <Image
+          src={src}
+          alt={alt || ''}
+          width={800}
+          height={450}
+          style={{ width: '100%', height: 'auto' }}
+        />
+      ) : (
+        // External images - use regular img tag
+        // eslint-disable-next-line @next/next/no-img-element
+        <img src={src} alt={alt || ''} style={{ maxWidth: '100%', height: 'auto' }} />
+      )
+
+      // If alt text exists and doesn't start with underscore, show as caption
+      if (alt && !alt.startsWith('_')) {
         return (
-          <Image
-            src={src}
-            alt={alt || ''}
-            width={800}
-            height={450}
-            style={{ width: '100%', height: 'auto' }}
-          />
+          <figure className="image-container">
+            {imageElement}
+            <figcaption className="image-caption">{alt}</figcaption>
+          </figure>
         )
       }
 
-      // External images - use regular img tag
-      // eslint-disable-next-line @next/next/no-img-element
-      return <img src={src} alt={alt || ''} style={{ maxWidth: '100%', height: 'auto' }} />
+      return imageElement
     },
 
     // Heading anchors
