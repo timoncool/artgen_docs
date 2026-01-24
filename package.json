@@ -107,7 +107,7 @@
     "@types/react-window": "^1.8.8",
     "@types/uuid": "^10.0.0",
     "@typescript-eslint/eslint-plugin": "^8.0.1",
-    "@typescript-eslint/parser": "^5.10.2",
+    "@typescript-eslint/parser": "^8.0.1",
     "clsx": "^2.1.1",
     "esbuild-plugin-react-virtualized": "^1.0.4",
     "eslint": "9.x",
