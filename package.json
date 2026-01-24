@@ -110,7 +110,7 @@
     "@typescript-eslint/parser": "^8.0.1",
     "clsx": "^2.1.1",
     "esbuild-plugin-react-virtualized": "^1.0.4",
-    "eslint": "9.x",
+    "eslint": "^8.57.0",
     "eslint-config-next": "14.2.13",
     "eslint-config-prettier": "^9.0.0",
     "eslint-plugin-css-modules": "^2.12.0",
