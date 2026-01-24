@@ -1,0 +1,52 @@
+import { Callout } from '@/src/01-shared/ui/mdx'
+
+# Left Panel
+
+The generator's left panel displays all your created images and provides tools for working with them.
+
+## Main Features
+
+**Chronological Order** — all your created images are displayed in chronological order.
+
+**Search by Prompt** — the search function allows you to find images by prompt text.
+
+**Likes and Favorites Counters** — each image displays the number of likes and favorites.
+
+## Reset Button (green)
+
+At the top of the left panel, there is a **green reset button**. It allows you to quickly reset all current generator settings to defaults:
+
+- Clears the prompt field
+- Resets the selected model to default
+- Disables all LoRAs
+- Resets parameters (CFG, Steps, Seed, etc.)
+- Removes the init image
+
+<Callout emoji="💡">
+Use the reset button when you want to start generation "from scratch" without the influence of previous settings.
+</Callout>
+
+## Mobile Behavior
+
+<Callout type="info">
+  On mobile devices and small screens, the left panel is hidden by default. Click on it to expand.
+</Callout>
+
+## Image Interactions
+
+When working with images in the left panel, the following actions are available:
+
+- **Deletion** — delete the image
+- **Preview** — hover over the magnifying glass icon for a quick preview
+- **Fullscreen Mode** — open the image in fullscreen
+- **Privacy Settings** — click the eye icon to manage image visibility
+
+## Sections
+
+import { Cards, Card } from '@/src/01-shared/ui/mdx'
+
+<Cards>
+  <Card title="Generation History" href="docs/generator/left-panel/history" />
+  <Card title="Favorites" href="docs/generator/left-panel/favorites" />
+  <Card title="Folders" href="docs/generator/left-panel/folders" />
+</Cards>

@@ -1,0 +1,94 @@
+import { Callout, Steps } from '@/src/01-shared/ui/mdx'
+
+# Performance Mode
+
+![Performance Mode](/assets/docs-pages/screens/creative-mode-options.png)
+
+![Creativity mode slider](/assets/docs-pages/images/blog/img_020.png)
+
+Performance mode (creativity) is a convenient way to quickly configure the balance between generation speed and result quality. Instead of manually adjusting multiple parameters, you can choose one of the preset modes.
+
+## Available Modes
+
+### Sketch
+
+The fastest mode for testing ideas.
+
+**Characteristics:**
+- Minimum number of generation steps
+- Fastest execution time
+- Basic image quality
+- Minimum generation usage
+
+**When to use:**
+- Quick prompt idea testing
+- Finding the right composition
+- Testing different styles
+- Checking LoRA functionality
+
+### Outline
+
+Balanced mode for everyday work.
+
+**Characteristics:**
+- Medium number of steps
+- Good image quality
+- Moderate generation time
+- Optimal generation usage
+
+**When to use:**
+- Most everyday tasks
+- Creating social media content
+- Working on image series
+- When you need balance between quality and speed
+
+### Masterpiece
+
+Maximum quality for final work.
+
+**Characteristics:**
+- Maximum number of steps
+- Highest quality and detail
+- Increased generation time
+- Higher generation usage
+
+**When to use:**
+- Final versions of work
+- Images for printing
+- Important projects
+- When quality matters more than speed
+
+## How Mode Affects Parameters
+
+When selecting a mode, the following are automatically configured:
+
+- **Number of steps (Steps)** - from minimum in "Sketch" to maximum in "Masterpiece"
+- **CFG Scale** - optimized for the selected mode
+- **Sampler** - the most suitable algorithm is chosen
+- **Other technical parameters** - configured for best results
+
+## Recommended Workflow
+
+<Callout type="info">
+This approach saves generations and time, allowing rapid iteration during the idea-finding phase.
+</Callout>
+
+<Steps>
+### Start with "Sketch"
+Quickly test several prompt variations and find a good idea.
+
+### Refine in "Outline"
+When you find a suitable composition, switch to "Outline" to refine details.
+
+### Finalize in "Masterpiece"
+Create the final version at maximum quality with "Masterpiece" mode.
+</Steps>
+
+**Example workflow:**
+1. Sketch: 5-10 quick generations to find the idea
+2. Outline: 2-3 generations to refine details
+3. Masterpiece: 1 final generation at maximum quality
+
+## Manual Configuration
+
+If the preset modes don't suit your task, you can always configure parameters manually. Performance mode is a convenient way to get started quickly, but not a limitation.

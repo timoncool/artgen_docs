@@ -1,0 +1,102 @@
+import { Callout, Steps } from '@/src/01-shared/ui/mdx'
+
+# Main Gallery
+
+![Main Gallery ArtGeneration.me](/assets/docs-pages/screens/gallery-home.png)
+
+The gallery showcases user-created images in an interactive grid. Here you can find inspiration, study techniques of other artists, and discover new styles.
+
+## Image Count Slider
+
+At the top of the gallery, there is a slider that allows you to adjust the number of displayed images on the page. Move the slider to increase or decrease the number of visible works.
+
+## Categories and Filters
+
+![Category Filter](/assets/docs-pages/screens/category-filter-dialog.png)
+
+The gallery supports filtering by categories for convenient search of works on specific themes.
+
+**Available categories:**
+- Anime
+- Characters
+- Classical styles
+- Fantasy
+- Landscapes
+- Cyberpunk
+- And many more
+
+## Interactive Image Cards
+
+![Gallery Grid](/assets/docs-pages/screens/gallery-grid.png)
+
+Each image in the gallery is presented as an interactive card with multiple functions.
+
+### When hovering over a thumbnail, the following is displayed:
+
+- **Likes count** — the number of users who rated the work
+- **Favorites icon** — ability to add to favorites
+- **Brief prompt with copy button** — quick access to the prompt text
+- **Creator username with link** — navigate to the creator's profile
+
+### Available card actions:
+
+<Steps>
+### Copy prompt
+Click the copy button next to the prompt to use it for your own generation.
+
+### Open fullsize
+Click on the image to view it in full-size mode with all generation details.
+
+### Navigate to creator profile
+Click on the username to go to the creator's profile page and see their other works.
+</Steps>
+
+## Bulk Operations
+
+![Bulk Selection Bar](/assets/docs-pages/screens/bulk-selection-bar.png)
+
+The gallery supports bulk operations for managing multiple images. Select several images by holding Ctrl (Cmd on Mac) and clicking, then use the selection bar to:
+
+- Delete multiple images at once
+- View selection count
+- Access quick actions
+
+![Bulk Actions Menu](/assets/docs-pages/screens/gallery-bulk-select.png)
+
+Use the "Action" dropdown menu to perform bulk operations on selected images.
+
+## Community Voting
+
+<Callout type="info">
+  User likes determine cover images — works with the most votes become the main images for categories and sections.
+</Callout>
+
+The voting system allows the community to highlight the best works. The more likes an image receives, the higher its chances of becoming a section cover.
+
+## Image View
+
+![Image Card](/assets/docs-pages/screens/image-view-card.png)
+
+Clicking on an image opens a card with detailed information:
+- Full-size image
+- Complete prompt text
+- Generation parameters
+- Creator profile
+- "Create your version" button
+
+## Sections
+
+import { Cards, Card } from '@/src/01-shared/ui/mdx'
+
+<Cards>
+  <Card title="Search and Categories" href="docs/gallery/search-categories" />
+  <Card title="Cover Interaction" href="docs/gallery/cover-interaction" />
+  <Card title="Gallery Categories" href="docs/gallery/categories" />
+  <Card title="Gallery View" href="docs/gallery/gallery-view" />
+  <Card title="Interactive Elements" href="docs/gallery/interactive-elements" />
+  <Card title="Image View" href="docs/gallery/image-view" />
+  <Card title="View Elements" href="docs/gallery/view-elements" />
+  <Card title="Generation Details" href="docs/gallery/generation-details" />
+  <Card title="Similar Images" href="docs/gallery/similar-images" />
+  <Card title="Create Your Version" href="docs/gallery/create-version" />
+</Cards>

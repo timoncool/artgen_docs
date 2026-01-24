@@ -1,7 +1,8 @@
-import type { MDXComponents } from 'mdx/types'
-import { Callout, Cards, Card, Steps, Tabs, Tab } from '@/components/mdx'
-import Link from 'next/link'
-import Image from 'next/image'
+import type { MDXComponents } from 'mdx/types';
+import Image from 'next/image';
+import Link from 'next/link';
+
+import { Callout, Card, Cards, Steps, Tab, Tabs } from '@/src/01-shared/ui/mdx';
 
 export function useMDXComponents(components: MDXComponents): MDXComponents {
   return {
@@ -20,71 +21,66 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
           <Link href={href} {...props}>
             {children}
           </Link>
-        )
+        );
       }
       return (
-        <a href={href} target="_blank" rel="noopener noreferrer" {...props}>
+        <a href={href} target='_blank' rel='noopener noreferrer' {...props}>
           {children}
         </a>
-      )
+      );
     },
 
     img: ({ src, alt }) => {
-      if (!src) return null
+      if (!src) {
+        return null;
+      }
 
       const imageElement = src.startsWith('/') ? (
-        <Image
-          src={src}
-          alt={alt || ''}
-          width={800}
-          height={450}
-          style={{ width: '100%', height: 'auto' }}
-        />
+        <Image src={src} alt={alt || ''} width={800} height={450} style={{ width: '100%', height: 'auto' }} />
       ) : (
-        // External images - use regular img tag
         // eslint-disable-next-line @next/next/no-img-element
         <img src={src} alt={alt || ''} style={{ maxWidth: '100%', height: 'auto' }} />
-      )
+      );
 
       // If alt text exists and doesn't start with underscore, show as caption
       if (alt && !alt.startsWith('_')) {
         return (
-          <figure className="image-container">
+          <figure className='image-container'>
             {imageElement}
-            <figcaption className="image-caption">{alt}</figcaption>
+            <figcaption className='image-caption'>{alt}</figcaption>
           </figure>
-        )
+        );
       }
 
-      return imageElement
+      return imageElement;
     },
 
     // Heading anchors
     h1: ({ children, id, ...props }) => (
       <h1 id={id} {...props}>
         {children}
-        {id && <a href={`#${id}`} className="heading-anchor" aria-hidden="true" />}
+        {id && <a href={`#${id}`} className='heading-anchor' aria-hidden='true' />}
       </h1>
     ),
 
     h2: ({ children, id, ...props }) => (
       <h2 id={id} {...props}>
         {children}
-        {id && <a href={`#${id}`} className="heading-anchor" aria-hidden="true" />}
+        {id && <a href={`#${id}`} className='heading-anchor' aria-hidden='true' />}
       </h2>
     ),
 
     h3: ({ children, id, ...props }) => (
       <h3 id={id} {...props}>
         {children}
-        {id && <a href={`#${id}`} className="heading-anchor" aria-hidden="true" />}
+        {id && <a href={`#${id}`} className='heading-anchor' aria-hidden='true' />}
       </h3>
     ),
 
     h4: ({ children, id, ...props }) => (
       <h4 id={id} {...props}>
         {children}
-        {id && <a href={`#${id}`} className="heading-anchor" aria-hidden="true" />}
+        {id && <a href={`#${id}`} className='heading-anchor' aria-hidden='true' />}
       </h4>
     ),
 
@@ -96,5 +92,5 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     ),
 
     ...components,
-  }
+  };
 }

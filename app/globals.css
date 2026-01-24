@@ -79,7 +79,7 @@ a:hover {
 /* External links */
 a[target="_blank"] {
   position: relative;
-  padding-right: 1em;
+  padding-right: 1.1em;
 }
 
 a[target="_blank"]::after {
@@ -97,7 +97,7 @@ a[target="_blank"]:hover::after {
   transform: translate(2px, -2px);
 }
 
-/* Links in content - slightly more visible */
+/* Links in content */
 .docs-content a:not(.heading-anchor):not([class]) {
   font-weight: 500;
 }

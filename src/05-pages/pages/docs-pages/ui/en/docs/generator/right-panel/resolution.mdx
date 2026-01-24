@@ -1,0 +1,85 @@
+import { Callout, Steps } from '@/src/01-shared/ui/mdx'
+
+# Resolution
+
+![Resolution](/assets/docs-pages/screens/resolution-slider.png)
+
+Resolution determines the size of the generated image in pixels. Choosing the right resolution is important for obtaining a quality result.
+
+## How to choose resolution
+
+In ArtGeneration.me, a convenient slider is available for selecting resolution. You can:
+- Choose from preset aspect ratios (1:1, 3:4, 4:3, 16:9, 9:16)
+- Manually set width and height using sliders
+- See the current aspect ratio and size in pixels
+
+## Aspect ratios
+
+### Square (1:1)
+Ideal for:
+- Portraits
+- Avatars and icons
+- Social media images
+- Symmetrical compositions
+
+### Portrait (vertical)
+Ratios **2:3**, **3:4**, **9:16** are suitable for:
+- Full-length portraits
+- Vertical posters
+- Instagram stories
+- Book covers
+
+### Landscape (horizontal)
+Ratios **3:2**, **4:3**, **16:9** are suitable for:
+- Landscapes
+- Desktop wallpapers
+- Cinematic scenes
+- Banners and headers
+
+## Recommended resolutions
+
+### For SDXL models
+- **1024x1024** — optimal square
+- **1152x896** — landscape
+- **896x1152** — portrait
+- **1216x832** — wide format
+- **832x1216** — tall portrait
+- **1536x1536** — maximum for detailed work
+
+### For FLUX models
+- **1024x1024** — base
+- **1472x704** — wide format
+- **704x1472** — tall portrait
+- Supports resolutions up to 4K and above
+
+## Impact of resolution on result
+
+**Generation time:** The higher the resolution, the longer the generation.
+
+**Detail quality:** High resolution allows for more details but requires more computational resources.
+
+**Cost:** Generation at high resolution may cost more coins.
+
+## Upscale as an alternative
+
+Instead of generating at high resolution, it is recommended to:
+
+<Steps>
+### Generate the image
+Generate an image at the optimal resolution for the model (1024x1024)
+
+### Apply Upscale
+Apply **Upscale x2** or **Upscale x4** to enlarge without quality loss
+</Steps>
+
+<Callout emoji="💡">
+This approach gives better results and saves time and coins.
+</Callout>
+
+## Tips
+
+- Start with the recommended resolution for your model
+- For testing ideas, use a lower resolution
+- For final work, use Upscale x2/x4
+- Consider the final use of the image when choosing aspect ratio
+- Some models support resolutions up to 1536x1536 and above — check the model information

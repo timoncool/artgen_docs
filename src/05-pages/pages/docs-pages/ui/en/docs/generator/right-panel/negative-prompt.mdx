@@ -1,0 +1,92 @@
+import { Callout } from '@/src/01-shared/ui/mdx'
+
+# Negative Prompt
+
+![Negative Prompt](/assets/docs-pages/screens/generator-right-panel.png)
+
+The negative prompt is a tool that tells the AI what to avoid when generating an image. It is entered in the **"Avoid"** field on the settings panel.
+
+## How Negative Prompt Works
+
+When you specify something in the "Avoid" field, the model tries to "move away" from these concepts during generation. This doesn't guarantee the element won't appear, but significantly reduces the probability.
+
+Negative prompt is especially useful for:
+- Eliminating typical AI artifacts
+- Excluding unwanted elements
+- Improving overall image quality
+- Correcting generation style
+
+## Weight Syntax in Negative Prompt
+
+<Callout type="warning">
+**Important:** Weights also work in negative prompts. Use parentheses `()` to strengthen, brackets `[]` to weaken.
+</Callout>
+
+```
+(blurry:1.4), low quality, ((deformed hands))
+```
+
+## Default Negative Prompt
+
+ArtGeneration.me has a default negative prompt configured for most models that helps avoid the most common problems. You can supplement it with your own requirements.
+
+## Effective Negative Prompts
+
+### For Quality Improvement
+```
+low quality, worst quality, blurry, pixelated,
+jpeg artifacts, compression artifacts, noise
+```
+
+### For Portraits and People
+```
+deformed, ugly, mutilated, disfigured,
+extra limbs, extra fingers, missing fingers,
+bad anatomy, bad proportions, gross proportions,
+malformed limbs, fused fingers, too many fingers,
+long neck, cross-eyed, mutated hands
+```
+
+### For Photorealism
+```
+cartoon, anime, illustration, painting, drawing,
+3d render, cgi, unrealistic, artificial
+```
+
+### For Anime and Illustrations
+```
+realistic, photo, photograph, 3d,
+bad anatomy, bad hands, text, watermark
+```
+
+### Universal Negative Prompt
+```
+lowres, bad anatomy, bad hands, text, error,
+missing fingers, extra digit, fewer digits,
+cropped, worst quality, low quality,
+normal quality, jpeg artifacts, signature,
+watermark, username, blurry
+```
+
+## Usage Tips
+
+<Callout type="warning">
+**Don't overload the negative prompt.** A negative prompt that's too long can confuse the model and worsen results. Focus on the most important exclusions.
+</Callout>
+
+**Use specific terms.** Instead of abstract "bad quality", specify concrete problems: "blurry", "pixelated", "compression artifacts".
+
+**Apply moderate weights.** Start with small values (1.1-1.3) and increase as needed.
+
+**Experiment.** Different models react differently to negative prompts. What works for one model may not work for another.
+
+<Callout type="info">
+**Negative prompt language.** Like the main prompt, negative prompts work best in English for most models.
+</Callout>
+
+## When Negative Prompt Doesn't Help
+
+Negative prompt isn't all-powerful. If the problem is related to the model's limitations or a poor main prompt, negative prompt may not help. In such cases, try:
+- Changing the main prompt
+- Choosing a different model
+- Using inpainting to fix problematic areas
