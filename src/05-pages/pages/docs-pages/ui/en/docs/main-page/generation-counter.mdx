@@ -1,0 +1,43 @@
+import { Callout } from '@/src/01-shared/ui/mdx'
+
+# Generation Counter
+
+![Generation Counter](/assets/docs-pages/screens/user-stats.png)
+
+The generation counter displays the number of available generations and helps track your balance.
+
+<Callout type="info">
+  The counter is always visible at the top of the screen, allowing you to quickly check your remaining generations.
+</Callout>
+
+## Location
+
+The counter is located at the top of the interface and is always available for viewing.
+
+## Counter Information
+
+- **Current balance** — number of available generations
+- **Generation type** — daily or non-expiring
+- **Subscription status** — whether PRO subscription is active
+
+## Color Coding
+
+The counter uses color coding to distinguish generation types:
+
+- **White color** — daily generations. This is your standard daily limit:
+  - 50 without subscription
+  - 300 with PRO subscription
+  - 600 with MAX subscription
+- **Green color** — non-expiring generations. Bonus or purchased generations that have no expiration date.
+
+<Callout emoji="💡">
+Non-expiring generations are only used after daily generations run out. This allows you to save bonus generations for larger projects.
+</Callout>
+
+## Balance Updates
+
+The balance updates automatically:
+
+- After each generation
+- At the beginning of a new day (for daily generations)
+- After purchasing additional generations

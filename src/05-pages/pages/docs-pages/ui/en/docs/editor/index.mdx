@@ -1,0 +1,170 @@
+# Image Editor
+
+import { Callout, Steps } from '@/src/01-shared/ui/mdx'
+
+The ArtGeneration.me image editor is a powerful tool for refining and enhancing generated images. It combines classic editing tools with artificial intelligence capabilities.
+
+![Image Editor Interface](/assets/docs-pages/guide/editor-02.png)
+
+## Editor Sections
+
+The editor consists of several main sections:
+
+### Settings Section
+
+Basic image transformation tools:
+
+- **Crop** — select the desired area to crop the image
+- **Horizontal Flip** — mirror reflection from left to right
+- **Vertical Flip** — mirror reflection from top to bottom
+
+### Filters Section
+
+A collection of ready-made filters for quick image transformation. Filters allow you to apply various effects with one click: sepia, black and white, vintage, contrast enhancement, and more.
+
+![Editor Filters](/assets/docs-pages/guide/editor-01.png)
+
+### Annotation Section
+
+Tools for adding graphic elements and text:
+
+**Available Tools:**
+- **Text** — add labels with font, size, and style settings
+- **Image** — insert additional images
+- **Rectangle** — draw rectangular shapes
+- **Ellipse** — draw ovals and circles
+- **Polygon** — create custom polygonal shapes
+- **Pencil** — freehand drawing
+- **Line** — straight lines
+- **Arrow** — arrows for indicating direction or highlighting elements
+
+**Annotation Settings:**
+- Fill and stroke color
+- Element transparency
+- Stroke width
+- Shadow
+- Canvas positioning
+
+![Annotation Tools](/assets/docs-pages/guide/editor-03.png)
+
+### Fine-Tuning Section
+
+Fine-tuning image parameters:
+
+- **Brightness** — adjust overall image lightness
+- **Contrast** — adjust difference between light and dark areas
+- **HSV** — adjust Hue, Saturation, and Value
+- **Blur** — add blur effect
+- **Temperature** — color temperature correction (warm/cool tones)
+
+## AI Tools
+
+**Inpainting (redrawing)** — select an area on the image and describe what should appear in its place. AI will redraw the selected part while preserving the style and lighting of the rest of the image. Ideal for fixing defects, replacing elements, or adding new details.
+
+![Mask tool for inpainting](/assets/docs-pages/assets/docs-pages/screens/mask-paint-tool.png)
+
+**Outpainting (expansion)** — extend the image boundaries, and AI will fill in the missing parts. Useful when you need to change the aspect ratio or add space around an object.
+
+![Outpainting menu](/assets/docs-pages/assets/docs-pages/screens/outpainting-menu.png)
+
+**Object Removal** — select an unwanted element, and AI will automatically remove it, filling the area with appropriate background.
+
+## How to Open the Editor
+
+### From the Generator
+
+<Steps>
+### Generate an image
+Create an image using the generator.
+
+### Click the edit button
+Hover over the result and click the "Edit" button.
+
+### Work in the editor
+The image will open in the editor.
+</Steps>
+
+### From History or Gallery
+
+<Steps>
+### Open the image
+Open the image in full-size mode.
+
+### Go to the editor
+Click the "Edit" button on the action panel.
+</Steps>
+
+### Directly
+
+<Steps>
+### Go to the editor page
+Open the editor page: artgeneration.me/editor
+
+### Upload an image
+Upload your image or select from history.
+</Steps>
+
+## Workflow
+
+Typical workflow in the editor:
+
+<Steps>
+### Upload an image
+Upload or open an image for editing.
+
+### Select an area
+Use selection tools to mark the editing area.
+
+### Choose an AI tool
+Select the needed AI tool (inpainting, outpainting, removal).
+
+### Configure parameters
+Enter a prompt (for inpainting) or adjust parameters.
+
+### Start processing
+Start processing and wait for the result.
+
+### Repeat if necessary
+Repeat for other areas if needed.
+
+### Export the result
+Export the finished result.
+</Steps>
+
+## Editor Use Cases
+
+The editor is suitable for various tasks:
+
+### Reference Preparation
+
+Use annotation tools to create references before generation: add notes, highlight zones, indicate directions.
+
+### Refining Generation Results
+
+- Fix minor defects with inpainting
+- Extend image boundaries through outpainting
+- Remove unwanted elements
+- Color correction and fine-tuning
+
+### Creating Visual Content
+
+The editor allows you to create:
+- **Memes** — adding text and graphic elements
+- **Greeting cards** — combining images with text
+- **Logos** — simple graphic compositions
+- **Advertising materials** — visuals with text and arrows
+
+### Quick Communication
+
+Use arrows, highlights, and text notes to quickly explain ideas to colleagues or clients.
+
+## Tips for Beginners
+
+<Callout emoji="💡">
+- Start with small editing areas for better control
+- Use precise prompts for inpainting
+- Save intermediate results
+- Experiment with different tools
+- Apply filters for quick style transformation
+- Use layers to create complex compositions
+</Callout>
