@@ -141,5 +141,8 @@
   },
   "overrides": {
     "string-width": "^7.0.0"
+  },
+  "engines": {
+    "node": "20.x"
   }
 }
