@@ -1,95 +1,54 @@
 import type { MDXComponents } from 'mdx/types';
-import Image from 'next/image';
 import Link from 'next/link';
+import type { ComponentPropsWithoutRef } from 'react';
+import { JSX } from 'react';
 
-import { Callout, Card, Cards, Steps, Tab, Tabs } from '@/src/01-shared/ui/mdx';
+import cls from '@/src/01-shared/ui/mdx/mdx.module.scss';
+
+type HeadingTag = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
+type HeadingBaseProps = ComponentPropsWithoutRef<'h2'>; // одинаково для h1..h6
+
+type HeadingWithAnchorProps = HeadingBaseProps & {
+  as: HeadingTag;
+};
+
+function HeadingWithAnchor({ as: Tag, id, children, ...props }: HeadingWithAnchorProps): JSX.Element {
+  return (
+    <Tag id={id} {...props}>
+      {id ? (
+        <Link href={`#${id}`} aria-label='Anchor link' style={{ textDecoration: 'none' }}>
+          {children}
+        </Link>
+      ) : (
+        children
+      )}
+    </Tag>
+  );
+}
+
+function MdxLink({ href = '', ...props }: ComponentPropsWithoutRef<'a'>) {
+  const isExternal = href.startsWith('http') || href.startsWith('mailto:') || href.startsWith('tel:');
+  const isAnchor = href.startsWith('#');
+
+  if (isExternal || isAnchor) {
+    return <a href={href} {...props} />;
+  }
+
+  return <Link href={href} {...props} />;
+}
 
 export function useMDXComponents(components: MDXComponents): MDXComponents {
   return {
-    // Custom components
-    Callout,
-    Cards,
-    Card,
-    Steps,
-    Tabs,
-    Tab,
+    wrapper: ({ children }) => <div className={cls.wrapper}>{children}</div>,
 
-    // Override default elements
-    a: ({ href, children, ...props }) => {
-      if (href?.startsWith('/') || href?.startsWith('#')) {
-        return (
-          <Link href={href} {...props}>
-            {children}
-          </Link>
-        );
-      }
-      return (
-        <a href={href} target='_blank' rel='noopener noreferrer' {...props}>
-          {children}
-        </a>
-      );
-    },
+    a: (p) => <MdxLink {...p} />,
 
-    img: ({ src, alt }) => {
-      if (!src) {
-        return null;
-      }
-
-      const imageElement = src.startsWith('/') ? (
-        <Image src={src} alt={alt || ''} width={800} height={450} style={{ width: '100%', height: 'auto' }} />
-      ) : (
-        // eslint-disable-next-line @next/next/no-img-element
-        <img src={src} alt={alt || ''} style={{ maxWidth: '100%', height: 'auto' }} />
-      );
-
-      // If alt text exists and doesn't start with underscore, show as caption
-      if (alt && !alt.startsWith('_')) {
-        return (
-          <figure className='image-container'>
-            {imageElement}
-            <figcaption className='image-caption'>{alt}</figcaption>
-          </figure>
-        );
-      }
-
-      return imageElement;
-    },
-
-    // Heading anchors
-    h1: ({ children, id, ...props }) => (
-      <h1 id={id} {...props}>
-        {children}
-        {id && <a href={`#${id}`} className='heading-anchor' aria-hidden='true' />}
-      </h1>
-    ),
-
-    h2: ({ children, id, ...props }) => (
-      <h2 id={id} {...props}>
-        {children}
-        {id && <a href={`#${id}`} className='heading-anchor' aria-hidden='true' />}
-      </h2>
-    ),
-
-    h3: ({ children, id, ...props }) => (
-      <h3 id={id} {...props}>
-        {children}
-        {id && <a href={`#${id}`} className='heading-anchor' aria-hidden='true' />}
-      </h3>
-    ),
-
-    h4: ({ children, id, ...props }) => (
-      <h4 id={id} {...props}>
-        {children}
-        {id && <a href={`#${id}`} className='heading-anchor' aria-hidden='true' />}
-      </h4>
-    ),
-
-    // Table wrapper for responsiveness
-    table: ({ children, ...props }) => (
-      <div style={{ overflowX: 'auto' }}>
-        <table {...props}>{children}</table>
-      </div>
-    ),
+    h1: (p) => <HeadingWithAnchor as='h1' {...p} />,
+    h2: (p) => <HeadingWithAnchor as='h2' {...p} />,
+    h3: (p) => <HeadingWithAnchor as='h3' {...p} />,
+    h4: (p) => <HeadingWithAnchor as='h4' {...p} />,
+    h5: (p) => <HeadingWithAnchor as='h5' {...p} />,
+    h6: (p) => <HeadingWithAnchor as='h6' {...p} />,
 
     ...components,
   };

@@ -25,6 +25,6 @@
       "@/*": ["./*"],
     }
   },
-  "include": ["app", "pages", "src", "declaration.d.ts", "next-env.d.ts", ".next/types/**/*.ts", "build/types/**/*.ts"],
+  "include": ["mdx-components.tsx", "app", "pages", "src", "declaration.d.ts", "next-env.d.ts", ".next/types/**/*.ts", "build/types/**/*.ts"],
   "exclude": ["node_modules"]
 }

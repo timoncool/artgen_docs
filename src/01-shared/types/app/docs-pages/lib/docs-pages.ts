@@ -1,5 +1,37 @@
 import { ComponentType } from 'react';
 import { MDXProps } from 'mdx/types';
+import { Lng } from '@/src/01-shared/types/app/lng';
+
+export interface SearchIndexItem {
+  title: string;
+  href: string;
+  content: string;
+  section: string;
+}
+
+export interface SearchResultItem {
+  title: string;
+  href: string;
+  content?: string;
+}
+
+export interface MainNavigationItem {
+  [Lng.RU]: string;
+  [Lng.EN]: string;
+  path: string;
+}
+
+export interface HeadingItem {
+  level: number;
+  text: string;
+  id: string;
+}
+
+export enum PagesFolder {
+  DOCS = 'docs',
+  ABOUT_DOCS = 'about-docs',
+  NEWS = 'news',
+}
 
 export interface AboutDocsMap {
   contributingDoc: ComponentType<MDXProps>;

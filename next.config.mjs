@@ -1,7 +1,11 @@
 import createMDX from '@next/mdx';
+import rehypeSlug from 'rehype-slug';
+import remarkFrontmatter from 'remark-frontmatter';
+import remarkMdxFrontmatter from 'remark-mdx-frontmatter';
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  // eslint-disable-next-line @typescript-eslint/explicit-function-return-type
   webpack(config) {
     // Grab the existing rule that handles SVG imports
     const fileLoaderRule = config.module.rules.find((rule) => rule.test?.test?.('.svg'));
@@ -56,6 +60,11 @@ const nextConfig = {
   pageExtensions: ['js', 'jsx', 'md', 'mdx', 'ts', 'tsx'],
 };
 
-const withMDX = createMDX({});
+const withMDX = createMDX({
+  options: {
+    remarkPlugins: [remarkFrontmatter, [remarkMdxFrontmatter, { name: 'metadata' }]],
+    rehypePlugins: [rehypeSlug],
+  },
+});
 
 export default withMDX(nextConfig);

@@ -2,6 +2,7 @@ import { Lng } from '@/src/01-shared/types/app/lng';
 
 import { aboutDocsMapEN, docsMapEN, newsMapEN } from './ui/en';
 import { aboutDocsMapRU, docsMapRU, newsMapRU } from './ui/ru';
+import React from 'react';
 
 const aboutDocsPages = {
   index: {
