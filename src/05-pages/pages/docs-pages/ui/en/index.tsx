@@ -13,6 +13,7 @@ const docsMapEN: DocsMap = {
   faqDoc: dynamic(() => import('./docs/faq.mdx')),
   galleryDoc: dynamic(() => import('./docs/gallery.mdx')),
   generatorDoc: dynamic(() => import('./docs/generator.mdx')),
+  logoGeneratorDoc: dynamic(() => import('./docs/logo-generator.mdx')),
   mainPageDoc: dynamic(() => import('./docs/main-page.mdx')),
   registrationDoc: dynamic(() => import('./docs/registration.mdx')),
   rulesDoc: dynamic(() => import('./docs/rules.mdx')),
@@ -20,6 +21,10 @@ const docsMapEN: DocsMap = {
 
   editor: {
     intro: dynamic(() => import('./docs/editor/index.mdx')),
+  },
+
+  logoGenerator: {
+    intro: dynamic(() => import('./docs/logo-generator/index.mdx')),
   },
 
   gallery: {

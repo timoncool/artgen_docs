@@ -44,12 +44,17 @@ export interface DocsMap {
   faqDoc: ComponentType<MDXProps>;
   galleryDoc: ComponentType<MDXProps>;
   generatorDoc: ComponentType<MDXProps>;
+  logoGeneratorDoc: ComponentType<MDXProps>;
   mainPageDoc: ComponentType<MDXProps>;
   registrationDoc: ComponentType<MDXProps>;
   rulesDoc: ComponentType<MDXProps>;
   userMenuDoc: ComponentType<MDXProps>;
 
   editor: {
+    intro: ComponentType<MDXProps>;
+  };
+
+  logoGenerator: {
     intro: ComponentType<MDXProps>;
   };
 
