@@ -161,21 +161,39 @@ npm run dev
 
 ## Adding Images
 
+Screenshots and images make documentation much clearer. Don't hesitate to add them to descriptions!
+
 ### Step 1: Prepare the Image
 
-- Format: PNG or WebP
+- Format: **PNG** or **WebP**
 - Recommended width: 800-1200 pixels
-- Compress the image for fast loading
+- **Always compress** images using [TinyPNG](https://tinypng.com/) — it's free and reduces file size by 2-3x without quality loss. Just drag the file onto the site and download the optimized version.
 
-### Step 2: Upload to Folder
+### Step 2: Name the File Properly
 
-Place the image in the `public/assets/docs-pages/screens/` folder
+File names should be lowercase Latin characters, separated by hyphens:
+- `generator-logo-templates.png` — correct
+- `Screenshot 2026.png` — incorrect
+- `IMG_1234.png` — incorrect
 
-### Step 3: Add to Documentation
+The name should briefly describe the image content.
+
+### Step 3: Upload to the Right Folder
+
+Where to place images depends on the section:
+- **Documentation screenshots** → `public/assets/docs-pages/screens/`
+- **Guide images** → `public/assets/docs-pages/guide/`
+- **News images** → `public/assets/docs-pages/blog/`
+
+### Step 4: Add to Documentation
+
+Insert the image in the right place in the text:
 
 ```mdx
-![Image description](/assets/docs-pages/screens/filename.png)
+![Brief image description](/assets/docs-pages/screens/filename.png)
 ```
+
+The text in square brackets is the image description — it should be meaningful.
 
 ---
 
