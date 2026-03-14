@@ -42,6 +42,10 @@ const docsPages = {
     [Lng.RU]: <docsMapRU.generatorDoc />,
     [Lng.EN]: <docsMapEN.generatorDoc />,
   },
+  'logo-generator': {
+    [Lng.RU]: <docsMapRU.logoGeneratorDoc />,
+    [Lng.EN]: <docsMapEN.logoGeneratorDoc />,
+  },
   'main-page': {
     [Lng.RU]: <docsMapRU.mainPageDoc />,
     [Lng.EN]: <docsMapEN.mainPageDoc />,
@@ -62,6 +66,11 @@ const docsPages = {
   'editor/index': {
     [Lng.RU]: <docsMapRU.editor.intro />,
     [Lng.EN]: <docsMapEN.editor.intro />,
+  },
+
+  'logo-generator/index': {
+    [Lng.RU]: <docsMapRU.logoGenerator.intro />,
+    [Lng.EN]: <docsMapEN.logoGenerator.intro />,
   },
 
   'gallery/index': {
