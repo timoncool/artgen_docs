@@ -27,6 +27,11 @@ const mainNavigationObj: Record<string, MainNavigationItem> = {
     [Lng.EN]: 'Image Generator',
     path: '/docs/generator',
   },
+  'logo-generator': {
+    [Lng.RU]: 'Генератор логотипов',
+    [Lng.EN]: 'Logo Generator',
+    path: '/docs/logo-generator',
+  },
   editor: {
     [Lng.RU]: 'Редактор изображений',
     [Lng.EN]: 'Image Editor',
@@ -69,6 +74,7 @@ export const mainNavigation: MainNavigationItem[] = [
   mainNavigationObj['registration'],
   mainNavigationObj['gallery'],
   mainNavigationObj['generator'],
+  mainNavigationObj['logo-generator'],
   mainNavigationObj['editor'],
   mainNavigationObj['user-menu'],
   mainNavigationObj['faq'],
