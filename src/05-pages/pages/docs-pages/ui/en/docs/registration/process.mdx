@@ -1,111 +1,97 @@
 import { Callout, Steps } from '@/src/01-shared/ui/mdx'
 
-# Registration Process
+# Registration & Login Process
 
-![Registration Process](/assets/docs-pages/screens/quick-login-settings.png)
+![Authorization](/assets/docs-pages/blog/update-8.3-1.png)
 
-Registration on ArtGeneration.me is a quick and simple process that takes less than a minute. The platform offers several ways to create an account at your choice.
+Logging into ArtGeneration.me is a quick and simple process that takes less than a minute. The platform offers several authorization methods to choose from.
 
-## Registration Methods
+## Email Login (OTP)
 
-### Quick Login via VK
-
-The fastest way for VKontakte users:
-
-1. Click the "Sign in with VK" button
-2. Confirm access in the VKontakte window
-3. Done — your account is created automatically
-
-**Advantages:**
-- No need to create a new password
-- Automatic profile filling (name, avatar)
-- Quick one-click login in the future
-
-### Quick Login via Yandex
-
-Similar process for Yandex users:
-
-1. Click the "Sign in with Yandex" button
-2. Confirm access in the Yandex ID window
-3. Account is created and ready to use
-
-### Registration via Email
-
-Classic registration method:
+The primary login method uses a one-time password (OTP). You don't need to remember a password — a new code is sent to your email each time you log in.
 
 <Steps>
-### Click "Sign Up"
-
 ### Enter your email address
 
-### Create a strong password (minimum 8 characters)
+Type your email in the login field. Any email provider works — Yandex, Mail.ru, Gmail, Outlook, and others.
 
-### Confirm email by clicking the link in the email
+### Click "Get Code"
 
-### Fill out your profile (optional)
-</Steps>
+After passing the Cloudflare verification, a one-time code will be sent to your email.
 
-<Callout type="warning">
-  **Password recommendations:**
-  - Use a combination of letters, numbers, and symbols
-  - Don't use simple passwords like "123456" or "password"
-  - Don't use the same password for different services
-</Callout>
+### Receive the code
 
-## Account Confirmation
+![Email with one-time code](/assets/docs-pages/blog/update-8.3-2.png)
 
-When registering via email, you'll receive an email with a confirmation link. If the email didn't arrive:
+You'll receive an email with a 6-digit code. The code is valid for **10 minutes**.
 
-- Check your "Spam" folder
-- Make sure the email was entered correctly
-- Request a resend
-- Wait a few minutes — delivery sometimes takes time
+### Enter the code
 
-## Bot Protection
+![Entering the one-time code](/assets/docs-pages/blog/update-8.3-3.png)
 
-If the system suspects automated registration, you may be asked to complete a captcha. This is a standard security measure to protect the platform.
-
-## Password Recovery
-
-If you forgot your password:
-
-<Steps>
-### On the login page, click "Forgot password?"
-
-### Enter the email used during registration
-
-### Receive an email with a password reset link
-
-### Follow the link and create a new password
+Type the received code into the input field. After successful verification, you'll be logged in automatically.
 </Steps>
 
 <Callout type="info">
-  The reset link is valid for 24 hours.
+  If this is your first login — your account will be created automatically. No separate registration required.
 </Callout>
 
-## After Registration
+<Callout type="warning">
+  **Not receiving the code?**
+  - Check your "Spam" folder
+  - Make sure the email was entered correctly
+  - Wait a couple of minutes — delivery sometimes takes time
+  - Click "Resend" (available after 2 minutes)
+</Callout>
 
-After successful registration, you will automatically:
-- Receive a welcome bonus (3 days of PRO + 100 non-expiring generations)
+## Quick Login via OAuth
+
+In addition to email login, quick authorization via social networks and services is available:
+
+### Yandex ID
+
+1. Click the "Sign in with Yandex ID" button
+2. Confirm access in the Yandex window
+3. Done — you're logged in
+
+### VK ID
+
+1. Click the "Sign in with VK ID" button
+2. Confirm access in the VKontakte window
+3. Account is created and ready to use
+
+### Odnoklassniki and Mail.ru
+
+Authorization via **Odnoklassniki** and **Mail.ru** is also available — click the corresponding icon on the login page.
+
+<Callout type="info">
+  **OAuth advantages:**
+  - One-click login without entering a code
+  - Automatic profile filling (name, avatar)
+  - You can link multiple login methods to one account
+</Callout>
+
+## Account Linking
+
+You can link multiple login methods to your account simultaneously. For example, log in via email, then link Yandex or VK in your profile settings for quick future access. You can also disable login methods you don't need.
+
+## Bot Protection
+
+If the system suspects automated registration, you may be asked to complete a Cloudflare verification. This is a standard security measure to protect the platform.
+
+## After Login
+
+After successful login, you will automatically:
+- Receive a welcome bonus on first login (3 days of PRO + 100 non-expiring generations)
 - Be redirected to the generator page
 - Be able to start creating images right away
 
 ## Possible Problems
 
-<Callout type="error">
-  **Email already registered** — you may have already created an account earlier. Try logging in or recovering your password.
-</Callout>
-
 <Callout type="warning">
   **Error during social network authorization:**
   - Check if pop-ups are blocked in your browser
+  - Disable your ad blocker — it may block authorization widgets
   - Try a different browser
   - Contact support if the problem persists
-</Callout>
-
-<Callout type="warning">
-  **Confirmation email not arriving:**
-  - Verify the email is correct
-  - Check your "Spam" folder
-  - Request a resend after 5 minutes
 </Callout>
