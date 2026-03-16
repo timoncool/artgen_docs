@@ -1,49 +1,77 @@
 ---
-title: Registration
-description: How to register on the ArtGeneration.me platform
+title: Login & Registration
+description: How to log in to ArtGeneration.me — OTP, OAuth and other methods
 ---
 
-# Registration on ArtGeneration.me
+# Login & Registration
 
-To use all the features of the platform, you need to register.
+Welcome to the amazing world of digital creativity at [ArtGeneration.me](https://artgeneration.me), where anyone can become an artist with the help of artificial intelligence. To begin your journey, you need to log in or create an account.
 
-## Registration Methods
+On the main page, you'll find the "Start Creating" button — your first step towards creating unique images.
 
-### Via Social Networks
-The fastest way is authorization via social networks:
-- **VKontakte** — for users from Russia
-- **Yandex** — for users from Russia
+## Email Login (OTP)
 
-### Via Email
-You can also register using your email address.
+![Login Form](/assets/docs-pages/blog/update-8.3-1.png)
 
-## Registration Process
+The primary login method uses a one-time password (OTP). You don't need to remember a password — a new code is sent to your email each time.
 
-import { Steps } from '@/src/01-shared/ui/mdx'
+import { Steps, Callout } from '@/src/01-shared/ui/mdx'
 
 <Steps>
-### Step 1
-Go to the [main page](https://artgeneration.me) and click the "Login" button
+### Enter your email address
 
-### Step 2
-Choose the authorization method: social network or email
+Type your email in the login field. Any email provider works — Yandex, Mail.ru, Gmail, Outlook, and others.
 
-### Step 3
-Confirm access to your account (for social networks) or enter the confirmation code (for email)
+### Click "Get Code"
 
-### Step 4
-Done! Now you can use all the features of the platform
+After passing the Cloudflare verification, a one-time code will be sent to your email.
+
+### Receive the code
+
+![Email with one-time code](/assets/docs-pages/blog/update-8.3-2.png)
+
+You'll receive an email with a 6-digit code. The code is valid for **10 minutes**.
+
+### Enter the code
+
+![Entering the one-time code](/assets/docs-pages/blog/update-8.3-3.png)
+
+Type the received code into the input field. After successful verification, you'll be logged in automatically.
 </Steps>
 
-## After Registration
+<Callout type="info">
+  If this is your first login — your account will be created automatically. No separate registration required.
+</Callout>
 
-After successful registration, you will have access to:
-- Image generation
-- Saving works in your personal gallery
-- Creating folders to organize images
-- Access to generation history
-- Ability to purchase a subscription
+## Quick Login via OAuth
 
-## Free Plan
+In addition to email login, quick authorization via social networks is available:
 
-New users receive free generations to familiarize themselves with the platform. Read more about plans in the [Payments & Subscriptions](/docs/payments) section.
+- **Yandex ID** — click "Sign in with Yandex ID"
+- **VK ID** — click "Sign in with VK ID"
+- **Odnoklassniki** — click the OK icon
+- **Mail.ru** — click the @ icon
+
+<Callout type="info">
+  **OAuth advantages:** one-click login, automatic profile filling, you can link multiple login methods to one account.
+</Callout>
+
+## Why Register?
+
+Creating an account gives you the opportunity to:
+
+- Save your work
+- Receive updates
+- Participate in the community
+- Enjoy a personalized experience on the platform
+- Subscribe to other users and follow their updates
+
+If you need help — our support team support@artgeneration.me is always at your service.
+
+## Welcome Bonus
+
+<Callout type="info">
+  After your first login, you'll receive a bonus: **3 days of PRO subscription** and **100 non-expiring generations**.
+</Callout>
+
+This gift subscription requires no commitment from you and will not renew automatically. After the subscription ends, you can decide whether to renew it yourself.
