@@ -1,36 +1,168 @@
----
-title: User Guide
-description: Complete guide to using ArtGeneration.me - AI image generation platform
----
+import { Callout, Cards, Card } from '@/src/01-shared/ui/mdx'
 
-# ArtGeneration.me User Guide
+# ArtGeneration.me user guide
 
-Welcome to the **ArtGeneration.me** user guide — a platform for creating images using artificial intelligence.
+This guide covers everything the service can do: how to create images, video
+and sound, how the AI chat and the editor work, what coins are spent on, and
+what to do when the result is not what you had in mind.
 
-import { Cards, Card } from '@/src/01-shared/ui/mdx'
+![The "About" page](/assets/docs-pages/screens/01-01-about-page.en.webp)
+
+The service itself is access to hundreds of neural networks at once, in one
+browser window. Nothing to install, configure or update: you describe what you
+want in words, pick a model, and it does the work. What comes out stays in your
+profile — download it, show it in the public feed, or, on a paid plan, keep it
+to yourself.
+
+All of it is **one account and one shared wallet**: pictures, clips, sound, chat
+and the editor spend the same coins, and there are no separate subscriptions
+for individual skills.
+
+<Callout type="tip">
+  There is a second way in for a newcomer — the **"About"** page in the "More"
+  menu. That is the shot above: five launch buttons (image, video, audio,
+  AI chat, model catalog), and from there a **"next"** button at the bottom of
+  each screen walks you through the sections — no manual scrolling needed. At
+  the very bottom it carries its own list of common questions.
+
+  This guide does not retell it; it explains in detail what is named there
+  in a single line.
+</Callout>
+
+## Why this guide is worth reading
+
+ArtGeneration is an online service, an ordinary website really: open it and work.
+But behind that simplicity is a large project that has been **gathering layers
+for years**: an image generator, then video, then sound, then the AI chat,
+the editor, LoRAs, styles, masks, references, upscalers. Every layer brought its
+own possibilities and its own quirks — and in the interface they sit side by side
+while switching on in different ways.
+
+We tried to make it all clear without a manual and put hints wherever they fit —
+and still we **recommend leafing through this guide from end to end**. Not for
+formality's sake: half the power here hides in places you won't look into until
+you know something is there. A button that writes a prompt from your picture.
+Mask inversion that saves half an hour of work. Searching by colour. Dragging
+works with the mouse instead of "download and upload back".
+
+And one more thing worth saying up front: **it is perfectly normal if the first
+attempt looks nothing like a masterpiece**. That is how it should be. Neural
+networks are a tool like a camera or a graphics editor: the result comes not from
+the first button but from understanding what you are turning and why.
+
+This is also where the most common disappointment comes from. The site looks like
+a site, someone pokes around at random, types "a beautiful girl", gets something
+mediocre — and concludes the service is weak. Almost always it is neither
+the service nor the model: the prompt gave it nothing to hold on to, the model
+was not the one for the job, and half the tools went unnoticed. The difference
+between "meh" and "excellent" is usually a couple of paragraphs of reading,
+not a different neural network.
+
+<Callout type="tip">
+  If you have already tried and were unimpressed — start with
+  [how to write prompts](/en/docs/generator). It is the fastest return on five
+  minutes anywhere in this guide.
+</Callout>
+
+If you don't want to read all of it — read at least
+[Generator](/en/docs/generator) and [Coins and limits](/en/docs/coins).
+Those two pages answer most of what people write to support about.
+
+## Where to start
+
+The order that saves a newcomer the most time:
+
+1. **Look through the [gallery](/en/docs/gallery)** — the best way to see what
+   is possible at all. Any work's prompt can be taken with one click, and which
+   model made it and with what settings is in the "Details" block — it is
+   collapsed, which is why few people know about it.
+2. **[Sign in](/en/docs/start)** — without signing in you can only browse,
+   search included. There is no separate registration: the first sign-in creates
+   the account, and no password is needed — a code by email or a social network.
+   The first sign-in comes with a gift.
+3. **[Claim your daily coins](/en/docs/coins)** — they are not credited
+   automatically; the header has a **"Забрать"** ("Claim") button for that.
+   This is the first thing everyone trips over.
+4. **[Make your first picture](/en/docs/generator)** — one phrase and one button.
+
+<Callout type="tip">
+  Not sure which model to start with — take one tagged **HIT**. That is not
+  an editorial pick but what everyone else is using most right now, and the set
+  changes on its own.
+</Callout>
+
+## What is here
 
 <Cards>
-  <Card title="Registration" href="docs/registration" />
-  <Card title="Main Page" href="docs/main-page" />
-  <Card title="Gallery" href="docs/gallery" />
-  <Card title="Generator" href="docs/generator" />
-  <Card title="Editor" href="docs/editor" />
-  <Card title="User Menu" href="docs/user-menu" />
-  <Card title="FAQ" href="docs/faq" />
-  <Card title="Rules" href="docs/rules" />
+  <Card title="Gallery" href="/en/docs/gallery" />
+  <Card title="Signing in and first steps" href="/en/docs/start" />
+  <Card title="Coins and limits" href="/en/docs/coins" />
+  <Card title="Generator" href="/en/docs/generator" />
+  <Card title="Your works" href="/en/docs/my-works" />
+  <Card title="AI Chat" href="/en/docs/chat" />
+  <Card title="Model catalogs" href="/en/docs/catalogs" />
+  <Card title="Editor and logos" href="/en/docs/editor" />
+  <Card title="Plans and payment" href="/en/docs/billing" />
+  <Card title="Profile and settings" href="/en/docs/profile" />
+  <Card title="Special model features" href="/en/docs/special" />
+  <Card title="When something doesn't work" href="/en/docs/troubleshooting" />
+  <Card title="FAQ" href="/en/docs/faq" />
+  <Card title="Service rules" href="/en/docs/rules" />
 </Cards>
 
-## About the Platform
+## Five things worth trying on the very first evening
 
-ArtGeneration.me provides access to advanced image generation models. You can create unique images using text descriptions (prompts), choose different styles and models, and apply advanced editing features.
+Not for the sake of it — after these the service makes more sense than after
+any amount of reading:
 
-## Getting Started
+1. **Scribble with the mouse and turn it into a picture.** The "Custom Image"
+   block has a brush: a crooked stick-figure house becomes a finished
+   illustration with the composition preserved. How it works is in
+   [Generator](/en/docs/generator).
+2. **Ask the service what is in a picture.** The magnifier button on the preview
+   of an uploaded image writes a detailed prompt for you — a great way to take
+   apart someone else's trick. Details in
+   [Special features](/en/docs/special).
+3. **Replace one object in a finished frame using a mask.** Paint over the area,
+   write what should be there, and nothing else is touched.
+4. **Send your picture to the [AI chat](/en/docs/chat)** and ask what to improve.
+   Models tagged **VISION** really do look at the image.
+5. **Bring a picture to life as video.** Above a finished result in the generator
+   there is a button labelled **«Анимировать (image → video)»** — the label is not
+   translated — which puts your picture in as the first frame and switches to
+   the "Video" tab. See [Generator](/en/docs/generator).
 
-1. **Register** on the platform via social networks or email
-2. **Explore the gallery** for inspiration and understanding of capabilities
-3. **Create your first image** in the generator
-4. **Experiment** with different models and styles
+<Callout type="tip">
+  Works can be **dragged with the mouse** from your feed on the left straight
+  into the "Custom Image" block on the right. No downloading and re-uploading —
+  that is the most common piece of wasted work for newcomers. How it works is
+  in [Generator](/en/docs/generator).
+</Callout>
 
-## Support
+## How this guide is built
 
-If you have questions, refer to the [FAQ](docs/faq) section or contact us on [Telegram](https://t.me/ArtGenerationMe).
+Every feature here follows the same order: **why** you need it, **how it works**,
+an **example** and a **tip**. If something in the service behaves unexpectedly,
+there is most likely a paragraph about exactly that.
+
+Exact numbers — prices, limits, package sizes — are deliberately not repeated
+in the text. They change, and the screen always has the current ones. Instead
+the guide says **where on the screen to look**: what each plan includes, for
+instance, is always listed in the plans window, which opens by clicking your
+balance in the header.
+
+<Callout type="tip">
+  Looking for the answer to a specific question — **use the search on the left**.
+  It searches the text of the pages, not just headings, and forgives typos.
+</Callout>
+
+And to get back here from the service, look for the word **"Вики"** ("Wiki") —
+that is what the guide is called both in the user menu and in the "More" menu.
+
+## Where to go next
+
+- Never used the service — [Gallery](/en/docs/gallery), and from there
+  [Signing in and first steps](/en/docs/start).
+- Already signed in and want to create — [Generator](/en/docs/generator).
+- Something is not working right now — [When something doesn't work](/en/docs/troubleshooting)
+  and [FAQ](/en/docs/faq).

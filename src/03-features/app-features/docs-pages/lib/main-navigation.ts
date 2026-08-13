@@ -1,5 +1,5 @@
+import type { MainNavigationItem } from '@/src/01-shared/types/app/docs-pages';
 import { Lng } from '@/src/01-shared/types/app/lng';
-import { MainNavigationItem } from '@/src/01-shared/types/app/docs-pages';
 
 const mainNavigationObj: Record<string, MainNavigationItem> = {
   index: {
@@ -7,40 +7,65 @@ const mainNavigationObj: Record<string, MainNavigationItem> = {
     [Lng.EN]: 'Overview',
     path: '/docs',
   },
-  registration: {
-    [Lng.RU]: 'Регистрация',
-    [Lng.EN]: 'Registration',
-    path: '/docs/registration',
-  },
-  'main-page': {
-    [Lng.RU]: 'Главная страница',
-    [Lng.EN]: 'Main Page',
-    path: '/docs/main-page',
-  },
   gallery: {
-    [Lng.RU]: 'Главная Галерея',
-    [Lng.EN]: 'Main Gallery',
+    [Lng.RU]: 'Галерея',
+    [Lng.EN]: 'Gallery',
     path: '/docs/gallery',
   },
+  start: {
+    [Lng.RU]: 'Вход и первые шаги',
+    [Lng.EN]: 'Signing in and first steps',
+    path: '/docs/start',
+  },
+  coins: {
+    [Lng.RU]: 'Монеты и лимиты',
+    [Lng.EN]: 'Coins and limits',
+    path: '/docs/coins',
+  },
   generator: {
-    [Lng.RU]: 'Генератор изображений',
-    [Lng.EN]: 'Image Generator',
+    [Lng.RU]: 'Генератор',
+    [Lng.EN]: 'Generator',
     path: '/docs/generator',
   },
-  'logo-generator': {
-    [Lng.RU]: 'Генератор логотипов',
-    [Lng.EN]: 'Logo Generator',
-    path: '/docs/logo-generator',
+  'my-works': {
+    [Lng.RU]: 'Свои работы',
+    [Lng.EN]: 'Your works',
+    path: '/docs/my-works',
+  },
+  chat: {
+    [Lng.RU]: 'ИИ-чат',
+    [Lng.EN]: 'AI Chat',
+    path: '/docs/chat',
+  },
+  catalogs: {
+    [Lng.RU]: 'Каталоги моделей',
+    [Lng.EN]: 'Model catalogs',
+    path: '/docs/catalogs',
   },
   editor: {
-    [Lng.RU]: 'Редактор изображений',
-    [Lng.EN]: 'Image Editor',
+    [Lng.RU]: 'Редактор и логотипы',
+    [Lng.EN]: 'Editor and logos',
     path: '/docs/editor',
   },
-  'user-menu': {
-    [Lng.RU]: 'Меню пользователя',
-    [Lng.EN]: 'User Menu',
-    path: '/docs/user-menu',
+  billing: {
+    [Lng.RU]: 'Тарифы и оплата',
+    [Lng.EN]: 'Plans and payment',
+    path: '/docs/billing',
+  },
+  profile: {
+    [Lng.RU]: 'Профиль и настройки',
+    [Lng.EN]: 'Profile and settings',
+    path: '/docs/profile',
+  },
+  special: {
+    [Lng.RU]: 'Особые возможности моделей',
+    [Lng.EN]: 'Special model features',
+    path: '/docs/special',
+  },
+  troubleshooting: {
+    [Lng.RU]: 'Если что-то не работает',
+    [Lng.EN]: "When something doesn't work",
+    path: '/docs/troubleshooting',
   },
   faq: {
     [Lng.RU]: 'Часто задаваемые вопросы',
@@ -69,14 +94,22 @@ const mainNavigationObj: Record<string, MainNavigationItem> = {
   },
 };
 
+// Порядок — тот, в котором пользователь знакомится с сервисом:
+// сначала галерея, потом вход, потом первая работа, потом всё остальное.
 export const mainNavigation: MainNavigationItem[] = [
   mainNavigationObj['index'],
-  mainNavigationObj['registration'],
   mainNavigationObj['gallery'],
+  mainNavigationObj['start'],
+  mainNavigationObj['coins'],
   mainNavigationObj['generator'],
-  mainNavigationObj['logo-generator'],
+  mainNavigationObj['my-works'],
+  mainNavigationObj['chat'],
+  mainNavigationObj['catalogs'],
   mainNavigationObj['editor'],
-  mainNavigationObj['user-menu'],
+  mainNavigationObj['billing'],
+  mainNavigationObj['profile'],
+  mainNavigationObj['special'],
+  mainNavigationObj['troubleshooting'],
   mainNavigationObj['faq'],
   mainNavigationObj['rules'],
   mainNavigationObj['news'],

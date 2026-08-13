@@ -1,186 +1,232 @@
----
-title: Image Editor
-description: Complete guide to using the ArtGeneration.me image editor
----
+import { Callout } from '@/src/01-shared/ui/mdx'
 
-import { Callout, Steps } from '@/src/01-shared/ui/mdx'
+# Editor and logos
 
-# Image Editor
+## Image editor
 
-The editor allows you to modify generated images without the need for third-party programs. It's a powerful tool for finalizing your generations.
+The editor finishes a work off: crop it, add a caption, overlay a shape, correct
+the colour. All of that without leaving the service and without opening
+a graphics application. It has its own item in the header — **"Editor"**.
 
-![ArtGeneration.me Image Editor](/assets/docs-pages/guide/editor-02.png)
+![Image editor](/assets/docs-pages/screens/09-01-editor-annotation.en.webp)
 
-## How to Open the Editor
+On the left — the same works drawer as in the generator, the canvas in
+the middle, the layers panel on the right.
 
-There are several ways to open an image in the editor:
-
-<Steps>
-### From the generator gallery
-Hover over an image and click the "To Editor" button.
-
-### From the main gallery
-Open an image and select "Edit".
-
-### Directly
-Go to the "Editor" section in the navigation and upload an image.
-</Steps>
-
-## Main Tools
-
-### Crop
-
-Crop the image to the desired size or aspect ratio. Available presets:
-- Free crop
-- 1:1 (square)
-- 16:9 (widescreen)
-- 9:16 (vertical)
-- 4:3 (classic)
-
-![Image crop tool](/assets/docs-pages/screens/crop-image-tool.png)
-
-### Scale
-
-Resize the image while maintaining proportions. Useful for preparing images for social media publication.
-
-### Rotate
-
-Rotate the image to any angle. Quick rotations at 90° and precise angle adjustment are available.
-
-### Flip
-
-Flip the image horizontally or vertically. Often used to fix composition.
-
-## Filters and Effects
-
-![Filters in image editor](/assets/docs-pages/images/blog/img_024.png)
-
-<Callout type="info">
-Filters are applied non-destructively — you can always return to the original or undo changes.
+<Callout type="tip">
+  **No need to download and upload back.** Press the editor icon on a work card
+  and it opens right here. The same is available from
+  the [generator](/en/docs/generator): the preview of an uploaded picture has
+  an "Edit image" button.
 </Callout>
 
-### Available Adjustments
+### Your own file from disk
 
-- **Brightness** — lighten or darken the image
-- **Contrast** — strengthen or weaken the difference between light and dark areas
-- **Saturation** — color intensity
-- **Exposure** — overall lighting
-- **Shadows** — detail in dark areas
-- **Highlights** — detail in bright areas
-- **Temperature** — warm or cool tones
-- **Tint** — color shift
+You can also load a file from your computer, not just pick a work from
+the drawer. The limits: **one file, up to 5 MB, PNG, JPEG or WebP**.
 
-### Artistic Filters
+An uploaded file gets two buttons: apply it to the canvas and remove it. Once
+the file is open in the editor, the button becomes a **green tick** — the sign
+that this is what is being edited.
 
-- Blur
-- Sharpen
-- Vignette
-- Grain
-- Black & White
+<Callout type="tip">
+  If there are unsaved edits, switching pictures **asks for confirmation** —
+  you cannot lose your work by accident.
+</Callout>
 
-## Drawing and Masks
+### Five sections
 
-![Annotation tools in editor](/assets/docs-pages/images/blog/img_022.png)
+**Adjustments · Filters · Annotate · Fine-tune · Figures.**
+The editor opens on **Annotate** with the Text tool selected — which is why
+it feels like it is "about captions".
 
-### Brush
+Annotate offers eight tools: **text** (with font, size, weight and colour),
+**image**, **rectangle**, **ellipse**, **polygon**, a **pen** for freehand
+drawing, **line** and **arrow**.
 
-Draw over the image with various brushes:
-- Brush size adjustment
-- Edge hardness adjustment
-- Color selection
-- Opacity adjustment
+The **Adjustments** section has an **Original** button that unfolds a list of
+ready crop proportions — each labelled with both the pixel size and the aspect
+ratio. Next to it: **Flip Horizontally** and **Flip Vertically**.
 
-![Brush color picker](/assets/docs-pages/screens/color-picker.png)
+![Crop presets in the editor](/assets/docs-pages/screens/09-03-editor-crop-presets.en.webp)
 
-### Mask for Inpainting
+<Callout type="tip">
+  The list of proportions is the same as in the generator. Handy when the picture
+  is already finished but you need another format for a cover or a post: crop it
+  here instead of redoing the generation.
+</Callout>
 
-Create masks for selective editing:
+The **Filters** section holds ready colour presets: Original, TikTok Pop, Beauty
+Glow, Ektar 100, Urban Night, Golden Desert, Cinematic Blue, Food Blogger, Nature
+Fresh, Cosy Coffee and more. The strip scrolls sideways, and clicking applies
+the preset right away.
 
-<Steps>
-### Select the tool
-Select the "Mask" tool from the toolbar.
+![The Filters section](/assets/docs-pages/screens/09-02-editor-filters.en.webp)
 
-### Paint the area
-Paint over the area you want to change.
+**Fine-tune** holds sliders: **brightness**, **contrast**, **HSV**, **warmth**,
+**blur** and **sharpness**.
 
-### Send to generator
-Click "Send to Generator".
+The **Figures** section has the same rectangle, ellipse, polygon and line as
+the annotation tools, just gathered separately: handy when you need a backdrop
+for text or a frame rather than a caption.
 
-### Write a prompt
-Write a prompt for the new area.
+Above the canvas — the size in pixels, zoom with plus and minus, and undo/redo
+buttons.
 
-### Start generation
-Start generation and wait for the result.
-</Steps>
+### A second mode: a blank canvas
 
-![Mask tool](/assets/docs-pages/screens/mask-paint-tool.png)
+<Callout type="tip">
+  **The "Reset" button does not do what it looks like.** With no edits it simply
+  clears the canvas. But if there are edits, it asks for confirmation and puts
+  a **blank white sheet** in place.
 
-![Mask settings panel](/assets/docs-pages/screens/mask-options-panel.png)
+  Effectively this is a second mode of the editor: not "fix a picture" but
+  **draw from scratch**. Need a simple banner, a backdrop with text or
+  a diagram — press "Reset" and draw right here, no generation required.
+</Callout>
+
+### The buttons at the bottom
+
+The set depends on where the editor was opened from. On its own page there are
+four: **Reset · Upload · Download · Save to gallery**. Opened from the generator
+the set is different: **Cancel · Download · Save to gallery · Apply**.
+
+| Button | What it does |
+|---|---|
+| **Reset** | clear the canvas — or put a blank white sheet in place |
+| **Upload** | take a file from disk instead of a work from the drawer |
+| **Download** | take the file for yourself; the work does not go to the gallery |
+| **Save to gallery** | create a **new** work from the edited image |
+| **Apply** | hand the result back to wherever the editor was opened from |
+| **Cancel** | leave without saving |
+
+<Callout type="tip">
+  **"Save to gallery" creates a new work and the original stays** — you cannot
+  ruin the source. The result is saved as **WebP at maximum quality** (the picture
+  is processed at a raised resolution) and lands **at the top** of your works,
+  appearing in the drawer without a page reload.
+</Callout>
+
+The editor library's own save button has been removed — looking for "Save"
+inside its panels is pointless: only the buttons at the bottom save anything.
+
+If the editor was opened from the generator, **"Apply" returns the picture
+to where you came from** — "Custom Image", an additional picture or the face
+slot; and if you opened the editor just to look, there is nowhere to return it.
+**The generation size adjusts itself** to the edited picture, if the model has
+such a size.
+
+**Edits are remembered between openings** — close the editor and you will
+continue from the same place, not from a blank sheet. Closing it is not scary.
+
+### An uploaded picture is not a work
+
+A file you uploaded yourself — into the editor or into "Custom Image" — **does
+not become a work**: it is stored separately, as a source for generation, and
+never appears in your feed of works.
+
+<Callout type="tip">
+  Hence the answer to "I uploaded a picture and it isn't in my works". That is
+  how it should be: to turn something uploaded into a work, run it through
+  a generation or save it with "Save to gallery".
+</Callout>
+
+<Callout type="info" title="What you save from the editor starts private">
+  A work created with "Save to gallery" appears **for you only** — it does not
+  go into the shared feed. It is also flagged as adult, so in your own feed it
+  may look blurred if you have turned such works off in profile settings. Both
+  flags can be switched later on the work's card: [Your works](/en/docs/my-works).
+</Callout>
+
+## Logo generator
+
+It lives in the **"More"** menu rather than next to the ordinary generator —
+hence the question "where are the logos".
+
+![Logo generator, step 1](/assets/docs-pages/screens/09-06-logo-step1.en.webp)
+
+### Four steps
+
+| Step | Name | What it is about |
+|---|---|---|
+| 1 | **"Укажите информацию"** (provide the details) | the brand name and the layout size |
+| 2 | **Composition and mood** | picking a layout |
+| 3 | **Editing** | adjusting the layout |
+| 4 | **"AI-обработка"** (AI processing) | styling by the neural network |
+
+Step one is simple: the **"Brand name"** field with an example hint, a choice of
+layout size — and the **"Create layouts"** button, inactive until a name is
+entered.
 
 <Callout type="warning">
-For quality inpainting, it's recommended to paint the area with a small margin beyond the object you want to change.
+  **Steps cannot be skipped.** Until the previous one is finished, the next says
+  **"this section will become available once the previous one is complete"** and
+  asks you to go back. But **you can move through completed steps** — the step
+  bar is clickable.
+
+  There is a separate restriction: **a step closed by your plan**. It looks
+  different from the usual plans window — a card right inside the step, with
+  an "Open plans" button. Don't confuse the two: in one case you need to finish
+  the previous step, in the other to change plan.
 </Callout>
 
-## Text and Labels
+### The main reason people give up halfway
 
-Add text to images:
-- Font selection
-- Size adjustment
-- Text and outline color selection
-- Positioning
+- on step 2 — **"pick a composition and a mood, never mind the icon for now,
+  you will be able to replace it later"**;
+- on step 3 — **"remember that all of this will still be styled by the neural
+  network, this is not the finished version"**;
+- on step 4 — **"the composition will be preserved, while the icon and the font
+  are improved"**.
 
-## Layers
-
-The editor supports working with layers:
-- Adding new layers
-- Changing layer order
-- Layer opacity adjustment
-- Blending modes
-
-## Saving and Export
-
-After editing, you can:
-
-- **Save to gallery** — the image will appear in your personal gallery
-- **Download** — save to your device in PNG or JPEG format
-- **Send to generator** — use as a base for new generation
-
-![User gallery with saved images](/assets/docs-pages/screens/color-picker2.png)
-
-### Export Formats
-
-- **PNG** — lossless quality, transparency support
-- **JPEG** — smaller file size, quality adjustment
-
-## Integration with Generator
-
-The edited image can be used as an Init Image for further generation. This allows you to create complex compositions iteratively:
-
-<Steps>
-### Generate a base image
-Create an initial image in the generator.
-
-### Edit in the editor
-Open the image in the editor and make the necessary changes.
-
-### Send back to the generator
-Send the edited image back to the generator.
-
-### Add new elements
-Add new elements through inpainting.
-
-### Repeat the process
-Repeat the process until you achieve the desired result.
-</Steps>
-
-<Callout emoji="💡">
-The iterative approach allows you to gradually improve the image and achieve more precise results.
+<Callout type="tip">
+  **On steps 2–3 you assemble a skeleton — what goes where. The picture is made
+  from it by the neural network on step 4.** People give up on the second step
+  deciding "it came out ugly" — and it is supposed to be ugly there.
 </Callout>
 
-## Keyboard Shortcuts
+### A second way in: your own logo
 
-- **Ctrl+Z** — undo last action
-- **Ctrl+Y** — redo undone action
-- **Ctrl+S** — save image
-- **Space + drag** — pan across the image
-- **Mouse wheel** — zoom
+On the first step, besides the brand name field, there is **"Or upload your own
+logo"** — by dragging or picking a file, PNG, JPG or WEBP up to 5 MB.
+
+<Callout type="tip">
+  So the logo generator also works as **"polish an existing logo"**: upload
+  yours → fix the layout → hand it to the network for styling. Nothing on
+  the screen names this route.
+</Callout>
+
+### What the layout editor has
+
+Add text, the text itself, font, weight, colour, icons, plus save, duplicate and
+delete for an element. The layout gallery switches between three views:
+**tiles, large, preview**.
+
+### The styling step
+
+Here you get the usual generation settings: a **styling model** with its own
+list, a **styling prompt**, a **"Negative"** field, a random-prompt dice and
+collapsed additional settings.
+
+<Callout type="warning">
+  **Two traps on this step.**
+
+  First: in the Russian version the **"Negative"** field carries the neighbouring
+  field's hint — about the styling prompt. Don't trust it: this field takes what
+  should **not** be there.
+
+  Second: **the additional settings are not translated** — they show technical
+  parameter names in Latin script. If you don't know what they are, don't touch
+  them: the defaults are chosen sensibly.
+</Callout>
+
+The styling prompt changes only the appearance. The composition and the layout
+stay as you assembled them on steps 2–3. Don't redo the layout with a prompt —
+go back to the "Editing" step.
+
+## Where to go next
+
+- Edit a fresh work right after generating it —
+  [Generator](/en/docs/generator).
+- Find the work you want to fix — [Your works](/en/docs/my-works).
+- Learn which formats are available for download — the same page.
