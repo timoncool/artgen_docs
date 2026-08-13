@@ -204,7 +204,7 @@ Blocks in the right panel come in two kinds, and the difference matters.
   and FPS work.
 - **A layer** — the same **plus a stack icon on the left and a chevron on
   the right**. That is your own image, the schema's media fields, "Additional",
-  and video frames and references.
+  styles, LoRAs, and video frames and references.
 
 A layer has **two independent states**: on or off (the stack icon) and expanded
 or collapsed (the chevron).
@@ -238,7 +238,9 @@ Resolution is set in two steps: first a **quality preset** (1K, 2K, 3K),
 then **proportions** with a slider. Switching the preset keeps the chosen
 proportions. The price is recalculated immediately and shown next to it.
 
-Video has **480p / 720p** instead of presets, and **duration** appears there too.
+Video has its own presets instead — from 480p up to 4K, a different set on every
+model; the preset row only appears at all if a model has more than one. **Duration**
+appears there too.
 
 <Callout type="tip">
   **Choose the shape of the frame first, then raise the quality.** When you switch
@@ -285,8 +287,10 @@ to the first file automatically.**
 
 Once the file is in place, **"Draw mask"**, **"Remove background"** and
 **"Modification strength"** appear. The last one decides how far the model
-departs from the source: a small value is a light touch-up, a large one is almost
-a new picture. **0.5** is the default and a comfortable place to start from.
+departs from the source: the scale has labelled notches — **Minimal / Medium /
+Maximal**. To repaint an object while keeping the angle and background, stay
+closer to minimal; for a new scene inspired by the source, closer to maximal.
+The slider is not on every model, and its range is set by the model.
 
 If the picture is not yet saved among your works, it is saved automatically
 before the background is removed — leaving you with **two works**: the source and
@@ -297,9 +301,9 @@ after the upload. Close it without saving and it will not come back on its own;
 after that only the "Draw mask" button reopens it.
 
 <Callout type="tip">
-  **Private mode switches itself on** the moment you upload your own image, so
-  a personal photo does not accidentally end up in the public feed. You can turn
-  it off right there with the toggle.
+  Uploading a personal photo — switch **private mode** on yourself, with
+  the toggle in the right panel: it does not come on by itself. Then the work
+  will not go into the public feed. Private mode is available on a paid plan.
 </Callout>
 
 ### Four buttons on the preview itself
@@ -403,8 +407,11 @@ selected model". That is a property of the model, not a fault.
 
 ![Additional settings](/assets/docs-pages/screens/05-25-additional-settings.en.webp)
 
-Below are collapsible blocks: your own image, styles, LoRAs, private mode,
-seed, prompt extend and settings that exist only on this model.
+Below come the blocks. **Your own image, styles, LoRAs and "Additional"** can be
+collapsed and switched off — they carry the stack icon. Private mode, "Noise"
+and the image count are plain blocks: you can only fill them in. Prompt extend
+is not a block of its own but a toggle **inside** "Additional", and not on every
+model.
 
 <Callout type="tip">
   **You can pick no more than three styles and three LoRAs.** The trigger words
@@ -481,9 +488,10 @@ beside it means the value is random. And **"Grain"** is about texture, not
 focus: it makes the picture more textured, but it will not rescue a blurry frame.
 
 The set of additional settings **comes with the model itself**, and every model
-has its own. SDXL models bring "Prompt Adherence" and "Creativity mode" which
-newer models do not have; design models bring a colour palette and a background
-colour; some models bring "Prompt extend".
+has its own. SDXL models bring "Prompt Adherence", which newer models do not
+have; design models bring a colour palette and a background colour; some models
+bring "Prompt extend". "Creativity mode" is not from "Additional" at all — it is
+a separate block of the right panel, right under the model.
 
 <Callout type="tip">
   The practical takeaway: **changed the model — scroll through "Additional"
