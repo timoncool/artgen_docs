@@ -67,12 +67,10 @@ translator, senior developer and others. Roles have search, categories and
   at how a ready role is written and write your own by that example.
 </Callout>
 
-<Callout type="warning">
-  The list of roles is **loaded from the server**, so it has a loading state and
-  an error state with a "Retry" button. Roles keep being added over time, and
-  the list height is limited — if it looks like there are only three of them,
-  scroll.
-</Callout>
+The list of roles is **loaded from the server**, so it has a loading state and
+an error state with a "Retry" button. Roles keep being added over time, and
+the list height is limited — if it looks like there are only three of them,
+scroll.
 
 ## The system prompt
 
@@ -85,11 +83,9 @@ The "Set the assistant's behavior…" field is an instruction applied
   both cheaper and more effective.
 </Callout>
 
-<Callout type="tip">
-  The eraser on the right of the field appears only when there is something in
-  it, and it also **clears the selected role** — text and choice at once. There
-  is no separate "remove role" button, which is not obvious.
-</Callout>
+The eraser on the right of the field appears only when there is something in
+it, and it also **clears the selected role** — text and choice at once. There
+is no separate "remove role" button, which is not obvious.
 
 ## Additional: answer parameters
 
@@ -106,10 +102,8 @@ The "Set the assistant's behavior…" field is an instruction applied
   the more expensive the request.
 </Callout>
 
-<Callout type="tip">
-  Reasoning helps on logic problems and gets in the way on simple ones, where it
-  only burns tokens. For "rewrite this email more politely" it is better off.
-</Callout>
+Reasoning helps on logic problems and gets in the way on simple ones, where it
+only burns tokens. For "rewrite this email more politely" it is better off.
 
 ## Tools: when the answer is drawn, not written
 
@@ -177,16 +171,14 @@ cancelled; an upload can be retried, cancelled, or the file removed.
   [Generator](/en/docs/generator).
 </Callout>
 
-<Callout type="warning">
-  **An attachment can be refused for three different reasons, and each is cured
-  differently:**
+**An attachment can be refused for three different reasons, and each is cured
+differently:**
 
-  1. **too many files in one message** — the limit is substituted into
-     the message; when dragging a batch, only the first ones are added;
-  2. **the format is not supported at all** — the message lists what is allowed;
-  3. **the model cannot read such files** — the format is fine, but the selected
-     model does not work with it. Only changing the model helps here.
-</Callout>
+1. **too many files in one message** — the limit is substituted into
+   the message; when dragging a batch, only the first ones are added;
+2. **the format is not supported at all** — the message lists what is allowed;
+3. **the model cannot read such files** — the format is fine, but the selected
+   model does not work with it. Only changing the model helps here.
 
 Attachments are **estimated in advance and cost coins**: if the balance is short,
 the service says outright what the files were estimated at and offers to remove
@@ -233,30 +225,24 @@ A message has seven states: sending, request accepted, generating an answer,
   handy when the answer has to go to a colleague or into documentation.
 </Callout>
 
-<Callout type="warning">
-  **Three cases where the buttons silently do nothing:**
+**Three cases where the buttons silently do nothing:**
 
-  - **"Retry"** works only for a **failed or cancelled** answer. On an ordinary
-    finished answer it will not fire;
-  - **any action is blocked while an answer is being generated in this
-    conversation**;
-  - **if the message had files and they are no longer available**, retry and edit
-    will not work. You get "One or more chat attachments were not found, already
-    used or unavailable" — an attachment lives for one message. The way out:
-    send a new message and attach the files again.
-</Callout>
+- **"Retry"** works only for a **failed or cancelled** answer. On an ordinary
+  finished answer it will not fire;
+- **any action is blocked while an answer is being generated in this
+  conversation**;
+- **if the message had files and they are no longer available**, retry and edit
+  will not work. You get "One or more chat attachments were not found, already
+  used or unavailable" — an attachment lives for one message. The way out:
+  send a new message and attach the files again.
 
-<Callout type="warning">
-  **"Edit and send again" cuts the conversation from that message onwards** —
-  everything that came after disappears. This is a common loss: someone edits
-  an old question and loses the whole branch below it.
-</Callout>
+**"Edit and send again" cuts the conversation from that message onwards** —
+everything that came after disappears. This is a common loss: someone edits
+an old question and loses the whole branch below it.
 
-<Callout type="tip">
-  **An answer can be stopped mid-sentence, and nothing is lost.** The part
-  already written is kept, the message is marked "Cancelled", your question stays
-  in the thread, and "Retry" appears next to it. Pressing stop is not scary.
-</Callout>
+**An answer can be stopped mid-sentence, and nothing is lost.** The part
+already written is kept, the message is marked "Cancelled", your question stays
+in the thread, and "Retry" appears next to it. Pressing stop is not scary.
 
 An empty message cannot be sent, but **a message consisting only of attachments,
 with no text, can**.
@@ -300,11 +286,9 @@ There is also "Clear conversations" — deleting them all at once.
   of parameters. The cure is the same: reset the chat settings and try again.
 </Callout>
 
-<Callout type="warning">
-  **Part of the chat interface is not translated.** On the English version
-  the "Ready-made prompts" and "System prompt" headings, the welcome line and
-  the role cards stay in Russian. Go by the icons and by this guide.
-</Callout>
+**Part of the chat interface is not translated.** On the English version
+the "Ready-made prompts" and "System prompt" headings, the welcome line and
+the role cards stay in Russian. Go by the icons and by this guide.
 
 ## Where to go next
 

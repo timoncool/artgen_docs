@@ -2,19 +2,19 @@
   {
     "title": "Plans and payment",
     "href": "/docs/billing",
-    "content": "Plans and payment The plans window opens by clicking your balance in the header — and it is the only place where the numbers are always current. This guide deliberately does not repeat them: plans and prices change, and the window changes with them. ![The plans window](/assets/docs-pages/screens/10-01-tariffs-modal.en.png) Three tabs and how they differ The window explains each option itself, and the explanations are accurate: - One-time payment — a single payment for a chosen period with no aut",
+    "content": "Plans and payment The plans window opens by clicking your balance in the header — and it is the only place where the numbers are always current. This guide deliberately does not repeat them: plans and prices change, and the window changes with them. ![The plans window](/assets/docs-pages/screens/10-01-tariffs-modal.en.webp) Three tabs and how they differ The window explains each option itself, and the explanations are accurate: - One-time payment — a single payment for a chosen period with no au",
     "section": "docs"
   },
   {
     "title": "Model catalogs",
     "href": "/docs/catalogs",
-    "content": "Model catalogs The catalog answers the question the generator makes you guess at: which model to take for this task. Here every model has a description, a price, example works and its neighbours in the line — all visible before you spend any coins. ![Image model catalog](/assets/docs-pages/screens/08-01-models-catalog.en.png) The tabs at the top: Images · Video · Audio · Text · LoRAs · Styles, each with a number in brackets. The catalog shows models with your plan in mind. It is not a general pr",
+    "content": "Model catalogs The catalog answers the question the generator makes you guess at: which model to take for this task. Here every model has a description, a price, example works and its neighbours in the line — all visible before you spend any coins. ![Image model catalog](/assets/docs-pages/screens/08-01-models-catalog.en.webp) The tabs at the top: Images · Video · Audio · Text · LoRAs · Styles, each with a number in brackets. The catalog shows models with your plan in mind. It is not a general p",
     "section": "docs"
   },
   {
     "title": "AI Chat",
     "href": "/docs/chat",
-    "content": "AI Chat The chat gives you access to text neural networks: ask, explain, translate, write code, go through a document or a picture. It differs from the generator fundamentally: the chat is text-only, there are no \"Images\" or \"Video\" tabs here, even though the screen layout looks similar. ![AI chat](/assets/docs-pages/screens/07-01-chat-main.en.png) Three parts: the list of conversations on the left, the conversation in the middle, the settings on the right. The chat has its own header, and on a ",
+    "content": "AI Chat The chat gives you access to text neural networks: ask, explain, translate, write code, go through a document or a picture. It differs from the generator fundamentally: the chat is text-only, there are no \"Images\" or \"Video\" tabs here, even though the screen layout looks similar. ![AI chat](/assets/docs-pages/screens/07-01-chat-main.en.webp) Three parts: the list of conversations on the left, the conversation in the middle, the settings on the right. The chat has its own header, and on a",
     "section": "docs"
   },
   {
@@ -26,7 +26,7 @@
   {
     "title": "Editor and logos",
     "href": "/docs/editor",
-    "content": "Editor and logos Image editor The editor finishes a work off: crop it, add a caption, overlay a shape, correct the colour. All of that without leaving the service and without opening a graphics application. ![Image editor](/assets/docs-pages/screens/09-01-editor-annotation.en.png) On the left — the same works drawer as in the generator, the canvas in the middle, the layers panel on the right. No need to download and upload back. Press the editor icon on a work card and it opens right here. The s",
+    "content": "Editor and logos Image editor The editor finishes a work off: crop it, add a caption, overlay a shape, correct the colour. All of that without leaving the service and without opening a graphics application. ![Image editor](/assets/docs-pages/screens/09-01-editor-annotation.en.webp) On the left — the same works drawer as in the generator, the canvas in the middle, the layers panel on the right. No need to download and upload back. Press the editor icon on a work card and it opens right here. The ",
     "section": "docs"
   },
   {
@@ -38,31 +38,31 @@
   {
     "title": "Gallery",
     "href": "/docs/gallery",
-    "content": "Gallery The gallery is the shared feed of works made by other people, and at the same time the home page of the service. It is worth visiting before the generator: ten minutes here show what neural networks are actually capable of, which models made it and which words describe it. Any prompt you like can be taken with a single click. ![The gallery home page](/assets/docs-pages/screens/01-02-home-cover-feed.en.png) The cover and voting for it At the top there is one large work. Next to it are \"co",
+    "content": "Gallery The gallery is the shared feed of works made by other people, and at the same time the home page of the service. It is worth visiting before the generator: ten minutes here show what neural networks are actually capable of, which models made it and which words describe it. Any prompt you like can be taken with a single click. ![The gallery home page](/assets/docs-pages/screens/01-02-home-cover-feed.en.webp) The cover and voting for it At the top there is one large work. Next to it are \"c",
     "section": "docs"
   },
   {
     "title": "Generator",
     "href": "/docs/generator",
-    "content": "Generator The generator is the main screen of the service. Images, video and sound are made here. Your works are on the left, the canvas and the prompt field in the middle, the settings of the chosen model on the right. ![Generator, Images tab](/assets/docs-pages/screens/05-01-generator-images.en.png) Three tabs at the top Images · Video · Audio — three different sets of models and three different sets of settings. Switching the tab changes the whole right-hand column. The generator remembers th",
+    "content": "Generator The generator is the main screen of the service. Images, video and sound are made here. Your works are on the left, the canvas and the prompt field in the middle, the settings of the chosen model on the right. ![Generator, Images tab](/assets/docs-pages/screens/05-01-generator-images.en.webp) Three tabs at the top Images · Video · Audio — three different sets of models and three different sets of settings. Switching the tab changes the whole right-hand column. The generator remembers t",
     "section": "docs"
   },
   {
     "title": "ArtGeneration.me user guide",
     "href": "/docs",
-    "content": "ArtGeneration.me user guide This guide covers everything the service can do: how to create images, video and sound, how the AI chat and the editor work, what coins are spent on, and what to do when the result is not what you had in mind. ![The \"About\" page](/assets/docs-pages/screens/01-01-about-page.en.png) The service itself is access to hundreds of neural networks at once, in one browser window. Nothing to install, configure or update: you describe what you want in words, pick a model, and it",
+    "content": "ArtGeneration.me user guide This guide covers everything the service can do: how to create images, video and sound, how the AI chat and the editor work, what coins are spent on, and what to do when the result is not what you had in mind. ![The \"About\" page](/assets/docs-pages/screens/01-01-about-page.en.webp) The service itself is access to hundreds of neural networks at once, in one browser window. Nothing to install, configure or update: you describe what you want in words, pick a model, and i",
     "section": "docs"
   },
   {
     "title": "Your works",
     "href": "/docs/my-works",
-    "content": "Your works Everything you create lives in your profile. It is also your public page: anyone with the link sees your works there. It opens from the user menu, the \"Personal\" item. ![Profile and the four feeds](/assets/docs-pages/screens/06-01-user-profile-feeds.en.png) At the top — your name, the settings gear, the plan badge with the subscription date, and three counters: a heart, a bookmark and a person with a plus. These three numbers are not your activity but your recognition. That is how man",
+    "content": "Your works Everything you create lives in your profile. It is also your public page: anyone with the link sees your works there. It opens from the user menu, the \"Personal\" item. ![Profile and the four feeds](/assets/docs-pages/screens/06-01-user-profile-feeds.en.webp) At the top — your name, the settings gear, the plan badge with the subscription date, and three counters: a heart, a bookmark and a person with a plus. These three numbers are not your activity but your recognition. That is how ma",
     "section": "docs"
   },
   {
     "title": "Profile and settings",
     "href": "/docs/profile",
-    "content": "Profile and settings User menu The button on the right of the header opens a menu of eight items: Personal, Settings, Payments, Bonuses, Partnership, Community, Wiki, Log Out. ![User menu](/assets/docs-pages/screens/11-01-user-menu.en.png) The guide is called \"Wiki\" in the menu — that is the word to look for. The \"More\" menu in the header Next to the main sections there is a More dropdown containing Logos, About and Wiki. ![The \"More\" menu in the header](/assets/docs-pages/screens/11-01b-more-me",
+    "content": "Profile and settings User menu The button on the right of the header opens a menu of eight items: Personal, Settings, Payments, Bonuses, Partnership, Community, Wiki, Log Out. ![User menu](/assets/docs-pages/screens/11-01-user-menu.en.webp) The guide is called \"Wiki\" in the menu — that is the word to look for. The \"More\" menu in the header Next to the main sections there is a More dropdown containing Logos, About and Wiki. ![The \"More\" menu in the header](/assets/docs-pages/screens/11-01b-more-m",
     "section": "docs"
   },
   {
@@ -80,7 +80,7 @@
   {
     "title": "Signing in and first steps",
     "href": "/docs/start",
-    "content": "Signing in and first steps Without signing in you can only browse: the [gallery](/en/docs/gallery) is open, but creating, searching and saving are not. Signing in takes under a minute and does not ask you to invent a password: the account has no password at all. ![The home page for a guest](/assets/docs-pages/screens/02-00-guest-landing.en.png) There is no separate registration in the service: your first sign-in creates the account. The sign-in window opens with the \"Start Creating!\" button in t",
+    "content": "Signing in and first steps Without signing in you can only browse: the [gallery](/en/docs/gallery) is open, but creating, searching and saving are not. Signing in takes under a minute and does not ask you to invent a password: the account has no password at all. ![The home page for a guest](/assets/docs-pages/screens/02-00-guest-landing.en.webp) There is no separate registration in the service: your first sign-in creates the account. The sign-in window opens with the \"Start Creating!\" button in ",
     "section": "docs"
   },
   {
