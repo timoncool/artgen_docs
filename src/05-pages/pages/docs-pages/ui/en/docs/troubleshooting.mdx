@@ -1,0 +1,240 @@
+import { Callout } from '@/src/01-shared/ui/mdx'
+
+# When something doesn't work
+
+A troubleshooting page: on the left the symptom as you would describe it yourself,
+on the right what is actually going on. Almost everything that looks broken isn't.
+
+## I can't sign in
+
+**The code doesn't arrive by email.** Most likely you pressed "send again" too
+early: while the previous code is alive, no new email is sent, even though
+the screen says it was. Open the first email. And check the spam folder.
+
+**The "Get Code" button is grey and does nothing.** An anti-bot check runs under
+the field; it is mandatory and computes by itself. Give it a couple of seconds.
+
+**I press a social network button and nothing happens.** Social networks open
+in a popup window, and a popup blocker or an aggressive ad blocker stops it.
+Disable it for the site.
+
+**The service won't accept my email.** On a first sign-in, temporary mail,
+addresses with a plus and private relay addresses will not do. The check applies
+to registration only — if the account already exists, signing in works as usual.
+
+More about signing in — [Signing in and first steps](/en/docs/start).
+
+## The search doesn't work
+
+**Gallery search finds nothing or does not respond.** Search works only for
+signed-in users. A guest sees the field but cannot use it.
+
+**I search a long phrase and get nonsense.** Only the first ten words of a query
+are used, the rest are dropped. Search with two or three precise words.
+
+## Where did my filters go
+
+**I picked colours and models, switched the sorting, and it all reset.** That is
+how it works: changing the sorting clears the search, the chosen colours, models
+and media type. Changing the category clears the search and models but keeps
+the sorting.
+
+The rule is simple: pick the sorting first, then filter.
+
+**There is no palette button in the "Bookmarks" feed.** The colour filter exists
+only in shared feeds and in your own "Created" — not in likes, bookmarks,
+following or inside folders.
+
+## The button won't press
+
+**"Create" won't press.** There are several reasons and each is named in
+the message: not enough coins, the simultaneous generation limit is reached,
+the model requires an image or a mask, the prompt is too short or empty,
+a required field marked with an asterisk is not filled.
+
+**I uploaded a picture and the model seems not to see it.** Check whether
+the "Custom Image" layer is switched on — a layer has a stack icon, and a dimmed
+layer does not take part in the generation even though it stays in place.
+
+**"Upscale with prompt" doesn't work.** That button takes the text from
+the prompt field right now, and with an empty field it will not start.
+
+**The heart won't click on my own work.** You cannot like or bookmark your own
+work — there are counters instead of buttons.
+
+**The report submit button is inactive.** The comment field and the button appear
+only after a reason is chosen.
+
+Full details — [Generator](/en/docs/generator).
+
+## The model doesn't have the setting I need
+
+**The setting was there, I changed the model and it vanished.** The set of
+settings is decided by the model itself. If a block is missing, the model does
+not support it, and that is normal: roughly every third model has no creativity
+mode, every fourth no seed or negative prompt.
+
+A hidden block is not cosmetics but a ban: the server refuses a generation if you
+send a value for a setting the model does not have. And the other way round —
+if the block is visible, it works.
+
+**I can't switch a block off — there is no stack icon.** Then it is a plain
+block, not a layer. Only layers can be switched off, and only on paid plans.
+
+## I can't see all the models
+
+**A friend has a model and I don't.** The catalog shows models with your plan in
+mind. How many are available to you is visible in the "Tariff" filter in
+the catalog — where you can also see how many would open on a paid plan.
+
+The plan badge appears on a card only when the model is above your plan.
+A missing badge is good news.
+
+## Coins were charged and there is no result
+
+**It looks like the money is gone.** That does not happen. Coins are not deducted
+at launch but reserved: on failure the reservation returns to the same wallet it
+came from. Ordered four pictures, got three — the fourth is refunded.
+
+**My coins reset by themselves.** The daily balance is set anew each day rather
+than accumulating. The non-expiring coins in brackets are untouched by this.
+
+**The second number disappeared on my phone.** On a narrow screen the
+non-expiring balance is hidden. The exception is the AI chat, where it stays
+visible. The balance has not gone anywhere.
+
+More — [Coins and limits](/en/docs/coins).
+
+## I clicked the balance and the plans opened
+
+That is not misplaced advertising: both balance numbers are one button, and it
+opens the plans window — that is, topping up.
+
+**I clicked the chest after claiming and got the plans again.** The chest changes
+its purpose: open, it opens the claim window; closed with a timer, it opens
+the plans.
+
+## A work won't open or isn't visible
+
+**Someone sent me a link and I get a message instead of a picture.** Three
+reasons: the work is private, showing 18+ content is off for you, or the author
+is blocked. None of them is about you or about the link.
+
+**My own work is not in the shared feed.** A normal state: your own profile shows
+more than the shared feed does. A new work appears immediately but takes its
+place in the feed later.
+
+**A work is blurred and I can't remove the blur.** Three conditions are needed at
+once: be signed in, have a paid plan, and switch the display on in profile
+settings. A guest has no such setting at all.
+
+**A work tagged 18+ won't download.** Until showing such content is switched on
+in settings, the settings open instead of a download. And on the free plan such
+works cannot be downloaded in any format.
+
+## I deleted a work — can I get it back
+
+Yes, but not for long. Right after deletion a red plate with a restore arrow
+stays in its place — until you leave the page, one click brings the work back.
+The restore window itself is about an hour: after that the files are wiped from
+storage.
+
+If you simply don't want to show a work — don't delete it, make it private.
+
+## How do I create a folder
+
+You don't — and that is not an omission. Folders are created by the service, by
+the day works were made. You cannot move a work to another day or give a folder
+your own name.
+
+Remember: deleting a folder deletes every work inside it, and there will be no
+"you are deleting N works" confirmation.
+
+More — [Your works](/en/docs/my-works).
+
+## Promo codes and plans
+
+**The promo code didn't extend my subscription.** If a paid subscription already
+exists, a promo code does not extend it — it grants a temporary upgrade to its
+own plan. On the free plan the same code is granted as an ordinary subscription.
+
+**I moved to a more expensive plan — did I lose my paid days?** No. Moving up
+recalculates the remainder of the old plan into days of the new one.
+
+**I cancelled the subscription but nothing says I did.** The "subscription active
+until …" line does not change after cancelling, because that date is the end
+date. There will be no separate line.
+
+**I paid and the plan is unchanged.** If you saw a "Payment in progress" window
+after paying, that is a normal intermediate state. Wait and refresh the page;
+do not pay again.
+
+**The browser won't open the payment page.** Russian banks had their
+international certificates revoked: install the state certificates or open
+the payment in Yandex Browser.
+
+More — [Plans and payment](/en/docs/billing).
+
+## The chat behaves oddly
+
+**There is no web search, reasoning or tools toggle.** Those are capabilities of
+a particular model. No capability, no toggle. Change the model.
+
+**I pressed "Retry" and nothing happened.** Retry works only for a failed or
+cancelled answer. And any action is blocked while an answer is being generated
+in that conversation.
+
+**I edited an old question and lost the conversation.** "Edit and send again"
+cuts off everything that came after that message.
+
+**An attachment no longer works.** An attachment lives for one message. Attach
+the file again.
+
+**The answer is marked "Recovering the answer".** Not an error: the service is
+pulling the answer back after a connection drop. You can wait.
+
+More — [AI Chat](/en/docs/chat).
+
+## The interface is in the wrong language
+
+**There is no globe in the chat.** The chat has its own header, and on a wide
+screen there is no language switcher in it. Go to any other section — or open
+the side menu with the button at the top left: the language switcher is always at
+the bottom of that menu.
+
+**Part of the English interface is still in Russian.** That is true: the block
+headings in the chat, the ready-role cards and some captions are not translated.
+Go by the icons and by this guide.
+
+## Service announcements
+
+A coloured bar with an announcement from the service sometimes appears at the top
+of the page. Close it with the cross and it will not show again — and it cannot
+be brought back. So it is worth reading through before closing.
+
+## How to use this guide
+
+On the left is the list of sections, on the right the table of contents for
+the current page. The table of contents is collapsed by default and has to be
+opened with the button on the right edge — which is exactly why almost nobody
+uses it. The left panel, conversely, can be collapsed to free up space.
+
+The search shows up to ten results and states how many were found in total — if
+what you need is not in the first ten, refine the query rather than scrolling.
+
+<Callout type="tip">
+  **Don't page through sections — type two words from your question into
+  the search.** It searches the text of the pages, not just the headings, forgives
+  typos and highlights matches. It also remembers your last query when you come
+  back.
+</Callout>
+
+The search index is separate for each language: the English version searches
+English pages.
+
+## None of this helped
+
+Write to support — the address is in the [FAQ](/en/docs/faq), along with a link
+to the Telegram community. If the problem is with a specific work, include a link
+to it: you can copy it with the button in the work window or straight from
+the address bar.

@@ -1,0 +1,233 @@
+import { Callout } from '@/src/01-shared/ui/mdx'
+
+# Coins and limits
+
+Everything the service does costs coins: an image, a clip, a voice-over, a chat
+reply, extracting a prompt from a picture. Coins are a single currency, so you
+never have to count "how much video is left" separately from "how many pictures
+are left".
+
+How many you have is always visible in the header.
+
+## Why there are two numbers
+
+The header shows something like `N (+M)` — a number, then a second one in
+brackets and in a different colour. These are **two different wallets**:
+
+- **the first number is the daily balance.** Topped up once a day according
+  to your plan;
+- **the second, in brackets, is the non-expiring balance.** Bought as a package
+  or received as a gift, it has no expiry date.
+
+The **daily one is spent first**, and only when it runs out does the service
+touch the non-expiring one.
+
+<Callout type="warning">
+  The second number carries a plus sign and a different colour, so it reads as
+  "how much will be added". It is not: **the brackets hold your non-expiring
+  reserve, not an addition to the daily one**.
+</Callout>
+
+<Callout type="tip">
+  **Expensive models are better launched early in the day**, while the daily
+  allowance is intact: the non-expiring coins then stay for later, when
+  the daily one runs out.
+</Callout>
+
+Both numbers are one button, and it opens the plans window. So "I clicked
+the balance and plans popped up" is not misplaced advertising — that is what
+the button is for.
+
+<Callout type="warning">
+  **On a narrow screen the second number is hidden** and only the daily one
+  remains. Exception: in the [AI chat](/en/docs/chat) the non-expiring balance
+  stays visible on mobile, because the chat builds its own header. It makes for
+  an odd picture: one number in the generator on a phone, two in the chat.
+  The balance has not gone anywhere.
+</Callout>
+
+## Daily coins have to be claimed
+
+While the coins are unclaimed, a green **Claim** button is lit in the header.
+Clicking it opens a window with a get button — how much exactly is credited is
+written right in the window and depends on your plan.
+
+The chest in the header is a button, and it has **two states with different
+meanings**:
+
+- **open chest** — coins not claimed yet; clicking opens the claim window;
+- **closed chest with a timer** — already claimed; clicking opens **the plans
+  window**, not the claim window.
+
+<Callout type="tip">
+  After claiming, the button **changes its purpose**, and that is often taken for
+  pushy advertising or a fault. It isn't: the chest is closed, so that's it for
+  today — and the same button now offers to top up.
+</Callout>
+
+After claiming you get **"Generations received!"** with a wish of good luck.
+Press again the same day and you get **"Generations have already been received.
+New generations will be available the next day."**
+
+<Callout type="warning">
+  The daily balance is **set**, not added. If something is left over from
+  yesterday and you claim, you get exactly the daily allowance — the remainder
+  is not added on top. Accumulating above the daily allowance is impossible.
+</Callout>
+
+<Callout type="tip">
+  **Claim at the start of the day even if you are not going to create anything
+  right now.** The non-expiring balance is unaffected, and the daily one
+  otherwise simply won't be credited: the day passes, the allowance is gone.
+</Callout>
+
+The countdown to the next top-up runs **to midnight Moscow time** for everyone,
+regardless of the time zone in your profile. When it reaches zero the Claim
+button comes back on its own — no need to reload the page.
+
+On a phone only the chest icon remains — no label and no timer.
+
+## What a generation costs
+
+Every model has its own price, shown next to the create button as "N / gen" —
+**before** you launch, not after. The price depends on the model, the chosen
+resolution and the mode.
+
+<Callout type="tip">
+  **Hover the price badge — it breaks down where the sum came from.** For images
+  that is the size and the price per piece, for video "seconds × price per
+  second", for voicing the characters. Paid options come as separate lines, and
+  at the very bottom sits the prompt length counter. It is the most informative
+  hint in the generator, and almost nobody opens it.
+</Callout>
+
+<Callout type="tip">
+  **The main way to save: the price is tied to a group of sizes, not to an exact
+  size.** The hint shows a "from — to" range, and every size inside it costs
+  the same. Nudged the slider and the price did not change — you stayed in
+  the same group and **got more pixels for free**.
+</Callout>
+
+Clicking the badge opens the **model's price table**: for images, sizes and
+prices; for video, the cost per second plus a "Minimum" block (what the shortest
+clip will cost); for audio, a price per second, per thousand characters or per
+track. The table describes **the model, not your plan** — it is the same for
+everyone, including people who have not signed in.
+
+<Callout type="tip">
+  If a model's price depends on the creativity mode, a mode table is shown
+  instead of the size one, cheapest first. **And if there is no mode table at
+  all, that is your answer: on this model the mode does not affect the price** —
+  take the highest one without worrying.
+</Callout>
+
+The counting differs by what you create: images per image, video **per second**,
+chat per thousand tokens, voicing per character. More in
+[Generator](/en/docs/generator).
+
+## Where to see your allowance and what a plan includes
+
+Exact numbers are deliberately not repeated here: they change. Everything current
+is in the plans window, which opens by clicking your balance.
+
+![The plans window](/assets/docs-pages/screens/10-01-tariffs-modal.en.webp)
+
+The window itself lists, for every plan: how many coins per day, how many image,
+video, audio and AI-chat models are available, how many styles and LoRAs.
+There is also an "All features" button with the full list.
+
+<Callout type="tip">
+  This is the most honest way to compare plans: don't trust a description in
+  an article, open the window and look at the figures side by side. More about
+  paying — [Plans and payment](/en/docs/billing).
+</Callout>
+
+## What happens if a generation fails
+
+The main fear sounds like this: "they charged me and there is no picture".
+That does not happen.
+
+Coins are not deducted at launch — they are **reserved**. On success you are
+charged for what was actually produced: you ordered four images, got three,
+the fourth is refunded.
+
+<Callout type="tip">
+  **If it didn't work, the coins come back.** This can be stated firmly: every
+  generation starts through a reservation, and a "charged and never refunded"
+  branch simply does not exist. Even if the reservation record gets damaged,
+  the refund is recalculated from the number of works and the price.
+</Callout>
+
+Two clarifications that remove unnecessary worry:
+
+- **the refund goes back to exactly the same wallet it came from**: what was
+  taken from the daily balance returns to the daily balance, and the same for
+  the non-expiring one. Daily coins do not turn into non-expiring ones or vice
+  versa;
+- **you cannot be refunded twice**: once a generation has finished — successfully
+  or with an error — a repeated refund changes nothing. "I pressed again and got
+  double" does not happen.
+
+Every balance movement is recorded with the state of both wallets before and
+after — that is what you later see in the payment history
+([Plans and payment](/en/docs/billing)).
+
+How much is currently reserved for a running generation is not shown anywhere.
+
+## Out of coins
+
+The insufficient-coins notice comes in **two different states**, with different
+ways out:
+
+1. **Daily coins not claimed yet** — the heading "Not enough", the text
+   "Need N, you have M" and an offer to claim the free daily ones. The **"Claim
+   daily"** button opens the claim window.
+2. **Daily coins already claimed** — same beginning, then "Top up your balance
+   to continue". The **"Top up balance"** button opens the plans window
+   **straight on the packages tab**, not on subscriptions.
+
+<Callout type="tip">
+  The banner deliberately **does not close on a click in its body** — only by
+  the cross. That is protection against dismissing it by accident: the message
+  with the "need / have" figures is worth reading.
+</Callout>
+
+There are two ways to top up: move to a higher plan — or **buy a package
+of non-expiring coins** without changing the plan.
+
+![Coin packages](/assets/docs-pages/screens/10-04-packages.en.webp)
+
+Every package has the scenario it was built for written on it: from "have a look,
+poke around, try it" and "finish the art when the daily limit ran out" to
+"studio volume, a flow of clients". Go by the caption, not only by the price —
+that is what it is there for.
+
+<Callout type="tip">
+  **A package and a subscription solve different problems.** A subscription raises
+  your daily allowance and unlocks features. A package unlocks nothing — it just
+  gives you a reserve that does not expire and stacks with the daily one. If you
+  hit the limit only occasionally, a package is cheaper than changing plans, and
+  it can be bought in advance.
+</Callout>
+
+## Too many generations at once
+
+Generations run in a queue. If you launch several works in a row you may get
+**"The parallel generations limit has been reached"**. Nothing is broken: wait
+for one of the running ones to finish and try again.
+
+Paid plans allow more at once and start them faster; what exactly your plan
+includes is in the plans window.
+
+<Callout type="tip">
+  If the service says a **retry has been scheduled**, don't press "Create" again.
+  The service is already trying by itself, and a second attempt will only hit
+  the limit.
+</Callout>
+
+## Where to go next
+
+- I want to know what eats the most — [Generator](/en/docs/generator).
+- I want to change plan or buy a package — [Plans and payment](/en/docs/billing).
+- Coins are not credited or were spent oddly —
+  [When something doesn't work](/en/docs/troubleshooting).

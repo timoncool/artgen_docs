@@ -1,0 +1,345 @@
+import { Callout } from '@/src/01-shared/ui/mdx'
+
+# Plans and payment
+
+The plans window opens by clicking your balance in the header — and it is
+the only place where the numbers are always current. This guide deliberately
+does not repeat them: plans and prices change, and the window changes with them.
+
+![The plans window](/assets/docs-pages/screens/10-01-tariffs-modal.en.webp)
+
+## Three tabs and how they differ
+
+The window explains each option itself, and the explanations are accurate:
+
+- **One-time payment** — a single payment for a chosen period with no automatic
+  charges; when the period ends you pay for the next one by hand;
+- **Subscription** — with auto-renewal, no interruptions, cancel at any time.
+  The auto-renewal discount is shown right in the tab heading;
+- **Additional generations** — coin packages: "out of generations and the daily
+  limit already spent?" The bigger the package, the better the value per
+  generation.
+
+![One-time payment](/assets/docs-pages/screens/10-02-one-time-payment.en.webp)
+
+<Callout type="tip">
+  **The free plan is shown as a card on both subscription tabs** — not for sale
+  but for comparison. Every plan has an "All features" button with the full list.
+</Callout>
+
+<Callout type="tip">
+  One-time payment and subscription have **different discounts per period**:
+  the subscription tab shows one set of percentages, the one-time tab noticeably
+  smaller ones. Compare not just the price but the tab.
+</Callout>
+
+## Coin packages
+
+![Coin packages](/assets/docs-pages/screens/10-04-packages.en.webp)
+
+Every package has the scenario it was built for written on it: from "have a look,
+poke around, try it" to "studio volume, a flow of clients".
+
+<Callout type="tip">
+  **A saving is written under each package — and it is not calculated the way you
+  would think.** It is not a discount off a former price but the benefit
+  **compared with buying the same number of coins in the smallest package**. So
+  the caption answers "how much better off am I buying in bulk", and comparing
+  packages by it is more useful than comparing prices.
+</Callout>
+
+<Callout type="tip">
+  **A package and a subscription solve different problems.** A subscription
+  raises your daily allowance and unlocks features. A package unlocks nothing —
+  it gives you a reserve that does not expire. More about the two wallets —
+  [Coins and limits](/en/docs/coins).
+</Callout>
+
+## Changing your plan
+
+Before the change the service shows a **preview**: what changes, how much to pay
+and from which date. Plans do not change blindly — pressing the button is not
+scary.
+
+| What you do | Pay now | When it takes effect | What happens to the remainder |
+|---|---|---|---|
+| **Take a paid plan from the free one** | full price | immediately | there is no remainder |
+| **Extend the same plan** | full price | immediately | the term is **added** to the current one |
+| **Move to a more expensive plan** | full price of the new one | immediately | the remainder **turns into days of the new plan** |
+| **Move to a cheaper plan** | nothing | **at the end of the paid period** | the current one runs to the end |
+| **Give up the paid plan** | nothing | **at the end of the paid period** | the current one runs to the end |
+
+<Callout type="tip">
+  **The thing that removes the fear: moving up does not waste your paid days** —
+  they are recalculated into days of the new plan. So moving up is better value
+  mid-period than waiting for it to end.
+
+  And moving down never takes away what is already paid: it is simply scheduled
+  for the end date.
+</Callout>
+
+<Callout type="warning">
+  When downgrading, the window shows a block **"After the switch you will lose:"**
+  with a list of what goes away. It is the only place where the consequences are
+  listed honestly and in full — read it before confirming.
+</Callout>
+
+<Callout type="tip">
+  **A scheduled change can be cancelled.** The plan card gets a "Switch scheduled
+  …" mark and a **"Cancel switch"** button, while the current one shows
+  "Active until …".
+
+  Note: **there can be only one pending change**. Trying to schedule a second one
+  is refused with a request to wait until the current plan ends. The way out is
+  to cancel the scheduled one and set it up again.
+</Callout>
+
+If the calculation could not be obtained, it says so — without a preview
+the change does not go through.
+
+## Cancelling auto-renewal
+
+Cancelled on the payments page. On cancelling, a window opens headed "Your
+creativity matters to us!", with a list of what the subscription gives and two
+buttons.
+
+<Callout type="tip">
+  **This is a retention window, not a confirmation with consequences.**
+  The cancellation happens via the "Cancel subscription" button, nothing burns,
+  and the subscription runs out its paid term.
+</Callout>
+
+Right after cancelling you get a confirmation: "Subscription auto-renewal has
+been cancelled. You can keep using the subscription features until the end
+of its term".
+
+<Callout type="warning">
+  **"I cancelled, but nowhere does it say I did."** The subscription line is
+  always shown the same way — "subscription active until …" — and after
+  cancelling it **does not change**. There is no separate "the subscription will
+  end on …" line, and there will not be one.
+
+  The reason: **the "active until" date is the end date**. You saw
+  the confirmation once, in the window right after cancelling. Pressing cancel
+  again returns "Auto-renewal has already been cancelled" — a normal answer,
+  not an error.
+</Callout>
+
+<Callout type="tip">
+  Where the confirmation is visible after all: **the free plan card in the plans
+  window** gets a mark that you will return to it. A scheduled move to another
+  **paid** plan, on the other hand, is shown as its own line — the difference is
+  not obvious. On the free plan there is no subscription line at all, and that is
+  not a fault.
+</Callout>
+
+## Promo codes
+
+The promo code field is at the top of the plans window.
+
+![Promo code](/assets/docs-pages/screens/10-07-promo-code.en.webp)
+
+A promo code can give two kinds of benefit, and they combine: **coins** — which
+land in the **non-expiring** balance — and/or **a subscription for a period**.
+
+<Callout type="warning">
+  **If you already have a paid subscription, a promo code does not extend it.**
+  It switches on a temporary upgrade to the code's plan and refreshes the daily
+  balance right away. On the free plan the same code is granted as an ordinary
+  subscription.
+
+  The difference is not obvious, and without an explanation it looks like
+  "the promo code was wasted".
+</Callout>
+
+<Callout type="tip">
+  **The main thing about a promo code: once accepted, it recalculates the prices
+  right in the plans window, before payment.** The discount is immediately visible
+  on the plan and package cards — which means the code should be entered **before**
+  picking a plan, not at the last step.
+
+  It applies with a tick or the Enter key; there is no separate "Apply" button.
+  On success the field turns green with the campaign description below it, on
+  refusal red. The cross clears the code and brings the usual prices back.
+</Callout>
+
+A code can be refused for four different reasons, and they mean different things:
+
+| Message | What it actually is |
+|---|---|
+| "This promo code has already been applied" | **you** have used this code; it will not work a second time |
+| "The activation limit for this promo code is exhausted" | **others** took it; waiting is pointless, you need a different code |
+| "This promo code is no longer valid" | the campaign has ended |
+| "This promo code is temporarily unavailable. Contact support" | the code exists but is switched off |
+
+<Callout type="tip">
+  The difference between the first two is the most useful one: in one case it is
+  about you, in the other the code was used up by everyone else. And only
+  **the last case** is the one where writing to support is genuinely worth it.
+</Callout>
+
+## Payment methods
+
+A bank card, **SBP**, **SberPay**, **T-Pay** and the **YooMoney** wallet.
+The list is shown in the payment window, where a method can also be saved
+for later.
+
+Saved methods live in a collapsible block on the payments page: cards in a row
+that scrolls sideways, with a **"+"** tile at the end for a new one. A card shows
+the method name, **the last four digits** and a bin.
+
+<Callout type="tip">
+  **The main method is chosen by clicking the card itself** — there is no separate
+  "make primary" button. The primary one has a green border with a tick. That is
+  the first thing to know about this block: people look for a button and never
+  find one.
+</Callout>
+
+<Callout type="warning">
+  **Why a card won't delete.** The bin **disappears** on the last card if you have
+  an active auto-renewing subscription: there would be nothing left to charge.
+  Cancel auto-renewal first, and the method can then be removed. With no
+  subscription, every method can be deleted.
+</Callout>
+
+## When payment won't go through
+
+The plans window warns about this under every tab, and the text is worth reading:
+
+> "Browser won't let you pay? Russian banks had their international certificates
+> revoked. Install the state certificates — a minute, once, for all banks.
+> Or use Yandex Browser, where they are already built in. Your money and card
+> details are safe."
+
+### Four windows after payment
+
+| Window | What it means |
+|---|---|
+| **"Payment successful"** | everything is credited |
+| **"Payment in progress"** | the money has left, the plan has not switched yet |
+| **"Error"** | the payment did not go through |
+| **"You are not signed in"** | you came back to a browser window where you are not signed in |
+
+<Callout type="warning">
+  **"Payment in progress" is a normal intermediate state**, not a fault.
+  The money is taken, the plan will update shortly: wait and refresh the page.
+  **Do not pay again** — this window is the single most common reason people
+  write to support a minute after paying.
+</Callout>
+
+<Callout type="tip">
+  The fourth case is common too: the payment finished in another browser window
+  or on a phone where you are not signed in. Go back to the window where you
+  started, or sign in again — the payment is not lost.
+</Callout>
+
+If a payment is refused for another reason, the service names it outright:
+the plan is not on sale, you already have a subscription to it, or another plan
+change is already scheduled.
+
+## Payment and coin history
+
+One table with six columns: **Product · Details · Date · Status · Amount ·
+Payment info**. On a narrow screen it scrolls sideways — the right-hand columns
+are not lost.
+
+If there have been no payments yet, a "No payments found" placeholder with a link
+to packages and subscriptions stands in place of the table.
+
+Higher up on the same page live the **"Payment methods"** block and
+the **"Subscription … active until …"** line — the very one that does not change
+after you cancel auto-renewal.
+
+<Callout type="warning">
+  **This table mixes two different things: payments and coin movements.** Hence
+  the puzzlement of "why is there a line about a generation in my payment
+  history" — it is not a payment but a coin charge. Telling them apart is easy:
+  payments have an amount in currency and payment info, coin movements do not.
+</Callout>
+
+What you will find in the list: charges for creating works, the daily top-up by
+plan, activation and deactivation of a package, the start and end of
+a subscription, a credit from support, a promo code activation, following a link
+from an email, a referral reward and a **reward reversal**.
+
+<Callout type="tip">
+  **A reward reversal is the only "minus" line**, and it scares people for
+  nothing: the reward came back because the invited person's payment did not go
+  through or was refunded.
+</Callout>
+
+## Invite friends
+
+Everyone has a permanent link. A friend gets a bonus on registration, you get
+a reward from their purchases. **The current terms are written right on
+the programme page** — they are configurable and can change.
+
+The page has two tabs: **Link** (with the link and share buttons; the message
+text is already written for you) and **Statistics**.
+
+<Callout type="tip">
+  The note under the statistics says it plainly: statistics are updated and
+  bonuses credited **every 15 minutes**. That is the answer to "my friend paid
+  and I have nothing".
+</Callout>
+
+### Reward statuses
+
+Pending · Confirming · Approved · **Credited** · Reversed · Rejected.
+
+"Credited" is the final good state. **"Reversed"** means the reward was taken
+back, usually because the friend's payment did not go through; **"Rejected"**
+means the reward was not confirmed.
+
+The same history also shows **what** each credit was for: "Referral reward",
+"Welcome bonus", "Reward clawback", and for partners — "Partner reward"
+and "Partner payout".
+
+### Partnership
+
+<Callout type="warning">
+  **The referral and partner programmes are mutually exclusive.** A partner does
+  not see the referral dashboard at all — instead there is a note and a button
+  leading to the partner dashboard. Partners earn cash.
+</Callout>
+
+Old referral credits stay in the history — they should, and that is not
+a contradiction. The terms and current rates are written on the programme page
+itself.
+
+## What happens when the subscription ends
+
+The plan returns to free, and **the non-expiring coins stay** — they have no
+expiry. What goes away are the paid plan's features: some models, private mode,
+PNG and JPG formats, the works archive and the rest of the "All features" list.
+
+<Callout type="warning">
+  **The daily balance drops immediately, it does not live out the day.** At
+  the moment the subscription ends it is set to the free norm — if the counter
+  was high, it disappears there and then.
+
+  Hence a practical tip: **claim and spend your daily coins just before
+  the subscription ends**. After the switch they are recalculated at the free
+  rate.
+</Callout>
+
+<Callout type="warning">
+  **Showing adult content switches itself off.** The setting is dropped together
+  with the subscription, and after renewing you will have to switch it back on
+  in [profile settings](/en/docs/profile). This is written nowhere, and
+  the question comes up regularly.
+</Callout>
+
+<Callout type="tip">
+  Your works are not going anywhere: they are not deleted, private ones do not
+  become public, bookmarks and favourites remain. But if some of them are private,
+  it is worth deciding in advance what to do with them: privacy can only be
+  changed by the owner **on a paid plan** — see [Your works](/en/docs/my-works).
+</Callout>
+
+## Where to go next
+
+- Understand what your spending consists of — [Coins and limits](/en/docs/coins).
+- See what a plan includes — the plans window, "All features" button.
+- A payment won't go through or coins were not credited —
+  [When something doesn't work](/en/docs/troubleshooting).

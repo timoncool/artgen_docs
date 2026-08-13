@@ -1,203 +1,816 @@
----
-title: Image Generator
-description: Complete guide to the ArtGeneration.me image generator - prompts, models, styles, and advanced features
----
-
-# Image Generator
-
-The Generator is the main tool of the platform for creating images using artificial intelligence. Here you can bring your ideas to life using text descriptions.
-
-## Prompts
-
-A prompt is a text description of the image you want to create. The quality of your prompt directly affects the result.
-
-### Writing Effective Prompts
-
 import { Callout } from '@/src/01-shared/ui/mdx'
 
-<Callout type="info">
-Write prompts in English for best results. Most AI models are trained primarily on English data.
-</Callout>
+# Generator
 
-A good prompt includes:
+The generator is the main screen of the service. Images, video and sound are made
+here. Your works are on the left, the canvas and the prompt field in the middle,
+the settings of the chosen model on the right.
 
-1. **Main Subject** — what or who is depicted (a woman, a cat, a landscape)
-2. **Details** — specific features (long red hair, blue eyes, wearing a dress)
-3. **Environment** — where the scene takes place (in a forest, on a beach, in a city)
-4. **Lighting** — type of light (soft sunlight, dramatic shadows, neon lights)
-5. **Style** — artistic direction (oil painting, digital art, anime)
-6. **Quality** — technical parameters (highly detailed, 8k, masterpiece)
+![Generator, Images tab](/assets/docs-pages/screens/05-01-generator-images.en.webp)
 
-### Weights in Prompts
+## Three tabs at the top
 
-You can emphasize or de-emphasize certain elements using weights:
-
-- `(word)` — slight emphasis (1.1x)
-- `((word))` — stronger emphasis (1.21x)
-- `(((word)))` — very strong emphasis (1.33x)
-- `(word:1.5)` — custom weight (1.5x)
-- `(word:0.5)` — reduce importance (0.5x)
-
-**Example:**
-```
-a beautiful woman with ((long red hair)), (blue eyes:1.3), wearing a white dress
-```
-
-### Negative Prompt
-
-The negative prompt describes what should NOT appear in the image. This helps avoid common issues:
-
-**Common negative prompt elements:**
-- `bad anatomy, bad hands, missing fingers` — anatomical errors
-- `blurry, low quality, pixelated` — quality issues
-- `watermark, text, logo` — unwanted overlays
-- `duplicate, clone` — repetition artifacts
-
-## Model Selection
-
-Different models produce different styles and quality levels. Choose based on your needs:
-
-### Available Model Types
-
-- **Realistic** — photorealistic images, portraits, landscapes
-- **Anime** — anime and manga style illustrations
-- **Artistic** — paintings, digital art, creative styles
-- **Fantasy** — fantasy art, magical themes
-- **Sci-Fi** — futuristic, cyberpunk aesthetics
+**Images · Video · Audio** — three different sets of models and three different
+sets of settings. Switching the tab changes the whole right-hand column.
 
 <Callout type="warning">
-Some models are only available with PRO or MAX subscriptions. Check the model card for availability.
+  The generator **remembers the tab between visits**. If you opened it and saw
+  Video instead of images, that is not a bug — you were working with video
+  last time.
 </Callout>
+
+Until something is created, an empty placeholder sits where the canvas is —
+that is not a loading error.
+
+## How to write prompts
+
+This is the most important part of the page. It is here that the difference
+between "meh" and "excellent" usually lives.
+
+The prompt field carries a hint: **"What do you want to create? Write a prompt
+in Russian or English, or click the dice for a random prompt"**.
+
+<Callout type="tip">
+  **Plain language works almost everywhere.** The vast majority of models are
+  marked as accepting prompt translation, so you rarely need to translate
+  anything yourself.
+</Callout>
+
+### What is actually worth writing
+
+The model does not know what you mean. "A beautiful girl" is not a prompt,
+it is a topic: millions of different pictures fit it, and you will get a random
+one. Concrete words give it something to hold on to, and usually four things
+are enough:
+
+1. **Who or what is in the frame** — "a red fox", "a wooden house", "a woman
+   in a knitted sweater".
+2. **Where and when** — "in a snowy forest", "in a kitchen in the morning",
+   "against a neon sign".
+3. **How it is shot or drawn** — "photorealistic", "watercolour", "a film still",
+   "a flat icon".
+4. **Light and mood** — "soft morning light", "backlit sunset", "a warm cosy
+   evening".
+
+**Example.** Instead of "a winter house" — "a cosy wooden cabin with a red roof,
+a fir tree beside it, snow on the ground, warm light in the window, soft winter
+evening sky, storybook illustration". The second phrase gives the model
+everything it needs so it does not have to guess.
+
+<Callout type="tip">
+  **Don't put negations in the main prompt.** "No people", "not cartoonish" often
+  work backwards: the model sees the words "people" and "cartoonish". There is
+  a separate **"Negative"** field for that — write there what should not be
+  in the picture.
+</Callout>
+
+### Three buttons that write for you
+
+- **The dice** next to the field inserts a random ready-made prompt. A great way
+  to see what a "good" prompt even looks like and take it apart.
+- **The sparkles ("Improve prompt")** — this is **the service's own improvement**.
+  It fires on click and works with any model: the service takes your short phrase
+  and rewrites it into a detailed one. A notification "Improving the prompt"
+  appears, and the updated text lands in the field — from there you can edit it
+  by hand.
+- **The microphone** — dictate the prompt out loud. The shortcut is
+  **Ctrl + Shift + M** (⌘ + Shift + M on a Mac); it stops the recording too.
+
+![Tooltips of the buttons near the prompt field](/assets/docs-pages/screens/05-37-prompt-buttons-tooltips.en.webp)
+
+While recording, the button turns red and shows an equaliser reacting to your
+voice, with a countdown beside it: **the recording is capped at one minute**.
+After you stop, the text is recognised, lands in the field, and the field flashes.
+
+<Callout type="warning">
+  **Voice input is a premium feature, and the refusal arrives after you have
+  finished speaking.** The button is not disabled: on the free plan the microphone
+  presses, the recording runs, and only when you stop does the answer come —
+  "Voice input is available on PRO plans and above".
+
+  It looks like a broken microphone, though the microphone has nothing to do with
+  it. Dictation spends coins like an ordinary generation — but **if nothing was
+  recognised, the coins come back**: silence is not charged.
+</Callout>
+
+<Callout type="tip">
+  If the recording does not start at all, it is almost always the browser
+  permission: the lock icon left of the address → site settings → microphone.
+  The button has its own hint for every case — access denied, no microphone
+  found, microphone busy with another program. And "we heard nothing" is not
+  an error at all: the button returns to its normal state by itself after
+  a couple of seconds.
+</Callout>
+
+There is a fourth route, the most underrated one: **upload a picture and press
+the magnifier button on its preview** — the service writes the prompt from
+the picture itself. Details in [Special features](/en/docs/special).
+
+<Callout type="warning">
+  **Don't confuse it with "Prompt extend".** The sparkles button is the service's
+  improvement, on demand. The **"Prompt extend"** toggle in the "Additional" block
+  is a setting of **the model itself**: it exists not on every model, and where
+  it does it may be on by default. Then the model reworks the wording on its own
+  side, and you will not see that in the prompt field.
+
+  If you know exactly what you want and the result keeps drifting away from it —
+  check that toggle and try switching it off.
+</Callout>
+
+### How much text fits
+
+Next to the price you can see how many characters still fit. The limits differ
+between models, and some models have none at all — then the counter says so.
+**Both states are normal.**
+
+<Callout type="warning">
+  Prompt length counts **more than your own words**: the prompts of selected
+  styles and the trigger words of selected LoRAs are added to it. For video
+  and sound only your own text is counted.
+</Callout>
+
+## Choosing a model
+
+Under the tabs there is a model search and **coloured category tags**: NEW, HIT,
+ART, PHOTO, ANIME, 3D, DESIGN, RU TEXT and others, plus a "More …" button
+that reveals the rest.
+
+Tags work as a filter. Within one group they act as "or", different groups
+combine as "and".
+
+![The full list of model tags](/assets/docs-pages/screens/05-14-all-model-tags.en.webp)
+
+<Callout type="tip">
+  Tags come in two kinds, and the colour shows which: **coloured ones
+  are categories** (what the model does: photo, anime, design, editing),
+  **grey ones are the provider and the families** (SDXL, FLUX, Pony, Recraft
+  and dozens more). So **you can filter models by family right in the generator**.
+</Callout>
+
+- **NEW** — the model appeared recently; the tag drops off by itself
+  after about a month.
+- **HIT** — the model is currently among the most used; the set changes on its own.
+
+Then comes the model carousel. A card shows the **price per generation**,
+the tags, and — for models above your plan — a **plan badge**.
+
+<Callout type="tip">
+  The plan badge is shown **only if the model is above your plan**.
+  A missing badge is good news: the model is available to you.
+</Callout>
+
+The list icon next to the "Model" heading opens a **panel with all models
+in a grid** — with its own search, the same filters and bookmark stars.
+
+![Model picker panel](/assets/docs-pages/screens/05-24-model-panel-list.en.webp)
+
+<Callout type="tip">
+  The carousel shows two or three models, the panel shows a dozen at once.
+  When picking among unfamiliar ones, open the panel: comparing prices and tags
+  there is much faster. And to understand how models differ in substance, look
+  into [Model catalogs](/en/docs/catalogs).
+</Callout>
+
+## Why models have different settings
+
+The most common question sounds like this: "this model has no Negative field,
+where did it go?"
+
+The answer: **settings are not universal**. Some blocks are switched on by
+the model itself, others come from its own schema. If a block is missing,
+the model does not support it — the interface is not broken.
+
+<Callout type="tip">
+  This is the norm, not the exception: roughly every third model has no
+  creativity mode, every fourth has no seed field, every fourth has no negative
+  prompt.
+</Callout>
+
+<Callout type="warning">
+  **A hidden block is not cosmetics, it is a ban.** The server rejects
+  a generation if you send a value for a setting the model does not have.
+  So "this model does not have that setting" is precisely true: it will not be
+  ignored, it will be refused. And the other way round — **if the block is
+  visible, it definitely works**.
+</Callout>
+
+**Tip.** Don't hunt for a setting — change the model: the set of blocks changes
+the moment you pick a new one.
+
+### Layers: the main secret of the right panel
+
+Blocks in the right panel come in two kinds, and the difference matters.
+
+- **A plain block** — a title, a hint and content. It cannot be collapsed
+  or switched off: that is how the model, creativity mode, resolution, duration
+  and FPS work.
+- **A layer** — the same **plus a stack icon on the left and a chevron on
+  the right**. That is your own image, the schema's media fields, "Additional",
+  and video frames and references.
+
+A layer has **two independent states**: on or off (the stack icon) and expanded
+or collapsed (the chevron).
+
+<Callout type="warning">
+  **A switched-off layer does not take part in the generation but stays in
+  place** — it does not disappear, it fades. That is fundamentally different from
+  "the model has no such block": there it truly does not exist, here you switched
+  it off yourself.
+
+  This is exactly what explains the error **"The 'Custom Image' layer is switched
+  off"**: the picture is loaded, but the layer is dimmed, and the model won't
+  get it.
+</Callout>
+
+<Callout type="tip">
+  **Dragging is smarter than it looks: drag a work onto a collapsed or
+  switched-off layer and it will expand and switch itself on** to accept
+  the file. No need to unfold the block first — just bring the picture to it.
+</Callout>
+
+<Callout type="tip">
+  A layer is a switch, not a delete: the settings inside are preserved. Built
+  a frame with a reference and want to see "how it looks without it" — don't
+  remove the picture, dim the layer and run again.
+</Callout>
+
+If a block has no stack icon, it cannot be switched off, and looking for
+a toggle is pointless. Switching layers off is available on paid plans: on
+the free one, clicking the icon opens the plans window.
 
 ## Resolution
 
-Choose the output image dimensions. Available options depend on your subscription:
+Resolution is set in two steps: first a **quality preset** (1K, 2K, 3K),
+then **proportions** with a slider. Switching the preset keeps the chosen
+proportions. The price is recalculated immediately and shown next to it.
 
-### Aspect Ratios
+Video has **480p / 720p** instead of presets, and **duration** appears there too.
 
-- **1:1** (512x512, 768x768, 1024x1024) — square, good for portraits
-- **16:9** (1024x576, 1920x1080) — widescreen, landscapes
-- **9:16** (576x1024, 1080x1920) — vertical, mobile wallpapers
-- **4:3** (1024x768) — classic ratio
-- **3:4** (768x1024) — portrait orientation
-
-### Resolution Limits
-
-- **FREE** — up to 768x768
-- **LIGHT** — up to 1024x1024
-- **PRO/MAX** — up to 1920x1080
-
-## Styles
-
-Styles are pre-configured modifiers that affect the visual appearance. Over 307 styles are available:
-
-- **Art Styles** — Oil Painting, Watercolor, Pencil Sketch
-- **Photography** — Portrait, Landscape, Macro
-- **Digital Art** — 3D Render, Vector Art, Pixel Art
-- **Historical** — Renaissance, Baroque, Art Nouveau
-- **Modern** — Pop Art, Minimalist, Abstract
-
-## Performance Modes
-
-Control the balance between speed and quality:
-
-![Performance mode slider](/assets/docs-pages/screens/model-description2.png)
-
-- **Sketch** — fastest generation (5-10 seconds), lower quality, good for testing ideas
-- **Draft** — balanced mode (15-20 seconds), good quality for most uses
-- **Masterpiece** — highest quality (30-60 seconds), maximum detail and refinement
-
-## LoRA Models
-
-LoRA (Low-Rank Adaptation) models fine-tune the generation for specific styles or subjects:
-
-- Character LoRAs — specific character appearances
-- Style LoRAs — particular artistic styles
-- Concept LoRAs — specific objects or themes
-
-### Using LoRA
-
-1. Select a base model
-2. Choose a compatible LoRA
-3. Adjust LoRA strength (0.1-1.0)
-4. Generate
-
-## Seed
-
-The seed is a number that controls the randomness of generation:
-
-- **Same seed + same parameters = similar result**
-- **Random seed = unique result each time**
-- Use seed to create variations of a successful image
-- Copy seed from gallery images to recreate similar results
-
-## Init Image (img2img)
-
-Upload an image as a starting point for generation:
-
-### Use Cases
-
-- **Stylize photos** — transform photos into art
-- **Create variations** — modify existing images
-- **Add elements** — enhance images with new details
-- **Color correction** — change color schemes
-
-### Denoising Strength
-
-Controls how much the original image influences the result:
-- **0.1-0.3** — subtle changes, keeps original structure
-- **0.4-0.6** — moderate changes, balanced transformation
-- **0.7-0.9** — significant changes, more creative freedom
-
-## Inpainting
-
-Edit specific parts of an image while keeping the rest unchanged:
-
-1. Upload an image or use a generated one
-2. Paint over the area you want to change
-3. Write a prompt for the new content
-4. Generate
-
-<Callout type="info">
-For best inpainting results, paint slightly beyond the edges of the area you want to change.
+<Callout type="tip">
+  **Choose the shape of the frame first, then raise the quality.** When you switch
+  presets the service looks for the closest aspect ratio in the new one, so
+  a vertical frame stays vertical — the shape will not slip.
 </Callout>
 
-## Face Swap
+Next to it sits **the number of images per run**. How many options there are is
+decided by the model; which of them are available to you, by your plan.
+Unavailable ones are not hidden but shown inactive, and clicking such a number
+opens the plans window.
 
-Replace faces in generated images (PRO/MAX only):
+<Callout type="warning">
+  **The price is multiplied by the count**: four pictures cost four times as much.
+  Try an unfamiliar model on one, and raise the count once the prompt has settled —
+  that way you pay for exploring variants, not for exploring wordings.
+</Callout>
 
-1. Generate or upload an image with a face
-2. Upload a reference face photo
-3. Click "Face Swap"
-4. Wait for processing
+## Your own image
 
-## Upscale
+A file can be dragged from disk **or straight from your own feed on the left** —
+no need to download and re-upload. The drop zone lights up with a dashed border
+when what you are dragging fits; it ignores the wrong file type, and that
+is not an error.
 
-Increase image resolution while maintaining quality (PRO/MAX only):
+The number of slots is set by the model and written right above the frame:
+"Available to upload: …". When the slots are full, the drop zone **disappears
+completely** — it does not go grey, it goes away. **Resolution adapts
+to the first file automatically.**
 
-- **2x Upscale** — double the resolution
-- Uses AI to add detail, not just resize
-- Best for finalizing images for print or large displays
+![Custom image loaded](/assets/docs-pages/screens/05-60-img2img-sdxl-strength.en.webp)
 
-## Background Removal
+Once the file is in place, **"Draw mask"**, **"Remove background"** and
+**"Modification strength"** appear. The last one decides how far the model
+departs from the source: a small value is a light touch-up, a large one is almost
+a new picture. **0.5** is the default and a comfortable place to start from.
 
-Remove the background from any image (PRO/MAX only):
+<Callout type="tip">
+  **Private mode switches itself on** the moment you upload your own image, so
+  a personal photo does not accidentally end up in the public feed. You can turn
+  it off right there with the toggle.
+</Callout>
 
-- Creates transparent PNG
-- Useful for compositing
-- Works best with clear subject separation
+### Four buttons on the preview itself
 
-## Generation Tips
+| Where | What it is |
+|---|---|
+| top left | **"Crop image"** — crop again, after uploading |
+| top right | **"Remove image"** |
+| bottom left | **"Extract prompt from image"** — the service writes the prompt for you |
+| bottom right | **"Edit image"** — opens the [editor](/en/docs/editor) right from here |
 
-1. **Start simple** — begin with basic prompts, then add details
-2. **Use references** — copy parameters from gallery images you like
-3. **Experiment with seeds** — find a good seed, then vary other parameters
-4. **Try different models** — each model has strengths
-5. **Use negative prompts** — prevent common issues
-6. **Iterate** — use img2img to refine results
+<Callout type="tip">
+  The top-left button **changes meaning**: if the picture was uploaded as a file,
+  it crops; if you drew it, the same button takes you back into the drawing
+  window to finish it.
+</Callout>
 
-## Generator Gallery
+<Callout type="warning">
+  **Cropping is not "trimming the file" but a required step.** The window is
+  named accordingly: "Set the visible area to use the image for generation".
+  On some models it pops up by itself right after the upload.
 
-Click on an image in the generator gallery to open it in the main work area. This will load the prompt used to create the image along with all its settings, allowing you to recreate or modify the image.
+  And here is the main thing: **until the visible area is set, the generation
+  will not start**. Close the window without pressing "Save" and the block shows
+  an explanation with a **"Set visible area"** button instead of settings. This
+  is the single most common cause of "the Create button doesn't work": the person
+  is sure they just closed a window they did not need.
 
-![Image preview overlay with model info and prompt](/assets/docs-pages/screens/generator-preview-overlay.png)
+  The frame is tied to the chosen resolution rather than free: change the size
+  and the frame changes with it.
+</Callout>
+
+If the block shows an explanation instead of an upload area, there are only four
+reasons: **your plan does not allow it** (your plan will be named in the text),
+**the model does not allow it**, **both at once** — or exactly **the visible area
+is not set**. The first three are refusals; the last is an unfinished step.
+
+### Draw instead of uploading
+
+Next to the upload button there is a **brush**. It opens a window
+**"Draw your own image"** — a clean canvas where you can sketch the composition
+by hand. Below the canvas: brush size, a colour field with an eyedropper,
+a brush / eraser toggle, clear, and the resolution of the future picture.
+
+![Drawing your own image](/assets/docs-pages/screens/05-62-draw-own-image.en.webp)
+
+**Example.** On the left of the shot is a sketch drawn with a mouse in a minute:
+a box for the house, a triangle for the roof, a fir tree, a ground line.
+Here is what came out of it:
+
+![Result from the sketch](/assets/docs-pages/screens/05-63-sketch-to-image-result.en.webp)
+
+The composition survived intact: house in the centre, fir tree on the left,
+roof of the same shape. Everything else — light, snow, wood grain, smoke from
+the chimney — the model filled in.
+
+<Callout type="warning">
+  **A sketch alone is not enough — the model matters.** On a photorealistic model
+  a line sketch stays a line sketch, even with "Modification strength" turned up.
+  This worked on a model tagged **EDITOR**, with the prompt written as
+  an instruction: "turn this line sketch into a warm storybook illustration…".
+  If the result stubbornly resembles your drawing, change the model, not
+  the slider.
+</Callout>
+
+### Mask: show exactly what to change
+
+If the model supports it, **"Draw mask"** appears under the preview. The window
+says that the painted area will be changed during generation.
+
+![Mask editor](/assets/docs-pages/screens/05-61-mask-dialog.en.webp)
+
+There are three tools: brush size, a brush / eraser toggle and **invert**.
+
+<Callout type="tip">
+  **Invert saves the most time.** Want to keep the character and replace
+  everything around them — paint over the character (that is quick) and hit
+  invert. No need to paint the whole background by hand.
+</Callout>
+
+<Callout type="warning">
+  On some models the button is replaced by "Mask is not available for the selected
+  model", and on erasing models — the opposite: "A mask is required for the
+  selected model". That is a property of the model, not a fault.
+</Callout>
+
+### If the file did not upload
+
+| What is wrong | What the service shows |
+|---|---|
+| wrong format | "Unsupported file format. Use jpeg, png or webp" |
+| file too heavy | "The file is too large. Maximum size is 20 MB" |
+| file too light | "The file is too small and cannot be uploaded" |
+| file unreadable | "Could not read the file. Try another image…" |
+| too many files at once | "You selected too many files" |
+
+## Styles, LoRAs and additional settings
+
+![Additional settings](/assets/docs-pages/screens/05-25-additional-settings.en.webp)
+
+Below are collapsible blocks: your own image, styles, LoRAs, private mode,
+seed, prompt extend and settings that exist only on this model.
+
+<Callout type="tip">
+  **You can pick no more than three styles and three LoRAs.** The trigger words
+  of selected LoRAs are appended to the prompt automatically — you don't type
+  them by hand, but they do eat into the prompt length.
+</Callout>
+
+A selected style or LoRA has **a toggle and a cross, and they are different
+things**: the toggle switches it off temporarily without losing it from the set,
+the cross removes it altogether. Handy for comparing "with and without" instead
+of hunting for the style in the ribbon again.
+
+<Callout type="tip">
+  **The five icons above the styles ribbon are not a filter but a change of
+  "sitter".** Cat, apple, tractor, man, woman: the previews of **all** styles are
+  redrawn on the chosen subject. It is the most useful and least noticeable
+  element of the block — a style that looks great on a cat can fall apart
+  on a portrait.
+
+  Planning a portrait — switch the sitter to a person first, and only then pick
+  a style.
+</Callout>
+
+<Callout type="tip">
+  **A style is not a black box: its card shows the prompt itself, and you can
+  copy it** (by pressing the heading, not by selecting the text). The style's
+  "Avoid" is there too, if it has one.
+
+  Hence the best trick of the whole topic: open the prompt of a style you like
+  and take its wording into your own. It works even where the style itself is
+  above your plan.
+</Callout>
+
+<Callout type="warning">
+  **The order of styles matters.** They do not blend; they stack in turn, each
+  one wrapping the result of the previous. And your text may end up **inside**
+  the style's template rather than before it — which is why short wordings work
+  better with styles. Write the substance; the style supplies the framing.
+</Callout>
+
+<Callout type="warning">
+  **Three ways to get "nothing happens" with a LoRA**, and all three are silent:
+
+  1. **three are already chosen** — a click on the fourth simply does not fire,
+     with no message at all. Remove one first;
+  2. **the LoRA is above your plan** — the card is covered by a gradient with
+     a large padlock, and a click opens the plans window instead of selecting it;
+  3. **the whole LoRA layer is switched off** — the cruellest one: the LoRAs are
+     chosen and visible, yet they never reach the generation. The same goes for
+     individual toggles inside the panel.
+</Callout>
+
+<Callout type="tip">
+  The list of LoRAs **is assembled for the selected model**, and each one's
+  weight is already set to the value its author recommends. Don't turn the
+  strength blindly and don't stack three at once — they almost always fight each
+  other; switch them on one at a time with the toggle. An empty LoRA list is not
+  a connection failure but a property of the model: it does not support them.
+  More in [Model catalogs](/en/docs/catalogs).
+</Callout>
+
+The set of additional settings **comes with the model itself**, and every model
+has its own. SDXL models bring "Prompt Adherence" and "Creativity mode" which
+newer models do not have; design models bring a colour palette and a background
+colour; some models bring "Prompt extend".
+
+<Callout type="tip">
+  The practical takeaway: **changed the model — scroll through "Additional"
+  again**. A setting you were used to may be gone, and a new one may have
+  appeared.
+</Callout>
+
+## Your own feed on the left and dragging
+
+The arrow button at the left edge opens a **drawer with your works**: search,
+grid density and media type switches. From there a work can be dragged straight
+into the "your image" slot.
+
+![Left drawer with your works](/assets/docs-pages/screens/05-54-left-drawer-works.en.webp)
+
+<Callout type="tip">
+  The shot also shows a deleted work — red, with a bin and a restore arrow.
+  Until you leave the page it can be brought back with one click. More
+  in [Your works](/en/docs/my-works).
+</Callout>
+
+<Callout type="tip">
+  **Hover a card in the drawer and an enlarged preview appears beside it, with
+  the resolution, the date and the first line of the prompt on top.** It is
+  the fastest way to find the right work among a hundred thumbnails — no need
+  to open a card and come back. Video plays silently in the preview and audio
+  gets a waveform player, so a track can be **listened to without opening it**.
+</Callout>
+
+The drawer has its own search — it looks **through the words of your prompt** and
+takes the first ten words into account. Search by one or two rare words: a long
+phrase gets truncated anyway. It also has its own density slider: a single column
+turns the drawer into a large preview feed, which is the most convenient way
+to pick.
+
+The right panel can be collapsed too — then only the canvas and the prompt
+field remain.
+
+![Collapsed right panel](/assets/docs-pages/screens/05-13-right-panel-collapsed.en.webp)
+
+### On a phone this works differently
+
+The drawers open with **a swipe from the edge of the screen** — an invisible trap
+strip runs along the very edge. A short, brisk movement is enough; there is no
+need to drag all the way.
+
+<Callout type="warning">
+  **Only one drawer is open at a time.** Open your works and the settings close
+  by themselves — and the tab of the second drawer **is not shown at all**. Hence
+  "the settings panel disappeared on my phone": it did not, just close the drawer
+  with your works.
+</Callout>
+
+<Callout type="tip">
+  Two tricks almost nobody knows. First: **the tab can be dragged up and down
+  with a finger**, and it stays where you left it — separately for the left and
+  the right drawer, and it survives a reload. That saves you when the tab covers
+  the button you need. Second: at the bottom of an open drawer there is a wide
+  **"Close gallery"** button — if swipes are not your thing, close it with that.
+</Callout>
+
+Also on a phone the improve-prompt button moves out of the input field into
+the bottom bar, the Ctrl + Enter hint is not shown, and the create button itself
+becomes round with an upward arrow.
+
+## Launching and waiting
+
+The launch shortcut is **Ctrl + Enter** (⌘ + Enter on Mac) and works anywhere
+on the page. On a phone the hint is not shown and the button is round,
+with an upward arrow.
+
+![Generation in progress](/assets/docs-pages/screens/05-55-generation-in-progress.en.webp)
+
+While the work is being made, a notification hangs at the top and a placeholder
+with a spinner sits in the feed on the left. You don't need to leave the page,
+but you don't need to watch it either: the result appears by itself.
+
+The wait is not silent: the service tells you what is going on. The job first
+joins **a queue** — and there you can see **your position and roughly how long
+it will take**. Then come "started", "accepted by the network", progress. Your
+position may suddenly improve: when someone else's generation drops out,
+the queue is recalculated.
+
+<Callout type="tip">
+  If the wait drags on, a warning may arrive: **"The generation is taking longer
+  than usual and may end in a timeout. We keep trying."** That is not a refusal
+  but an early warning, and it comes **once** — "it warned me and went quiet"
+  does not mean "it hung".
+
+  And if the service says **a retry is scheduled**, do not press "Create" again:
+  it is already trying by itself, and a second attempt will only hit
+  the simultaneous-generation limit.
+</Callout>
+
+<Callout type="warning">
+  **Read the error text straight away.** Finished rows disappear from the panel
+  after about a minute, and then there is nowhere to look up the cause — hence
+  the eternal "something red flashed and I missed it". The work itself does not
+  go anywhere: a failed attempt stays in the feed as a cross in a circle.
+
+  A generation also has a time limit: if the network never answers, the job closes
+  itself with **"The generation time has expired"** — and **the coins come back**.
+  Slow models wait longer, and that is normal.
+</Callout>
+
+<Callout type="tip">
+  **If several pictures were ordered, a row of thumbnails appears under the big
+  one** — for switching between variants of the same batch. With a single picture
+  there is no row. A finished result **can be dragged straight from the canvas**
+  into the settings fields, just like from the left drawer. That works for images
+  and sound; video cannot be dragged.
+</Callout>
+
+## What you can do with a finished work
+
+As soon as the work is ready, a row of buttons appears above it — and this is
+the most useful place in the whole generator. The buttons form three meaningful
+groups.
+
+![A finished result and the action buttons](/assets/docs-pages/screens/05-50-generation-result.en.webp)
+
+The buttons are icons only, but each has a tooltip on hover — that is how you
+find out what each one does.
+
+![A tooltip of a button above the result](/assets/docs-pages/screens/05-50a-result-buttons-tooltips.en.webp)
+
+**1. Keep working** — the result becomes the source for the next step:
+
+| Button | What it does |
+|---|---|
+| **Send to "Custom Image"** | puts the result into the source slot |
+| **Create a similar image** | the same prompt with a random seed, one picture |
+| **Animate (image → video)** | switches to the Video tab and puts the picture in as the first frame |
+| **Discuss with AI in chat** | uploads the picture as an attachment and moves to the [chat](/en/docs/chat) |
+
+**2. Refine** — the result itself changes:
+
+| Button | What it does |
+|---|---|
+| **Upscale resolution** | a menu with ×2 and ×4 |
+| **Upscale resolution + prompt** | always ×2, but **paints in detail from your text** |
+| **Outpaint the image** | a menu of four sides — which way to extend the frame |
+| **Background remove** | no menu, straight away |
+
+**3. Take it away** — copy link and download.
+
+<Callout type="tip">
+  **"Send to 'Custom Image'" is smarter than it looks.** If the size matches
+  the current one, the picture is simply placed. If the model has such a size,
+  it switches to it. And if not, the crop dialog opens, because otherwise
+  the model would not accept the file. The canvas is cleared and the "Custom
+  Image" layer switches itself on and expands: you are looking at a clean field
+  for the next step.
+</Callout>
+
+<Callout type="warning">
+  **"Upscale with prompt" takes the text from the field right now** — including
+  "Negative". With an empty field it will not start and shows an error about
+  a missing prompt. That is the difference between the two upscale buttons:
+  the first just enlarges, the second paints in detail from your description.
+</Callout>
+
+### What is available on the free plan
+
+| Action | Free | Any paid plan |
+|---|---|---|
+| Create a similar image | yes | yes |
+| **Face restoration** | **yes** | yes |
+| Copy link, download | yes | yes |
+| Send to "Custom Image" | **no** | yes |
+| Upscale and upscale with prompt | **no** | yes |
+| Upscale together with face restoration | **no** | yes |
+| Outpaint beyond the frame | **no** | yes |
+| Background remove | **no** | yes |
+
+<Callout type="tip">
+  **Face restoration is the only enhancement available on the free plan.**
+  Upscaling itself is not, and neither is "upscale together with face
+  restoration": that is a separate action with its own restriction.
+</Callout>
+
+<Callout type="tip">
+  **Unavailable buttons are not hidden and not dimmed — they are highlighted and
+  open the plans window.** That is one consistent rule across the service.
+  A **dimmed** button means something else: there is nothing to work with —
+  a generation is running or there is no finished result. Highlighted means
+  the plan is missing; pale means the occasion is.
+</Callout>
+
+While the buttons load, identical placeholders sit in their place: the panel does
+not jump, but it does not work either — that is not a freeze. And if there is no
+panel at all, there is no result: every button hides itself on an empty canvas.
+
+## Video and sound
+
+The "Video" and "Audio" tabs work the same way but with different settings.
+
+![Generator, Video tab](/assets/docs-pages/screens/05-42a-video-mode.en.webp)
+
+Video brings duration, frames per second and resolution — from 480p up to 4K
+on some models. **Video is charged per second**, so duration multiplies the price
+directly.
+
+![Video: 4K resolution, duration and keyframes](/assets/docs-pages/screens/05-43-video-4k-duration.en.webp)
+
+<Callout type="warning">
+  **The list of durations depends on the chosen size.** On some models 4K offers
+  one set of durations and 1080p another, and when you change the size
+  an unsupported duration **moves itself** to the nearest allowed one. It looks
+  like the interface acting on its own; in fact it is protection from a refusal.
+
+  Hence the tip: if the duration you need is missing, try a different size.
+  On a number of models long clips are only available at a lower resolution.
+</Callout>
+
+### What goes where in video
+
+On video models files go into different slots rather than one, and this is
+the main confusion of the section:
+
+| Slot | What goes in |
+|---|---|
+| **Frames** | literally frames of your clip: the first, the last |
+| **References (images)** | a sample of what it should look like: style, character |
+| **References (video)** | movement or manner to be repeated |
+| **References (audio)** | sound as a sample |
+| **Audio** | the track that will be part of the clip itself |
+| **Source video** | the clip you are editing (on editing models) |
+
+Only the slots a model supports are shown — usually two or three, not all of
+them. Each is a layer: it collapses, switches off and accepts drag-and-drop from
+the left drawer.
+
+<Callout type="warning">
+  **The difference between "Frames" and "References (images)" is the commonest
+  mistake.** A frame is literally a frame of the future clip — the model will
+  start (or end) with it. A reference is only a sample to imitate; it will not
+  appear in the clip.
+</Callout>
+
+<Callout type="tip">
+  Uploaded audio — **check the frames per second**: some models have their own
+  set of rates for a voiced clip, and the value may have jumped by itself. And
+  remember that on some models **the duration is taken from the length of
+  the track** — a one-minute audio gives a one-minute clip and a one-minute
+  price. Trimming the track beforehand is cheaper than generating spare seconds.
+</Callout>
+
+<Callout type="warning">
+  **A finished video has only three actions: extract a frame, copy the link and
+  download.** There is no upscaling, no outpainting and no "create similar"
+  for video — don't look for them. The only way to refine a clip: extract
+  a frame, fix it as a picture and animate it again.
+</Callout>
+
+![Generator, Audio tab](/assets/docs-pages/screens/05-46-audio-mode.en.webp)
+
+Audio model tags split them into clear groups: **SPEECH** (voicing text),
+**VOICE-CLONE** (voice cloning), **MUSIC** (music and songs), **SFX** (sound
+effects). Voicing is charged **per character**, not per second — which is why
+it has no duration slider.
+
+<Callout type="warning">
+  A finished track has **two** actions: copy the link and download. A track
+  cannot be animated, sent to the chat or redone with one button — only
+  by a new generation.
+</Callout>
+
+Both topics are covered in detail in
+[Special model features](/en/docs/special).
+
+## Resetting the settings
+
+The **"Reset"** button next to "Create" does more than expected: it clears
+**both the prompt and "Avoid"**, returns the model and every setting to their
+defaults, and removes the previous result from the canvas. **There is no warning
+beforehand** — you press it and it is done.
+
+<Callout type="tip">
+  Your works are **not deleted** — they stay in the feed on the left and in your
+  profile; only the form is reset. But if the prompt matters, copy it first:
+  it cannot be brought back afterwards. Or, instead of resetting, simply open any
+  of your works from the drawer — its settings land on top of the current ones.
+</Callout>
+
+## I pressed "Create" and got an error about my plan
+
+A separate story, and the most frightening one: **you have broken nothing**.
+For some features the check fires **after** the press rather than before, so
+the refusal arrives once you have done everything and are waiting for a result.
+
+| What you did | What comes back |
+|---|---|
+| uploaded your own image or a mask | "img2img mode is not available on your plan" |
+| switched private generation on | "Private mode is not available on your plan" |
+| chose the "Masterpiece" creativity mode | "Creativity mode 'Masterpiece' is not available on your plan" |
+| chose a premium style | "The selected style … is not available on your plan" |
+| dictated the prompt out loud | "Voice input is available on PRO plans and above" |
+| asked to improve the prompt | "Prompt improvement is not available on your plan" |
+| extracted a prompt from a picture | "Prompt generation from an image is not available on your plan" |
+| extended the frame beyond its borders | "Outpaint mode is not available on your plan" |
+| removed a background | "Background removal is not available on your plan" |
+| chose a model above your plan | "The selected model … is not available on your plan" |
+| ran an upscale together with face restoration | "Upscaling together with face restoration is not available on your plan" |
+
+<Callout type="tip">
+  Three of these are written in technical language and deserve a translation:
+  **img2img** means generating from your own image, **outpaint** means extending
+  the frame beyond its borders, and **prompt generation from an image** is that
+  magnifier button which writes a prompt from a picture.
+</Callout>
+
+<Callout type="tip">
+  **No coins are charged for such a refusal** — it never got as far as
+  a generation. That is the first question people ask after this error.
+</Callout>
+
+<Callout type="warning">
+  "Masterpiece" has an exception to the exception: **on a few models it is open
+  even on the free plan**. There are not many of them, but the rule is simple —
+  if the mode button is active, this model is one of them.
+</Callout>
+
+## If the generation won't start
+
+| What happened | What to do |
+|---|---|
+| **the prompt is shorter than five characters** | write more: the button stays dim while the text is too short |
+| **the prompt is empty** and the model requires one | write something |
+| **the visible area is not set** on the uploaded picture | press "Set visible area" and save |
+| **the model requires an image or a mask** | add what is missing |
+| **the "Custom Image" layer is switched off** | switch the layer on with the stack icon — the picture is loaded but not being sent |
+| **a required field in "Additional" is empty** | look for the field with an asterisk — it is highlighted |
+| **not enough coins** | claim the daily ones or top up — [Coins and limits](/en/docs/coins) |
+| **the simultaneous generation limit is reached** | wait for one of the running ones to finish |
+| **another generation is running** | the button does not dim, it spins — that is not a refusal |
+| **no prompt entered** | "Upscale with prompt" does not work with an empty field |
+| **the feature is not available on your plan** | see the section above and [Plans and payment](/en/docs/billing) |
+| **a retry has been scheduled** | do nothing: the service is already trying |
+
+<Callout type="warning">
+  There is one more case: **a temporary block for repeated forbidden requests**.
+  Send something the service refuses several times in a row and generation closes
+  for a while — the message says how long is left. The block lifts by itself;
+  there is no need to write to support, just rephrase the request.
+</Callout>
+
+<Callout type="tip">
+  On the free plan **an advertisement is shown in place of the empty canvas**.
+  It can be closed, but not instantly: a short countdown runs next to the cross.
+  After your first generation the canvas is taken by the work, and any paid plan
+  removes the advertising entirely — both here and in the feed.
+</Callout>
+
+## Where to go next
+
+- Understand how models differ and how to pick them —
+  [Model catalogs](/en/docs/catalogs).
+- Upscaling, outpainting, background removal, avatars, voice cloning —
+  [Special model features](/en/docs/special).
+- Find and sort your past works — [Your works](/en/docs/my-works).
