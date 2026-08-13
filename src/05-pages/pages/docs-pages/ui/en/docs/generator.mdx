@@ -24,9 +24,6 @@ that is not a loading error.
 
 ## How to write prompts
 
-This is the most important part of the page. It is here that the difference
-between "meh" and "excellent" usually lives.
-
 The prompt field carries a hint: **"What do you want to create? Write a prompt
 in Russian or English, or click the dice for a random prompt"**.
 
@@ -82,16 +79,8 @@ While recording, the button turns red and shows an equaliser reacting to your
 voice, with a countdown beside it: **the recording is capped at one minute**.
 After you stop, the text is recognised, lands in the field, and the field flashes.
 
-<Callout type="warning">
-  **Voice input is a premium feature, and the refusal arrives after you have
-  finished speaking.** The button is not disabled: on the free plan the microphone
-  presses, the recording runs, and only when you stop does the answer come —
-  "Voice input is available on PRO plans and above".
-
-  It looks like a broken microphone, though the microphone has nothing to do with
-  it. Dictation spends coins like an ordinary generation — but **if nothing was
-  recognised, the coins come back**: silence is not charged.
-</Callout>
+Voice input is available on paid plans and spends coins like an ordinary
+generation. If nothing could be recognised, the coins come back.
 
 If the recording does not start at all, it is almost always the browser
 permission: the lock icon left of the address → site settings → microphone.
@@ -100,7 +89,7 @@ found, microphone busy with another program. And "we heard nothing" is not
 an error at all: the button returns to its normal state by itself after
 a couple of seconds.
 
-There is a fourth route, the most underrated one: **upload a picture and press
+There is a fourth route: **upload a picture and press
 the magnifier button on its preview** — the service writes the prompt from
 the picture itself. Details in [Special features](/en/docs/special).
 
@@ -193,7 +182,7 @@ visible, it definitely works**.
 **Tip.** Don't hunt for a setting — change the model: the set of blocks changes
 the moment you pick a new one.
 
-### Layers: the main secret of the right panel
+### Layers: how the blocks of the right panel differ
 
 Blocks in the right panel come in two kinds, and the difference matters.
 
@@ -391,7 +380,7 @@ of hunting for the style in the ribbon again.
 <Callout type="tip">
   **The five icons above the styles ribbon are not a filter but a change of
   "sitter".** Cat, apple, tractor, man, woman: the previews of **all** styles are
-  redrawn on the chosen subject. It is the most useful and least noticeable
+  redrawn on the chosen subject. An inconspicuous control that decides a lot:
   element of the block — a style that looks great on a cat can fall apart
   on a portrait.
 
@@ -418,7 +407,7 @@ better with styles. Write the substance; the style supplies the framing.
    with no message at all. Remove one first;
 2. **the LoRA is above your plan** — the card is covered by a gradient with
    a large padlock, and a click opens the plans window instead of selecting it;
-3. **the whole LoRA layer is switched off** — the cruellest one: the LoRAs are
+3. **the whole LoRA layer is switched off** — the LoRAs are
    chosen and visible, yet they never reach the generation. The same goes for
    individual toggles inside the panel.
 
@@ -428,6 +417,12 @@ strength blindly and don't stack three at once — they almost always fight each
 other; switch them on one at a time with the toggle. An empty LoRA list is not
 a connection failure but a property of the model: it does not support them.
 More in [Model catalogs](/en/docs/catalogs).
+
+Three of the common ones are worth knowing. **"Prompt adherence"** — how strictly
+to follow the text: the slider has labelled notches from "Low" to "Strict".
+**"Noise"** is the seed, the number that lets you repeat a frame; a green dice
+beside it means the value is random. And **"Grain"** is about texture, not
+focus: it makes the picture more textured, but it will not rescue a blurry frame.
 
 The set of additional settings **comes with the model itself**, and every model
 has its own. SDXL models bring "Prompt Adherence" and "Creativity mode" which
@@ -484,7 +479,7 @@ need to drag all the way.
   with your works.
 </Callout>
 
-Two tricks almost nobody knows. First: **the tab can be dragged up and down
+Two lesser-known tricks. First: **the tab can be dragged up and down
 with a finger**, and it stays where you left it — separately for the left and
 the right drawer, and it survives a reload. That saves you when the tab covers
 the button you need. Second: at the bottom of an open drawer there is a wide
@@ -506,22 +501,8 @@ While the work is being made, a notification hangs at the top and a placeholder
 with a spinner sits in the feed on the left. You don't need to leave the page,
 but you don't need to watch it either: the result appears by itself.
 
-The wait is not silent: the service tells you what is going on. The job first
-joins **a queue** — and there you can see **your position and roughly how long
-it will take**. Then come "started", "accepted by the network", progress. Your
-position may suddenly improve: when someone else's generation drops out,
-the queue is recalculated.
-
-<Callout type="tip">
-  If the wait drags on, a warning may arrive: **"The generation is taking longer
-  than usual and may end in a timeout. We keep trying."** That is not a refusal
-  but an early warning, and it comes **once** — "it warned me and went quiet"
-  does not mean "it hung".
-
-  And if the service says **a retry is scheduled**, do not press "Create" again:
-  it is already trying by itself, and a second attempt will only hit
-  the simultaneous-generation limit.
-</Callout>
+Works run in a queue, so time may pass between the press and the result —
+that is not a freeze.
 
 **Read the error text straight away.** Finished rows disappear from the panel
 after about a minute, and then there is nowhere to look up the cause — hence
@@ -541,7 +522,7 @@ and sound; video cannot be dragged.
 ## What you can do with a finished work
 
 As soon as the work is ready, a row of buttons appears above it — and this is
-the most useful place in the whole generator. The buttons form three meaningful
+the most useful place in the generator. The buttons form three meaningful
 groups.
 
 ![A finished result and the action buttons](/assets/docs-pages/screens/05-50-generation-result.en.webp)
@@ -604,8 +585,9 @@ the first just enlarges, the second paints in detail from your description.
   restoration": that is a separate action with its own restriction.
 </Callout>
 
-**Unavailable buttons are not hidden and not dimmed — they are highlighted and
-open the plans window.** That is one consistent rule across the service.
+**A dimmed button and a highlighted one mean different things.** Dimmed means
+there is nothing to work with: a generation is running, or there is no finished
+result. Highlighted means the feature exists but is not part of your plan.
 A **dimmed** button means something else: there is nothing to work with —
 a generation is running or there is no finished result. Highlighted means
 the plan is missing; pale means the occasion is.
@@ -702,39 +684,27 @@ beforehand** — you press it and it is done.
   of your works from the drawer — its settings land on top of the current ones.
 </Callout>
 
-## I pressed "Create" and got an error about my plan
+## What requires a paid plan
 
-A separate story, and the most frightening one: **you have broken nothing**.
-For some features the check fires **after** the press rather than before, so
-the refusal arrives once you have done everything and are waiting for a result.
+Some of the generator's features work on paid plans. If one of them is not open
+to you right now, the service says so and names it: generating from your own
+image and a mask, private mode, the "Masterpiece" creativity mode, premium
+styles, voice input, prompt improvement, extracting a prompt from a picture,
+extending the frame beyond its borders, background removal, upscaling together
+with face restoration, and models above your plan.
 
-| What you did | What comes back |
-|---|---|
-| uploaded your own image or a mask | "img2img mode is not available on your plan" |
-| switched private generation on | "Private mode is not available on your plan" |
-| chose the "Masterpiece" creativity mode | "Creativity mode 'Masterpiece' is not available on your plan" |
-| chose a premium style | "The selected style … is not available on your plan" |
-| dictated the prompt out loud | "Voice input is available on PRO plans and above" |
-| asked to improve the prompt | "Prompt improvement is not available on your plan" |
-| extracted a prompt from a picture | "Prompt generation from an image is not available on your plan" |
-| extended the frame beyond its borders | "Outpaint mode is not available on your plan" |
-| removed a background | "Background removal is not available on your plan" |
-| chose a model above your plan | "The selected model … is not available on your plan" |
-| ran an upscale together with face restoration | "Upscaling together with face restoration is not available on your plan" |
+No coins are charged for such a refusal. What exactly each plan includes is in
+the plans window — see [Plans and payment](/en/docs/billing).
 
 <Callout type="tip">
-  Three of these are written in technical language and deserve a translation:
-  **img2img** means generating from your own image, **outpaint** means extending
-  the frame beyond its borders, and **prompt generation from an image** is that
-  magnifier button which writes a prompt from a picture.
+  Three of the messages are written in technical language and deserve
+  a translation: **img2img** means generating from your own image, **outpaint**
+  means extending the frame beyond its borders, and **prompt generation from
+  an image** is that magnifier button which writes a prompt from a picture.
 </Callout>
 
-**No coins are charged for such a refusal** — it never got as far as
-a generation. That is the first question people ask after this error.
-
-"Masterpiece" has an exception to the exception: **on a few models it is open
-even on the free plan**. There are not many of them, but the rule is simple —
-if the mode button is active, this model is one of them.
+"Masterpiece" has an exception: on a few models it is open even on the free plan.
+The rule is simple — if the mode button is active, this model is one of them.
 
 ## If the generation won't start
 
@@ -751,7 +721,6 @@ if the mode button is active, this model is one of them.
 | **another generation is running** | the button does not dim, it spins — that is not a refusal |
 | **no prompt entered** | "Upscale with prompt" does not work with an empty field |
 | **the feature is not available on your plan** | see the section above and [Plans and payment](/en/docs/billing) |
-| **a retry has been scheduled** | do nothing: the service is already trying |
 
 <Callout type="warning">
   There is one more case: **a temporary block for repeated forbidden requests**.
