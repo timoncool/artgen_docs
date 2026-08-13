@@ -142,6 +142,19 @@ Then comes the model carousel. A card shows the **price per generation**,
 the tags, and — for models above your plan — a **plan badge**.
 
 <Callout type="tip">
+  **The coloured dot to the left of the model name shows how busy it is right
+  now**: green — good availability, yellow — moderate, red — poor. An
+  inconspicuous detail that saves time: a red dot means a longer wait, and it is
+  wiser to take a neighbouring model of the same family — the result will be
+  similar.
+</Callout>
+
+Another hint appears **above the model search** when the selected model is
+missing something: "The selected model requires a 'Custom Image'" or "…requires
+a 'Custom Image' and a mask". It comes **before** you launch, not after
+a refusal — and it settles half of the "why won't it generate" questions.
+
+<Callout type="tip">
   The plan badge is shown **only if the model is above your plan**.
   A missing badge is good news: the model is available to you.
 </Callout>
@@ -233,6 +246,18 @@ Video has **480p / 720p** instead of presets, and **duration** appears there too
   a vertical frame stays vertical — the shape will not slip.
 </Callout>
 
+<Callout type="warning">
+  **The set of sizes changes when a custom image is loaded.** On some models
+  the list narrows to a fixed one, and it looks as if the options vanished.
+  Remove the picture and the list comes back. Hence the trick: if the proportions
+  you need are missing — take the custom image off, choose the size, then put
+  the picture back.
+
+  And on video models that take the size from the source, the proportions slider
+  goes dark altogether: the aspect ratio is read from the file. The quality
+  presets keep working.
+</Callout>
+
 Next to it sits **the number of images per run**. How many options there are is
 decided by the model; which of them are available to you, by your plan.
 Unavailable ones are not hidden but shown inactive, and clicking such a number
@@ -263,6 +288,14 @@ Once the file is in place, **"Draw mask"**, **"Remove background"** and
 departs from the source: a small value is a light touch-up, a large one is almost
 a new picture. **0.5** is the default and a comfortable place to start from.
 
+If the picture is not yet saved among your works, it is saved automatically
+before the background is removed — leaving you with **two works**: the source and
+the result. Those are not duplicates.
+
+On models that require a mask, the drawing window opens by itself — once, right
+after the upload. Close it without saving and it will not come back on its own;
+after that only the "Draw mask" button reopens it.
+
 <Callout type="tip">
   **Private mode switches itself on** the moment you upload your own image, so
   a personal photo does not accidentally end up in the public feed. You can turn
@@ -282,6 +315,13 @@ a new picture. **0.5** is the default and a comfortable place to start from.
   The top-left button **changes meaning**: if the picture was uploaded as a file,
   it crops; if you drew it, the same button takes you back into the drawing
   window to finish it.
+</Callout>
+
+<Callout type="warning">
+  **To swap the reference you don't need the bin — just drop another work onto
+  the preview.** But note: a drop onto an occupied slot replaces the file rather
+  than adding a second one, and the **painted mask is wiped along with the old
+  picture** — it was tied to that image. The mask has to be drawn again.
 </Callout>
 
 **Cropping is not "trimming the file" but a required step.** The window is
@@ -411,12 +451,28 @@ better with styles. Write the substance; the style supplies the framing.
    chosen and visible, yet they never reach the generation. The same goes for
    individual toggles inside the panel.
 
+**What happens to LoRAs when you change the model** is the commonest "bug" that
+is not a bug: incompatible ones disappear **silently**, with no message; the
+strength you set survives only if it falls inside the new model's range,
+otherwise it reverts to the author's default; a LoRA switched off with the toggle
+stays off; anything beyond three is dropped. Compatibility is not decided by
+the family name: **if a LoRA is visible in the list under your model, it fits**.
+
+**Video has no LoRAs at all** — not a single video model accepts them.
+
 The list of LoRAs **is assembled for the selected model**, and each one's
 weight is already set to the value its author recommends. Don't turn the
 strength blindly and don't stack three at once — they almost always fight each
 other; switch them on one at a time with the toggle. An empty LoRA list is not
 a connection failure but a property of the model: it does not support them.
 More in [Model catalogs](/en/docs/catalogs).
+
+<Callout type="warning">
+  **"Noise" does not guarantee a repeat if prompt extension is on.** The setting's
+  own description says as much: it affects reproducibility. To repeat a work
+  exactly, set "Noise" **and** switch prompt extension off in "Additional".
+  The seed alone is not enough.
+</Callout>
 
 Three of the common ones are worth knowing. **"Prompt adherence"** — how strictly
 to follow the text: the slider has labelled notches from "Low" to "Strict".
@@ -648,6 +704,13 @@ set of rates for a voiced clip, and the value may have jumped by itself. And
 remember that on some models **the duration is taken from the length of
 the track** — a one-minute audio gives a one-minute clip and a one-minute
 price. Trimming the track beforehand is cheaper than generating spare seconds.
+
+**"Extract a frame" takes neither the first nor the "best" frame, but the one
+currently paused in the player.** So the order is: pause the clip at the moment
+you want — and only then press the button. The frame is taken at the video's full
+resolution, goes straight into "Custom Image" replacing the previous reference,
+and the generator switches to the "Images" tab. If the frame could not be
+captured, the clip's cover is used instead.
 
 **A finished video has only three actions: extract a frame, copy the link and
 download.** There is no upscaling, no outpainting and no "create similar"

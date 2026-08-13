@@ -10,9 +10,14 @@ a single click.
 
 ![The gallery home page](/assets/docs-pages/screens/01-02-home-cover-feed.en.webp)
 
+## How the screen is laid out
+
+Top to bottom: the header, the **category ribbon** of chips, the **cover** with
+a search field in the middle, the feed controls, and the feed itself.
+
 ## The cover and voting for it
 
-At the top there is one large work. Next to it are **"copy prompt"** and **"open
+Below the categories there is one large work. Next to it are **"copy prompt"** and **"open
 fullscreen"** buttons, the author's name is a link to their profile (opens
 in a new tab), and on the right — **"Rate:"** with a thumb up and a thumb down.
 
@@ -35,7 +40,8 @@ to see what level of work is at the top right now.
 
 ## Categories are assigned by the service
 
-Under the cover there is a strip of categories: "All", "Fantasy art", "Anime",
+The category strip sits right under the header, above the cover: "All",
+"Fantasy art", "Anime",
 "Characters", "Landscape", "Cyberpunk", "Space", "Paintings", "Pop art",
 "Cubism", "Architecture", "Interior design" and others. The strip scrolls
 sideways.
@@ -43,7 +49,9 @@ sideways.
 <Callout type="warning">
   The category is assigned by the service automatically, the author has no say
   in it. The question "how do I put my work into the right category" has a short
-  answer — you can't.
+  answer — you can't. And **"Other" is the default category**: that is where
+  a work goes when no category could be determined. Not "the author skipped it",
+  but the service's decision.
 </Callout>
 
 **Every category is a real link**, even though the feed changes without
@@ -60,8 +68,9 @@ what you are looking at.
   "new with likes": what counts is the speed of gaining, adjusted by overall
   rating. This mode is the default on the home page — which is why the top
   is not the freshest.
-- **Hot** — by the work's own rating, ties broken by time.
-- **Top** — by overall rating for all time.
+- **Hot** — by the "gaining popularity" rating; ties broken by time.
+- **Top** — by the work's overall rating; ties also broken by time. It differs
+  from "Hot" not by period but by which rating is taken.
 
 **Example.** Looking for fresh ideas on a specific theme — "New" plus a category.
 Want to see the benchmark of quality — "Top". Want to catch what is taking off
@@ -89,6 +98,7 @@ the main source of "where is that button?" questions.
 | Grid density | always |
 | Scroll / pages | everywhere **except the home page and search results** |
 | Media type: images / video / audio | **only on the home page and in your own works** |
+| What to show from your works | **only in your own feeds** — not in a folder, not in someone else's profile |
 | Bulk actions | **only in your own "Created" and folders** |
 
 <Callout type="tip">
@@ -123,6 +133,11 @@ The switches next to it filter **images, video or sound**.
 
 As you scroll, a **"back to top"** button appears.
 
+If nothing was found after changing the sorting or a filter, the feed shows
+**"nothing found"** — and that state covers the starting grid. So an empty screen
+instead of the previous pictures is not a fault but an honest answer to your
+filter.
+
 ## Search and the colour filter
 
 **Search in the service works only for signed-in users** — that is a general
@@ -146,8 +161,16 @@ and the feed comes back **empty — with no message at all**. It looks like
 empty result on a seemingly harmless word is a reason to rephrase, not
 a conclusion about what the gallery holds.
 
+**There are two search fields, and they differ.** The one on the cover has
+a refresh icon and a detailed-settings icon; the one above the feed has a palette
+icon for searching by colour. They search the same way, but their button sets do
+not match — a common reason for "I don't have that button".
+
 The settings icon in the search field on the cover opens **detailed settings**:
-two tabs — **Category** and **Models** — and it also shows what is selected now.
+two tabs — **Category** and **Models**. The panel shows the current selection
+itself, as **"Selected category: …"** and **"Selected models: …"** lines — you do
+not have to remember what you ticked. A good reason to open it when the feed
+shows something other than expected.
 The panel closes on a click outside it and after every search.
 
 ![Detailed search settings](/assets/docs-pages/screens/01-06-search-settings.en.webp)
@@ -245,6 +268,14 @@ you are not following, and a tick when you are. Clicking toggles it. The questio
   **You cannot like or bookmark your own work** — instead of buttons there are
   inactive counters. That is the direct answer to "why doesn't my heart click".
 </Callout>
+
+**A like and a bookmark are different things.** A like is public: everyone sees
+it, and it works as the work's application for the cover. A bookmark is your
+private shelf that nobody else sees. Both feeds live in your profile — see
+[Your works](/en/docs/my-works).
+
+On the free plan the privacy button on your own work is highlighted as a paid
+feature and leads to the plans window: hiding a work works **on any paid plan**.
 
 Under the work there is a line: **"When using the image, place an active link
 to this page"** — with a link to the user agreement. This is the only place where
