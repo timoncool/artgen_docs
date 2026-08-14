@@ -61,8 +61,8 @@ export function Callout({ type = 'default', title, emoji, children }: CalloutPro
         WebkitBackdropFilter: 'blur(20px)',
       }}
     >
-      <Flex gap={12} align="flex-start">
-        <Box style={{ flexShrink: 0, marginTop: 2 }}>
+      <Flex gap={12} align="center">
+        <Box style={{ display: 'flex', flexShrink: 0 }}>
           {emoji || config.icon}
         </Box>
         <Box style={{ flex: 1 }}>

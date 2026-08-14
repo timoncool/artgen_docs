@@ -79,11 +79,18 @@ While recording, the button turns red and shows an equaliser reacting to your
 voice, with a countdown beside it: **the recording is capped at one minute**.
 After you stop, the text is recognised, lands in the field, and the field flashes.
 
+![Recording in progress: the equaliser and the countdown to one minute](/assets/docs-pages/screens/05-79-voice-recording.en.webp)
+
 Voice input is available on paid plans and spends coins like an ordinary
 generation. If nothing could be recognised, the coins come back.
 
 If the recording does not start at all, it is almost always the browser
-permission: the lock icon left of the address → site settings → microphone.
+permission. The first time it asks by itself, and that question needs a "yes";
+if you have already refused, use the lock icon left of the address → site
+settings → microphone.
+
+![The browser asking for microphone permission](/assets/docs-pages/screens/05-80-mic-permission.en.webp)
+
 The button has its own hint for every case — access denied, no microphone
 found, microphone busy with another program. And "we heard nothing" is not
 an error at all: the button returns to its normal state by itself after
@@ -234,9 +241,12 @@ the free one, clicking the icon opens the plans window.
 
 ## Resolution
 
-Resolution is set in two steps: first a **quality preset** (1K, 2K, 3K),
-then **proportions** with a slider. Switching the preset keeps the chosen
-proportions. The price is recalculated immediately and shown next to it.
+Resolution is set in two steps: first a **quality preset** — every model has its
+own set, from 0.5K up to 4K — then **proportions** with a slider. While you drag
+the slider, the exact size in pixels shows above it. Switching the preset keeps
+the chosen proportions, and the price is recalculated immediately next to it.
+
+![The Resolution block: presets, the proportions slider and the exact size](/assets/docs-pages/screens/05-19-resolution-block.en.webp)
 
 Video has its own presets instead — from 480p up to 4K, a different set on every
 model; the preset row only appears at all if a model has more than one. **Duration**
@@ -284,6 +294,14 @@ completely** — it does not go grey, it goes away. **Resolution adapts
 to the first file automatically.**
 
 ![Custom image loaded](/assets/docs-pages/screens/05-60-img2img-sdxl-strength.en.webp)
+
+The preview itself carries four buttons in its corners, each with a hint:
+**crop**, **remove image**, **extract prompt from image** and **edit image** —
+the last one opens the uploaded file in the [editor](/en/docs/editor).
+
+![The "Crop image" hint on the preview](/assets/docs-pages/screens/05-82-custom-image-crop.en.webp)
+
+![The "Edit image" hint on the preview](/assets/docs-pages/screens/05-81-custom-image-edit.en.webp)
 
 Once the file is in place, **"Draw mask"**, **"Remove background"** and
 **"Modification strength"** appear. The last one decides how far the model
@@ -491,7 +509,11 @@ The set of additional settings **comes with the model itself**, and every model
 has its own. SDXL models bring "Prompt Adherence", which newer models do not
 have; design models bring a colour palette and a background colour; some models
 bring "Prompt extend". "Creativity mode" is not from "Additional" at all — it is
-a separate block of the right panel, right under the model.
+a separate block of the right panel, right under the model. It has three steps —
+**Sketch, Draft, Masterpiece** — and the captions at the ends of the slider say
+plainly what you pay with: "Faster" on the left, "Higher quality" on the right.
+
+![Creativity mode: Sketch, Draft, Masterpiece](/assets/docs-pages/screens/05-78-creativity-mode.en.webp)
 
 <Callout type="tip">
   The practical takeaway: **changed the model — scroll through "Additional"
@@ -591,44 +613,144 @@ groups.
 
 ![A finished result and the action buttons](/assets/docs-pages/screens/05-50-generation-result.en.webp)
 
-The buttons are icons only, but each has a tooltip on hover — that is how you
-find out what each one does.
+The buttons are icons only, but each has a tooltip on hover — and the tooltip is
+what explains them. Here they are in order, left to right.
 
-![A tooltip of a button above the result](/assets/docs-pages/screens/05-50a-result-buttons-tooltips.en.webp)
+### Send to "Custom Image"
 
-**1. Keep working** — the result becomes the source for the next step:
+Puts the finished result into the source slot, so the next generation starts
+from it. That is how a chain is built: generate, send to the source, rewrite
+the prompt, get a development of the same picture.
 
-| Button | What it does |
-|---|---|
-| **Send to "Custom Image"** | puts the result into the source slot |
-| **Create a similar image** | the same prompt with a random seed, one picture |
-| **Animate (image → video)** | switches to the Video tab and puts the picture in as the first frame |
-| **Discuss with AI in chat** | uploads the picture as an attachment and moves to the [chat](/en/docs/chat) |
+![The "Send to Custom Image" hint](/assets/docs-pages/screens/05-50b-send-to-custom-image.en.webp)
 
-**2. Refine** — the result itself changes:
+The button is smarter than it looks, because the source size has to suit
+the model. If the result matches the current size, the picture is simply
+placed in. If the model has that size among its own, **the resolution switches
+by itself**. And if there is no suitable one, the cropper opens — otherwise
+the model would not take the file. The canvas is cleared, and the "Custom Image"
+layer switches on and unfolds on its own: a clean field for the next step.
 
-| Button | What it does |
-|---|---|
-| **Upscale resolution** | a menu with ×2 and ×4 |
-| **Upscale resolution + prompt** | always ×2, but **paints in detail from your text** |
-| **Outpaint the image** | a menu of four sides — which way to extend the frame |
-| **Background remove** | no menu, straight away |
+### Create a similar image
 
-**3. Take it away** — copy link and download.
+Runs **the very same prompt with a random "Noise" value** — and makes exactly
+one picture, however many were set in the settings. It is the cheapest way
+to get another take on the same idea: nothing needs to be changed.
 
-<Callout type="tip">
-  **"Send to 'Custom Image'" is smarter than it looks.** If the size matches
-  the current one, the picture is simply placed. If the model has such a size,
-  it switches to it. And if not, the crop dialog opens, because otherwise
-  the model would not accept the file. The canvas is cleared and the "Custom
-  Image" layer switches itself on and expands: you are looking at a clean field
-  for the next step.
+![The "Create a similar image" hint](/assets/docs-pages/screens/05-50c-create-similar.en.webp)
+
+That is why the result differs every time: the seed is reset to random. If you
+need an exact repeat rather than another take, set "Noise" by hand
+in the additional settings.
+
+### Animate (image to video)
+
+Switches the generator to the **"Video"** tab, puts your picture in as
+**the first frame** and unfolds the frames block by itself. What is left
+is to pick a video model and write what should happen in the shot.
+
+![The "Animate (image to video)" hint](/assets/docs-pages/screens/05-50d-animate-to-video.en.webp)
+
+The prompt is not carried over: video has its own logic of description —
+there you write about movement, not about the content of the frame.
+
+### Discuss with AI in chat
+
+Uploads the picture as an attachment and opens the [AI chat](/en/docs/chat)
+with it. While the file is uploading, a spinner runs in place of the icon —
+that is a couple of seconds, not a freeze. If the upload fails, a notification
+says so and nothing is lost.
+
+![The "Discuss with AI in chat" hint](/assets/docs-pages/screens/05-50e-discuss-in-chat.en.webp)
+
+Useful when you need to take your own work apart in words: ask it to describe
+the composition, suggest what to improve, or write a prompt for the next
+generation from it.
+
+### Upscale resolution
+
+Enlarges a finished picture without rebuilding it. The button opens a menu
+with two items — **x2** and **x4**.
+
+![The "Upscale resolution" hint](/assets/docs-pages/screens/05-50g-upscale.en.webp)
+
+![The upscale menu: x2 and x4](/assets/docs-pages/screens/05-71-upscale-menu.en.webp)
+
+The prompt plays no part here at all: upscaling works with pixels, not with
+a description. The result arrives as a separate work.
+
+### Upscale resolution x2 + prompt
+
+The second upscale is always x2, with no choice of factor, but it **paints in
+detail from your text**. It takes the prompt and "Negative" **from the fields
+as they are right now**, not the ones the picture was made with.
+
+![The "Upscale resolution x2 + prompt" hint](/assets/docs-pages/screens/05-50f-upscale-prompt.en.webp)
+
+With an empty prompt field the button will not fire and shows an error about
+the missing prompt. That is the whole difference between the two: one simply
+enlarges, the other enlarges and paints in detail from the description.
+
+### Outpaint the image
+
+Extends the frame beyond its borders: the service paints in what was never
+in the shot. The button opens a menu of four sides — **top, left, right,
+bottom**.
+
+![The "Outpaint the image" hint](/assets/docs-pages/screens/05-50h-outpaint.en.webp)
+
+![The outpaint menu: top, left, right, bottom](/assets/docs-pages/screens/05-72-outpaint-menu.en.webp)
+
+Sides are picked one at a time, and each pass produces a new work. That is how
+a tight composition turns into a wide shot: a few outpaints in a row and
+a portrait becomes a scene. One pass adds roughly a quarter of the side, but
+no more than a fixed maximum — which is why a wide shot is built in several
+steps rather than one.
+
+<Callout type="warning">
+  **Outpainting has two limits, and both arrive as a message.** The same work
+  cannot be outpainted forever: after a few passes the service says the limit
+  is used up. And it will not outpaint a picture that is too large — it says
+  that outright too.
+
+  Hence the order of operations: **outpaint first, upscale afterwards.**
+  An upscaled frame will almost certainly hit the size limit.
 </Callout>
 
-**"Upscale with prompt" takes the text from the field right now** — including
-"Negative". With an empty field it will not start and shows an error about
-a missing prompt. That is the difference between the two upscale buttons:
-the first just enlarges, the second paints in detail from your description.
+### Background remove
+
+The only button with no menu: press it and the work goes into the queue
+straight away. What comes back is the picture with a transparent background.
+
+![The "Background remove" hint](/assets/docs-pages/screens/05-50i-background-remove.en.webp)
+
+### Copy Link
+
+Puts the link to the work's page into the clipboard — the very page anyone
+following it will see. It is a link to the page, not to the image file: next
+to the work they will find its prompt, model and settings.
+
+![The "Copy Link" hint](/assets/docs-pages/screens/05-50j-copy-link.en.webp)
+
+### Download
+
+For pictures the button opens a menu of formats — **WebP, PNG and JPG**;
+vector models add **SVG**, because the source itself is vector there.
+
+![The "Download" hint](/assets/docs-pages/screens/05-50k-download.en.webp)
+
+![The download menu: WebP, PNG, JPG](/assets/docs-pages/screens/05-73-download-formats.en.webp)
+
+**Video and sound have no menu at all** — the file downloads at once, in one
+press: a clip as MP4, a track in its own format. Raster formats do not apply
+to them, so no choice is offered.
+
+<Callout type="warning">
+  **On the free plan downloading is available in WebP only**, PNG and JPG come
+  with paid plans. And a separate case: a work marked 18+ will not download
+  while adult content is switched off in profile settings — the settings open
+  instead of the download.
+</Callout>
 
 ### What is available on the free plan
 
