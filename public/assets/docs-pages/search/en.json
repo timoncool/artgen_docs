@@ -2,13 +2,13 @@
   {
     "title": "Plans and payment",
     "href": "/docs/billing",
-    "content": "Plans and payment The plans window opens by clicking your balance in the header — and it is the only place where the numbers are always current. This guide deliberately does not repeat them: plans and prices change, and the window changes with them. ![The plans window](/assets/docs-pages/screens/10-01-tariffs-modal.en.webp) Three tabs and how they differ The window explains each option itself, and the explanations are accurate: - One-time payment — a single payment for a chosen period with no au",
+    "content": "Plans and payment The plans window opens by clicking your balance in the header. Plans differ from one another in the daily coin allowance, the set of available models, how many pictures one run makes, private mode, access to 18+, the ability to change your name and the absence of ads — while the actual numbers always stand in the window itself. ![The plans window](/assets/docs-pages/screens/10-01-tariffs-modal.en.webp) Three tabs and how they differ - One-time payment — a single payment for a c",
     "section": "docs"
   },
   {
     "title": "Model catalogs",
     "href": "/docs/catalogs",
-    "content": "Model catalogs The catalog answers the question the generator makes you guess at: which model to take for this task. Here every model has a description, a price, example works and its neighbours in the line — all visible before you spend any coins. ![Image model catalog](/assets/docs-pages/screens/08-01-models-catalog.en.webp) The tabs at the top: Images · Video · Audio · Text · LoRAs · Styles, each with a number in brackets. The catalog shows models with your plan in mind. It is not a general p",
+    "content": "Model catalogs The catalog answers \"which model to take for this task\" — and, along the way, \"why can't I see the model my friend has\". Every model here has a description, a price, example works and its neighbours in the line, all visible before you spend any coins. ![Image model catalog](/assets/docs-pages/screens/08-01-models-catalog.en.webp) The tabs at the top: Images · Video · Audio · Text · LoRAs · Styles, each with a number in brackets. The catalog shows models with your plan in mind. It ",
     "section": "docs"
   },
   {
@@ -26,13 +26,13 @@
   {
     "title": "Editor and logos",
     "href": "/docs/editor",
-    "content": "Editor and logos Image editor The editor finishes a work off: crop it, add a caption, overlay a shape, correct the colour. All of that without leaving the service and without opening a graphics application. ![Image editor](/assets/docs-pages/screens/09-01-editor-annotation.en.webp) On the left — the same works drawer as in the generator, the canvas in the middle, the layers panel on the right. No need to download and upload back. Press the editor icon on a work card and it opens right here. The ",
+    "content": "Editor and logos Image editor The editor finishes a work off: crop it, add a caption, overlay a shape, correct the colour. All of that without leaving the service and without opening a graphics application. It has its own item in the header — \"Editor\". ![Image editor](/assets/docs-pages/screens/09-01-editor-annotation.en.webp) On the left — the same works drawer as in the generator, the canvas in the middle, the layers panel on the right. No need to download and upload back. Press the editor ico",
     "section": "docs"
   },
   {
     "title": "Frequently Asked Questions (FAQ)",
     "href": "/docs/faq",
-    "content": "Frequently Asked Questions (FAQ) How do I upload my own image for generation? Use the \"Your Image\" function in the right panel of generation settings. You can upload an image from your device and use it as a basis for further generation. Please note that according to the service rules, you can only upload images that you have rights to. Do not use other people's images found on the Internet. What is the difference between PRO subscription and free access? A paid plan opens a number of additional",
+    "content": "Frequently Asked Questions (FAQ) How do I upload my own image for generation? Use the \"Your Image\" function in the right panel of generation settings. You can upload an image from your device and use it as a basis for further generation. Please note that according to the service rules, you can only upload images that you have rights to. Do not use other people's images found on the Internet. What is the difference between a paid plan and free access? A paid plan opens a number of additional feat",
     "section": "docs"
   },
   {
@@ -74,7 +74,7 @@
   {
     "title": "Special model features",
     "href": "/docs/special",
-    "content": "Special model features Half of the most powerful things in the service hide in the \"Additional\" block of particular models. You cannot see them in the catalog or in a description — not until you pick the model and unfold the block. Collected here is what you would not guess otherwise, from task to model rather than the other way round. Working with images Try clothes on a person There are virtual try-on models: they have two separate slots — \"Person\" and \"Garment\". ![A try-on model: the \"Person\"",
+    "content": "Special model features Try clothes on a person, erase an object, clone a voice, write a song, replace an object in a finished clip — the service does all of this, but it lives in the \"Additional\" block of particular models and is invisible from outside: not in the catalog, not in a description, not until you pick the model and unfold the block. Collected here, from task to model rather than the other way round. Working with images Try clothes on a person There are virtual try-on models: they hav",
     "section": "docs"
   },
   {

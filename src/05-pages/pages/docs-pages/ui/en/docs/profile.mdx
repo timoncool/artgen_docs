@@ -21,8 +21,8 @@ Next to the main sections there is a **More** dropdown containing
 ![The "More" menu in the header](/assets/docs-pages/screens/11-01b-more-menu.en.webp)
 
 <Callout type="tip">
-  The logo generator lives here, not next to the ordinary generator. That is
-  the most common reason behind "where are the logos". More in
+  The logo generator lives here, not next to the ordinary generator — hence
+  the question "where are the logos". More in
   [Editor and logos](/en/docs/editor).
 </Callout>
 
@@ -31,23 +31,26 @@ Next to the main sections there is a **More** dropdown containing
 The language is switched with the **globe to the left of the logo**. It is there
 in every section except the AI chat: the chat has its own header.
 
-That window holds **two lists, not one**: **"Localisation"** — the language —
-and **"Server"**. Each has its own question-mark hint, and they behave
-differently.
+That window holds **two lists, not one**, and they get mixed up constantly:
+
+- **"Localisation"** — the interface language. Its hint says exactly that:
+  localisation defines the language of the site's interface;
+- **"Server"** — the regional infrastructure. Its hint explains the choice
+  through payment: pick "Global" for international payment, "RU" for paying
+  from Russia.
 
 <Callout type="warning">
   **Changing the language switches the interface in place, while changing
   the server opens a different site in a new tab** — the current one stays as
   it was.
 
-  Hence the classic "I pressed Apply, nothing changed, so it's broken". It isn't:
+  Hence the classic "I pressed Save, nothing changed, so it's broken". It isn't:
   a second tab simply opened, and a popup blocker may well have swallowed it.
 </Callout>
 
 The service can also suggest the switch itself: if it decides you are from
 another country, a prompt appears with "go" and "cancel" buttons. **Your choice
-is remembered and it will not come back** — so there is nothing to be alarmed
-about, and closing it is perfectly safe.
+is remembered and it will not come back.**
 
 On a narrow screen things work differently. The header shrinks and the sections
 move into a **side menu** — the button at the top left.
@@ -77,15 +80,20 @@ block for downloading all your works, and a red account deletion link.
 
 <Callout type="warning">
   **Everything on this tab is saved by the single button at the bottom.** Flip
-  the checkbox, pick a time zone and close the window — nothing was saved. That
-  is the most annoying loss in settings.
+  the checkbox, pick a time zone and close the window — nothing was saved.
 </Callout>
+
+The picture on the left of the window is **not decoration**: it changes every
+time, comes from the gallery, and carries an author, a copy-prompt button,
+a fullscreen view and a cover rating. So the settings window doubles as someone
+else's work you can take apart.
 
 ### Display name
 
-From 3 to 50 characters, any characters, emoji and ASCII art. The field is locked
-by default: **the pencil toggles edit mode, it does not save**. Press the pencil →
-the field unlocks → you type → you save with the common button.
+From 3 to 50 characters, any characters, emoji and ASCII art; an empty name is
+not accepted. The field is locked by default: **the pencil toggles edit mode,
+it does not save**. Press the pencil → the field unlocks (the icon turns into
+a "pause") → you type → you save with the common button.
 
 <Callout type="warning">
   **Changing the name is available on paid plans only.** On a free plan
@@ -103,8 +111,9 @@ If you never picked one, your **computer's** zone is used, not the one you had
 at registration.
 
 <Callout type="warning">
-  **The time zone does not affect daily coins.** They refresh at midnight Moscow
-  time for everyone, wherever you live — see [Coins and limits](/en/docs/coins).
+  **The time zone does not affect daily generations.** They refresh at midnight
+  Moscow time for everyone, wherever you live — see
+  [Coins and limits](/en/docs/coins).
 
   What it really affects: **the period boundaries when building an archive** and
   the display of dates. If the zone is wrong, an archive "for today" will cover
@@ -113,7 +122,9 @@ at registration.
 
 ### Showing adult content
 
-The "I am over 18…" checkbox with a link to the user agreement.
+The checkbox is called **"Show NSFW content"**, and the line under it reads
+"By selecting, you confirm that you are 18 or older according to the user
+agreement" — with a link to the agreement itself.
 
 <Callout type="warning">
   Works **on paid plans only**: on a free plan the toggle does not fire and
@@ -197,18 +208,40 @@ and that changes over time; if there are none at the moment, it says so —
   And as on the Profile tab, changes apply **only via the save button**.
 </Callout>
 
-Three service emails are worth knowing, because they call for action:
-**"auto-renewal payment failed"** — the card did not work and the subscription is
-at risk; **"your subscription renews soon"** — a warning before the charge, so it
-can still be cancelled; and **"your account will be deleted soon"** — which has
-its own section below.
+### Which emails the service sends at all
+
+**Service emails — always sent, cannot be switched off:**
+
+| About | When it arrives |
+|---|---|
+| **signing in** | the sign-in code, email confirmation |
+| **payment** | a subscription or package payment went through; the subscription renewed; renewal could not be charged; the subscription renews soon; ends soon; has ended |
+| **moderation** | a moderation warning, an account block |
+| **works and account** | the works archive is ready; confirmation of account deletion; the account will be deleted soon; the account was deleted |
+
+**Marketing emails — the ones that actually switch off:** three welcome emails
+(immediately, after a day and after a week), the weekly digest and the personal
+digest.
+
+<Callout type="tip">
+  Three service emails are worth knowing, because they call for action:
+  **"auto-renewal payment failed"** — the card did not work and the subscription
+  is at risk; **"your subscription renews soon"** — a warning before the charge,
+  so it can still be cancelled; and **"your account will be deleted soon"** —
+  which has its own section below.
+</Callout>
+
+You can also unsubscribe **without signing in** — via the link in the email
+itself: it opens a page with the same toggles as this tab. Handy when you have
+your inbox but nowhere to sign in right now.
 
 ## Download all your works
 
 The **"Download my images"** block is collapsed inside the Profile tab and opens
-by clicking its heading. Inside — a choice of period (all time, today, yesterday,
-week, month and onwards), each showing a number of works, and a build button.
-The link arrives by email and as a notification on the site.
+by clicking its heading. Inside — a choice of period: **all time, today,
+yesterday, week, month, 3 months, half a year, year**, each showing a number
+of works. The caption next to the choice carries **your email** — the address
+the link will arrive at; it is duplicated as a notification on the site.
 
 <Callout type="warning">
   **The archive is available on paid plans only.** On a free plan the block
@@ -216,9 +249,15 @@ The link arrives by email and as a notification on the site.
   window.
 </Callout>
 
-### What is actually in the archive
+The block has two states, both shown as an orange banner: **"building"** — then
+the button is locked, and there is nothing to hurry along, the time depends on
+how many works there are; and **"the archive is ready"** — while it exists,
+a new one cannot be ordered. Under the button you see everything about
+the current archive: the period and the number of works, the creation date with
+a **"Download"** button, and the date it is kept until with a **"Delete"**
+button. Want a different one — delete this one first.
 
-Three facts, each of which changes expectations:
+### What is actually in the archive
 
 1. **The archive holds compressed versions of your works, not the originals.**
    It is "take everything at once", not "take the best quality". If you need
@@ -257,9 +296,13 @@ deleted, and **on re-registering with this address the welcome bonus is not
 granted**.
 
 <Callout type="tip">
-  **Deletion takes two steps.** Clicking only sends an email with a one-time
-  link; the account is deleted only when you follow it. Changed your mind — just
-  don't open the email.
+  **Deletion takes two steps.** Clicking only sends an email with a link, and
+  the service says so: account deletion has been initiated, an email with a link
+  has been sent. The account is deleted only when you follow it. Changed your
+  mind — just don't open the email.
+
+  The link is **single-use and time-limited**: open it too late and it will not
+  work, so deletion has to be started again.
 </Callout>
 
 What happens on confirmation: the account and all works are hidden and disappear
@@ -268,9 +311,8 @@ conversations are deleted, and files attached to them are wiped from storage.
 
 <Callout type="warning">
   The window says "irreversible", and for **you** that is true: you cannot bring
-  the account back yourself. But works are not wiped instantly — if you deleted
-  it by mistake, **contact support as soon as possible**; recovery is possible,
-  though not guaranteed.
+  the account back yourself. Support can restore an account together with its
+  works — but do not count on that as an undo button.
 
   **Chat attachments, however, are wiped for good** — that is the one part that
   disappears irrevocably.

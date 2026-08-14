@@ -1,4 +1,4 @@
-import { Callout } from '@/src/01-shared/ui/mdx'
+import { Callout, Tabs, Tab } from '@/src/01-shared/ui/mdx'
 
 # Frequently Asked Questions (FAQ)
 
@@ -6,17 +6,30 @@ import { Callout } from '@/src/01-shared/ui/mdx'
 
 Use the "Your Image" function in the right panel of generation settings. You can upload an image from your device and use it as a basis for further generation. Please note that according to the service rules, you can only upload images that you have rights to. Do not use other people's images found on the Internet.
 
-## What is the difference between PRO subscription and free access?
+## What is the difference between a paid plan and free access?
 
 A paid plan opens a number of additional features. Exact figures are deliberately
 not repeated here — they change. **The plans window always lists what each plan
 includes**: open it by clicking your balance in the header.
 
-- Save images in PNG and JPG formats in addition to standard WEBP
-- Access to view and generate NSFW content (if enabled in settings)
-- A larger daily coin allowance — the exact figure is written in the plans window
-- Access to private mode, ability to hide your generations from other users
-- More generations running at the same time
+<Tabs items={['Free', 'Paid plan']}>
+  <Tab>
+    - Daily coins at the free rate
+    - Saving in WEBP only
+    - Public generation mode only
+    - No access to 18+ content
+    - Ads on the service pages
+  </Tab>
+  <Tab>
+    - More daily coins
+    - More generations running at the same time
+    - Formats: PNG, JPG, WEBP
+    - Private generation mode
+    - Access to 18+ content
+    - An archive of all your works, name changing, voice input
+    - No ads
+  </Tab>
+</Tabs>
 
 ## I registered via VK/Yandex, how do I sign in by email?
 
@@ -27,13 +40,19 @@ in the user menu and link an email or a second network there. See
 
 ## How do I disable ads in the service?
 
-To completely remove ads, subscribe to PRO. On the free plan, ads are shown to cover the costs of generation and image storage.
+Ads disappear **on any paid plan**. On the free plan they are shown to cover
+generation and storage of works.
 
 ## I ran out of generations, where can I get more?
 
-Every day each user gets a fresh daily balance — how much exactly depends on your plan and is written in the claim window itself. To get it, click the "Claim" button at the top of the screen. See [Coins and limits](/en/docs/coins).
+There are two routes. The first is the **daily claim**: every day a fresh daily
+balance is granted — how much exactly depends on your plan and is written in
+the claim window; to take it, press "Claim" in the header. The second is
+a **package of additional generations** on the "Additional generations" tab of
+the plans window: those coins **do not expire** and sit there until you spend
+them. See [Coins and limits](/en/docs/coins).
 
-## Why does one generation cost five coins and another two hundred?
+## Why does one generation cost pennies and another real money?
 
 Because these are different neural networks from different providers, and they
 cost different amounts. The price is always written on the model card and next
@@ -54,8 +73,7 @@ The counting differs too:
 
 ## Why can't I make a video on the free plan?
 
-Because no video model is ever free: a minute of a video network's work costs
-a provider far more than a picture, and there simply is no free tier for that.
+Because there are no video models on the free tier at all.
 
 You can check it yourself: open the [model catalog](/en/models/videos) and look
 at the **Tariff** filter on the left. For video it will only list a paid tier.
@@ -130,10 +148,8 @@ and nothing was saved.
 
 ## How do I get my work on the ArtGeneration.me cover?
 
-The path is this: first users **like** a work, and out of those that gathered
-a response the cover is **chosen by the administration**. So likes are
-an application, not an automatic pass: "got the most" does not mean "made it
-to the cover".
+A like is **an application for the cover**, not an automatic pass: "got the most"
+does not mean "made it to the cover". Deleted works drop out of the running.
 
 What actually helps: make works people want to look at, and show them —
 covers are published in the [Telegram community](https://t.me/ArtGenerationMe)
@@ -156,12 +172,12 @@ at once — be signed in, have a paid plan, and switch the display on:
 
 1. Take out any paid subscription.
 2. Open profile settings, the "Profile" tab.
-3. Tick "I am over 18…".
+3. Tick **"Show NSFW content"**.
 4. **Press "Save"** — without it the tick is not remembered.
 
 <Callout type="warning">
   **The setting drops itself when the subscription ends.** After renewing you will
-  have to switch the display back on — this is written nowhere, and the question
+  have to switch the display back on.
   comes up constantly.
 </Callout>
 
@@ -175,7 +191,11 @@ No, the gift subscription does not require payment and does not renew automatica
 
 ## How do I make a Full HD or 4k image or other specific resolution?
 
-Every model is trained on its own resolutions, so the set of available sizes is decided by the model — a trade-off between quality and speed. Resolution is picked in two steps: first a quality preset (1K, 2K, 3K), then proportions with a slider.
+Every model is trained on its own resolutions, so the set of available sizes is
+decided by the model — a trade-off between quality and speed. Usually the choice
+goes in two steps: first a **quality preset** (1K and 2K on some models, up to 4K
+on others), then proportions with a slider. There are plenty of native 4K models
+in the catalog too — look at the presets of the particular one.
 
 From there the size is grown with the tools above a finished work: **Upscale**, **Upscale with a prompt** and **Outpaint**. Combining them takes you well past the original size. Final trimming is easiest in the built-in [editor](/en/docs/editor).
 
@@ -221,7 +241,8 @@ Go to the "Payments" tab, which is located in the user menu. There you will see 
 
 ## What payment methods are available for subscription and generations?
 
-A bank card, **SBP**, **SberPay**, **T-Pay** and the **YooMoney** wallet. The list is shown in the payment window, where a method can also be saved for later.
+**Card**, **SBP**, **SberPay** and the **YooMoney** wallet — that is exactly how
+they are labelled in the saved methods block on the payments page.
 
 <Callout type="warning">
   If the browser refuses to open the payment page, that is not the service. Russian banks had their international certificates revoked; the payment window itself offers to install the state certificates or to open the payment in Yandex Browser, which already has them built in.
@@ -253,6 +274,89 @@ in **by email** — a one-time code, no password — always works.
 </Callout>
 
 **The set of networks on the sign-in screen and in settings may differ.** If "Settings → Quick login" shows a different list from the sign-in screen, that is not an error: some methods are meant for linking to an existing account. See [Profile and settings](/en/docs/profile).
+
+## The code doesn't arrive by email
+
+Check the spam folder — the code comes as an email and often lands there. If it
+is still missing after a few minutes, request it again: the button does not go
+active immediately because a "you are not a robot" check runs under the field
+first — a grey button at that moment is not a fault. Signing in through a linked
+social network works too. See [Signing in and first steps](/en/docs/start).
+
+## What is the difference between a like and a favourite?
+
+A **like** is a mark of appreciation for the author and an application for
+the site cover. **Favourites** is your own shelf: things you want to come back
+to. Both live as separate feeds in your profile, and the counters at the top of
+the profile are about something else — how many likes and bookmarks **you**
+received. See [Your works](/en/docs/my-works).
+
+## Why won't the heart click on my own work?
+
+You cannot like or bookmark your own work — its card shows counters of other
+people's marks instead of buttons.
+
+## Why doesn't gallery search work?
+
+Search is only for signed-in users: a guest sees the field but cannot use it.
+And note that only the first few words of a long phrase are taken into account —
+search with two or three precise ones.
+
+## Where did my filters go?
+
+They are wiped by **changing the sorting** and by **switching feeds**: the search,
+the chosen colours and models all reset. The order is simple — pick the sorting
+first, then filter.
+
+## I deleted a work — can I get it back?
+
+Yes, but not for long. Right after deletion the work stays in the feed as a red
+plate with a restore arrow, and one click brings it back. The window for
+restoring is about an hour — after that the files are wiped. If you simply don't
+want to show a work, don't delete it: make it private.
+
+## I clicked the chest after claiming and the plans opened again
+
+The chest in the header changes purpose: while the coins are unclaimed it opens
+the claim window, and afterwards the plans window. Not an error and not an ad out
+of nowhere.
+
+## My promo code didn't extend my subscription
+
+If a paid subscription is already active, a promo code does **not** extend it: it
+switches on a temporary upgrade to its own plan and refreshes the daily balance.
+On the free plan the same code is granted as an ordinary subscription. See
+[Plans and payment](/en/docs/billing).
+
+## I moved to a more expensive plan — did I lose my paid days?
+
+No. The remainder of the old plan is **recalculated into days of the new one**,
+which is why moving up is better value mid-period than waiting for the end.
+Moving down is scheduled for the end date and takes nothing away.
+
+## Why doesn't this model have a setting another one had?
+
+The set of settings is decided by the model itself: many have no creativity mode,
+no seed and no negative prompt. A hidden block is not cosmetics but a ban:
+the server refuses if you send a value for a setting the model does not have.
+
+## Why can't I see all the models?
+
+Everyone's catalog is their own: some models are above your plan, and some are
+taken out of the catalog by the team entirely. How many models sit on which level
+is visible in the "Tariff" filter in the [catalog](/en/docs/catalogs).
+
+## Which neural networks does the service run on?
+
+Not one: models of different families and different providers — open lines and
+branded models from big companies, for pictures, video, sound and text. The full
+list is always in the [model catalog](/en/docs/catalogs), with a description,
+a price and examples for each.
+
+## Where is my help section?
+
+This is it. In the user menu and in the "More" menu it is called **"Вики"**
+("Wiki") — that is the word to look for.
 
 ## I still have questions, where can I ask them?
 

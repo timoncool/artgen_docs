@@ -47,14 +47,38 @@ following or inside folders.
 
 ## The button won't press
 
-**"Create" won't press.** There are several reasons and each is named in
-the message: not enough coins, the simultaneous generation limit is reached,
-the model requires an image or a mask, the prompt is too short or empty,
-a required field marked with an asterisk is not filled.
+**"Create" won't press.** Some reasons the service names in a message: not enough
+coins, the simultaneous generation limit is reached, the model requires an image
+or a mask, a required field marked with an asterisk is not filled. But **there
+are silent reasons too**, and they are worth knowing:
+
+- **the prompt is shorter than five characters** — the button simply goes dim,
+  with no explanation;
+- **the visible area of an uploaded picture is not set** — see below;
+- **a generation is already running** — the button does not dim, it spins.
+
+<Callout type="warning">
+  **You uploaded a picture, closed the crop window — and nothing starts.** This
+  is the most common cause of "the button doesn't work": you were sure you had
+  simply closed a window you didn't need. Instead of settings, the "Custom Image"
+  block shows an explanation with a **"Set visible area"** button — press it,
+  set the area and save.
+</Callout>
 
 **I uploaded a picture and the model seems not to see it.** Check whether
 the "Custom Image" layer is switched on — a layer has a stack icon, and a dimmed
 layer does not take part in the generation even though it stays in place.
+
+**The prompt field is inactive.** Not a fault, and the text inside the field
+explains it: either **the model needs no prompt** (upscaling, background removal,
+vectorising and other tool models), or a video has the per-segment scenario on
+and the text goes into the segment cards.
+
+**"Prompt limit exceeded" while my text is short.** The prompts of the styles
+you picked and the activator words of the LoRAs you picked are added to
+the length of your own text. There is no separate counter on screen — hover
+the cost badge, the length is in its tooltip. "No limit" is also normal: it
+depends on the model.
 
 **"Upscale with prompt" doesn't work.** That button takes the text from
 the prompt field right now, and with an empty field it will not start.
@@ -70,16 +94,37 @@ Full details — [Generator](/en/docs/generator).
 ## The model doesn't have the setting I need
 
 **The setting was there, I changed the model and it vanished.** The set of
-settings is decided by the model itself. If a block is missing, the model does
-not support it, and that is normal: roughly every third model has no creativity
-mode, every fourth no seed or negative prompt.
+settings is decided by the model itself: many have no creativity mode, many no
+seed or negative prompt field. If a block is missing, the model does not support
+it, and that is normal.
 
 A hidden block is not cosmetics but a ban: the server refuses a generation if you
 send a value for a setting the model does not have. And the other way round —
 if the block is visible, it works.
 
+**A setting vanished and I didn't change the model.** Fields in "Additional"
+depend on each other: switch one toggle off and the dependent ones disappear,
+their values reset (switch it back on and the block is empty). An uploaded
+picture of your own also hides some options. And changing the model wipes
+every "Additional" setting and restores the defaults.
+
+**The service changed my size or duration by itself.** That is protection from
+a combination that cannot work, not wilfulness: the set of sizes narrows when
+a picture of your own is uploaded (remove the picture → pick the size → bring it
+back); the resolution adapts to the first uploaded file; an impossible video
+duration is reset when the size changes; the frames-per-second list changes once
+audio is uploaded.
+
 **I can't switch a block off — there is no stack icon.** Then it is a plain
 block, not a layer. Only layers can be switched off, and only on paid plans.
+
+**Where did my LoRA go.** Four different cases, and all of them look like
+"nothing happens": when the model changes, incompatible LoRAs disappear
+**silently**; the strength you set returns to the default weight if it falls
+outside the new model's range; with LoRAs already picked, a click on the next
+one may simply not register — no message, no highlight; and if **the whole LoRA
+layer** is switched off, the picked LoRAs are visible but never reach
+the generation.
 
 ## I can't see all the models
 
@@ -87,14 +132,35 @@ block, not a layer. Only layers can be switched off, and only on paid plans.
 mind. How many are available to you is visible in the "Tariff" filter in
 the catalog — where you can also see how many would open on a paid plan.
 
-The plan badge appears on a card only when the model is above your plan.
-A missing badge is good news.
+A separate plan badge appears next to the name only when the model is **above
+your plan**. The Free / Pro / MAX tag in the row of tags is always there and says
+which level the model is available from. Some models are removed from the catalog
+by the team entirely — then no filter will show them.
+
+## The generation hangs or never finishes
+
+**It spins for ages and it's unclear whether anything is alive.** The service
+warns about this itself, in advance and once: "the generation is taking longer
+than usual and may end in a timeout. We are still trying." Silence after that
+message does not mean everything has frozen — heavy models take longer.
+
+**If the time does run out**, you get "generation time expired" with an offer to
+try again, and **the coins come back**.
 
 ## Coins were charged and there is no result
 
 **It looks like the money is gone.** That does not happen. Coins are not deducted
 at launch but reserved: on failure the reservation returns to the same wallet it
 came from. Ordered four pictures, got three — the fourth is refunded.
+
+**A card with a cross in a circle stayed in the feed.** That is a failed
+generation: no text, no reason, no retry button. This is exactly the view that
+reads as "the money is gone". Look for the reason in the generator's
+notification; the coins for such a work are refunded.
+
+**I didn't manage to read the error text.** A notification closes on a click
+anywhere on it, and finished rows leave the queue panel after about a minute.
+To read the message, repeat the action — it will come again.
 
 **My coins reset by themselves.** The daily balance is set anew each day rather
 than accumulating. The non-expiring coins in brackets are untouched by this.
@@ -104,6 +170,54 @@ non-expiring balance is hidden. The exception is the AI chat, where it stays
 visible. The balance has not gone anywhere.
 
 More — [Coins and limits](/en/docs/coins).
+
+## A picture won't upload
+
+The refusals differ, and so do the cures:
+
+| Message | What to do |
+|---|---|
+| "unsupported file format — use jpeg, png or webp" | re-save in one of the three formats |
+| "the file is too large" | shrink it or re-save at lower quality |
+| "the file is too small and cannot be uploaded" | take a bigger picture: a tiny image has nothing to work with |
+| "the file could not be read" | **not about the format**: this is how broken files and exotic compression behave under a correct extension. Re-saving in any editor fixes it |
+| "you selected too many files" | the model has a limited number of image slots |
+
+**The upload area disappeared entirely.** That means the model has run out of
+free slots for files — it is not "inactive", it is gone. And when you change
+the model, surplus pictures are not removed by themselves: the cards stay,
+get marked unavailable and have to be cleared by hand.
+
+## I reused the same seed and got a different picture
+
+Reproducibility is broken by **prompt auto-enhancement**: it expands and refines
+your request before the generation, and the setting's own description says so.
+To repeat a frame you need both a fixed seed and auto-enhancement **switched
+off** in the "Additional" block.
+
+## The "Change the model" error
+
+It means the model is temporarily unavailable. You can see it coming: to the left
+of the model's name on its card there is a **coloured availability dot** — green,
+yellow or red. The cure is simple — take a neighbouring model from the same
+family.
+
+## The microphone doesn't work
+
+The voice input button has five "bad" states, each with its own hint: microphone
+access denied, no microphone found, the microphone is busy in another program,
+a recognition error, and "we heard nothing at all". The last one is not an
+error — the button returns to normal by itself after a couple of seconds.
+
+The cure is almost always the same — **browser permission**: the lock icon to
+the left of the address → site settings → microphone.
+
+## Outpainting refuses
+
+It refuses with three different messages, each meaning something else: the source
+work has been deleted; the limit of outpaints **for that picture** is used up
+(it counts per source work, not per session); or the result has already been
+saved — it cannot be saved a second time.
 
 ## I clicked the balance and the plans opened
 

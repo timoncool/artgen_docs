@@ -2,15 +2,15 @@ import { Callout } from '@/src/01-shared/ui/mdx'
 
 # Plans and payment
 
-The plans window opens by clicking your balance in the header — and it is
-the only place where the numbers are always current. This guide deliberately
-does not repeat them: plans and prices change, and the window changes with them.
+The plans window opens by clicking your balance in the header. Plans differ from
+one another in the **daily coin allowance, the set of available models, how many
+pictures one run makes, private mode, access to 18+, the ability to change your
+name and the absence of ads** — while the actual numbers always stand in
+the window itself.
 
 ![The plans window](/assets/docs-pages/screens/10-01-tariffs-modal.en.webp)
 
 ## Three tabs and how they differ
-
-The window explains each option itself, and the explanations are accurate:
 
 - **One-time payment** — a single payment for a chosen period with no automatic
   charges; when the period ends you pay for the next one by hand;
@@ -27,9 +27,25 @@ The window explains each option itself, and the explanations are accurate:
   but for comparison. Every plan has an "All features" button with the full list.
 </Callout>
 
+### The period switch and the length discount
+
+Above the plan cards sits a **period switch**, and each period has its own
+discount written under it; the shortest one says "no discount". Periods run
+from short to long, and the list is live: add a new one and it shows up.
+The "Additional generations" tab has no switch at all — packages are not tied
+to a period.
+
+<Callout type="warning">
+  **A period's discount is the largest among the plans for that period, not
+  yours.** The switch shows the best offer of the period; for a particular plan
+  the discount can be smaller. So the safer comparison is **not the price and
+  not the percentage but the price per month** — divide the sum by the number
+  of months and it is immediately clear which wins.
+</Callout>
+
 One-time payment and subscription have **different discounts per period**:
-the subscription tab shows one set of percentages, the one-time tab noticeably
-smaller ones. Compare not just the price but the tab.
+the subscription tab shows one set, the one-time tab noticeably smaller ones.
+Compare not just the price but the tab.
 
 ## Coin packages
 
@@ -54,8 +70,7 @@ it gives you a reserve that does not expire. More about the two wallets —
 ## Changing your plan
 
 Before the change the service shows a **preview**: what changes, how much to pay
-and from which date. Plans do not change blindly — pressing the button is not
-scary.
+and from which date. Plans do not change blindly.
 
 | What you do | Pay now | When it takes effect | What happens to the remainder |
 |---|---|---|---|
@@ -66,17 +81,26 @@ scary.
 | **Give up the paid plan** | nothing | **at the end of the paid period** | the current one runs to the end |
 
 <Callout type="tip">
-  **The thing that removes the fear: moving up does not waste your paid days** —
-  they are recalculated into days of the new plan. So moving up is better value
-  mid-period than waiting for it to end.
+  **Moving up does not waste your paid days** — they are recalculated into days
+  of the new plan. So moving up is better value mid-period than waiting for it
+  to end.
 
   And moving down never takes away what is already paid: it is simply scheduled
   for the end date.
 </Callout>
 
-When downgrading, the window shows a block **"After the switch you will lose:"**
-with a list of what goes away. It is the only place where the consequences are
-listed honestly and in full — read it before confirming.
+The window's heading changes with the scenario — **"Subscribe to …"**,
+**"Switch to …"**, **"Extend …"** or **"Cancel subscription"** — and the button
+at the bottom reads **"Proceed to payment"** where money is due and
+**"Confirm"** where it is not.
+
+The window spells out what happens next: moving up, it says the subscription
+will be active until a date, bonus days from the remainder of the current plan
+included; moving down, that until that date you keep using the current plan
+without limits.
+
+When downgrading, a block **"After the switch you will lose:"** appears with
+a list of what goes away — read it before confirming.
 
 **A scheduled change can be cancelled.** The plan card gets a "Switch scheduled
 …" mark and a **"Cancel switch"** button, while the current one shows
@@ -91,14 +115,26 @@ the change does not go through.
 
 ## Cancelling auto-renewal
 
-Cancelled on the payments page. On cancelling, a window opens headed "Your
-creativity matters to us!", with a list of what the subscription gives and two
-buttons.
+Cancelled on the payments page — and the easiest way there is **from the plans
+window itself**: at the top, next to the "Subscription … active until …" line,
+there is a **pencil icon**, "Manage subscription and payment methods". There is
+deliberately no "Cancel" button in the window, and that is the first thing
+people trip over.
+
+On cancelling, a window opens headed "Your creativity matters to us!", with
+a list of what the subscription gives and two buttons.
 
 <Callout type="tip">
   **This is a retention window, not a confirmation with consequences.**
-  The cancellation happens via the "Cancel subscription" button, nothing burns,
-  and the subscription runs out its paid term.
+  Cancelling happens via the left button — **"Cancel subscription"**; the right
+  one, **"Keep the subscription and carry on creating"**, just closes
+  the window. Nothing burns: the subscription runs out its paid term.
+</Callout>
+
+<Callout type="warning">
+  In its list of features the window promises access to 18+ with no conditions.
+  In reality a paid plan is not enough: you also need the **"Show NSFW content"**
+  checkbox in profile settings — [Profile and settings](/en/docs/profile).
 </Callout>
 
 Right after cancelling you get a confirmation: "Subscription auto-renewal has
@@ -123,9 +159,21 @@ window** gets a mark that you will return to it. A scheduled move to another
 not obvious. On the free plan there is no subscription line at all, and that is
 not a fault.
 
+<Callout type="info" title="The subscription line shows three different things">
+  One and the same line at the top of the window covers three states:
+  the **current** subscription with its end date; the **next** one — when
+  a switch is already paid for, and then you see its name and the dates it runs
+  between; and a **temporary upgrade from a promo code**. The last one looks
+  exactly the same, but it is not a scheduled plan — it is a return to your
+  previous plan when the boost ends, and it cannot be cancelled.
+</Callout>
+
 ## Promo codes
 
-The promo code field is at the top of the plans window.
+In the plans window the promo code is **not a field but a faint "Promo code"
+link** at the top: until you click it, there is no input at all. That is why
+people fail to find it. Clicking turns the link into an "Enter promo" field.
+A guest does not see the link at all — promo codes are for signed-in users.
 
 ![Promo code](/assets/docs-pages/screens/10-07-promo-code.en.webp)
 
@@ -153,49 +201,54 @@ refusal red. The cross clears the code and brings the usual prices back.
 
 A code can be refused for four different reasons, and they mean different things:
 
-| Message | What it actually is |
+| What the message is about | What it actually is |
 |---|---|
-| "This promo code has already been applied" | **you** have used this code; it will not work a second time |
-| "The activation limit for this promo code is exhausted" | **others** took it; waiting is pointless, you need a different code |
-| "This promo code is no longer valid" | the campaign has ended |
-| "This promo code is temporarily unavailable. Contact support" | the code exists but is switched off |
+| the code has **already been applied** | **you** have used this code; it will not work a second time |
+| the **activation limit is exhausted** | **others** took it; waiting is pointless, you need a different code |
+| the code has **expired** | the campaign has ended |
+| the code **does not exist or is unavailable** | a typo in the code — or it is switched off, and then support is needed |
 
 <Callout type="tip">
-  The difference between the first two matters: in one case it is
-  about you, in the other the code was used up by everyone else. And only
-  **the last case** is the one where writing to support is genuinely worth it.
+  Support is only worth writing to about the last case. The first three are not
+  a fault: one is the code itself, another is everyone else having used it up,
+  the third is a campaign that ended.
+</Callout>
+
+<Callout type="tip">
+  **If you already hold a paid subscription and the code gives the same or
+  a lower plan — save it.** You will not feel the upgrade and it will not extend
+  the term; better to apply it once the current subscription ends.
 </Callout>
 
 ## Payment methods
 
-A bank card, **SBP**, **SberPay**, **T-Pay** and the **YooMoney** wallet.
-The list is shown in the payment window, where a method can also be saved
-for later.
-
 Saved methods live in a collapsible block on the payments page: cards in a row
-that scrolls sideways, with a **"+"** tile at the end for a new one. A card shows
-the method name, **the last four digits** and a bin.
+that scrolls sideways, with a **"+"** tile at the end for a new one. They are
+labelled briefly — **"Card"**, **"SBP"**, **"SberPay"**, **"YooMoney"** — and
+a card shows **the last four digits** and a bin.
 
 <Callout type="tip">
-  **The main method is chosen by clicking the card itself** — there is no separate
-  "make primary" button. The primary one has a green border with a tick. That is
-  the first thing to know about this block: people look for a button and never
-  find one.
+  **The main method is chosen by clicking the card itself** — there is no
+  separate "make primary" button, and people look for one in vain. The primary
+  one has a green border with a tick.
 </Callout>
 
 **Why a card won't delete.** The bin **disappears** on the last card if you have
-an active auto-renewing subscription: there would be nothing left to charge.
-Cancel auto-renewal first, and the method can then be removed. With no
-subscription, every method can be deleted.
+an active auto-renewing subscription. Cancel auto-renewal first, and the method
+can then be removed. With no subscription, every method can be deleted.
 
 ## When payment won't go through
 
 The plans window warns about this under every tab, and the text is worth reading:
 
-> "Browser won't let you pay? Russian banks had their international certificates
-> revoked. Install the state certificates — a minute, once, for all banks.
-> Or use Yandex Browser, where they are already built in. Your money and card
-> details are safe."
+> "Browser blocking the payment page? International certificates were revoked
+> for Russian banks. Install the Russian certificates — a minute, once, works
+> for all banks. Or use Yandex Browser, they are already built in. Your money
+> and card details are safe."
+
+Two phrases in that text are links: "Install the Russian certificates" leads to
+[gosuslugi.ru/crt](https://www.gosuslugi.ru/crt), and "Yandex Browser" to
+[browser.yandex.ru](https://browser.yandex.ru).
 
 ### Four windows after payment
 
@@ -223,9 +276,9 @@ change is already scheduled.
 
 ## Payment and coin history
 
-One table with six columns: **Product · Details · Date · Status · Amount ·
-Payment info**. On a narrow screen it scrolls sideways — the right-hand columns
-are not lost.
+On the payments page this section is called **"Payment history"** — one table
+with six columns: **Product · Details · Date · Status · Amount · Payment info**.
+On a narrow screen it scrolls sideways, the right-hand columns are not lost.
 
 If there have been no payments yet, a "No payments found" placeholder with a link
 to packages and subscriptions stands in place of the table.
@@ -255,17 +308,35 @@ from an email, a referral reward and a **reward reversal**.
 ## Invite friends
 
 Everyone has a permanent link. A friend gets a bonus on registration, you get
-a reward from their purchases. **The current terms are written right on
-the programme page** — they are configurable and can change.
+a reward from their purchases.
 
 The page has two tabs: **Link** (with the link and share buttons; the message
-text is already written for you) and **Statistics**.
+text is already written for you) and **Statistics**. At the bottom of the page
+there is its own **FAQ** — when a reward is credited, whether you can be both
+a referral and a partner, whether a reward expires, and how to collect what you
+earned. Go there for the current terms: they are configurable and can change.
+
+<Callout type="warning">
+  **"Invited" and "Active referrals" are different numbers, and this is the main
+  question of the page.** A registration through your link is not a reward by
+  itself: an invited person only reaches the second counter after meeting
+  the conditions described on that same page. So "I invited five people and have
+  no rewards" is usually not a fault.
+</Callout>
+
+Besides the two counters, the "Statistics" tab has a **"Your rewards"** block
+(Earned · Pending · Paid out) and **"Latest credits"** with a status icon on
+each line. A reward is not always coins — it can include subscription days.
 
 <Callout type="tip">
-  The note under the statistics says it plainly: statistics are updated and
-  bonuses credited **every 15 minutes**. That is the answer to "my friend paid
-  and I have nothing".
+  The answer to "my friend paid and I have nothing" is in that same FAQ: a reward
+  does not arrive instantly, it needs confirmation. The note under the list of
+  credits says exactly that — rewards are credited automatically once confirmed.
 </Callout>
+
+The link carries **a language segment**: share from the English version of
+the site and you send an English link. For a Russian-speaking friend, take
+the link from the Russian version.
 
 ### Reward statuses
 
@@ -288,8 +359,22 @@ and "Partner payout".
 </Callout>
 
 Old referral credits stay in the history — they should, and that is not
-a contradiction. The terms and current rates are written on the programme page
-itself.
+a contradiction.
+
+**You become a partner by application**, there is no automatic approval: you
+state your traffic channels (from a ready list — YouTube, Telegram, Instagram,
+TikTok, VKontakte, a blog or site, advertising, other), the size of your
+audience, links, a Telegram contact and how you would like to be paid, and
+the application is then reviewed by hand. It has three states: **under review**,
+**rejected** (you may apply again) and **suspended**. An approved partner does
+not need to apply a second time.
+
+<Callout type="warning">
+  The programme page can also be in a **"the partner programme is temporarily
+  unavailable"** state — with neither an application form nor a dashboard on it.
+  That is not a sign-in fault and not a block on your account: the programme is
+  closed for the time being, come back later.
+</Callout>
 
 ## What happens when the subscription ends
 
@@ -309,8 +394,7 @@ PNG and JPG formats, the works archive and the rest of the "All features" list.
 
 **Showing adult content switches itself off.** The setting is dropped together
 with the subscription, and after renewing you will have to switch it back on
-in [profile settings](/en/docs/profile). This is written nowhere, and
-the question comes up regularly.
+in [profile settings](/en/docs/profile).
 
 Your works are not going anywhere: they are not deleted, private ones do not
 become public, bookmarks and favourites remain. But if some of them are private,

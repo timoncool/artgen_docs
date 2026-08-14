@@ -6,7 +6,7 @@ import { Callout } from '@/src/01-shared/ui/mdx'
 
 The editor finishes a work off: crop it, add a caption, overlay a shape, correct
 the colour. All of that without leaving the service and without opening
-a graphics application.
+a graphics application. It has its own item in the header — **"Editor"**.
 
 ![Image editor](/assets/docs-pages/screens/09-01-editor-annotation.en.webp)
 
@@ -56,14 +56,19 @@ ratio. Next to it: **Flip Horizontally** and **Flip Vertically**.
   here instead of redoing the generation.
 </Callout>
 
-The **Filters** section holds ready colour presets with names: "Original"
-and then film-like and "Instagram" variants. The strip scrolls sideways,
-and clicking applies the preset right away.
+The **Filters** section holds ready colour presets: Original, TikTok Pop, Beauty
+Glow, Ektar 100, Urban Night, Golden Desert, Cinematic Blue, Food Blogger, Nature
+Fresh, Cosy Coffee and more. The strip scrolls sideways, and clicking applies
+the preset right away.
 
 ![The Filters section](/assets/docs-pages/screens/09-02-editor-filters.en.webp)
 
-**Fine-tune** holds sliders: **brightness**, **contrast**, **HSV**, **blur**
-and **sharpness**.
+**Fine-tune** holds sliders: **brightness**, **contrast**, **HSV**, **warmth**,
+**blur** and **sharpness**.
+
+The **Figures** section has the same rectangle, ellipse, polygon and line as
+the annotation tools, just gathered separately: handy when you need a backdrop
+for text or a frame rather than a caption.
 
 Above the canvas — the size in pixels, zoom with plus and minus, and undo/redo
 buttons.
@@ -80,13 +85,16 @@ buttons.
   a diagram — press "Reset" and draw right here, no generation required.
 </Callout>
 
-### The four buttons at the bottom
+### The buttons at the bottom
 
-**Reset · Upload · Download · Save to gallery.** The set depends on where
-the editor was opened from: opened from the generator, it also gets **Apply**.
+The set depends on where the editor was opened from. On its own page there are
+four: **Reset · Upload · Download · Save to gallery**. Opened from the generator
+the set is different: **Cancel · Download · Save to gallery · Apply**.
 
 | Button | What it does |
 |---|---|
+| **Reset** | clear the canvas — or put a blank white sheet in place |
+| **Upload** | take a file from disk instead of a work from the drawer |
 | **Download** | take the file for yourself; the work does not go to the gallery |
 | **Save to gallery** | create a **new** work from the edited image |
 | **Apply** | hand the result back to wherever the editor was opened from |
@@ -94,15 +102,19 @@ the editor was opened from: opened from the generator, it also gets **Apply**.
 
 <Callout type="tip">
   **"Save to gallery" creates a new work and the original stays** — you cannot
-  ruin the source. The result is saved as WebP and lands **at the top** of your
-  works, appearing in the drawer without a page reload.
+  ruin the source. The result is saved as **WebP at maximum quality** (the picture
+  is processed at a raised resolution) and lands **at the top** of your works,
+  appearing in the drawer without a page reload.
 </Callout>
 
-If the editor was opened from the generator, **"Apply" returns the picture into
-the slot you came from** — "Custom Image" or an additional picture. And
-**the generation size adjusts itself** to the edited picture, if the model has
-such a size. That is not the interface being wilful but a courtesy: otherwise
-the model would not accept the file.
+The editor library's own save button has been removed — looking for "Save"
+inside its panels is pointless: only the buttons at the bottom save anything.
+
+If the editor was opened from the generator, **"Apply" returns the picture
+to where you came from** — "Custom Image", an additional picture or the face
+slot; and if you opened the editor just to look, there is nowhere to return it.
+**The generation size adjusts itself** to the edited picture, if the model has
+such a size.
 
 **Edits are remembered between openings** — close the editor and you will
 continue from the same place, not from a blank sheet. Closing it is not scary.
@@ -115,40 +127,52 @@ never appears in your feed of works.
 
 <Callout type="tip">
   Hence the answer to "I uploaded a picture and it isn't in my works". That is
-  how it should be. To turn something uploaded into a work, either run it through
-  a generation or save it from the editor with **"Save to gallery"** — then a new
-  work appears.
+  how it should be: to turn something uploaded into a work, run it through
+  a generation or save it with "Save to gallery".
+</Callout>
+
+<Callout type="info" title="What you save from the editor starts private">
+  A work created with "Save to gallery" appears **for you only** — it does not
+  go into the shared feed. It is also flagged as adult, so in your own feed it
+  may look blurred if you have turned such works off in profile settings. Both
+  flags can be switched later on the work's card: [Your works](/en/docs/my-works).
 </Callout>
 
 ## Logo generator
 
 It lives in the **"More"** menu rather than next to the ordinary generator —
-the most common reason behind "where are the logos".
+hence the question "where are the logos".
 
 ![Logo generator, step 1](/assets/docs-pages/screens/09-06-logo-step1.en.webp)
 
 ### Four steps
 
-| Step | Name | What it is about |
+Each step in the bar carries two lines — a name and a caption under it:
+
+| Step | Name | Caption |
 |---|---|---|
-| 1 | **Brand information** | the name and the details |
-| 2 | **Composition and mood** | picking a layout |
-| 3 | **Editing** | adjusting the layout |
-| 4 | **Styling** | processing by the neural network |
+| 1 | **Brand information** | "provide the details" |
+| 2 | **Composition and mood** | "pick a layout" |
+| 3 | **Editing** | "adjust the layout" |
+| 4 | **Styling** | "AI processing" |
+
+Step one is simple: the **"Brand name"** field with an example hint, a choice of
+layout size — and the **"Create layouts"** button, inactive until a name is
+entered.
 
 <Callout type="warning">
   **Steps cannot be skipped.** Until the previous one is finished, the next says
-  it will become available after the previous is complete. But **you can go back
-  through completed steps** — the step bar is clickable.
+  **"this section will become available once the previous one is complete"** and
+  asks you to go back. But **you can move through completed steps** — the step
+  bar is clickable.
 
   There is a separate restriction: **a step closed by your plan**. It looks
-  similar but offers to open the plans instead. Don't confuse the two: in one
-  case you need to finish the previous step, in the other to change plan.
+  different from the usual plans window — a card right inside the step, with
+  an "Open plans" button. Don't confuse the two: in one case you need to finish
+  the previous step, in the other to change plan.
 </Callout>
 
 ### The main reason people give up halfway
-
-The hints on the steps say it outright, and they are worth reading:
 
 - on step 2 — **"pick a composition and a mood, never mind the icon for now,
   you will be able to replace it later"**;
@@ -170,8 +194,8 @@ logo"** — by dragging or picking a file, PNG, JPG or WEBP up to 5 MB.
 
 <Callout type="tip">
   So the logo generator also works as **"polish an existing logo"**: upload
-  yours → fix the layout → hand it to the network for styling. Almost nobody
-  knows about this route.
+  yours → fix the layout → hand it to the network for styling. Nothing on
+  the screen names this route.
 </Callout>
 
 ### What the layout editor has
@@ -187,13 +211,7 @@ list, a **styling prompt**, a **"Negative"** field, a random-prompt dice and
 collapsed additional settings.
 
 <Callout type="warning">
-  **Two traps on this step.**
-
-  First: in the Russian version the **"Negative"** field carries the neighbouring
-  field's hint — about the styling prompt. Don't trust it: this field takes what
-  should **not** be there.
-
-  Second: **the additional settings are not translated** — they show technical
+  **The additional settings are not translated** — they show technical
   parameter names in Latin script. If you don't know what they are, don't touch
   them: the defaults are chosen sensibly.
 </Callout>

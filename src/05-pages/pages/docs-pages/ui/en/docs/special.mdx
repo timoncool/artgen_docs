@@ -2,10 +2,12 @@ import { Callout } from '@/src/01-shared/ui/mdx'
 
 # Special model features
 
-Half of the most powerful things in the service hide in the "Additional" block
-of particular models. You cannot see them in the catalog or in a description —
-not until you pick the model and unfold the block. Collected here is what you
-would not guess otherwise, **from task to model** rather than the other way round.
+Try clothes on a person, erase an object, clone a voice, write a song, replace
+an object in a finished clip — the service does all of this, but it lives in
+the "Additional" block of particular models and is invisible from outside:
+not in the catalog, not in a description, not until you pick the model and
+unfold the block. Collected here, **from task to model** rather than the other
+way round.
 
 ## Working with images
 
@@ -43,13 +45,17 @@ itself works is covered in [Generator](/en/docs/generator).
 
 And in the "Additional" block such models carry a **"Mask dilation (px)"**
 parameter, whose description holds a ready recipe: dilation helps cover edges,
-soft contours and shadows — **15–20 for hair, fur and smoke**.
+soft contours and shadows. The default is **10**, and **15–20** is recommended
+for hair, fur and smoke.
 
 <Callout type="tip">
-  This is the best example of hidden knowledge: the parameter looks technical but
-  solves the main problem of erasing — the halo along the edges. About masks —
-  in [Generator](/en/docs/generator).
+  The parameter looks technical but solves the main problem of erasing —
+  the halo along the edges. About masks — in [Generator](/en/docs/generator).
 </Callout>
+
+One more trait of erasing models: **the result's size is taken from the source
+picture**, so they have no usual resolution choice — and that is not a missing
+setting.
 
 ### Extend a frame beyond its borders
 
@@ -74,7 +80,10 @@ Some models have a **series mode**: several connected frames generated in one jo
 
 ### Set the colour palette of the result
 
-There are **two different palettes** in the service, and they are easy to mix up:
+The palette has to be **switched on first**, with its own toggle — "set a group
+of colours to control the colour scheme of the result"; the set itself only
+appears after that. Then there are **two different palettes** in the service,
+and they are easy to mix up:
 
 - the simple one — **up to five colours** the model will use;
 - the advanced one — **from three to ten colours with weights**: the main colour
@@ -90,7 +99,9 @@ only what is behind the object.
 <Callout type="tip">
   **This is the only way to hit brand colours without hunting through prompts.**
   Take the colours from your logo, give the main one more weight — and you get
-  a series of pictures in one range.
+  a series of pictures in one range. And to find other people's works in that
+  same range, there is [colour search](/en/docs/gallery) — the same trick
+  in reverse.
 </Callout>
 
 ### Transparent background
@@ -272,7 +283,9 @@ to the sound.
   of movement is borrowed. The slots look alike; the results are opposite.
 </Callout>
 
-**A finished clip can be edited**, not only redone.
+The source clip has a **length limit**, written right in the field's caption —
+usually a few seconds at the bottom and no more than half an hour at the top.
+Such models will not take a long clip: cut the piece you need beforehand.
 
 ### Continue your clip and other video settings
 
@@ -328,9 +341,11 @@ This is not one feature but three, and they are easy to confuse:
 
 ![A voice-cloning model: the sample slot and speech settings](/assets/docs-pages/screens/13-14-voice-clone-pss.en.webp)
 
-1. **copy a specific voice** — upload or record a piece of clean speech, **from
-   one second to a minute and a half**; you do not have to transcribe it,
-   the transcript is detected automatically;
+1. **copy a specific voice** — upload or record a piece of clean speech; you do
+   not have to transcribe it, the transcript is detected automatically.
+   **The allowed length differs from model to model** — one takes anything from
+   a second to a minute and a half, another 5–30 seconds — and it is written
+   right in the caption under the field;
 2. **voice another language with that voice** — a separate setting for dubbing;
 3. **invent a voice from words** — "a warm male voice, calm pace".
 
@@ -356,8 +371,9 @@ in the prompt — as **@Audio1, @Audio2, @Audio3**.
   the timbre and the **emotion** — a calm sample gives a calm line.
 </Callout>
 
-Next to it there are usually "Pitch" (a shift of an octave up or down) and
-"Volume". Neither is sent while it sits at its default — touch them deliberately.
+Next to it there are usually **"Speech rate"**, **"Pitch"** (a shift of an octave
+up or down) and **"Volume"**. None of the three is sent while it sits at its
+default — touch them deliberately.
 
 ### Write a song
 
@@ -426,11 +442,14 @@ steps" works, "atmospheric and unsettling" does not.
 
 ## Settings you meet everywhere
 
-### "Prompt extend" under seven names
+### "Prompt extend" under many names
 
 The same setting is called differently on different models: prompt extend, prompt
-upsampling, improve prompt, magic prompt. The meaning is one:
+upsampling, improve prompt, "enhance prompt", magic prompt. The meaning is one:
 **before generating, a separate model expands and refines your prompt**.
+
+On music models the same setting is called **"Auto lyrics"** and works not on
+the prompt but **on the song's lyrics** — polishing the lines you wrote.
 
 <Callout type="warning">
   **And it has a consequence stated right in the description: prompt extension
@@ -460,8 +479,9 @@ and, for text models, answer verbosity.
 
 ### Models that search the internet
 
-Some image models have a **web search**: the model checks current facts or looks
-for references for the picture.
+Some image models even carry **two separate toggles**: **"Web search"** — for
+the model to check current facts and events — and **"Image search"**, for when
+it needs visual references. They switch on independently.
 
 <Callout type="warning">
   **This is not the same web search as in the [chat](/en/docs/chat).** There

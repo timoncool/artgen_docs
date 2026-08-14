@@ -2,9 +2,10 @@ import { Callout } from '@/src/01-shared/ui/mdx'
 
 # Model catalogs
 
-The catalog answers the question the generator makes you guess at: **which model
-to take for this task**. Here every model has a description, a price, example
-works and its neighbours in the line — all visible before you spend any coins.
+The catalog answers **"which model to take for this task"** — and, along the way,
+"why can't I see the model my friend has". Every model here has a description,
+a price, example works and its neighbours in the line, all visible before you
+spend any coins.
 
 ![Image model catalog](/assets/docs-pages/screens/08-01-models-catalog.en.webp)
 
@@ -20,9 +21,13 @@ with a number in brackets.
 
 ## Filters: the left column
 
-At the top there are three separate rows: **bookmarked only** (with a star),
-**new only** (red tag), **hits only** (orange). Below them, collapsible sections:
-**Category**, **Tariff**, **Family**, **Provider**.
+Above the grid — a **search by name** ("Search by model name…", and "Search
+LoRAs…" / "Search styles…" in the LoRA and style catalogs) and the "selected /
+total" counter.
+
+In the left column, three separate rows come first: **"Bookmarked"** (with
+a star), **"New"** (red tag), **"Top"** (orange). Below them, collapsible
+sections: **Category**, **Tariff**, **Family**, **Provider**.
 
 ![Video model catalog](/assets/docs-pages/screens/08-01b-catalog-video.en.webp)
 
@@ -46,24 +51,24 @@ A few more details that save time:
   instantly.
 
 <Callout type="tip">
-  **The "Tariff" filter shows at once how
-  many models are available to you and how many would open on a paid plan.
-  That way you won't pick a model you cannot run.
+  **The "Tariff" filter shows how many models sit on each level.** Several levels
+  can be ticked at once, and images also have a separate **Free** row — free
+  models do exist, and you can see their number.
 </Callout>
 
 ## Sorting
 
-Five options: **default**, new, cheaper, more expensive, by name.
+Five options: **"Popular"**, new, cheaper, more expensive, by name.
 
 <Callout type="warning">
-  "Default" is **the order recommended by the service**, not popularity among
-  users. It should not be read as a ranking.
+  **"Popular" is not a user ranking** but the order recommended by the service.
+  This is the most misleading label in the catalog: it is not "what people pick
+  most often" but a selection made by the service.
 </Callout>
 
-**"Cheaper" plus a category is the most practical trick in the catalog.**
-The price spread is enormous: half of the image models cost a token amount,
-while the flagships are hundreds of times more. For drafts and for tuning
-a prompt, a cheap model works just as well.
+**"Cheaper" plus a category.** The price spread is enormous: half of the image
+models cost a token amount, while the flagships are hundreds of times more.
+For drafts and for tuning a prompt, a cheap model works just as well.
 
 ## The model card
 
@@ -99,28 +104,44 @@ not open the page.
 <Callout type="tip">
   Hence an honest piece of advice: **not sure where to start — take a model
   tagged HIT**. That is not an editorial pick but what everyone else is using
-  right now. Both tags can be topped up manually by the team, so "strictly
-  top N" cannot be promised.
+  right now. A model is occasionally added by hand, so the list is not strictly
+  automatic.
 </Callout>
 
-**The plan badge appears on a card only when the model is above your plan.**
-So **a missing badge is good news**: the model is available to you. A guest
-sees cards with no badges at all, and that does not mean everything is free.
+### What else a card says
+
+Left to right: the **price in coins**, the **NEW** and **HIT** tags, **category**
+tags in their own colours, the **provider** and the **family** in neutral grey,
+and last the **plan** the model is available from: Free, Light, Pro, MAX or API.
+
+The **"from"** prefix on a price appears only when the minimum cost differs from
+the model's base price.
+
+<Callout type="info" title="The plan tag and the plan badge are different things">
+  The tag in the row of tags is **always** there and says which level the model
+  is available from. The **separate plan badge next to the name** appears only
+  when the model is **above your plan** — that is the "not yours yet" hint.
+  A guest is shown no badge at all, and that does not mean everything is free.
+</Callout>
 
 ## The model page
 
 ![Model page](/assets/docs-pages/screens/08-04-model-page.en.webp)
 
 Top to bottom: breadcrumbs, a large preview, the name, tags and price,
-the description, **two price tables** (by size and by mode), the **"Try model"**
-button, **example works** and **similar models**.
+the description, the **"Cost"** table with "Size" and "Price" columns,
+the **"Try"** button, **"Generation examples"** and **"Similar models"**.
+Some models also get a second table, by working mode.
 
 <Callout type="tip">
-  **"Try model" takes you straight to the right place** — the generator with that
+  **"Try" takes you straight to the right place** — the generator with that
   model, or the chat if the model is a text one. No need to pick it again.
 </Callout>
 
-### Example works
+A model's description is **stripped of markup**: if it looks like one solid
+block with no paragraphs or lists, that is intended, not a layout fault.
+
+### Generation examples
 
 The examples are **real works made on that model**, not marketing pictures.
 
@@ -130,9 +151,11 @@ The examples are **real works made on that model**, not marketing pictures.
   settings and take them for yourself — see [Gallery](/en/docs/gallery).
 </Callout>
 
-Two rows are shown; the "Show all" button appears only if there are more examples
-than fit. If there are none at all, there is no block — that is not a loading
-error.
+Two rows are shown; the **"Show all"** button appears only if there are more
+examples than fit, and it opens the feed **filtered by that model**. The number
+of columns adapts to the screen width, so on a phone fewer examples fit and
+the button shows up sooner. If there are none at all, there is no block — that
+is not a loading error.
 
 ### Similar models
 
@@ -205,9 +228,9 @@ to go; "a specific character" is a different and much smaller category.
   **family** as well as by category. In the generator there is only one
   attribute — category — and several selected ones combine with "AND".
 
-  Hence the best trick on this page: **pick your model's family in the catalog and
-  you will see only the LoRAs that fit it**. There is no such filter in
-  the generator; looking for it there is pointless.
+  Hence the trick: **pick your model's family in the catalog and you will see
+  only the LoRAs that fit it**. There is no such filter in the generator;
+  looking for it there is pointless.
 </Callout>
 
 ![LoRA page](/assets/docs-pages/screens/08-06-lora-page.en.webp)
@@ -229,10 +252,10 @@ The LoRA page has things its card inside the generator does not:
   added to your prompt" — not a task to type it yourself.
 </Callout>
 
-**"Try in the generator" does more than it looks.** The button does not just
-open the generator: it substitutes a suitable model from the same family and
-**selects that LoRA straight away**, expanding the LoRA section. Two clicks
-instead of "pick a model → find the LoRA in the list → switch it on".
+**"Try in the generator" substitutes both the model and the LoRA.** The button
+opens the generator with a suitable model from the same family and **selects
+that LoRA straight away**, expanding the LoRA section. Two clicks instead of
+"pick a model → find the LoRA in the list → switch it on".
 
 The sign of success is the LoRA section opening by itself. If it didn't,
 the LoRA is not compatible with the substituted model and the generator opened
@@ -262,18 +285,23 @@ a list or is empty.
 
 ![Style catalog](/assets/docs-pages/screens/08-07-styles-catalog.en.webp)
 
-A style is a ready-made add-on to your prompt: it appends wording that sets
-the manner.
+A style is a **ready-made prompt frame** your own text is inserted into. The style
+catalog has its own category filter (ART, PHOTO, DIGIT, GAME, PAPER, FUTURE, ADS,
+TRAD, FX, CULT), a "Bookmarked" row, search, sorting and a counter — just like
+the model catalog.
 
 ![Style page](/assets/docs-pages/screens/08-08-style-page.en.webp)
 
 A style's page carries a **"Prompt template"** and a **"Negative prompt"**. The
-word "template" is literal here: it is a frame **your prompt is inserted into** —
-which is why it is worth reading before you write your own text.
+word "template" is literal here: the text holds a `{prompt}` marker and your
+request goes **inside it** — some wording comes before, some after. Worth reading
+before you write your own text: you can see what the style has already said
+for you.
 
 <Callout type="tip">
-  Like LoRAs, a style has a "Try" button. You can select **no more than three**
-  styles and three LoRAs at once — and all of it counts towards the prompt length.
+  Like LoRAs, a style has a **"Try in the generator"** button, and below it
+  a **"Similar styles"** block. Some styles are available on paid plans only;
+  what your plan includes is listed in the plans window.
 </Callout>
 
 **Why one model has few styles and another many.** Styles are picked by
@@ -302,10 +330,22 @@ work only for signed-in users.
   the list there too.
 </Callout>
 
+## Why you don't see every model
+
+Everyone's catalog is their own, and there are exactly two reasons:
+
+- **your plan** — models above your level are in the list but carry a plan
+  badge; what opens on which level is listed in the plans window;
+- **hidden models** — some models are taken out of the catalog by the team
+  entirely, and then no filter will show them.
+
+That is also the answer to "where did the model go" and "my friend has it and
+I don't": either it is on another level, or it was pulled from the shelf.
+Search has nothing to do with it — filters work on the already loaded list.
+
 ## Where to go next
 
-- Picked a model — [Generator](/en/docs/generator).
-- Want to know what its settings mean — the same page, the additional settings
-  part.
+- Picked a model — [Generator](/en/docs/generator): its settings are explained
+  there too.
 - Looking for unusual features: upscaling, outpainting, avatars, voice
   cloning — [Special model features](/en/docs/special).

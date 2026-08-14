@@ -56,26 +56,38 @@ priced **per thousand tokens**, and the price is on the card.
 
 ![Ready-made prompts and roles](/assets/docs-pages/screens/07-03-chat-prompts-roles.en.webp)
 
-These are not sample questions but **system prompt templates** — ready roles:
-data analyst, product manager, technical writer, contract editor, scriptwriter,
-translator, senior developer and others. Roles have search, categories and
-**bookmarks**: a marked role rises in the list.
+These are not sample questions but **system prompt templates** — ready roles for
+a data analyst, a product manager, a technical writer, a contract editor,
+a scriptwriter, a translator, a senior developer and more. Their names and
+categories stay in Russian on the English locale, so go by the card's
+description. Roles have search, categories and **bookmarks**: a marked role
+rises in the list, and the star to the left of the categories leaves **only
+the marked ones** — the same trick as with styles in the generator.
 
 <Callout type="tip">
   **Open a role's card — the full text of its prompt is there, and it can be
-  copied.** This is the best textbook on system prompts the service has: look
-  at how a ready role is written and write your own by that example.
+  copied.** Look at how a ready role is written and write your own by that
+  example. The text is often long and **scrolls inside the card**: if it seems
+  to break off mid-sentence, scroll it.
 </Callout>
 
+**Example.** The "translator" role sets the behaviour once — after that you just
+drop text into the chat, with no "please translate" in front of every chunk.
+
+**Tip.** A role is a starting point, not a restriction: pick a ready one and add
+your own lines to the system prompt, they don't conflict.
+
 The list of roles is **loaded from the server**, so it has a loading state and
-an error state with a "Retry" button. Roles keep being added over time, and
-the list height is limited — if it looks like there are only three of them,
-scroll.
+an error state with a "Retry" button. The list may grow, and its height is
+limited — if it looks like there are only three roles, scroll.
 
 ## The system prompt
 
-The "Set the assistant's behavior…" field is an instruction applied
-**at the start of every message in the conversation**, not once.
+The field reads "Set the assistant's behavior…", and its tooltip spells it out:
+**"Instructions that define the model's behavior at the start of each
+conversation"**. Next to the block heading sits its own cost counter and a token
+estimate — something like "1 · 23 tok." — so you can see what the instruction
+itself costs.
 
 <Callout type="warning">
   **The system prompt is billed separately and on every request.** A three-screen
@@ -89,11 +101,16 @@ is no separate "remove role" button, which is not obvious.
 
 ## Additional: answer parameters
 
-- **"Max answer tokens"** — a slider whose bounds are set by the model.
-- **"Answer detail"** — three buttons: **Brief · Medium · Detailed**.
-- **"Reasoning"** — a toggle on models that can do it. Turning it on reveals
-  **"Reasoning effort"** with a set of steps.
-- **"Tools"** — a toggle on models that support tools.
+- **"Max output tokens"** — a slider whose bounds are set by the model.
+- **"Response verbosity"** — three buttons: **Concise · Balanced · Detailed**;
+  the middle one is picked by default.
+- **«Рассуждение»** (reasoning) — a toggle on models that can do it, and one of
+  the labels left untranslated. Turning it on reveals the reasoning effort steps.
+- **«Инструменты»** (tools) — a toggle on models that support tools, on by
+  default; also untranslated.
+
+If a model already describes its reasoning **in a scheme of its own**, no
+separate toggle appears: the service does not show two identical controls.
 
 <Callout type="warning">
   **The reasoning effort steps come with the model, and each costs differently.**
@@ -128,16 +145,16 @@ checklists, strikethrough), **mathematical formulas** instead of raw LaTeX,
 and **code with highlighting and a copy button**.
 
 <Callout type="tip">
-  **Few people know the chat draws diagrams.** Ask for a mermaid diagram —
+  **The chat can draw diagrams.** Ask for a mermaid diagram —
   "draw the order process as a mermaid diagram" — and you get a finished
   flowchart as a picture right in the answer, not text made of dashes.
 </Callout>
 
 ## Buttons around the input field
 
-To the left of the field — a **paperclip** ("Attach a file (PDF, text, code)")
-and a **web search icon**. To the right — a **microphone** ("Voice input")
-and **Send**. Next to them — **Clear prompt**.
+To the left of the field — a **paperclip** and a **web search icon**. To the
+right — a **microphone** and the **Send** arrow, with the message cost counter
+beside it.
 
 ### Web search
 
@@ -153,22 +170,32 @@ message, +N coins per request" — the surcharge is written right there.
   matters: prices, news, versions, documentation.
 </Callout>
 
+An answer made with search arrives **with links to its sources** — they are
+visible right in the thread, so the numbers can be checked.
+
 Some models search the internet by themselves — they have no toggle and don't
 need one.
 
 ### Attachments
 
-You can attach with the **paperclip or by dragging files into the window**.
-The formats are listed in the paperclip's tooltip: pictures, PDF, text and code,
-audio, video. Every file has its own status — queued, uploading, uploaded, error,
-cancelled; an upload can be retried, cancelled, or the file removed.
+You can attach with the **paperclip or by dragging files into the window** —
+while dragging, a "drop the files to attach" hint appears. The service lists
+the formats itself, in the paperclip's tooltip: images PNG, JPG, WEBP, GIF;
+PDF documents; text and code TXT, MD, CSV, JSON, YAML, LOG and others; audio
+MP3, WAV, OGG, FLAC, M4A; video MP4, MOV, WEBM.
+
+Every file has its own status — queued, uploading, uploaded, error, cancelled;
+an upload can be retried, cancelled, or the file removed. Removing works only
+for what **has not gone into the chat yet**: a sent attachment disappears
+together with its message.
 
 <Callout type="tip">
   **The fastest way to show the chat one of your older works is to paste its link
   straight into the message text.** The service downloads the file and attaches
-  it itself. And a picture from the generator can be
-  sent to the chat with the single "Discuss with AI in chat" button — see
-  [Generator](/en/docs/generator).
+  it itself. If the work has been deleted or is unavailable, the link will not
+  attach and you get a separate "Could not attach the link" message. And
+  a picture from the generator can be sent to the chat with the single "Discuss
+  with AI in chat" button — see [Generator](/en/docs/generator).
 </Callout>
 
 **An attachment can be refused for three different reasons, and each is cured
@@ -220,9 +247,9 @@ A message has seven states: sending, request accepted, generating an answer,
 **Copy · Download as Markdown · Regenerate · Send again · Retry · Edit.**
 
 <Callout type="tip">
-  **"Download as Markdown" is the chat's least noticeable useful button.**
-  A long answer leaves as a file with its markup, tables and code intact:
-  handy when the answer has to go to a colleague or into documentation.
+  **"Download as Markdown" is worth remembering.** A long answer leaves as
+  a file with its markup, tables and code intact: handy when the answer has to
+  go to a colleague or into documentation.
 </Callout>
 
 **Three cases where the buttons silently do nothing:**
@@ -230,15 +257,17 @@ A message has seven states: sending, request accepted, generating an answer,
 - **"Retry"** works only for a **failed or cancelled** answer. On an ordinary
   finished answer it will not fire;
 - **any action is blocked while an answer is being generated in this
-  conversation**;
+  conversation**: one conversation, one stream — a second answer will not start
+  alongside;
 - **if the message had files and they are no longer available**, retry and edit
-  will not work. You get "One or more chat attachments were not found, already
-  used or unavailable" — an attachment lives for one message. The way out:
-  send a new message and attach the files again.
+  will not work — an attachment lives for one message. The way out: send a new
+  message and attach the files again.
 
 **"Edit and send again" cuts the conversation from that message onwards** —
 everything that came after disappears. This is a common loss: someone edits
-an old question and loses the whole branch below it.
+an old question and loses the whole branch below it. Editing applies to **your
+own message only**: an assistant's answer is changed with "Regenerate", not
+by editing.
 
 **An answer can be stopped mid-sentence, and nothing is lost.** The part
 already written is kept, the message is marked "Cancelled", your question stays
@@ -252,6 +281,8 @@ with no text, can**.
 On the left — the list: search, grouping by **Today / Yesterday / N days ago**,
 renaming, deleting and "New chat". An unnamed conversation is called
 "New conversation".
+
+![The conversations list in the left drawer](/assets/docs-pages/screens/07-02-chat-conversations.en.webp)
 
 <Callout type="tip">
   **Conversations are stored on the server, not in the browser.** They are there
@@ -277,8 +308,21 @@ There is also "Clear conversations" — deleting them all at once.
 | "This file format is not supported" | the list of allowed formats is substituted into the message |
 | "No more than N files can be attached to one message" | the limit is supplied by the server |
 | "One or more chat attachments were not found, already used or unavailable" | an attachment lives for one message; attach the file again |
+| "The attachment is too large to send to the chat" | the file will not go through whole — shrink it or send a fragment |
 | "The chat history has changed. Refresh the chat and try again" | the conversation changed meanwhile — for example, it is open in a second tab |
+| "Session expired. Sign in again" | the sign-in ran out of time; the thread on the server is intact |
+| "The connection dropped before the answer finished" | the link broke mid-sentence — press "Retry" |
+| "Parallel answers limit" | you started answers in several conversations at once; wait for the current ones |
+| "Chat models are unavailable for now" | the model list did not load; the panel has a button to load it again |
 | "The request is still processing" / "The request was already accepted" / "The request is already complete" | pressing again broke nothing and charged nothing twice |
+
+<Callout type="info" title="&quot;The chat history has changed&quot; — nothing is lost">
+  This is the most alarming-looking message in the chat, and it is **not about
+  losing the thread**. It is how the service replies when you edit a message or
+  ask for an answer to be redone while the conversation has changed meanwhile —
+  because it is open in a second tab, for instance. Refresh the page and repeat:
+  both questions and answers stay where they were.
+</Callout>
 
 <Callout type="tip">
   If a message looks technical — about an "invalid setting format" or
@@ -286,9 +330,18 @@ There is also "Clear conversations" — deleting them all at once.
   of parameters. The cure is the same: reset the chat settings and try again.
 </Callout>
 
-**Part of the chat interface is not translated.** On the English version
-the "Ready-made prompts" and "System prompt" headings, the welcome line and
-the role cards stay in Russian. Go by the icons and by this guide.
+## Part of the chat interface is not translated
+
+On the English version these stay in Russian: the "Готовые промпты"
+(ready-made prompts) and "Системный промпт" (system prompt) headings,
+the "Рассуждение" and "Инструменты" toggles, the names and categories of roles,
+the welcome line, and the "Повторить загрузку доступности моделей" button that
+reloads the model list. Everything else — the model panel, the input field,
+the "Additional" block — is in English.
+
+![The chat on the English locale: part of the interface stays in Russian](/assets/docs-pages/screens/07-01b-chat-untranslated.en.webp)
+
+Go by the icons, by the position of a control and by this guide.
 
 ## Where to go next
 
