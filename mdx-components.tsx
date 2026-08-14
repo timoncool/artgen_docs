@@ -4,6 +4,7 @@ import type { ComponentPropsWithoutRef } from 'react';
 import { JSX } from 'react';
 
 import cls from '@/src/01-shared/ui/mdx/mdx.module.scss';
+import { MdxImage } from '@/src/01-shared/ui/mdx/MdxImage';
 
 type HeadingTag = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
 type HeadingBaseProps = ComponentPropsWithoutRef<'h2'>; // одинаково для h1..h6
@@ -43,12 +44,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
 
     a: (p) => <MdxLink {...p} />,
 
-    // Кадры в справке мелкие по ширине колонки — по клику открываем оригинал.
-    img: ({ src = '', alt = '', ...p }) => (
-      <a href={typeof src === 'string' ? src : ''} target='_blank' rel='noreferrer' style={{ display: 'block', cursor: 'zoom-in' }}>
-        <img src={typeof src === 'string' ? src : ''} alt={alt} {...p} />
-      </a>
-    ),
+    img: (p) => <MdxImage {...p} />,
 
     h1: (p) => <HeadingWithAnchor as='h1' {...p} />,
     h2: (p) => <HeadingWithAnchor as='h2' {...p} />,
