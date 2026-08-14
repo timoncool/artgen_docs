@@ -43,6 +43,13 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
 
     a: (p) => <MdxLink {...p} />,
 
+    // Кадры в справке мелкие по ширине колонки — по клику открываем оригинал.
+    img: ({ src = '', alt = '', ...p }) => (
+      <a href={typeof src === 'string' ? src : ''} target='_blank' rel='noreferrer' style={{ display: 'block', cursor: 'zoom-in' }}>
+        <img src={typeof src === 'string' ? src : ''} alt={alt} {...p} />
+      </a>
+    ),
+
     h1: (p) => <HeadingWithAnchor as='h1' {...p} />,
     h2: (p) => <HeadingWithAnchor as='h2' {...p} />,
     h3: (p) => <HeadingWithAnchor as='h3' {...p} />,
